@@ -6,9 +6,10 @@ import cx from "classnames";
 import styles from "./App.module.scss";
 
 function App() {
+    const list = ["Home", "About", "Services"];
   return (
     <React.Fragment>
-      <Nav />
+      <Nav NavList ={list} />
     </React.Fragment>
   );
 }
