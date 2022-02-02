@@ -1,0 +1,25 @@
+Here my comments are listed for your first push to Github:
+
+1. I changed the name of the branch to "feature/createNavbar", 
+please make sure to apply this change in your local as well.
+
+2. For, every components that you are going to build, put it
+inside a folder. The folder includes the scss file, index.js 
+and component.js (EX: Nav.js); look at how I structured my
+folders for App and Nav components.
+
+3. I changed the name of component from Navbare to Nav
+
+4. You pushed a folder named .idea, I do not know what 
+that folder is and I believe we do not need that to be pushed
+in the github. If this is something in your local machine, 
+please make sure to add the name of this folder into 
+.gitignore file.
+
+Thanks,
+Mohammad
+
+Tue, Feb 1; 23:26 Eastern Time
+
+******************************
+******************************
