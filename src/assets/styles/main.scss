@@ -1,8 +1,13 @@
 @use "sass:math";
 
 // From Base Folder
+@import "base/_imports";
 @import "base/_variables";
 @import "base/_mixins";
 @import "base/_global";
 
 // From Modules
+@import "modules/_display";
+@import "modules/_width";
+@import "modules/_spacing";
+@import "modules/_borders";

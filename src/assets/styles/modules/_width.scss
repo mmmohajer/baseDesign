@@ -1,0 +1,17 @@
+.width {
+  &--full {
+    width: 100%;
+  }
+
+  &--threeFourth {
+    width: 75%;
+  }
+
+  &--half {
+    width: 50%;
+  }
+
+  &--oneFourth {
+    width: 25%;
+  }
+}
