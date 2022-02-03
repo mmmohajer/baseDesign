@@ -3,19 +3,22 @@
 
 .header {
   .nav {
+    height: 70px;
+
+    color: $secondaryColor;
+
+
     .logo {
-      width: 150px;
-      height: 150px;
-      background-color: $primaryColor;
-      color: $thirdColor;
+      color: $secondaryColor;
     }
 
     .menuContainer {
       .menuListItem {
         a {
+          color: $secondaryColor;
           &:hover {
             background-color: $thirdColor;
-            color: $secondaryColor;
+            color: $primaryColor;
           }
         }
       }

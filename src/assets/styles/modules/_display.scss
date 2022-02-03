@@ -1,6 +1,12 @@
 .flex {
   display: flex;
 
+  @each $Grow in $flexGrow {
+    &--gr--#{$Grow} {
+      flex-grow: $Grow;
+    }
+  }
+
   &--jc--start {
     justify-content: flex-start;
   }
@@ -49,6 +55,7 @@
     flex-wrap: wrap;
   }
 }
+
 
 .block {
   display: block;
