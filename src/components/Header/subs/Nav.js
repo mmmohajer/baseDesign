@@ -29,7 +29,7 @@ function Nav({ NavList }) {
 
       <div
         id="hamburger-menu-list"
-        className="pos-abs pos-abs--rb bgPrimary pl8 pr8 op-70 hamburger-menu-hr show-block-in-sm-xsm box-vh-full"
+        className="pos-abs pos-abs--rb pl8 pr8 op-70 hamburger-menu-hr show-block-in-sm-xsm box-vh-full"
       >
         <ul className="flex flex--ai--center flex--dir--col flex--jc--center">
           {NavList.map((item, idx) => (
