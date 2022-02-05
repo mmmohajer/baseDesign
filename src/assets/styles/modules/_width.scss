@@ -1,11 +1,35 @@
 @each $val in $widthPercentages {
-    .w-per-#{$val} {
-        width: percentage(math.div($val, 100));
-    }
+  .w-min-per-#{$val} {
+    min-width: percentage(math.div($val, 100));
+  }
 }
 
 @each $val in $widthPx {
-    .w-px-#{$val} {
-        width: #{$val}px;
-    }
+  .w-min-px-#{$val} {
+    min-width: #{$val}px;
+  }
+}
+
+@each $val in $widthPercentages {
+  .w-per-#{$val} {
+    width: percentage(math.div($val, 100));
+  }
+}
+
+@each $val in $widthPx {
+  .w-px-#{$val} {
+    width: #{$val}px;
+  }
+}
+
+@each $val in $widthPercentages {
+  .w-max-per-#{$val} {
+    max-width: percentage(math.div($val, 100));
+  }
+}
+
+@each $val in $widthPx {
+  .w-max-px-#{$val} {
+    max-width: #{$val}px;
+  }
 }

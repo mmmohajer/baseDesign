@@ -8,7 +8,19 @@ import Nav from "./subs/Nav";
 
 const Header = ({ NavList }) => {
   return (
-    <div className="w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt2 pos-rel">
+    <div
+      className={cx(
+        "w-per-100",
+        "flex",
+        "flex--jc--start",
+        "flex--ai--center",
+        "p2",
+        "pos-rel",
+        "br-bottom-solid-1",
+        "br-color-third",
+        "bgFourth"
+      )}
+    >
       <Logo />
       <Nav NavList={NavList} />
     </div>

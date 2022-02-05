@@ -42,8 +42,8 @@ $btnLargeSizeSmall: 80px;
 // Colors
 $primaryColor: black;
 $secondaryColor: red;
-$thirdColor: #ffff00;
-$fourthColor: dodgerblue;
+$thirdColor: #ccc;
+$fourthColor: beige;
 
 $warningColor: #f76666;
 $successColor: #30aa30;
@@ -123,10 +123,8 @@ $boxHeighs: (
 );
 
 // Inputs
-$inputPaddingX: 1rem;
-$inputPaddingY: 0.2rem;
-$inputMarginX: 1rem;
-$inputMarginY: 1rem;
+$inputPaddingX: 0.5rem;
+$inputPaddingY: 0.5rem;
 $inputTextColor: black;
 $inputBgColor: white;
 $focusTextColor: black;

@@ -1,16 +1,15 @@
-.input {
-    padding: $inputPaddingY $inputPaddingX;
-    margin: $inputMarginY $inputMarginX;
-    color: $inputTextColor;
-    background-color: $inputBgColor;
+input {
+  padding: $inputPaddingY $inputPaddingX;
+  color: $inputTextColor;
+  background-color: $inputBgColor;
 
-    &:focus {
-        color: $focusTextColor;
-        background-color: $focusBgColor;
-    }
+  &:focus {
+    color: $focusTextColor;
+    background-color: $focusBgColor;
+  }
 }
 
 .required::after {
-    content: "*";
-    color: red;
+  content: "*";
+  color: red;
 }
