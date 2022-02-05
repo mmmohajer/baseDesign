@@ -12,7 +12,7 @@ html {
 
 body {
   font-family: $fontFamily;
-  color: $primaryColor;
+  color: $fontColor;
   font-size: $fontSize;
   overflow-x: hidden;
 
@@ -55,8 +55,4 @@ ul {
   justify-content: space-between;
   margin: 0 auto;
   position: relative;
-}
-
-.footer {
-  flex-shrink: 0;
 }

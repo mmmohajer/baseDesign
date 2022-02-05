@@ -1,0 +1,11 @@
+a {
+  text-decoration: none;
+  color: $linkColor;
+  background-color: $linkBgColor;
+  cursor: pointer;
+}
+
+a:hover {
+  color: $linkHoverColor;
+  background-color: $linkHoverBgColor;
+}

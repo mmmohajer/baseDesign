@@ -78,6 +78,7 @@ if (currentTask == "dev") {
     port: 3000,
     hot: true,
     host: "0.0.0.0",
+    historyApiFallback: true,
   };
   config.mode = "development";
 }
@@ -88,6 +89,7 @@ if (currentTask == "build") {
     filename: "[name].[chunkhash].js",
     chunkFilename: "[name].[chunkhash].js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "./",
   };
   config.mode = "production";
   config.optimization = {

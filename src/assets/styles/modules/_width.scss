@@ -1,17 +1,11 @@
-.width {
-  &--full {
-    width: 100%;
-  }
+@each $val in $widthPercentages {
+    .w-per-#{$val} {
+        width: percentage(math.div($val, 100));
+    }
+}
 
-  &--threeFourth {
-    width: 75%;
-  }
-
-  &--half {
-    width: 50%;
-  }
-
-  &--oneFourth {
-    width: 25%;
-  }
+@each $val in $widthPx {
+    .w-px-#{$val} {
+        width: #{$val}px;
+    }
 }

@@ -1,14 +1,17 @@
 import React from "react";
 import cx from "classnames";
 
-import Nav from "Components/Nav";
+import Header from "Components/Header";
 import styles from "./App.module.scss";
 
 function App() {
   const list = ["Home", "About", "Services"];
   return (
     <>
-      <Nav NavList={list} />
+      <div>
+        <Header NavList={list} />
+      </div>
+      <div className="footer">Footer</div>
     </>
   );
 }

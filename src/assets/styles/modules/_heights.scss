@@ -1,0 +1,95 @@
+@each $height in $boxHeighs {
+  .min-height-px-#{$height} {
+    min-height: #{$height}px;
+  }
+}
+
+@each $height in $boxHeighs {
+  .height-px-#{$height} {
+    height: #{$height}px;
+  }
+}
+
+@each $height in $boxHeighs {
+  .max-height-px-#{$height} {
+    max-height: #{$height}px;
+  }
+}
+
+.min-height-vh {
+  &-full {
+    min-height: 100vh;
+  }
+
+  &-half {
+    min-height: 50vh;
+  }
+
+  &-oneFourth {
+    min-height: 25vh;
+  }
+
+  &-threeFourth {
+    min-height: 75vh;
+  }
+
+  &-oneThird {
+    min-height: 33.33333333vh;
+  }
+
+  &-twoThird {
+    min-height: 66.66666666vh;
+  }
+}
+
+.height-vh {
+  &-full {
+    height: 100vh;
+  }
+
+  &-half {
+    height: 50vh;
+  }
+
+  &-oneFourth {
+    height: 25vh;
+  }
+
+  &-threeFourth {
+    height: 75vh;
+  }
+
+  &-oneThird {
+    height: 33.33333333vh;
+  }
+
+  &-twoThird {
+    height: 66.66666666vh;
+  }
+}
+
+.max-height-vh {
+  &-full {
+    max-height: 100vh;
+  }
+
+  &-half {
+    max-height: 50vh;
+  }
+
+  &-oneFourth {
+    max-height: 25vh;
+  }
+
+  &-threeFourth {
+    max-height: 75vh;
+  }
+
+  &-oneThird {
+    max-height: 33.33333333vh;
+  }
+
+  &-twoThird {
+    max-height: 66.66666666vh;
+  }
+}
