@@ -1,11 +1,11 @@
 @each $val in $widthPercentages {
-  .w-min-per-#{$val} {
+  .min-w-per-#{$val} {
     min-width: percentage(math.div($val, 100));
   }
 }
 
 @each $val in $widthPx {
-  .w-min-px-#{$val} {
+  .min-w-px-#{$val} {
     min-width: #{$val}px;
   }
 }
@@ -23,13 +23,13 @@
 }
 
 @each $val in $widthPercentages {
-  .w-max-per-#{$val} {
+  .max-w-per-#{$val} {
     max-width: percentage(math.div($val, 100));
   }
 }
 
 @each $val in $widthPx {
-  .w-max-px-#{$val} {
+  .max-w-px-#{$val} {
     max-width: #{$val}px;
   }
 }

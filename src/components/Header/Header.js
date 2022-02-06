@@ -6,7 +6,7 @@ import styles from "./Header.module.scss";
 import Logo from "./subs/Logo";
 import Nav from "./subs/Nav";
 
-const Header = ({ NavList }) => {
+const Header = () => {
   return (
     <div
       className={cx(
@@ -14,7 +14,10 @@ const Header = ({ NavList }) => {
         "flex",
         "flex--jc--start",
         "flex--ai--center",
-        "p2",
+        "pl2",
+        "pr2",
+        "pt1",
+        "pb1",
         "pos-rel",
         "br-bottom-solid-1",
         "br-color-third",
@@ -22,7 +25,7 @@ const Header = ({ NavList }) => {
       )}
     >
       <Logo />
-      <Nav NavList={NavList} />
+      <Nav />
     </div>
   );
 };
