@@ -144,6 +144,6 @@ Notice: In order to make any changes in the way of appearing of the mobile menu,
 
 **15. General Classes** <br>
 `mouse-hand` --> Pointer Cursor <br>
-`z-(0, 10, 100, 1000)` --> Z-index classes
-`f-(left, right)` --> Float left or right
-`of-(y, x)-(hidden, scroll, auto)` --> Overflow
+`z-(0, 10, 100, 1000)` --> Z-index classes <br>
+`f-(left, right)` --> Float left or right <br>
+`of-(y, x)-(hidden, scroll, auto)` --> Overflow <br>
