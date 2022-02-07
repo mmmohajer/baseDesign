@@ -5,12 +5,17 @@ import styles from "./Icon.module.scss";
 
 import Search from "Images/js-images/icons/svg/search.svg";
 
-function Icon() {
-  return (
-    <div className="">
-      <Search fill="red" stroke="green" />
-    </div>
-  );
+function Icon({ type, fill, stroke, scale }) {
+  const iconTypes = {
+    search: (
+      <Search
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+      />
+    ),
+  };
+  return <>{iconTypes[type]}</>;
 }
 
 export default Icon;
