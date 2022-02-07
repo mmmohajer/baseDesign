@@ -8,7 +8,7 @@ import Search from "Images/js-images/icons/svg/search.svg";
 function Icon() {
   return (
     <div className="">
-      <Search />
+      <Search fill="red" stroke="green" />
     </div>
   );
 }
