@@ -1,9 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Anchor({ children }) {
+import { removeDivFullWindow } from "../utils";
+function Anchor({ children, to }) {
   return (
     <>
-      <a>{children}</a>
+      <Link to={`/${to}`} onClick={removeDivFullWindow}>
+        {children}
+      </Link>
     </>
   );
 }

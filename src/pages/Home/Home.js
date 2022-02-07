@@ -1,12 +1,12 @@
 import React from "react";
 import cx from "classnames";
 
-import styles from "./App.module.scss";
+import styles from "./Home.module.scss";
 
 import Header from "Components/Header";
 import Icon from "Components/Icon";
 
-function App() {
+function Home() {
   return (
     <>
       <div>
@@ -21,4 +21,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

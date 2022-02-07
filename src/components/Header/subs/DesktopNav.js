@@ -1,9 +1,10 @@
 import React from "react";
 import cx from "classnames";
+import slugify from "slugify";
 
 import styles from "../Header.module.scss";
 
-import { toggleSubMenuHandler } from "../utils";
+import { toggleSubMenuHandler, slugifyConfig } from "../utils";
 
 import Anchor from "./Anchor";
 
@@ -73,14 +74,16 @@ function DesktopNav({ navList, navSublist }) {
                           subIdx < navSublist[item].length - 1 && "pb2"
                         )}
                       >
-                        <Anchor>{subItem}</Anchor>
+                        <Anchor to={slugify(subItem, slugifyConfig)}>
+                          {subItem}
+                        </Anchor>
                       </li>
                     ))}
                   </ul>
                 </div>
               </>
             ) : (
-              <Anchor>{item}</Anchor>
+              <Anchor to={slugify(item, slugifyConfig)}>{item}</Anchor>
             )}
           </li>
         ))}
@@ -96,10 +99,10 @@ function DesktopNav({ navList, navSublist }) {
       >
         <ul className={cx("flex", "flex--jc--start", "flex--ai--center")}>
           <li className={cx("pr2", "pl2", "br-right-solid-1")}>
-            <Anchor>Login</Anchor>
+            <Anchor to="login">Login</Anchor>
           </li>
           <li className={cx("pr2", "pl2")}>
-            <Anchor>Register</Anchor>
+            <Anchor to="register">Register</Anchor>
           </li>
         </ul>
         <input

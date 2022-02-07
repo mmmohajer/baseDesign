@@ -3,8 +3,14 @@ import cx from "classnames";
 
 import styles from "./Icon.module.scss";
 
+import Search from "Images/js-images/icons/svg/search.svg";
+
 function Icon() {
-  return <div>Icon</div>;
+  return (
+    <div className="">
+      <Search />
+    </div>
+  );
 }
 
 export default Icon;

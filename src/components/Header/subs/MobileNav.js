@@ -1,9 +1,10 @@
 import React from "react";
 import cx from "classnames";
+import slugify from "slugify";
 
 import styles from "../Header.module.scss";
 
-import { toggleMobileSubMenuHandler } from "../utils";
+import { toggleMobileSubMenuHandler, slugifyConfig } from "../utils";
 
 import Anchor from "./Anchor";
 
@@ -106,14 +107,16 @@ function MobileNav({ navList, navSublist }) {
                           subIdx < navSublist[item].length - 1 && "pb2"
                         )}
                       >
-                        <Anchor>{subItem}</Anchor>
+                        <Anchor to={slugify(subItem, slugifyConfig)}>
+                          {subItem}
+                        </Anchor>
                       </li>
                     ))}
                   </ul>
                 </div>
               </>
             ) : (
-              <Anchor>{item}</Anchor>
+              <Anchor to={slugify(item, slugifyConfig)}>{item}</Anchor>
             )}
           </li>
         ))}
@@ -140,7 +143,7 @@ function MobileNav({ navList, navSublist }) {
             "br-bottom-dotted-1"
           )}
         >
-          <Anchor>Login</Anchor>
+          <Anchor to="login">Login</Anchor>
         </li>
         <li
           className={cx(
@@ -155,7 +158,7 @@ function MobileNav({ navList, navSublist }) {
             "w-per-80"
           )}
         >
-          <Anchor>Register</Anchor>
+          <Anchor to="register">Register</Anchor>
         </li>
       </ul>
     </div>

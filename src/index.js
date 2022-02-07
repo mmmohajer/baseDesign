@@ -1,7 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import "./assets/styles/main.scss";
-import App from "./App";
+import AppRoutes from "./AppRoutes";
 
-ReactDOM.render(<App />, document.querySelector("#app"));
+ReactDOM.render(
+  //   <BrowserRouter basename="/dist/">
+  <BrowserRouter>
+    <AppRoutes />
+  </BrowserRouter>,
+  document.querySelector("#app")
+);

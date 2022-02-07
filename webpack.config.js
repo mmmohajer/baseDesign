@@ -26,6 +26,7 @@ let config = {
   entry: "./src/index.js",
   resolve: {
     alias: {
+      Pages: path.resolve(__dirname, "src/pages/"),
       Components: path.resolve(__dirname, "src/components/"),
       Styles: path.resolve(__dirname, "src/assets/styles"),
       Images: path.resolve(__dirname, "src/assets/images"),
@@ -50,6 +51,15 @@ let config = {
             presets: ["@babel/preset-react", "@babel/preset-env"],
           },
         },
+      },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
+      },
+      {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
       },
       {
         test: /\.(jpe?g|gif|png|svg)$/i,

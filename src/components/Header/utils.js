@@ -43,3 +43,17 @@ export const toggleMobileSubMenuHandler = (item) => {
   subMenu.classList.toggle("flex");
   subMenu.classList.toggle("no-display");
 };
+
+export const removeDivFullWindow = () => {
+  const div = document.querySelector(".fullWindow");
+  div.parentNode.removeChild(div);
+};
+
+export const slugifyConfig = {
+  replacement: "-",
+  remove: undefined,
+  lower: true,
+  strict: true,
+  locale: "vi",
+  trim: true,
+};
