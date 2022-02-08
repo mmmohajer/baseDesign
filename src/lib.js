@@ -1,3 +1,4 @@
-import Icon from "./components/Icon";
+import Icon from "Components/Icon";
+import "Styles/main.scss";
 
 export { Icon };

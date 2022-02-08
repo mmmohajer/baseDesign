@@ -111,7 +111,7 @@ if (currentTask == "build") {
   };
   config.plugins.push(
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({ filename: "styles.[chunkhash].css" }),
+    new MiniCssExtractPlugin({ filename: "style.css" }),
     new RunAfterCompile()
   );
 }

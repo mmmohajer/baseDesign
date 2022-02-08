@@ -1,6 +1,6 @@
 {
   "name": "basecomponentsmohammad",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Includes different base components for any new projects.",
   "main": "dist/main.js",
   "module": "dist/main.js",
@@ -17,9 +17,8 @@
   ],
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack",
-    "majpub": "npm version major --force && npm publish",
-    "minpub": "npm version patch --force && npm publish",
+    "build": "npm run versionBump && webpack && npm publish",
+    "versionBump": "npm version patch --no-git-tag-version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mohammad Mahdi Mohajer",
