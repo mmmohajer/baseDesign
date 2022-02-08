@@ -1,15 +1,28 @@
 {
-  "name": "react-webpack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "basecomponentsmohammad",
+  "version": "2.0.1",
+  "description": "Includes different base components for any new projects.",
+  "main": "dist/main.js",
+  "module": "dist/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mmmohajer/baseDesign.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mmmohajer/baseDesign.git"
+  },
+  "keywords": [
+    "basecomponents",
+    "basedesign"
+  ],
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack",
+    "build": "npm run versionBump && webpack && npm publish",
+    "versionBump": "npm version patch --no-git-tag-version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mohammad Mahdi Mohajer",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/plugin-transform-runtime": "^7.16.5",
