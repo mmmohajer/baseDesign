@@ -1,6 +1,6 @@
 {
   "name": "basecomponentsmohammad",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "Includes different base components for any new projects.",
   "main": "dist/main.js",
   "module": "dist/main.js",
