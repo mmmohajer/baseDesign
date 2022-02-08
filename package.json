@@ -17,7 +17,8 @@
   ],
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "npm run versionBump && webpack && npm publish",
+    "build": "webpack",
+    "publish": "npm run versionBump && webpack && npm publish",
     "versionBump": "npm version patch --no-git-tag-version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
