@@ -101,6 +101,7 @@ if (currentTask == "build") {
     chunkFilename: "[name].[chunkhash].js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "./",
+    libraryTarget: "commonjs2",
   };
   config.mode = "production";
   config.optimization = {

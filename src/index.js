@@ -6,8 +6,7 @@ import "./assets/styles/main.scss";
 import AppRoutes from "./AppRoutes";
 
 ReactDOM.render(
-  //   <BrowserRouter basename="/dist/">
-  <BrowserRouter>
+  <BrowserRouter basename="/dist/">
     <AppRoutes />
   </BrowserRouter>,
   document.querySelector("#app")
