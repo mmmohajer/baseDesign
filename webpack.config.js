@@ -23,7 +23,7 @@ let sassConfig = {
 };
 
 let config = {
-  entry: "./src/index.js",
+  entry: "./src/lib.js",
   resolve: {
     alias: {
       Pages: path.resolve(__dirname, "src/pages/"),
@@ -97,10 +97,11 @@ if (currentTask == "dev") {
 if (currentTask == "build") {
   sassConfig.use.unshift(MiniCssExtractPlugin.loader);
   config.output = {
-    filename: "[name].[chunkhash].js",
-    chunkFilename: "[name].[chunkhash].js",
+    filename: "[name].js",
+    chunkFilename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "./",
+    libraryTarget: "commonjs2",
   };
   config.mode = "production";
   config.optimization = {
