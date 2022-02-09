@@ -147,6 +147,5 @@ Notice: In order to make any changes in the way of appearing of the mobile menu,
 `z-(0, 10, 100, 1000)` --> Z-index classes <br>
 `f-(left, right)` --> Float left or right <br>
 `of-(y, x)-(hidden, scroll, auto)` --> Overflow <br>
-`link` --> Can be used for links
-`btn` --> Can be used for buttons
-`input` --> Can be used for inputs
+`link` --> Can be used for links <br>
+`input` --> Can be used for inputs <br>
