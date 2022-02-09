@@ -77,7 +77,8 @@ let config = {
 };
 
 if (currentTask == "dev") {
-  (config.entry = "./src/index.js"), sassConfig.use.unshift("style-loader");
+  config.entry = "./src/index.js";
+  sassConfig.use.unshift("style-loader");
   config.output = {
     filename: "bundled.js",
     path: path.resolve(__dirname, "src"),
@@ -94,8 +95,8 @@ if (currentTask == "dev") {
 }
 
 if (currentTask == "build") {
-  (config.entry = "./src/lib.js"),
-    sassConfig.use.unshift(MiniCssExtractPlugin.loader);
+  config.entry = "./src/lib.js";
+  sassConfig.use.unshift(MiniCssExtractPlugin.loader);
   config.output = {
     filename: "[name].js",
     chunkFilename: "[name].js",
