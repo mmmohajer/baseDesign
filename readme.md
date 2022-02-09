@@ -37,7 +37,7 @@ Sample: `<div class="text-ltr">Hello</div>`
 `br-rad-px-(5, 10, 15, 20, 25, 30, 35, 40, 45, 50)` --> Use this classes to define the border radius in pixels. <br>
 `br-rad-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` --> Use this classes to define the border radius in percentage. <br>
 `br-(all, top, left, right, bottom)-(dotted, dashed, solid, double, groove, ridge, inset, outset, hidden)-(1, 2, 3, 4)` --> Use this classes to define the direction, style, and thickness of borders in pixels. <br>
-`br-color-(primary, secondary, third, fourth, success, warning, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` --> Use this classes to define the color of borders. <br>
+`br-color-(primary, info, inverse, faded, danger, success, warning, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` --> Use this classes to define the color of borders. <br>
 `br-none` --> Use this class to remove all borders
 Sample: `<div class="br-bottom-double-2 br-color-red">Hello</div>`
 
@@ -49,8 +49,8 @@ Sample: `<button class="btn-large">` <br>
 **Note:** You can also use our customized classes to define your desired button with the desired size, color, background color, and borders. <br>
 
 **4. Colors** <br>
-`text(Primary, Secondary, Third, Fourth, Success, Warning, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` --> Use this classes to define the text color of an element <br>
-`bg(Primary, Secondary, Third, Fourth, Success, Warning, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` --> Use this classes to define background color of an element<br>
+`text(Primary, Info, Inverse, Faded, Danger, Success, Warning, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` --> Use this classes to define the text color of an element <br>
+`bg(Primary, Info, Inverse, Faded, Danger, Success, Warning, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` --> Use this classes to define background color of an element<br>
 Sample: `<div class="text-third bg-green"></div>`
 
 **5. display** <br>
@@ -84,8 +84,8 @@ Sample: `<p class="fs-r-2 fw-600 f-i">Something</p>` <br>
 Sample: <div class="box-vh-half"> <br>
 
 **8. Hover** <br>
-`hover-text-(primary, secondary, third, fourth, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` --> Color text when hovering on an element <br>
-`hover-bg-(primary, secondary, third, fourth, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` --> Background color when hovering on an element <br>
+`hover-text-(primary, info, inverse, faded, danger, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` --> Color text when hovering on an element <br>
+`hover-bg-(primary, info, inverse, faded, danger, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` --> Background color when hovering on an element <br>
 Sample: `<a class="hover-text-third hover-bg-primary"></a>` <br>
 
 **9. Opacity** <br>
@@ -147,3 +147,6 @@ Notice: In order to make any changes in the way of appearing of the mobile menu,
 `z-(0, 10, 100, 1000)` --> Z-index classes <br>
 `f-(left, right)` --> Float left or right <br>
 `of-(y, x)-(hidden, scroll, auto)` --> Overflow <br>
+`link` --> Can be used for links
+`btn` --> Can be used for buttons
+`input` --> Can be used for inputs
