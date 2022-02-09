@@ -32,16 +32,16 @@
   border-color: $primaryColor;
 }
 
-.br-color-secondary {
-  border-color: $secondaryColor;
+.br-color-faded {
+  border-color: $fadedColor;
 }
 
-.br-color-third {
-  border-color: $thirdColor;
+.br-color-info {
+  border-color: $infoColor;
 }
 
-.br-color-fourth {
-  border-color: $fourthColor;
+.br-color-inverse {
+  border-color: $inverseColor;
 }
 
 .br-color-success {
@@ -50,6 +50,10 @@
 
 .br-color-warning {
   border-color: $warningColor;
+}
+
+.br-color-danger {
+  border-color: $dangerColor;
 }
 
 .br-color-red {

@@ -2,16 +2,16 @@
   color: $primaryColor;
 }
 
-.hover-text-secondary:hover {
-  color: $secondaryColor;
+.hover-text-faded:hover {
+  color: $fadedColor;
 }
 
-.hover-text-third:hover {
-  color: $thirdColor;
+.hover-text-info:hover {
+  color: $infoColor;
 }
 
-.hover-text-fourth:hover {
-  color: $fourthColor;
+.hover-text-inverse:hover {
+  color: $inverseColor;
 }
 
 .hover-text-success:hover {
@@ -20,6 +20,10 @@
 
 .hover-text-warning:hover {
   color: $warningColor;
+}
+
+.hover-text-danger:hover {
+  color: $dangerColor;
 }
 
 .hover-text-red:hover {
@@ -70,16 +74,20 @@
   background-color: $primaryColor;
 }
 
-.hover-bg-secondary:hover {
-  background-color: $secondaryColor;
+.hover-bg-faded:hover {
+  background-color: $fadedColor;
 }
 
-.hover-bg-third:hover {
-  background-color: $thirdColor;
+.hover-bg-info:hover {
+  background-color: $infoColor;
 }
 
-.hover-bg-fourth:hover {
-  background-color: $fourthColor;
+.hover-bg-inverse:hover {
+  background-color: $inverseColor;
+}
+
+.hover-bg-danger:hover {
+  background-color: $dangerColor;
 }
 
 .hover-bg-success:hover {

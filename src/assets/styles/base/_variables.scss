@@ -40,13 +40,13 @@ $btnLargeSizeMedium: 100px;
 $btnLargeSizeSmall: 80px;
 
 // Colors
-$primaryColor: black;
-$secondaryColor: red;
-$thirdColor: #ccc;
-$fourthColor: beige;
-
-$warningColor: #f76666;
-$successColor: #30aa30;
+$primaryColor: #0275d8;
+$fadedColor: #f7f7f7;
+$infoColor: #5bc0de;
+$inverseColor: #292b2c;
+$warningColor: #f0ad4e;
+$successColor: #5cb85c;
+$dangerColor: #d9534f;
 
 $redColor: red;
 $blueColor: blue;
@@ -132,7 +132,7 @@ $focusBgColor: white;
 
 // Links
 $linkColor: $primaryColor;
-$linkHoverColor: $secondaryColor;
+$linkHoverColor: $fadedColor;
 $linkBgColor: none;
 $linkHoverBgColor: none;
 

@@ -1,4 +1,4 @@
-%btn {
+.btn {
   border-radius: $btnBorderRadius;
   padding: $btnPadding;
   cursor: pointer;
@@ -68,4 +68,8 @@
   @include atLarge {
     width: $btnLargeSizeSmall;
   }
+}
+
+.btn-full {
+  width: 100%;
 }

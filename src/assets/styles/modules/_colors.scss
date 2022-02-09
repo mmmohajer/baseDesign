@@ -3,16 +3,16 @@
     color: $primaryColor;
   }
 
-  &Secondary {
-    color: $secondaryColor;
+  &Faded {
+    color: $fadedColor;
   }
 
-  &Third {
-    color: $thirdColor;
+  &Info {
+    color: $infoColor;
   }
 
-  &Fourth {
-    color: $fourthColor;
+  &Inverse {
+    color: $inverseColor;
   }
 
   &Success {
@@ -21,6 +21,10 @@
 
   &Warning {
     color: $warningColor;
+  }
+
+  &Danger {
+    color: $dangerColor;
   }
 
   &Red {
@@ -73,16 +77,16 @@
     background-color: $primaryColor;
   }
 
-  &Secondary {
-    background-color: $secondaryColor;
+  &Faded {
+    background-color: $fadedColor;
   }
 
-  &Third {
-    background-color: $thirdColor;
+  &Info {
+    background-color: $infoColor;
   }
 
-  &Fourth {
-    background-color: $fourthColor;
+  &Inverse {
+    background-color: $inverseColor;
   }
 
   &Success {
@@ -91,6 +95,10 @@
 
   &Warning {
     background-color: $warningColor;
+  }
+
+  &Danger {
+    background-color: $dangerColor;
   }
 
   &Red {
