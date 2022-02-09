@@ -51,6 +51,12 @@ export const removeDivFullWindow = (e) => {
   }
 };
 
+export const subMenuClickHandler = (item) => {
+  const subMenu = document.querySelector(`#${item}SubMenu`);
+  subMenu.classList.remove("flex");
+  subMenu.classList.add("no-display");
+};
+
 export const slugifyConfig = {
   replacement: "-",
   remove: undefined,

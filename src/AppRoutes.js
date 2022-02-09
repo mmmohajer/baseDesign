@@ -8,6 +8,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/home" element={<Home />}></Route>
+      <Route path="/team" element={<Home />}></Route>
     </Routes>
   );
 }

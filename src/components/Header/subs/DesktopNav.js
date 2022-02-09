@@ -4,7 +4,11 @@ import slugify from "slugify";
 
 import styles from "../Header.module.scss";
 
-import { toggleSubMenuHandler, slugifyConfig } from "../utils";
+import {
+  toggleSubMenuHandler,
+  slugifyConfig,
+  subMenuClickHandler,
+} from "../utils";
 
 import Anchor from "./Anchor";
 
@@ -73,6 +77,7 @@ function DesktopNav({ navList, navSublist }) {
                             "br-bottom-solid-1",
                           subIdx < navSublist[item].length - 1 && "pb2"
                         )}
+                        onClick={() => subMenuClickHandler(item)}
                       >
                         <Anchor to={slugify(subItem, slugifyConfig)}>
                           {subItem}
