@@ -11,7 +11,7 @@ function Home() {
     <>
       <div>
         <Header />
-        <div className="bgThird w-per-100 height-px-200 bgThird"></div>
+        <div className="bgThird w-per-100 height-px-200 bgInfo"></div>
         <div>
           <Icon type="search" fill="red" stroke="blue" scale={1.5} />
         </div>

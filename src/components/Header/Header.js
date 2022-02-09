@@ -20,8 +20,8 @@ const Header = () => {
         "pb1",
         "pos-rel",
         "br-bottom-solid-1",
-        "br-color-third",
-        "bgFourth"
+        "br-color-primary",
+        "bgPrimary"
       )}
     >
       <Logo />

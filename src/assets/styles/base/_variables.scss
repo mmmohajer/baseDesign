@@ -124,7 +124,7 @@ $boxHeighs: (
 
 // Inputs
 $inputPaddingX: 8px;
-$inputPaddingY: 4px;
+$inputPaddingY: 6px;
 $inputTextColor: black;
 $inputBgColor: white;
 $focusTextColor: black;
@@ -132,9 +132,9 @@ $focusBgColor: #ccc;
 
 // Links
 $linkColor: black;
-$linkHoverColor: #5f6367;
-$linkBgColor: none;
-$linkHoverBgColor: none;
+$linkHoverColor: pink;
+$linkBgColor: transparent;
+$linkHoverBgColor: transparent;
 
 // MenuIcon
 $hamburgerMenuContainerHeight: 60px;

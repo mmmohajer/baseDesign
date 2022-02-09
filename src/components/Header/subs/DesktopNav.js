@@ -48,7 +48,7 @@ function DesktopNav({ navList, navSublist }) {
                     className={cx(
                       "pos-abs",
                       "pos-abs--lb",
-                      "bgFourth",
+                      "bgPrimary",
                       "min-w-px-200",
                       "flex",
                       "flex--jc--center",
@@ -108,7 +108,7 @@ function DesktopNav({ navList, navSublist }) {
         <input
           type="text"
           placeholder="search"
-          className={cx("w-per-80", "w-px-200")}
+          className={cx("w-per-80", "w-px-200", "input")}
         />
       </div>
     </div>

@@ -5,8 +5,10 @@ import { removeDivFullWindow } from "../utils";
 function Anchor({ children, to }) {
   return (
     <>
-      <Link to={`/${to}`} onClick={removeDivFullWindow}>
-        {children}
+      <Link to={`/${to}`}>
+        <div className="link" onClick={removeDivFullWindow}>
+          {children}
+        </div>
       </Link>
     </>
   );

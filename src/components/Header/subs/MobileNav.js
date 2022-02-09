@@ -18,7 +18,7 @@ function MobileNav({ navList, navSublist }) {
         "pos-abs--rt",
         "height-vh-full",
         "py2",
-        "bgFourth",
+        "bgPrimary",
         "show-block-in-sm-xsm",
         "box-vh-full",
         "flex",
@@ -40,7 +40,11 @@ function MobileNav({ navList, navSublist }) {
           "flex--ai--center"
         )}
       >
-        <input type="text" placeholder="search" className={cx("w-per-80")} />
+        <input
+          type="text"
+          placeholder="search"
+          className={cx("w-per-80", "input")}
+        />
       </div>
       <ul
         className={cx(
