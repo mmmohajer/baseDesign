@@ -57,6 +57,14 @@ export const subMenuClickHandler = (item) => {
   subMenu.classList.add("no-display");
 };
 
+export const mobileSubMenuClickHandler = () => {
+  const div = document.querySelector(".hamburger-menu-hr");
+  div.classList.remove("hamburger-menu-hr-active");
+  const icon = document.querySelector("#hamburger-menu-icon");
+  icon.classList.toggle("hamburger-menu-closed-icon");
+  icon.classList.toggle("hamburger-menu-icon");
+};
+
 export const slugifyConfig = {
   replacement: "-",
   remove: undefined,

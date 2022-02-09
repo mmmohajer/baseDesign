@@ -4,7 +4,11 @@ import slugify from "slugify";
 
 import styles from "../Header.module.scss";
 
-import { toggleMobileSubMenuHandler, slugifyConfig } from "../utils";
+import {
+  toggleMobileSubMenuHandler,
+  slugifyConfig,
+  mobileSubMenuClickHandler,
+} from "../utils";
 
 import Anchor from "./Anchor";
 
@@ -110,6 +114,7 @@ function MobileNav({ navList, navSublist }) {
                             "br-bottom-dotted-1",
                           subIdx < navSublist[item].length - 1 && "pb2"
                         )}
+                        onClick={mobileSubMenuClickHandler}
                       >
                         <Anchor to={slugify(subItem, slugifyConfig)}>
                           {subItem}
@@ -120,7 +125,9 @@ function MobileNav({ navList, navSublist }) {
                 </div>
               </>
             ) : (
-              <Anchor to={slugify(item, slugifyConfig)}>{item}</Anchor>
+              <div onClick={mobileSubMenuClickHandler}>
+                <Anchor to={slugify(item, slugifyConfig)}>{item}</Anchor>
+              </div>
             )}
           </li>
         ))}
