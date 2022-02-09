@@ -149,3 +149,4 @@ Notice: In order to make any changes in the way of appearing of the mobile menu,
 `of-(y, x)-(hidden, scroll, auto)` --> Overflow <br>
 `link` --> Can be used for links <br>
 `input` --> Can be used for inputs <br>
+`h(1, 2, 3)` --> Can be used for headings <br>
