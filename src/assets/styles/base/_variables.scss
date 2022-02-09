@@ -31,13 +31,13 @@ $btnSmallSizeLarge: 200px;
 $btnSmallSizeMedium: 100px;
 $btnSmallSizeSmall: 80px;
 
-$btnMediumSizeLarge: 200px;
-$btnMediumSizeMedium: 100px;
-$btnMediumSizeSmall: 80px;
+$btnMediumSizeLarge: 400px;
+$btnMediumSizeMedium: 200px;
+$btnMediumSizeSmall: 160px;
 
-$btnLargeSizeLarge: 200px;
-$btnLargeSizeMedium: 100px;
-$btnLargeSizeSmall: 80px;
+$btnLargeSizeLarge: 400px;
+$btnLargeSizeMedium: 200px;
+$btnLargeSizeSmall: 160px;
 
 // Colors
 $primaryColor: #0275d8;
@@ -65,10 +65,10 @@ $flexGrow: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
 
 // Fonts
 $fontFamily: "Roboto", "sans-serif";
-$fontSize: 0.9rem;
-$fontSmallSize: 0.9rem;
-$fontMediumSize: 1rem;
-$fontLargeSize: 1rem;
+$fontSize: 16px;
+$fontSmallSize: 16px;
+$fontMediumSize: 16px;
+$fontLargeSize: 18px;
 $fontColor: black;
 
 // Font Sizes
@@ -80,22 +80,22 @@ $fontWeightArray: (100, 200, 300, 400, 500, 600, 700, 800, 900, 1000);
 $gridGap: 1rem;
 
 // Headings
-$fontHeadingWeight: 300;
+$fontHeadingWeight: bold;
 
-$fontH1Size: 2rem;
-$fontH1SmallSize: 2rem;
-$fontH1MediumSize: 2rem;
-$fontH1LargeSize: 2.5rem;
+$fontH1Size: 32px;
+$fontH1SmallSize: 32px;
+$fontH1MediumSize: 40px;
+$fontH1LargeSize: 48px;
 
-$fontH2Size: 1.5rem;
-$fontH2SmallSize: 1.5rem;
-$fontH2MediumSize: 1.5rem;
-$fontH2LargeSize: 1.5rem;
+$fontH2Size: 26px;
+$fontH2SmallSize: 26px;
+$fontH2MediumSize: 32px;
+$fontH2LargeSize: 36px;
 
-$fontH3Size: 1.5rem;
-$fontH3SmallSize: 1.5rem;
-$fontH3MediumSize: 1.5rem;
-$fontH3LargeSize: 1.5rem;
+$fontH3Size: 22px;
+$fontH3SmallSize: 22px;
+$fontH3MediumSize: 24px;
+$fontH3LargeSize: 28px;
 
 // Heights
 $boxHeighs: (
@@ -123,16 +123,16 @@ $boxHeighs: (
 );
 
 // Inputs
-$inputPaddingX: 0.5rem;
-$inputPaddingY: 0.5rem;
+$inputPaddingX: 8px;
+$inputPaddingY: 4px;
 $inputTextColor: black;
 $inputBgColor: white;
 $focusTextColor: black;
-$focusBgColor: white;
+$focusBgColor: #ccc;
 
 // Links
-$linkColor: $primaryColor;
-$linkHoverColor: $fadedColor;
+$linkColor: black;
+$linkHoverColor: #5f6367;
 $linkBgColor: none;
 $linkHoverBgColor: none;
 
