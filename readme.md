@@ -134,6 +134,7 @@ Sample: `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-o
 `w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` --> Width in pixels <br>
 `max-w-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` --> Max width in percentage <br>
 `max-w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` --> Max width in pixels <br>
+`.w-inherit` --> Width: inherit <br>
 
 **14. Mobile Menu Bar** <br>
 `menu-mob-icon` --> Mobile Menu Icon <br>
