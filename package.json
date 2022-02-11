@@ -18,9 +18,9 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack",
-    "pub-patch": "grunt bump-only:patch && webpack && npm publish",
-    "pub-minor": "grunt bump-only:minor && webpack && npm publish",
-    "pub-major": "grunt bump-only:major && webpack && npm publish",
+    "pub-patch": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:patch && webpack && npm publish && mv README.md README-npm.md && mv README.md-github.md README.md",
+    "pub-minor": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:minor && webpack && npm publish && mv README.md README-npm.md && mv README.md-github.md README.md",
+    "pub-major": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:major && webpack && npm publish && mv README.md README-npm.md && mv README.md-github.md README.md",
     "versionBump": "npm version patch --no-git-tag-version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
