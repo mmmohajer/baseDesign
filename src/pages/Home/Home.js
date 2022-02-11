@@ -3,7 +3,9 @@ import cx from "classnames";
 
 import styles from "./Home.module.scss";
 
-import HamburgerIcon from "Components/HamburgerIcon";
+// import HamburgerIcon from "Components/HamburgerIcon";
+import { HamburgerIcon, Icon } from "Root/lib/lib.js";
+import "Root/lib/style.js";
 
 function Home() {
   const onOpenedIconClick = () => {
@@ -13,16 +15,9 @@ function Home() {
     console.log("Icon is closed");
   };
   return (
-    <>
-      <div className="flex">
-        <HamburgerIcon
-          onOpenedIconClick={onOpenedIconClick}
-          onClosedIconClick={onClosedIconClick}
-          type={1}
-        />
-      </div>
-      <div className="footer">Footer</div>
-    </>
+    <div className="bgRed">
+      <HamburgerIcon />
+    </div>
   );
 }
 

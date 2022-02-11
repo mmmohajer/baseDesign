@@ -25,6 +25,7 @@ let sassConfig = {
 let config = {
   resolve: {
     alias: {
+      Root: path.resolve(__dirname, "./"),
       Pages: path.resolve(__dirname, "src/pages/"),
       Components: path.resolve(__dirname, "src/components/"),
       Styles: path.resolve(__dirname, "src/assets/styles"),
@@ -97,12 +98,12 @@ if (currentTask == "dev") {
 }
 
 if (currentTask == "build") {
-  config.entry = "./src/lib.js";
+  config.entry = "./src/index.js";
   sassConfig.use.unshift(MiniCssExtractPlugin.loader);
   config.output = {
     filename: "[name].js",
     chunkFilename: "[name].js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     publicPath: "./",
     libraryTarget: "commonjs2",
   };

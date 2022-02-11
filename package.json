@@ -2,8 +2,9 @@
   "name": "iswad-basedesign",
   "version": "0.0.1",
   "description": "Includes different base components for any new projects.",
-  "main": "dist/main.js",
-  "module": "dist/main.js",
+  "main": "./dist/lib.js",
+  "browser": "./lib/lib.js",
+  "module": "./module/lib.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/mmmohajer/baseDesign.git"
@@ -17,7 +18,10 @@
   ],
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack",
+    "build-browser": "cross-env BABEL_ENV=browser babel ./src --out-dir ./lib --source-maps --copy-files",
+    "build-module": "cross-env BABEL_ENV=module babel ./src --out-dir ./module --source-maps --copy-files",
+    "build-node": "babel ./src --out-dir ./dist --source-maps --copy-files",
+    "build": "rm -rf lib && rm -rf dist && rm -rf module && npm run build-node && npm run build-browser && npm run build-module",
     "pub-patch": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:patch && webpack && npm publish && mv README.md README-npm.md && mv README.md-github.md README.md",
     "pub-minor": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:minor && webpack && npm publish && mv README.md README-npm.md && mv README.md-github.md README.md",
     "pub-major": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:major && webpack && npm publish && mv README.md README-npm.md && mv README.md-github.md README.md",
@@ -27,9 +31,12 @@
   "author": "Mohammad Mahdi Mohajer",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.16.5",
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.2",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
     "@babel/plugin-transform-runtime": "^7.16.5",
-    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.5",
     "@svgr/webpack": "^6.2.1",
     "babel-loader": "^8.2.3",
