@@ -144,3 +144,10 @@ Sample: `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-o
 `link` --> Can be used for links <br>
 `input` --> Can be used for inputs <br>
 `h(1, 2, 3)` --> Can be used for headings <br>
+
+<hr>
+
+**Components**
+
+`Icon` --> `<Icon type="search" fill="red" stroke="red">` <br>
+`HamburgerIcon` --> `<HamburgerIcon onOpenedIconClick={func} onClosedIconClick={func} type={1}>` <br>
