@@ -1,0 +1,90 @@
+// MenuIcon
+$hamburgerMenuContainerHeight: 40px;
+$hamburgerMenuContainerBgColor: transparent;
+$hamburgerMenuContainerBorder: none;
+$hamburgerMenuContainerBorderRadius: 10px;
+$hamburgerMenuContainerPadding: 10px 10px;
+
+$hamburgerMenuTopWidth: 15px;
+$hamburgerMenuMiddleWidth: 25px;
+$hamburgerMenuBottomWidth: 35px;
+$hamburgerMenuHeight: 4px;
+$hamburgerMenuBgColor: black;
+$hamburgerMenuSpace: 10px;
+$hamburgerMenuBorderRadius: 5px;
+$hamburgerMenuClosedIconWidth: 25px;
+$hamburgerMenuTransform: scale(-1, 1);
+
+.hamburgerMenuContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: $hamburgerMenuContainerHeight;
+  cursor: pointer;
+  background-color: $hamburgerMenuContainerBgColor;
+  border: $hamburgerMenuContainerBorder;
+  border-radius: $hamburgerMenuContainerBorderRadius;
+  padding: $hamburgerMenuContainerPadding;
+}
+
+%hamburgerMenuIcon {
+  height: $hamburgerMenuHeight;
+  background-color: $hamburgerMenuBgColor;
+  display: block;
+  border-radius: $hamburgerMenuBorderRadius;
+  transition: all ease-in 0.3s;
+}
+
+.hamburgerMenuIcon {
+  @extend %hamburgerMenuIcon;
+  position: relative;
+  width: $hamburgerMenuMiddleWidth;
+  transform: $hamburgerMenuTransform;
+
+  &::before {
+    content: "";
+    @extend %hamburgerMenuIcon;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-$hamburgerMenuSpace);
+    width: $hamburgerMenuTopWidth;
+  }
+
+  &::after {
+    content: "";
+    @extend %hamburgerMenuIcon;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY($hamburgerMenuSpace);
+    width: $hamburgerMenuBottomWidth;
+  }
+}
+
+.hamburgerMenuClosedIcon {
+  @extend %hamburgerMenuIcon;
+  position: relative;
+  transform: scaleX(1);
+  opacity: 1;
+  background-color: transparent;
+  width: $hamburgerMenuClosedIconWidth;
+
+  &::before {
+    content: "";
+    @extend %hamburgerMenuIcon;
+    position: absolute;
+    transform: rotate(-45deg) scaleX(1.25);
+    opacity: 1;
+    width: $hamburgerMenuClosedIconWidth;
+  }
+
+  &::after {
+    content: "";
+    @extend %hamburgerMenuIcon;
+    position: absolute;
+    transform: rotate(45deg) scaleX(1.25);
+    opacity: 1;
+    width: $hamburgerMenuClosedIconWidth;
+  }
+}

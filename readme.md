@@ -136,14 +136,7 @@ Sample: `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-o
 `max-w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` --> Max width in pixels <br>
 `.w-inherit` --> Width: inherit <br>
 
-**14. Mobile Menu Bar** <br>
-`menu-mob-icon` --> Mobile Menu Icon <br>
-`menu-mob-closed-icon` --> Closing icon <br>
-`menu-mob-hr` <br>
-`menu-mob-hr-active` <br>
-Notice: In order to make any changes in the way of appearing of the mobile menu, you need to change these two classes `hamburger-menu-hr` `hamburger-menu-hr-active`, in the `_mobmenu.scss` file <br>
-
-**15. General Classes** <br>
+**14. General Classes** <br>
 `mouse-hand` --> Pointer Cursor <br>
 `z-(0, 10, 100, 1000)` --> Z-index classes <br>
 `f-(left, right)` --> Float left or right <br>
