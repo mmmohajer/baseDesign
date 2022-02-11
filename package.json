@@ -1,6 +1,6 @@
 {
   "name": "iswad-basedesign",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Includes different base components for any new projects.",
   "main": "dist/main.js",
   "module": "dist/main.js",
