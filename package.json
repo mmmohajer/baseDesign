@@ -1,6 +1,6 @@
 {
   "name": "iswad-basedesign",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Includes different base components for any new projects.",
   "main": "dist/main.js",
   "module": "dist/main.js",
@@ -38,7 +38,9 @@
     "css-minimizer-webpack-plugin": "^3.3.1",
     "file-loader": "^6.2.0",
     "fs-extra": "^10.0.0",
+    "grunt": "^1.4.1",
     "grunt-bump": "^0.8.0",
+    "grunt-contrib-jshint": "^3.1.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.5",
     "sass": "^1.45.1",
