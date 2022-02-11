@@ -1,6 +1,6 @@
 {
   "name": "iswad-basedesign",
-  "version": "1.0.3",
+  "version": "0.0.1",
   "description": "Includes different base components for any new projects.",
   "main": "dist/main.js",
   "module": "dist/main.js",
@@ -18,9 +18,9 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack",
-    "pub-patch": "grunt bump:patch && webpack && npm publish",
-    "pub-minor": "grunt bump:minor && webpack && npm publish",
-    "pub-major": "grunt bump:major && webpack && npm publish",
+    "pub-patch": "grunt bump-only:patch && webpack && npm publish",
+    "pub-minor": "grunt bump-only:minor && webpack && npm publish",
+    "pub-major": "grunt bump-only:major && webpack && npm publish",
     "versionBump": "npm version patch --no-git-tag-version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -40,7 +40,6 @@
     "fs-extra": "^10.0.0",
     "grunt": "^1.4.1",
     "grunt-bump": "^0.8.0",
-    "grunt-contrib-jshint": "^3.1.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.5",
     "sass": "^1.45.1",
