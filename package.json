@@ -1,6 +1,6 @@
 {
   "name": "iswad-basedesign",
-  "version": "0.0.1",
+  "version": "0.1.3",
   "description": "Includes different base components for any new projects.",
   "main": "./dist/lib.js",
   "browser": "./lib/lib.js",
@@ -22,9 +22,9 @@
     "build-module": "cross-env BABEL_ENV=module babel ./src --out-dir ./module --source-maps --copy-files",
     "build-node": "babel ./src --out-dir ./dist --source-maps --copy-files",
     "build": "rm -rf lib && rm -rf dist && rm -rf module && npm run build-node && npm run build-browser && npm run build-module",
-    "pub-patch": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:patch && webpack && npm publish && mv README.md README-npm.md && mv README.md-github.md README.md",
-    "pub-minor": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:minor && webpack && npm publish && mv README.md README-npm.md && mv README.md-github.md README.md",
-    "pub-major": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:major && webpack && npm publish && mv README.md README-npm.md && mv README.md-github.md README.md",
+    "pub-patch": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:patch && npm run build && npm publish && mv README.md README-npm.md && mv README-github.md README.md",
+    "pub-minor": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:minor && npm run build && npm publish && mv README.md README-npm.md && mv README-github.md README.md",
+    "pub-major": "mv README.md README-github.md && mv README-npm.md README.md && grunt bump-only:major && npm run build && npm publish && mv README.md README-npm.md && mv README-github.md README.md",
     "versionBump": "npm version patch --no-git-tag-version",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -40,6 +40,7 @@
     "@babel/preset-react": "^7.16.5",
     "@svgr/webpack": "^6.2.1",
     "babel-loader": "^8.2.3",
+    "babel-plugin-module-resolver": "^4.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.5.1",
     "css-minimizer-webpack-plugin": "^3.3.1",
@@ -60,6 +61,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.16.5",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "classnames": "^2.3.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",

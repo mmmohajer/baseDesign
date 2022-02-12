@@ -16,7 +16,7 @@ function Home() {
   };
   return (
     <div className="bgRed">
-      <HamburgerIcon />
+      <Icon />
     </div>
   );
 }

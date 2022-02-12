@@ -4,21 +4,63 @@
       "presets": ["@babel/preset-env", "@babel/preset-react"],
       "plugins": [
         "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-proposal-class-properties"
+        "@babel/plugin-proposal-class-properties",
+        "inline-react-svg",
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": {
+              "Components": "./src/Components",
+              "Styles": "./src/assets/styles",
+              "Images": "./src/assets/images",
+              "Constants": "./src/constants",
+              "Utils": "./src/utils"
+            }
+          }
+        ]
       ]
     },
     "browser": {
       "presets": ["@babel/preset-env", "@babel/preset-react"],
       "plugins": [
         "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-proposal-class-properties"
+        "@babel/plugin-proposal-class-properties",
+        "inline-react-svg",
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": {
+              "Components": "./src/Components",
+              "Styles": "./src/assets/styles",
+              "Images": "./src/assets/images",
+              "Constants": "./src/constants",
+              "Utils": "./src/utils"
+            }
+          }
+        ]
       ]
     },
     "module": {
       "presets": ["@babel/preset-env", "@babel/preset-react"],
       "plugins": [
         "@babel/plugin-proposal-object-rest-spread",
-        "@babel/plugin-proposal-class-properties"
+        "@babel/plugin-proposal-class-properties",
+        "inline-react-svg",
+        [
+          "module-resolver",
+          {
+            "root": ["./src"],
+            "alias": {
+              "Components": "./src/Components",
+              "Styles": "./src/assets/styles",
+              "Images": "./src/assets/images",
+              "Constants": "./src/constants",
+              "Utils": "./src/utils"
+            }
+          }
+        ]
       ]
     }
   },

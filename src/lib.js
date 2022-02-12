@@ -1,4 +1,4 @@
-import Icon from "Components/Icon";
-import HamburgerIcon from "Components/HamburgerIcon";
+import Icon from "./components/Icon";
+import HamburgerIcon from "./components/HamburgerIcon";
 
 export { Icon, HamburgerIcon };
