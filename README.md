@@ -4,11 +4,12 @@
 
 This repository is designed in order to develop basic components and create handy css classes to be used in any react/webpack projects. Using the pre-designed components and pre-defined css classes developed in this repository, you can enourmously increase your speed of development and be more focused on the logic of your project. Css classes defined in this project can be very helpful for you to design full responsive websites with writing much less css codes.
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Classes](#classes)
+- [Components](#components)
 - [License](#license)
 
 ## Installation
