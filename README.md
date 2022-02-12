@@ -96,7 +96,7 @@ Sample: `<p class="fs-r-2 fw-600 f-i">Something</p>` <br>
 `height-vh-(oneFourth, oneThird, half, twoThird, threeFourth, full)` Heights in vh <br>
 `max-height-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500)` --> Max heights in px <br>
 `max-height-vh-(oneFourth, oneThird, half, twoThird, threeFourth, full)` --> Max heights in vh <br>
-Sample: <div class="box-vh-half"> <br>
+Sample: `<div class="box-vh-half">` <br>
 
 <hr>
 
@@ -109,7 +109,7 @@ Sample: `<a class="hover-text-third hover-bg-primary"></a>` <br>
 
 **9. Opacity** <br>
 `op-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` --> Opacity in percentage <br>
-Sample: <img class="op-60"> <br>
+Sample: `<img class="op-60">` <br>
 
 <hr>
 
@@ -130,7 +130,7 @@ Sample: `<div class="pos-abs pos-abs--lt">` <br>
 `row--lg--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` --> Large Devices<br>
 `grid` <br>
 `grid--cols--(auto, oneFourth, oneThird, oneHalf)` <br>
-Sample: `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-oneThird text-red p4 text-center">First Div</div>` OR <div class="grid grid--cols--auto"></div> <br>
+Sample: `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-oneThird text-red p4 text-center">First Div</div>` OR `<div class="grid grid--cols--auto"></div>` <br>
 
 <hr>
 
