@@ -1,29 +1,35 @@
-This repository is designed in order to develop basic components and create useful sass styles to be used in other react projects.
+# iswad-basedesign
 
-<hr>
+## Description
 
-To initiate the project on your machine, you need to take the following steps:
+This repository is designed in order to develop basic components and create handy css classes to be used in any react/webpack projects. Using the pre-designed components and pre-defined css classes developed in this repository, you can enourmously increase your speed of development and be more focused on the logic of your project. Css classes defined in this project can be very helpful for you to design full responsive websites with writing much less css codes.
 
-1. Run `git clone https://github.com/mmmohajer/baseDesign.git`
-2. Run `npm install`
-3. Run `npm run dev`
+## Table of Contents (Optional)
 
-<hr>
+- [Installation](#installation)
+- [Usage](#usage)
+- [Classes](#classes)
+- [License](#license)
 
-To collaborate on this repository you need to make a request from the owner of this repository (https://github.com/mmmohajer) and then you need to push your changes into a new branch and create pull request.
+## Installation
 
-<hr>
+In order to setup integrate this package with your project you need to take the following steps:
 
-Some important instructions:
+Since, the project is dependent on the sass module, you need to install that package on your machine:
+`npm install --save sass` <br>
+Then you can install the npm package related to this project: <br>
+`npm install --save iswad-basedesign`<br>
 
-1. In order to develop, a new componet, you must create it in the components folder, and then test it in App.js file.
-2. For styling components, we are using sass and modular css. So, for general styling, css codes which are common between several components, you need to add your classes and css codes into the styles folder inside the assets folder. However, for css codes specifc to one component, you need to add it into the COMPONENT_NAME.module.scss. We also use cx function for combining multiple classes. (Please, have a look at the sample code written in App.js file.)
+## Usage
 
-<hr>
+In order to use our css classes in your project, you need to do the following import, in your main js file (usually index.js) at the root of your project: <br>
+`import iswad-basedesign/dist/style.js` <br>
+**Note that css classes are introduced in the css classes section.**
+In order to work with our components, you can import them as follows: <br>
+`import {ComponentName} from "iswad-basedesign"` <br>
+**Note that components are introduced in the components section.**
 
-Our predefines css classes:
-
-<hr>
+## Classes
 
 **1. Alignments** <br>
 `text-ltr` --> Align: left to right<br>
@@ -148,3 +154,34 @@ Notice: In order to make any changes in the way of appearing of the mobile menu,
 `z-(0, 10, 100, 1000)` --> Z-index classes <br>
 `f-(left, right)` --> Float left or right <br>
 `of-(y, x)-(hidden, scroll, auto)` --> Overflow <br>
+
+## Components
+
+**1. Icon** <br>
+This component is used in order to add icons to your project, and the props for this component are: <br>
+**type**: The type of the icon. One of the following options: <br>
+`[search]` <br>
+**fill**: Filling color of the icon as a string (It can be a hex color or a color name) <br>
+**stroke**: Stroke color of the icon, as a string (It can be a hex color or a color name) <br>
+**scale**: Determine the scale/size of the icon. An integer value can be passes as a value to this prop. <br>
+
+**Example** <br>
+`<Icon type="search" fill="black" stroke="black" scale={1} />` <br>
+
+**1. HamburgerIcon** <br>
+This is a hamburgur icon with a nice animation on click to close and open the icon. Available props for this component are: <br>
+**type**: The type of the hamburger icon. One of the following options: <br>
+`[1, 2, 3, 4, 5, 6]` <br>
+**onOpenedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the opened hamburger icon <br>
+**onClosedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the closed hamburger icon <br>
+
+**Example** <br>
+`<HamburgerIcon type={1} onOpenedIconClick={() => console.log("Open")} onClosedIconClick={() => console.log("Close")} />`
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
+## How to Contribute
+
+To collaborate on this repository you need to make a request from the owner of this repository (https://github.com/mmmohajer) and then you need to push your changes into a new branch and create pull request.
