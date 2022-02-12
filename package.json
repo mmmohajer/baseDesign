@@ -1,5 +1,5 @@
 {
-  "name": "iswad-basedesign",
+  "name": "basedesign-iswad",
   "version": "0.0.0",
   "description": "Includes different base components for any new projects.",
   "main": "./dist/lib.js",

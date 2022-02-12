@@ -1,4 +1,4 @@
-# iswad-basedesign
+# basedesign-iswad
 
 ## Description
 
@@ -13,12 +13,12 @@ In order to setup integrate this package with your project you need to take the 
 Since, the project is dependent on the sass module, you need to install that package on your machine:
 `npm install --save sass` <br>
 Then you can install the npm package related to this project: <br>
-`npm install --save iswad-basedesign`<br>
+`npm install --save basedesign-iswad`<br>
 
 ## Usage
 
 In order to use our css classes in your project, you need to do the following import, in your main js file (usually index.js) at the root of your project: <br>
-`import iswad-basedesign/dist/style.js` <br>
+`import basedesign-iswad/dist/style.js` <br>
 
 In order to work with our components, you can import them as follows: <br>
-`import {ComponentName} from "iswad-basedesign"` <br>
+`import {ComponentName} from "basedesign-iswad"` <br>
