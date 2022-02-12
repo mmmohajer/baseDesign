@@ -55,10 +55,14 @@ Sample: `<div class="br-bottom-double-2 br-color-red">Hello</div>`
 Sample: `<button class="btn-large">` <br>
 **Note:** You can also use our customized classes to define your desired button with the desired size, color, background color, and borders. <br>
 
+<hr>
+
 **4. Colors** <br>
 `text(Primary, Secondary, Third, Fourth, Success, Warning, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` --> Use this classes to define the text color of an element <br>
 `bg(Primary, Secondary, Third, Fourth, Success, Warning, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` --> Use this classes to define background color of an element<br>
 Sample: `<div class="text-third bg-green"></div>`
+
+<hr>
 
 **5. display** <br>
 `flex` <br>
@@ -73,6 +77,8 @@ Sample: `<div class="text-third bg-green"></div>`
 `show-block-in-(sm-md-lg, md-lg, lg, md-sm-xsm, sm-xsm, xsm)` <br>
 Sample: `<div class="flex flex--jc--center flex--ai--center flex--dir--col">` OR `<div class="no-display"></div>` OR `<div class="block"></div>` <br>
 
+<hr>
+
 **6. Fonts** <br>
 `fs-px-(8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32)` --> Font size in pixels <br>
 `fs-r-(1, 2, 3, 4, 5, 6, 7, 8)` --> Font size in half rem <br>
@@ -80,6 +86,8 @@ Sample: `<div class="flex flex--jc--center flex--ai--center flex--dir--col">` OR
 `f-b` --> Bold Text <br>
 `f-i` --> Italic text <br>
 Sample: `<p class="fs-r-2 fw-600 f-i">Something</p>` <br>
+
+<hr>
 
 **7. Heights and Boxes**
 `min-height-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500)` --> Min heights in px <br>
@@ -90,14 +98,20 @@ Sample: `<p class="fs-r-2 fw-600 f-i">Something</p>` <br>
 `max-height-vh-(oneFourth, oneThird, half, twoThird, threeFourth, full)` --> Max heights in vh <br>
 Sample: <div class="box-vh-half"> <br>
 
+<hr>
+
 **8. Hover** <br>
 `hover-text-(primary, secondary, third, fourth, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` --> Color text when hovering on an element <br>
 `hover-bg-(primary, secondary, third, fourth, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` --> Background color when hovering on an element <br>
 Sample: `<a class="hover-text-third hover-bg-primary"></a>` <br>
 
+<hr>
+
 **9. Opacity** <br>
 `op-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` --> Opacity in percentage <br>
 Sample: <img class="op-60"> <br>
+
+<hr>
 
 **10. Position** <br>
 `pos-abs` --> Make the position absolute <br>
@@ -107,6 +121,8 @@ Sample: <img class="op-60"> <br>
 `pos-rel` --> Make the position relative <br>
 Sample: `<div class="pos-abs pos-abs--lt">` <br>
 
+<hr>
+
 **11. Rows and Columns** <br>
 `row--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` --> XS Devices<br>
 `row--sm--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` --> Small Devices <br>
@@ -115,6 +131,8 @@ Sample: `<div class="pos-abs pos-abs--lt">` <br>
 `grid` <br>
 `grid--cols--(auto, oneFourth, oneThird, oneHalf)` <br>
 Sample: `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-oneThird text-red p4 text-center">First Div</div>` OR <div class="grid grid--cols--auto"></div> <br>
+
+<hr>
 
 **12. Margins and Paddings** <br>
 `m(1, 2, 3, 4, 5, 6, 7, 8)` <br>
@@ -134,6 +152,8 @@ Sample: `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-o
 `ml-auto` <br>
 `mr-auto` <br>
 
+<hr>
+
 **13. Widths** <br>
 `min-w-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` --> Min width in percentage <br>
 `min-w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` --> Min width in pixels <br>
@@ -143,12 +163,16 @@ Sample: `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-o
 `max-w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` --> Max width in pixels <br>
 `w-inherit` --> Width: inherit <br>
 
+<hr>
+
 **14. Mobile Menu Bar** <br>
 `menu-mob-icon` --> Mobile Menu Icon <br>
 `menu-mob-closed-icon` --> Closing icon <br>
 `menu-mob-hr` <br>
 `menu-mob-hr-active` <br>
 Notice: In order to make any changes in the way of appearing of the mobile menu, you need to change these two classes `hamburger-menu-hr` `hamburger-menu-hr-active`, in the `_mobmenu.scss` file <br>
+
+<hr>
 
 **15. General Classes** <br>
 `mouse-hand` --> Pointer Cursor <br>
@@ -168,6 +192,8 @@ This component is used in order to add icons to your project, and the props for 
 
 **Example** <br>
 `<Icon type="search" fill="black" stroke="black" scale={1} />` <br>
+
+<hr>
 
 **2. HamburgerIcon** <br>
 This is a hamburgur icon with a nice animation on click to close and open the icon. Available props for this component are: <br>
