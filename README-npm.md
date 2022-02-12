@@ -11,7 +11,7 @@ This repository is designed in order to develop basic components and create hand
 In order to setup integrate this package with your project you need to take the following steps:
 
 Since, the project is dependent on the sass module, you need to install that package on your machine:
-`npm install --save sass` <br>
+`npm install --save-dev sass` <br>
 Then you can install the npm package related to this project: <br>
 `npm install --save basedesign-iswad`<br>
 
