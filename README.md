@@ -169,7 +169,7 @@ This component is used in order to add icons to your project, and the props for 
 **Example** <br>
 `<Icon type="search" fill="black" stroke="black" scale={1} />` <br>
 
-**1. HamburgerIcon** <br>
+**2. HamburgerIcon** <br>
 This is a hamburgur icon with a nice animation on click to close and open the icon. Available props for this component are: <br>
 **type**: The type of the hamburger icon. One of the following options: <br>
 `[1, 2, 3, 4, 5, 6]` <br>
