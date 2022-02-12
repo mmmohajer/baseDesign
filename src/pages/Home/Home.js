@@ -3,8 +3,8 @@ import cx from "classnames";
 
 import styles from "./Home.module.scss";
 
-// import HamburgerIcon from "Components/HamburgerIcon";
-import { HamburgerIcon, Icon } from "Root/lib/lib.js";
+import HamburgerIcon from "Components/HamburgerIcon";
+// import { HamburgerIcon, Icon } from "Root/lib/lib.js";
 import "Root/lib/style.js";
 
 function Home() {
@@ -16,7 +16,7 @@ function Home() {
   };
   return (
     <div className="bgRed">
-      <Icon />
+      <HamburgerIcon />
     </div>
   );
 }
