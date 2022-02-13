@@ -8,6 +8,7 @@ const cssConfig = {
 };
 
 import HamburgerIcon from "Components/HamburgerIcon";
+import Icon from "Components/Icon/Icon"
 
 function Home() {
   return (
