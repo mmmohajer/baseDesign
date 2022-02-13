@@ -3,20 +3,20 @@ import cx from "classnames";
 
 import styles from "./Home.module.scss";
 
+const cssConfig = {
+  hamburgerMenuBgColor: "blue",
+};
+
 import HamburgerIcon from "Components/HamburgerIcon";
-// import { HamburgerIcon, Icon } from "Root/lib/lib.js";
-import "Root/lib/style.js";
 
 function Home() {
-  const onOpenedIconClick = () => {
-    console.log("Icon is open");
-  };
-  const onClosedIconClick = () => {
-    console.log("Icon is closed");
-  };
   return (
-    <div className="bgRed">
-      <HamburgerIcon />
+    <div className="">
+      <HamburgerIcon
+        cssConfig={cssConfig}
+        onOpenedIconClick={() => console.log("Opened")}
+        onClosedIconClick={() => console.log("Closed")}
+      />
     </div>
   );
 }
