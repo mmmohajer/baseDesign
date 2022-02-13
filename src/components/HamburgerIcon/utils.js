@@ -1,11 +1,16 @@
 import PropTypes from "prop-types";
 
 import { randomStr } from "Utils/utils";
+import { CSS_CLASS_RANDOM_LENGTH } from "Constants/vars";
 
 export const cssClassMaps = {
-  hamburgerMenuContainer: `hamburgerMenuContainer-${randomStr(5)}`,
-  hamburgerMenuIcon: `hamburgerMenuIcon-${randomStr(5)}`,
-  hamburgerMenuClosedIcon: `hamburgerMenuClosedIcon-${randomStr(5)}`,
+  hamburgerMenuContainer: `hamburgerMenuContainer-${randomStr(
+    CSS_CLASS_RANDOM_LENGTH
+  )}`,
+  hamburgerMenuIcon: `hamburgerMenuIcon-${randomStr(CSS_CLASS_RANDOM_LENGTH)}`,
+  hamburgerMenuClosedIcon: `hamburgerMenuClosedIcon-${randomStr(
+    CSS_CLASS_RANDOM_LENGTH
+  )}`,
 };
 
 export const cssConfigShape = {
