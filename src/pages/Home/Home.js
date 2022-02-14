@@ -8,16 +8,18 @@ const cssConfig = {
 };
 
 import HamburgerIcon from "Components/HamburgerIcon";
+import CarouselCard from "Components/SliderCards";
 import Icon from "Components/Icon/Icon"
 
 function Home() {
   return (
     <div className="">
-      <HamburgerIcon
-        cssConfig={cssConfig}
-        onOpenedIconClick={() => console.log("Opened")}
-        onClosedIconClick={() => console.log("Closed")}
-      />
+      {/*<HamburgerIcon*/}
+      {/*  cssConfig={cssConfig}*/}
+      {/*  onOpenedIconClick={() => console.log("Opened")}*/}
+      {/*  onClosedIconClick={() => console.log("Closed")}*/}
+      {/*/>*/}
+        <CarouselCard />
     </div>
   );
 }

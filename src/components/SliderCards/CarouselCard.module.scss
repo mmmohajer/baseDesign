@@ -1,0 +1,45 @@
+.product {
+  overflow: hidden;
+
+}
+
+.cardContainer {
+  scroll-behavior: smooth;
+  overflow: hidden;
+
+}
+
+
+.ImageThumb {
+  object-fit: cover;
+}
+
+.cardTitle {
+  right: 10px;
+  top: 10px;
+  text-transform: capitalize;
+}
+
+.name {
+  text-transform: uppercase;
+}
+
+.Description {
+  line-height: 20px;
+  text-transform: capitalize;
+}
+
+.preBtn,
+.nxtBtn {
+  height: 100%;
+  top: 0;
+  cursor: pointer;
+}
+
+.preBtn {
+  left: 30px;
+}
+
+.nxtBtn {
+  right: 30px;
+}
