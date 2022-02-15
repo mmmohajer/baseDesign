@@ -9,15 +9,17 @@ const cssConfig = {
 
 import HamburgerIcon from "Components/HamburgerIcon";
 import Icon from "Components/Icon/Icon"
+import Card from "Components/Card/Card"
 
 function Home() {
   return (
     <div className="">
-      <HamburgerIcon
-        cssConfig={cssConfig}
-        onOpenedIconClick={() => console.log("Opened")}
-        onClosedIconClick={() => console.log("Closed")}
-      />
+      {/*<HamburgerIcon*/}
+      {/*  cssConfig={cssConfig}*/}
+      {/*  onOpenedIconClick={() => console.log("Opened")}*/}
+      {/*  onClosedIconClick={() => console.log("Closed")}*/}
+      {/*/>*/}
+        <Card />
     </div>
   );
 }
