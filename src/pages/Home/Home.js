@@ -9,7 +9,7 @@ const cssConfig = {
 
 import HamburgerIcon from "Components/HamburgerIcon";
 import Icon from "Components/Icon";
-import Card from "Components/Card/Card";
+import Card from "Components/Card";
 
 const arrayOfIcons = [
   "search",
