@@ -2,9 +2,8 @@ import React from "react";
 import cx from "classnames";
 
 import styles from "../Card.module.scss";
-import Employee from "Images/js-Images/Employes/Employee.jpg";
 
-function IdentityCard() {
+function IdentityCard({info}) {
   return (
     <div>
       <div
@@ -17,10 +16,7 @@ function IdentityCard() {
         )}
       >
         <div className={cx("pos-abs", "bgSilver", styles.imgBx)}>
-          <img
-            className={cx("pos-abs", "pos-abs--lt", "w-per-100")}
-            src={Employee}
-          />
+          {info.image}
         </div>
         <div
           className={cx(
@@ -31,9 +27,9 @@ function IdentityCard() {
           )}
         >
           <h2 className={cx("fw-600", "fs-px-20")}>
-            The Name <br />
+            {info.name} <br />
             <span className={cx("fw-600", "fs-px-20", "block", "mt1")}>
-              Programer
+              {info.Occupation}
             </span>
           </h2>
         </div>

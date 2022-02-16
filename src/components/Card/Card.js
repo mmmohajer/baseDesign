@@ -6,7 +6,9 @@ import IdentityCard from "./subs/IdentityCard"
 
 
 
-const Card = () => {
+const Card = ({info, type}) => {
+
+
     return (
         <div className={cx(
             "flex",
@@ -14,7 +16,9 @@ const Card = () => {
             "flex--ai--center",
             "height-vh-full"
         )}>
-            <IdentityCard />
+            {type=="identity" &&
+            <IdentityCard info={info}/>
+            }
         </div>
     );
 };
