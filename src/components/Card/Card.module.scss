@@ -1,0 +1,66 @@
+.card{
+  box-shadow:0 2px 10px rgba(0,0,0,.2);
+  transition: transform .5s;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 2s cubic-bezier(.165, .84, .44, 1);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .2), 0 6px 20px 0 rgba(0, 0, 0, .15);
+    content: '';
+    border-radius: 4px;
+    opacity: 0;
+    z-index: -1;
+  }
+  &:hover{
+    transition: transform .1s;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, .5), 0 6px 20px 0 rgba(0, 0, 0, .15);
+
+    .imgBx
+    {
+      bottom: 80px;
+    }
+  }
+  &:focus {
+    transform: scale3d(1.006, 1.006, 1);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .imgBx {
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    transition: 0.5s;
+    z-index: 1;
+
+    img{
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .details{
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+
+    h2{
+      color: #777;
+      text-transform: uppercase;
+      span{
+        color: #f38695;
+      }
+    }
+  }
+
+}
+
+
+
+
