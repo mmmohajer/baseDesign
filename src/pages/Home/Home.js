@@ -8,7 +8,30 @@ const cssConfig = {
 };
 
 import HamburgerIcon from "Components/HamburgerIcon";
-import Icon from "Components/Icon/Icon"
+import Icon from "Components/Icon";
+
+const arrayOfIcons = [
+  "search",
+  "up",
+  "down",
+  "left",
+  "right",
+  "dash",
+  "image",
+  "fimage",
+  "mic",
+  "fmic",
+  "notification",
+  "fnotification",
+  "setting",
+  "fsetting",
+  "x",
+  "video",
+  "fvideo",
+  "share",
+  "fshare",
+  "plus",
+];
 
 function Home() {
   return (
@@ -18,6 +41,18 @@ function Home() {
         onOpenedIconClick={() => console.log("Opened")}
         onClosedIconClick={() => console.log("Closed")}
       />
+      <div className="flex flex--jc--center p2 flex--ai--center w-per-100 flex--wrap bgYellow">
+        {arrayOfIcons.map((icon, idx) => (
+          <div className="ml2 mr2" key={idx}>
+            <Icon
+              type={icon}
+              scale={1.2}
+              fill="dodgerblue"
+              stroke="dodgerblue"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
