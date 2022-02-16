@@ -10,6 +10,7 @@ const cssConfig = {
 import HamburgerIcon from "Components/HamburgerIcon";
 import Icon from "Components/Icon";
 import Card from "Components/Card";
+import CarouselCard from "Components/SliderCards";
 
 const arrayOfIcons = [
   "search",
@@ -55,6 +56,7 @@ function Home() {
         ))}
       </div>
       <Card />
+      <CarouselCard />
     </div>
   );
 }
