@@ -1,0 +1,28 @@
+Hi Marouane,
+I reviewd your codes and really love your progress in coding. 
+I merged most of your codes with some minor modifications to master.
+
+I have a few comments, I want you to work on them:
+1. For slider cards, after we reach the the most right item 
+(last item from the right), when we click on the right arrow, it should 
+show the first item again (This loop must be continuous).
+The same situation must happen for the most left item (first item). After,
+reaching to the first item, if user clicks on the left arrow, we should
+see the last item.
+
+2. For the card component, I really liked what you did. But I want you to
+design several different types of cards. If we can have different options,
+in the future, we will be able to select which design is better depending
+on project. Please keep up your researching on more cards and any of them
+that has beautiful style, please try to add them as a sub component to your
+cards component.
+
+3. I see that you are getting the habit of using our css classes and it is
+very good. I want you to know that our css classes are really flexible and
+still some your css codes that I looked at them can be written by our pre-defined
+css classes instead of defining them in the css file.
+
+Overall, your work looks very good to me and you made me really happy with
+what you did.
+
+Thank you
