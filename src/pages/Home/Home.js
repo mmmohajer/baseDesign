@@ -7,7 +7,7 @@ const cssConfig = {
   hamburgerMenuBgColor: "blue",
 };
 
-
+import Header from "Components/Header";
 import HamburgerIcon from "Components/HamburgerIcon";
 import Icon from "Components/Icon";
 import Card from "Components/Card";
@@ -37,18 +37,18 @@ const arrayOfIcons = [
   "plus",
 ];
 
-const info  = {
-    name :"marouane",
-    Occupation : "Developer",
-    image : <img
-        className={cx("pos-abs", "pos-abs--lt", "w-per-100")}
-        src={Employee}
-    />
+const info = {
+  name: "marouane",
+  Occupation: "Developer",
+  image: (
+    <img className={cx("pos-abs", "pos-abs--lt", "w-per-100")} src={Employee} />
+  ),
 };
 
 function Home() {
   return (
     <div className="hi">
+      <Header />
       <HamburgerIcon
         cssConfig={cssConfig}
         onOpenedIconClick={() => console.log("Opened")}
@@ -66,9 +66,8 @@ function Home() {
           </div>
         ))}
       </div>
-        <Card info={info} type="identity"/>
-        <CarouselCard />
-
+      <Card info={info} type="identity" />
+      <CarouselCard />
     </div>
   );
 }
