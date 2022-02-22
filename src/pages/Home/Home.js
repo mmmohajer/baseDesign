@@ -10,9 +10,6 @@ const cssConfig = {
 import Header from "Components/Header";
 import HamburgerIcon from "Components/HamburgerIcon";
 import Icon from "Components/Icon";
-import Card from "Components/Card";
-import CarouselCard from "Components/SliderCards";
-import Employee from "Images/js-Images/Employes/Employee.jpg";
 
 const arrayOfIcons = [
   "search",
@@ -37,17 +34,9 @@ const arrayOfIcons = [
   "plus",
 ];
 
-const info = {
-  name: "marouane",
-  Occupation: "Developer",
-  image: (
-    <img className={cx("pos-abs", "pos-abs--lt", "w-per-100")} src={Employee} />
-  ),
-};
-
-function Home() {
+const Home = () => {
   return (
-    <div className="hi">
+    <div className="container">
       <Header />
       <HamburgerIcon
         cssConfig={cssConfig}
@@ -66,10 +55,8 @@ function Home() {
           </div>
         ))}
       </div>
-      <Card info={info} type="identity" />
-      <CarouselCard />
     </div>
   );
-}
+};
 
 export default Home;
