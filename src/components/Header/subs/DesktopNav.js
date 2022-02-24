@@ -53,9 +53,9 @@ function DesktopNav({ navList, navSublist }) {
                   <ul
                     className={cx(
                       "pos-abs",
-                      "pos-abs--lb",
+                      "pos-abs--center",
                       "bgPrimary",
-                      "min-w-px-200",
+                      "w-px-200",
                       "flex",
                       "flex--jc--center",
                       "flex--dir--col",
