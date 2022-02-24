@@ -1,30 +1,36 @@
 import styles from "./Header.module.scss";
 
-export const menuToggleHandler = () => {
-  const menuList = document.querySelector("#hamburger-menu-list");
-  const menuIcon = document.querySelector("#hamburger-menu-icon");
-  menuList.classList.toggle("hamburger-menu-hr-active");
-  menuIcon.classList.toggle("hamburger-menu-icon");
-  menuIcon.classList.toggle("hamburger-menu-closed-icon");
-  const newDiv = document.createElement("DIV");
-  newDiv.onclick = () => {
-    menuList.classList.remove("hamburger-menu-hr-active");
-    menuIcon.classList.add("hamburger-menu-icon");
-    menuIcon.classList.remove("hamburger-menu-closed-icon");
-    newDiv.parentNode.removeChild(newDiv);
-  };
-  newDiv.classList.add(styles.fullWindow);
-  const body = document.querySelector("body");
-  body.appendChild(newDiv);
+export const menuToggleHandler = (
+  mobMenuContainer,
+  setHamburgerIconToggler,
+  menuIsOpen,
+  setMenuIsOpen
+) => {
+  if (mobMenuContainer) {
+    mobMenuContainer.classList.toggle(styles.menu_mob_hr_active);
+    setMenuIsOpen(!menuIsOpen);
+    if (!menuIsOpen) {
+      const newDiv = document.createElement("DIV");
+      newDiv.onclick = () => {
+        // mobMenuContainer.classList.remove(styles.menu_mob_hr_active);
+        newDiv.parentNode.removeChild(newDiv);
+        setHamburgerIconToggler(true);
+        setHamburgerIconToggler(false);
+      };
+      newDiv.classList.add(styles.fullWindow);
+      const body = document.querySelector("body");
+      body.appendChild(newDiv);
+    }
+  }
 };
 
-export const toggleSubMenuHandler = (item) => {
-  const allSubMenus = document.querySelectorAll(`.${styles.subMenuContainer}`);
-  allSubMenus.forEach((menu) => {
-    menu.classList.add("no-display");
-  });
+export const toggleSubMenuHandler = (submenus, item) => {
+  console.log(submenus.current);
+  for (let key in submenus.current) {
+    submenus.current[key].classList.add("no-display");
+  }
 
-  const subMenu = document.querySelector(`#${item}SubMenu`);
+  const subMenu = submenus.current[item];
   subMenu.classList.toggle("flex");
   subMenu.classList.toggle("no-display");
 
@@ -38,10 +44,9 @@ export const toggleSubMenuHandler = (item) => {
   body.appendChild(newDiv);
 };
 
-export const toggleMobileSubMenuHandler = (item) => {
-  const subMenu = document.querySelector(`#${item}MobileSubMenu`);
-  subMenu.classList.toggle("flex");
-  subMenu.classList.toggle("no-display");
+export const toggleMobileSubMenuHandler = (mobileSubMenu) => {
+  mobileSubMenu.classList.toggle("flex");
+  mobileSubMenu.classList.toggle("no-display");
 };
 
 export const removeDivFullWindow = (e) => {
@@ -57,12 +62,9 @@ export const subMenuClickHandler = (item) => {
   subMenu.classList.add("no-display");
 };
 
-export const mobileSubMenuClickHandler = () => {
-  const div = document.querySelector(".hamburger-menu-hr");
-  div.classList.remove("hamburger-menu-hr-active");
-  const icon = document.querySelector("#hamburger-menu-icon");
-  icon.classList.toggle("hamburger-menu-closed-icon");
-  icon.classList.toggle("hamburger-menu-icon");
+export const mobileSubMenuClickHandler = (mobMenuContainer) => {
+  const div = mobMenuContainer?.current;
+  div.classList.remove(styles.menu_mob_hr_active);
 };
 
 export const slugifyConfig = {

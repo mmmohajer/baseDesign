@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import cx from "classnames";
 import slugify from "slugify";
 
@@ -12,12 +12,12 @@ import {
 
 import Anchor from "./Anchor";
 
-function MobileNav({ navList, navSublist }) {
+function MobileNav({ navList, navSublist, mobMenuContainer }) {
+  const mobileSubmenus = useRef({});
   return (
     <div
-      id="hamburger-menu-list"
+      ref={(el) => (mobMenuContainer.current = el)}
       className={cx(
-        "hamburger-menu-hr",
         "pos-abs",
         "pos-abs--rt",
         "height-vh-full",
@@ -31,7 +31,8 @@ function MobileNav({ navList, navSublist }) {
         "flex--ai--center",
         "w-per-80",
         "w-max-px-400",
-        "z-100"
+        "z-100",
+        styles.menu_mob_hr
       )}
     >
       <div
@@ -81,7 +82,9 @@ function MobileNav({ navList, navSublist }) {
               <>
                 <div className="pos-rel">
                   <div
-                    onClick={() => toggleMobileSubMenuHandler(item)}
+                    onClick={() =>
+                      toggleMobileSubMenuHandler(mobileSubmenus.current[item])
+                    }
                     className="mouse-hand"
                   >
                     {item}
@@ -97,7 +100,7 @@ function MobileNav({ navList, navSublist }) {
                       "flex--ai--center",
                       "no-display"
                     )}
-                    id={`${item}MobileSubMenu`}
+                    ref={(el) => (mobileSubmenus.current[item] = el)}
                   >
                     {navSublist[item].map((subItem, subIdx) => (
                       <li
@@ -114,7 +117,9 @@ function MobileNav({ navList, navSublist }) {
                             "br-bottom-dotted-1",
                           subIdx < navSublist[item].length - 1 && "pb2"
                         )}
-                        onClick={mobileSubMenuClickHandler}
+                        onClick={() =>
+                          mobileSubMenuClickHandler(mobMenuContainer)
+                        }
                       >
                         <Anchor to={slugify(subItem, slugifyConfig)}>
                           {subItem}
@@ -125,7 +130,7 @@ function MobileNav({ navList, navSublist }) {
                 </div>
               </>
             ) : (
-              <div onClick={mobileSubMenuClickHandler}>
+              <div onClick={() => mobileSubMenuClickHandler(mobMenuContainer)}>
                 <Anchor to={slugify(item, slugifyConfig)}>{item}</Anchor>
               </div>
             )}

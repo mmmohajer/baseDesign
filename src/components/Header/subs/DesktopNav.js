@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import cx from "classnames";
 import slugify from "slugify";
 
@@ -13,6 +13,8 @@ import {
 import Anchor from "./Anchor";
 
 function DesktopNav({ navList, navSublist }) {
+  const submenus = useRef({});
+
   return (
     <div
       className={cx(
@@ -43,7 +45,7 @@ function DesktopNav({ navList, navSublist }) {
               <>
                 <div className="pos-rel">
                   <div
-                    onClick={() => toggleSubMenuHandler(item)}
+                    onClick={() => toggleSubMenuHandler(submenus, item)}
                     className="mouse-hand"
                   >
                     {item}
@@ -62,7 +64,7 @@ function DesktopNav({ navList, navSublist }) {
                       "z-100",
                       styles.subMenuContainer
                     )}
-                    id={`${item}SubMenu`}
+                    ref={(el) => (submenus.current[item] = el)}
                   >
                     {navSublist[item].map((subItem, subIdx) => (
                       <li

@@ -8,7 +8,6 @@ const cssConfig = {
 };
 
 import Header from "Components/Header";
-import HamburgerIcon from "Components/HamburgerIcon";
 import Icon from "Components/Icon";
 
 const arrayOfIcons = [
@@ -38,11 +37,6 @@ const Home = () => {
   return (
     <div className="container">
       <Header />
-      <HamburgerIcon
-        cssConfig={cssConfig}
-        onOpenedIconClick={() => console.log("Opened")}
-        onClosedIconClick={() => console.log("Closed")}
-      />
       <div className="flex flex--jc--center p2 flex--ai--center w-per-100 flex--wrap bgYellow">
         {arrayOfIcons.map((icon, idx) => (
           <div className="ml2 mr2" key={idx}>

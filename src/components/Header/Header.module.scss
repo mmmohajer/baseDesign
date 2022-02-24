@@ -12,3 +12,14 @@
 .subMenuContainer {
   transform: translate(-73px, 24px);
 }
+
+.menu_mob_hr {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all ease-in 0.3s;
+}
+
+.menu_mob_hr_active {
+  opacity: 1;
+  transform: translateX(0);
+}
