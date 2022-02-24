@@ -12,10 +12,8 @@ export const menuToggleHandler = (
     if (!menuIsOpen) {
       const newDiv = document.createElement("DIV");
       newDiv.onclick = () => {
-        // mobMenuContainer.classList.remove(styles.menu_mob_hr_active);
         newDiv.parentNode.removeChild(newDiv);
         setHamburgerIconToggler(true);
-        setHamburgerIconToggler(false);
       };
       newDiv.classList.add(styles.fullWindow);
       const body = document.querySelector("body");

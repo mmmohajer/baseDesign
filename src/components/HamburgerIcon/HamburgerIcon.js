@@ -8,12 +8,15 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 import { cssClassMaps, cssConfigShape, cssDefaultConfig } from "./utils";
 
 import { css } from "./styles";
+import propTypes from "prop-types";
 
 function HamburgerIcon({
+  onClick = onClick,
   onOpenedIconClick,
   onClosedIconClick,
   cssConfig,
   iconToggler,
+  setIconToggler,
 }) {
   const appliedCssConfig = { ...cssDefaultConfig, ...cssConfig };
   const [isIconOpened, setIsIconOpened] = useState(true);
@@ -21,8 +24,9 @@ function HamburgerIcon({
   useEffect(() => {
     if (iconToggler) {
       menuIconToggleHandler();
+      setIconToggler(false);
     }
-  }, [iconToggler]);
+  }, [iconToggler, setIconToggler]);
 
   const menuIconToggleHandler = () => {
     const menuIcon =
@@ -35,6 +39,9 @@ function HamburgerIcon({
     }
     if (!isIconOpened && onClosedIconClick) {
       onClosedIconClick();
+    }
+    if (!onOpenedIconClick && !onClosedIconClick && onClick) {
+      onClick();
     }
     setIsIconOpened(!isIconOpened);
   };
@@ -54,16 +61,17 @@ function HamburgerIcon({
 
 HamburgerIcon.propTypes = {
   ...defaultPropTypes,
+  onClick: PropTypes.func,
   onOpenedIconClick: PropTypes.func,
   onClosedIconClick: PropTypes.func,
   cssConfig: PropTypes.shape(cssConfigShape),
   iconToggler: PropTypes.bool,
+  setIconToggler: PropTypes.func,
 };
 
 HamburgerIcon.defaultProps = {
   ...defaultProps,
   cssConfig: cssDefaultConfig,
-  iconToggler: false,
 };
 
 export default HamburgerIcon;

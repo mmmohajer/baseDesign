@@ -22,15 +22,7 @@ function Nav() {
 
       <div className="show-flex-in-sm-xsm">
         <HamburgerIcon
-          onOpenedIconClick={() =>
-            menuToggleHandler(
-              mobMenuContainer.current,
-              setHamburgerIconToggler,
-              menuIsOpen,
-              setMenuIsOpen
-            )
-          }
-          onClosedIconClick={() =>
+          onClick={() =>
             menuToggleHandler(
               mobMenuContainer.current,
               setHamburgerIconToggler,
@@ -39,6 +31,7 @@ function Nav() {
             )
           }
           iconToggler={hamburgerIconToggler}
+          setIconToggler={setHamburgerIconToggler}
         />
       </div>
 
