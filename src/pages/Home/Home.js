@@ -9,6 +9,7 @@ const cssConfig = {
 
 import Header from "Components/Header";
 import Icon from "Components/Icon";
+import Crausel from "Components/Crausel";
 
 const arrayOfIcons = [
   "search",
@@ -49,6 +50,7 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <Crausel />
     </div>
   );
 };

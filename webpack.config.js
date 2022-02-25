@@ -37,7 +37,15 @@ let config = {
     },
   },
   plugins: [
-    new Dotenv(),
+    new Dotenv({
+      path: "./.env",
+      safe: true,
+      allowEmptyValues: true,
+      systemvars: true,
+      silent: true,
+      defaults: false,
+      prefix: "process.env.",
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       filename: "index.html",
@@ -54,6 +62,7 @@ let config = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-react", "@babel/preset-env"],
+            plugins: ["@babel/transform-runtime"],
           },
         },
       },
