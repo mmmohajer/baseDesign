@@ -8,10 +8,7 @@ const cssConfig = {
 };
 
 import Header from "Components/Header";
-import NavBar from "Components/NavBar";
-import NavItem from "Components/NavBar/subs/NavItem";
-import SubNavContainer from "Components/NavBar/subs/SubNavContainer";
-import SubNavItem from "Components/NavBar/subs/SubNavItem";
+import TestNavBar from "TestComponents/TestNavBar";
 import Icon from "Components/Icon";
 import Carousel from "Components/Carousel";
 
@@ -42,42 +39,9 @@ const Home = () => {
   const [moveRight, setMoveRight] = useState(false);
   const [moveLeft, setMoveLeft] = useState(false);
   const [moveToItemWithNum, setMoveToItemWithNum] = useState(1);
-  const [subMenu1IsActive, setSubMenu1IsActive] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("Item1");
   return (
     <div className="container">
-      <NavBar className={"bgRed"} onClick={() => console.log("Hello")}>
-        <div className="flex w-per-100">
-          <NavItem
-            className="bgBlue mr1 p1"
-            onClick={() => setSubMenu1IsActive(!subMenu1IsActive)}
-            isActive={activeMenu === "Item1"}
-          >
-            <div className="">Item1</div>
-            <SubNavContainer className="bgPrimary" isActive={subMenu1IsActive}>
-              <SubNavItem className="mb1">SubItem1</SubNavItem>
-              <SubNavItem className="mb1">SubItem2</SubNavItem>
-              <SubNavItem className="mb1">SubItem3</SubNavItem>
-              <SubNavItem className="mb1">SubItem4</SubNavItem>
-            </SubNavContainer>
-          </NavItem>
-          <NavItem className="bgBlue mr1 p1">
-            <div className="">Item2</div>
-          </NavItem>
-          <NavItem className="bgBlue mr1 p1">
-            <div className="">Item3</div>
-          </NavItem>
-          <NavItem className="bgBlue mr1 p1">
-            <div className="">Item4</div>
-            <SubNavContainer className="bgPrimary">
-              <SubNavItem className="mb1">SubItem1</SubNavItem>
-              <SubNavItem className="mb1">SubItem2</SubNavItem>
-              <SubNavItem className="mb1">SubItem3</SubNavItem>
-              <SubNavItem className="mb1">SubItem4</SubNavItem>
-            </SubNavContainer>
-          </NavItem>
-        </div>
-      </NavBar>
+      <TestNavBar />
       <div className="flex flex--jc--center p2 flex--ai--center w-per-100 flex--wrap bgYellow">
         {arrayOfIcons.map((icon, idx) => (
           <div className="ml2 mr2" key={idx}>

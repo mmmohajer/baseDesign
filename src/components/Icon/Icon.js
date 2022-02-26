@@ -29,7 +29,6 @@ import Video from "Images/js-images/icons/svg/video.svg";
 import FVideo from "Images/js-images/icons/svg/fvideo.svg";
 import Plus from "Images/js-images/icons/svg/plus.svg";
 
-
 function Icon({ type, fill, stroke, scale, ...props }) {
   const otherProps = allowedProps(props);
   const iconTypes = {
@@ -42,165 +41,185 @@ function Icon({ type, fill, stroke, scale, ...props }) {
       />
     ),
     up: (
-        <Up
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Up
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     down: (
-        <Down
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Down
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     left: (
-        <Left
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Left
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     right: (
-        <Right
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Right
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     dash: (
-        <Dash
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Dash
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     image: (
-        <Image
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Image
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     fimage: (
-        <FImage
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <FImage
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     mic: (
-        <Mic
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Mic
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     fmic: (
-        <FMic
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <FMic
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     x: (
-        <X
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <X
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     setting: (
-        <Setting
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Setting
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     fsetting: (
-        <FSetting
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <FSetting
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     notification: (
-        <Notification
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Notification
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     fnotification: (
-        <FNotification
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <FNotification
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     plus: (
-        <Plus
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Plus
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     video: (
-        <Video
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Video
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     fvideo: (
-        <FVideo
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <FVideo
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     share: (
-        <Share
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <Share
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
     fshare: (
-        <FShare
-            fill={fill}
-            stroke={stroke}
-            style={{ transform: `scale(${scale})` }}
-            {...otherProps}
-        />
+      <FShare
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
     ),
-
   };
   return <>{iconTypes[type]}</>;
 }
 
 Icon.propTypes = {
   ...defaultPropTypes,
-  type: PropTypes.oneOf(["search", "up", "down", "left", "right", "dash", "image", "fimage", "mic", "fmic", "notification", "fnotification", "setting", "fsetting", "x", "video", "fvideo", "share", "fshare", "plus"]),
+  type: PropTypes.oneOf([
+    "search",
+    "up",
+    "down",
+    "left",
+    "right",
+    "dash",
+    "image",
+    "fimage",
+    "mic",
+    "fmic",
+    "notification",
+    "fnotification",
+    "setting",
+    "fsetting",
+    "x",
+    "video",
+    "fvideo",
+    "share",
+    "fshare",
+    "plus",
+  ]),
   fill: PropTypes.string,
   stroke: PropTypes.string,
 };

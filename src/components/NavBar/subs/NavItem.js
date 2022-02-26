@@ -9,6 +9,8 @@ const NavItem = ({ children, className, isActive, ...props }) => {
   useEffect(() => {
     if (isActive) {
       navItemElement.current.classList.add("iswad_navItem_active");
+    } else {
+      navItemElement.current.classList.remove("iswad_navItem_active");
     }
   }, [isActive]);
   return (

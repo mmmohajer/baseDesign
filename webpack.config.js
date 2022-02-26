@@ -34,6 +34,7 @@ let config = {
       Images: path.resolve(__dirname, "src/assets/images"),
       Constants: path.resolve(__dirname, "src/constants"),
       Utils: path.resolve(__dirname, "src/utils"),
+      TestComponents: path.resolve(__dirname, "src/TestComponents"),
     },
   },
   plugins: [
