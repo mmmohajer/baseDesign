@@ -8,10 +8,9 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 import { cssClassMaps, cssConfigShape, cssDefaultConfig } from "./utils";
 
 import { css } from "./styles";
-import propTypes from "prop-types";
 
 function HamburgerIcon({
-  onClick = onClick,
+  onClick,
   onOpenedIconClick,
   onClosedIconClick,
   cssConfig,
