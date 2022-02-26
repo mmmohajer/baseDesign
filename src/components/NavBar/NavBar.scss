@@ -1,0 +1,18 @@
+.iswad_subNavContainer {
+  transition: all ease-in-out 0.3s;
+  overflow-y: auto;
+
+  &_noActive {
+    max-height: 0;
+  }
+
+  &_active {
+    max-height: 100vh;
+  }
+}
+
+.iswad_navItem {
+  &_active {
+    color: red;
+  }
+}
