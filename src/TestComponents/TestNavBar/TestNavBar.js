@@ -63,6 +63,20 @@ const TestNavBar = () => {
     } else {
       setActiveMenu(menu);
       setActiveSubMenues([]);
+    }
+  };
+
+  const mobMenuClickHandler = (menu) => {
+    setActiveSubMenues([]);
+    if (Object.keys(SUB_MENUES).includes(menu)) {
+      if (activeSubMenues.includes(menu)) {
+        removeActiveSubMenu(menu);
+      } else {
+        addActiveSubMenu(menu);
+      }
+    } else {
+      setActiveMenu(menu);
+      setActiveSubMenues([]);
       setIconToggler(true);
       setMobMenuIsActive(false);
     }
@@ -109,7 +123,7 @@ const TestNavBar = () => {
             activeMenu={activeMenu}
             setActiveMenu={setActiveMenu}
             activeSubMenues={activeSubMenues}
-            menuClickHandler={menuClickHandler}
+            mobMenuClickHandler={mobMenuClickHandler}
             MENUES={MENUES}
             SUB_MENUES={SUB_MENUES}
             mobMenuIsActive={mobMenuIsActive}

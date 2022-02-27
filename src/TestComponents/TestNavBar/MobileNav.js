@@ -13,7 +13,7 @@ const MobileNav = ({
   activeMenu,
   setActiveMenu,
   activeSubMenues,
-  menuClickHandler,
+  mobMenuClickHandler,
   MENUES,
   SUB_MENUES,
   mobMenuIsActive,
@@ -34,7 +34,7 @@ const MobileNav = ({
             className={cx(
               "my1 py1 textWhite br-rad-px-10 br-color-primary w-per-100"
             )}
-            onClick={() => menuClickHandler(menu)}
+            onClick={() => mobMenuClickHandler(menu)}
             isActive={activeMenu === menu}
             key={idx1}
           >
