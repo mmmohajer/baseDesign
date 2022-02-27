@@ -22,7 +22,11 @@ function HamburgerIcon({
 
   useEffect(() => {
     if (iconToggler) {
-      menuIconToggleHandler();
+      const menuIcon =
+        document.querySelector(`.${cssClassMaps["hamburgerMenuIcon"]}`) ||
+        document.querySelector(`.${cssClassMaps["hamburgerMenuClosedIcon"]}`);
+      menuIcon.classList.toggle(cssClassMaps["hamburgerMenuIcon"]);
+      menuIcon.classList.toggle(cssClassMaps["hamburgerMenuClosedIcon"]);
       setIconToggler(false);
     }
   }, [iconToggler, setIconToggler]);

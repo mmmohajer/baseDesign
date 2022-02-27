@@ -28,6 +28,8 @@ export const cssConfigShape = {
   hamburgerMenuSpace: PropTypes.number,
   hamburgerMenuBorderRadius: PropTypes.number,
   hamburgerMenuClosedIconWidth: PropTypes.number,
+  hamburgerMenuTransitionDuration: PropTypes.number,
+  hamburgerMenuContainerXPadding: PropTypes.number,
   hamburgerMenuTransform: PropTypes.oneOf([
     "scale(-1, 1)",
     "scale(1, 1)",
@@ -48,5 +50,7 @@ export const cssDefaultConfig = {
   hamburgerMenuSpace: 10,
   hamburgerMenuBorderRadius: 5,
   hamburgerMenuClosedIconWidth: 25,
+  hamburgerMenuTransitionDuration: 0.3,
+  hamburgerMenuContainerXPadding: 10,
   hamburgerMenuTransform: "scale(-1, 1)",
 };

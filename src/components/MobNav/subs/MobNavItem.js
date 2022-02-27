@@ -1,16 +1,16 @@
 import React, { useRef, useEffect } from "react";
 import cx from "classnames";
 
-import "../Navbar.scss";
+import "../MobNav.scss";
 
-const NavItem = ({ children, className, isActive, ...props }) => {
+const MobNavItem = ({ children, className, isActive, ...props }) => {
   const navItemElement = useRef();
 
   useEffect(() => {
     if (isActive) {
-      navItemElement.current.classList.add("iswad_navItem_active");
+      navItemElement.current.classList.add("iswad_mobNavItem_active");
     } else {
-      navItemElement.current.classList.remove("iswad_navItem_active");
+      navItemElement.current.classList.remove("iswad_mobNavItem_active");
     }
   }, [isActive]);
   return (
@@ -19,7 +19,7 @@ const NavItem = ({ children, className, isActive, ...props }) => {
         ref={(el) => (navItemElement.current = el)}
         {...props}
         className={cx(
-          "flex flex--jc--center flex--ai--center pos-rel iswad_navItem",
+          "flex flex--dir--col flex--ai--center iswad_mobNavItem",
           className
         )}
       >
@@ -29,4 +29,4 @@ const NavItem = ({ children, className, isActive, ...props }) => {
   );
 };
 
-export default NavItem;
+export default MobNavItem;

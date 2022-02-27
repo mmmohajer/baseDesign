@@ -1,0 +1,60 @@
+@import "./../../assets/styles/base/variables";
+
+.logRegBtn {
+  border: 1px solid transparent;
+  transition: 0.3s ease all;
+  &:hover {
+    border-color: $primaryColor;
+    background: rgba($primaryColor, 0.1);
+    color: $primaryColor;
+  }
+  &:active {
+    border-color: $primaryColor;
+    background: linear-gradient(
+      rgba($primaryColor, 0.2),
+      rgba($primaryColor, 0.3)
+    );
+    color: $primaryColor;
+  }
+}
+
+.searchInput {
+  border: transparent;
+  width: 0;
+  transition: all 0.4s ease-in-out;
+
+  &:focus {
+    outline: none;
+    background-color: transparent;
+  }
+
+  &_active {
+    width: 170px;
+  }
+}
+.search {
+  border: 3px solid transparent;
+  &:hover {
+    border: 3px solid black;
+    border-color: $silverColor;
+  }
+}
+
+.mob_search {
+  transform: translate(10px, 25%);
+}
+
+.separator {
+  border-color: $primaryColor;
+  background: rgba($primaryColor, 0.1);
+  color: $primaryColor;
+}
+
+.mobNavContainer {
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+
+  &_active {
+    transform: translateX(0);
+  }
+}

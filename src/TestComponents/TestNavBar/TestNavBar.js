@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import cx from "classnames";
 
-import "./TestNavBar.scss";
+import "./DesktopNav";
+import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
+import HamburgerIcon from "Components/HamburgerIcon";
 
-import Icon from "Components/Icon";
-import NavBar from "Components/NavBar";
-import NavItem from "Components/NavBar/subs/NavItem";
-import SubNavContainer from "Components/NavBar/subs/SubNavContainer";
-import SubNavItem from "Components/NavBar/subs/SubNavItem";
+import styles from "./TestNavBar.module.scss";
 
 const MENUES = ["Home", "About Us", "Services", "Contact Us"];
 const SUB_MENUES = {
@@ -20,15 +19,30 @@ const SUB_MENUES = {
   ],
 };
 
+const HamIconCssConfig = {
+  hamburgerMenuContainerBgColor: "transparent",
+  hamburgerMenuContainerBorder: "none",
+  hamburgerMenuContainerBorderRadius: 10,
+  hamburgerMenuTopWidth: 15,
+  hamburgerMenuMiddleWidth: 25,
+  hamburgerMenuBottomWidth: 35,
+  hamburgerMenuHeight: 4,
+  hamburgerMenuBgColor: "white",
+  hamburgerMenuSpace: 10,
+  hamburgerMenuBorderRadius: 5,
+  hamburgerMenuClosedIconWidth: 25,
+  hamburgerMenuTransitionDuration: 0.3,
+  hamburgerMenuContainerXPadding: 0,
+  hamburgerMenuTransform: "scale(-1, 1)",
+};
+
 const TestNavBar = () => {
   const [activeSubMenues, setActiveSubMenues] = useState([]);
   const [activeMenu, setActiveMenu] = useState("Home");
-  const [activeSearch, setActiveSearch] = useState(false);
+  const [mobMenuIsActive, setMobMenuIsActive] = useState(false);
+  const [iconToggler, setIconToggler] = useState(false);
 
   const addActiveSubMenu = (menu) => {
-    // const localActiveSubMenues = [...activeSubMenues];
-    // localActiveSubMenues.push(menu);
-    // setActiveSubMenues(localActiveSubMenues);
     setActiveSubMenues([menu]);
   };
 
@@ -49,91 +63,62 @@ const TestNavBar = () => {
     } else {
       setActiveMenu(menu);
       setActiveSubMenues([]);
+      setIconToggler(true);
+      setMobMenuIsActive(false);
     }
   };
 
-  useEffect(() => {
-    console.log(activeSubMenues);
-  }, [activeSubMenues]);
-
   return (
     <>
-      <NavBar
+      <div className="show-flex-in-lg">
+        <DesktopNav
+          activeMenu={activeMenu}
+          setActiveMenu={setActiveMenu}
+          activeSubMenues={activeSubMenues}
+          menuClickHandler={menuClickHandler}
+          MENUES={MENUES}
+          SUB_MENUES={SUB_MENUES}
+        />
+      </div>
+      <div
         className={cx(
-          "w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse bgInverse"
+          "show-flex-in-md-sm-xsm",
+          "w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 height-px-60 br-bottom-solid-1 br-color-inverse bgInverse pos-rel"
         )}
       >
-        <div className="flex flex--jc--start flex--ai--center">
-          <div className="w-px-200 height-px-50 bgSilver flex flex--jc--center flex--ai--center">
-            Logo 200x50
-          </div>
-          <div className="flex">
-            {MENUES.map((menu, idx1) => (
-              <NavItem
-                className={cx(
-                  "mx1 px1 flex flex--ai--center textWhite br-rad-px-10 height-px-40 br-color-primary"
-                )}
-                onClick={() => menuClickHandler(menu)}
-                isActive={activeMenu === menu}
-                key={idx1}
-              >
-                <div className="">{menu}</div>
-                {menu in SUB_MENUES && (
-                  <SubNavContainer
-                    className={cx(
-                      "bgInverse w-px-200 flex flex--jc--center flex--dir--col flex--ai--center br-rad-px-10"
-                    )}
-                    onClick={() => setActiveMenu(menu)}
-                    isActive={activeSubMenues.includes(menu)}
-                  >
-                    {SUB_MENUES[menu].map((subMenu, idx2) => (
-                      <SubNavItem
-                        className={cx(
-                          "br-rad-px-10 textWhite p1 w-per-100 flex flex--jc--center flex--ai--center"
-                        )}
-                        key={idx2}
-                      >
-                        {subMenu}
-                      </SubNavItem>
-                    ))}
-                  </SubNavContainer>
-                )}
-              </NavItem>
-            ))}
-          </div>
+        <div className="w-px-200 height-px-50 bgSilver flex flex--jc--center flex--ai--center">
+          Logo 200x50
         </div>
-
-        <div className="flex flex--jc--center flex--ai--center">
-          <div
-            className={cx(
-              "mr2 min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center search"
-            )}
-          >
-            <Icon
-              onClick={() => setActiveSearch(!activeSearch)}
-              type="search"
-              scale={0.8}
-              fill="gray"
-              stroke="gray"
-              className="mouse-hand"
-            />
-            <input
-              type="text"
-              className={cx(
-                "br-rad-px-10 fs-px-18 searchInput",
-                activeSearch && "searchInput_active pl1 pr1"
-              )}
-            />
-          </div>
-          <button
-            className={cx(
-              "show-flex-in-md-lg bgPrimary fs-px-16 br-hidden-1 br-color-primary btn-small mouse-hand br-rad-px-10 height-px-40 flex flex--ai--center flex--jc--center px2 logRegBtn"
-            )}
-          >
-            Login/Register
-          </button>
+        <div className="z-100000">
+          <HamburgerIcon
+            cssConfig={HamIconCssConfig}
+            onClick={() => setMobMenuIsActive(!mobMenuIsActive)}
+            iconToggler={iconToggler}
+            setIconToggler={setIconToggler}
+          />
         </div>
-      </NavBar>
+        <div
+          className={cx(
+            "height-vh-full w-per-80 pos-fix pos-fix--rt flex flex--dir--col z-10000",
+            styles.mobNavContainer,
+            mobMenuIsActive && styles.mobNavContainer_active
+          )}
+        >
+          <div className="height-px-60"></div>
+          <MobileNav
+            activeMenu={activeMenu}
+            setActiveMenu={setActiveMenu}
+            activeSubMenues={activeSubMenues}
+            menuClickHandler={menuClickHandler}
+            MENUES={MENUES}
+            SUB_MENUES={SUB_MENUES}
+            mobMenuIsActive={mobMenuIsActive}
+            setMobMenuIsActive={setMobMenuIsActive}
+            iconToggler={iconToggler}
+            setIconToggler={setIconToggler}
+          />
+        </div>
+      </div>
     </>
   );
 };

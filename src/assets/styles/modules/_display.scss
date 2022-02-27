@@ -54,6 +54,10 @@
   &--wrap {
     flex-wrap: wrap;
   }
+
+  &--grow--1 {
+    flex-grow: 1;
+  }
 }
 
 .block {

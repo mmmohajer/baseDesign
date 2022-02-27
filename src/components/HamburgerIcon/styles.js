@@ -5,7 +5,7 @@ export const css = (cssClassMaps, cssConfig) => {
       cssConfig["hamburgerMenuMiddleWidth"],
       cssConfig["hamburgerMenuBottomWidth"],
       cssConfig["hamburgerMenuClosedIconWidth"]
-    ) + 10;
+    ) + cssConfig["hamburgerMenuContainerXPadding"];
   const containerHeight =
     cssConfig["hamburgerMenuHeight"] * 3 +
     cssConfig["hamburgerMenuSpace"] * 2 +
@@ -15,7 +15,7 @@ export const css = (cssClassMaps, cssConfig) => {
         background-color: ${cssConfig["hamburgerMenuBgColor"]};
         display: block;
         border-radius: ${cssConfig["hamburgerMenuBorderRadius"]}px;
-        transition: all ease-in 0.3s;
+        transition: all ease-in ${cssConfig["hamburgerMenuTransitionDuration"]}s;
     `;
 
   return `
