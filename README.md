@@ -61,7 +61,7 @@ Sample: `<button class="btn-large">` <br>
 
 **4. Colors** <br>
 `text(Primary, Secondary, Third, Fourth, Success, Warning, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` --> Use this classes to define the text color of an element <br>
-`bg(Primary, Secondary, Third, Fourth, Success, Warning, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` --> Use this classes to define background color of an element<br>
+`bg(Primary, Secondary, Third, Fourth, Success, Warning, Transparent, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` --> Use this classes to define background color of an element<br>
 Sample: `<div class="text-third bg-green"></div>`
 
 <hr>
