@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import cx from "classnames";
 
-import styles from "./Home.module.scss";
-
 import TestNavBar from "TestComponents/TestNavBar";
 import TestCaraousel from "TestComponents/TestCaraousel";
 import TestIcon from "TestComponents/TestIcon";
