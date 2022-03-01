@@ -23,10 +23,9 @@ const MobileNav = ({
   return (
     <>
       <MobNav
+        isActive={mobMenuIsActive}
         className={cx(
-          "flex--gr--1 w-per-100 bgInverse pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse of-y-auto",
-          styles.mobNavContainer,
-          mobMenuIsActive && styles.mobNavContainer_active
+          "flex--gr--1 w-per-100 bgInverse pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse of-y-auto"
         )}
       >
         {MENUES.map((menu, idx1) => (

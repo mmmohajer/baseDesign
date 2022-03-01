@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import cx from "classnames";
 
-import "./TestNavBar.scss";
 import styles from "./TestNavBar.module.scss";
 
 import Icon from "Components/Icon";

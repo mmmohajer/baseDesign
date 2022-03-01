@@ -105,9 +105,8 @@ const TestNavBar = () => {
         </div>
         <div
           className={cx(
-            "height-vh-full w-per-80 pos-fix pos-fix--rt flex flex--dir--col z-10000",
-            styles.mobNavContainer,
-            mobMenuIsActive && styles.mobNavContainer_active
+            "height-vh-full w-per-80 pos-fix pos-fix--rt flex flex--dir--col z-10000 iswad_mobNav",
+            mobMenuIsActive && "iswad_mobNav_active"
           )}
         >
           <div className="height-px-60"></div>

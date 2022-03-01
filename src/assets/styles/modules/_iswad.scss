@@ -1,4 +1,11 @@
-@import "./../../assets/styles/base/variables";
+.iswad_mobNav {
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+
+  &_active {
+    transform: translateX(0);
+  }
+}
 
 .iswad_navItem,
 .iswad_subNavItem,
@@ -19,10 +26,24 @@
   }
 }
 
-.iswad_subNavContainer {
-  transform: translateX(-25%);
+.iswad_mobSubNavContainer {
+  &_noActive {
+    display: none;
+  }
+
+  &_active {
+    display: flex;
+  }
 }
 
-.test {
-  transform: translateX(100%);
+.iswad_subNavContainer {
+  transform: translateX(-25%);
+
+  &_noActive {
+    display: none;
+  }
+
+  &_active {
+    display: block;
+  }
 }
