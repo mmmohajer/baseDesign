@@ -29,9 +29,7 @@
 }
 
 .iswad_mobSubNavContainer {
-  &_noActive {
-    display: none;
-  }
+  display: none;
 
   &_active {
     display: flex;
@@ -40,10 +38,7 @@
 
 .iswad_subNavContainer {
   transform: translateX(-25%);
-
-  &_noActive {
-    display: none;
-  }
+  display: none;
 
   &_active {
     display: block;

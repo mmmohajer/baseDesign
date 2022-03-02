@@ -8,18 +8,12 @@ const SubNavContainer = ({ children, className, isActive, ...props }) => {
 
   useEffect(() => {
     if (isActive) {
-      SubNavContainerElement.current.classList.remove(
-        "iswad_subNavContainer_noActive"
-      );
       SubNavContainerElement.current.classList.add(
         "iswad_subNavContainer_active"
       );
     } else {
       SubNavContainerElement.current.classList.remove(
         "iswad_subNavContainer_active"
-      );
-      SubNavContainerElement.current.classList.add(
-        "iswad_subNavContainer_noActive"
       );
     }
   }, [isActive]);
