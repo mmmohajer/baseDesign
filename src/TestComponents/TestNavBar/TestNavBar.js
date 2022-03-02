@@ -5,6 +5,7 @@ import "./DesktopNav";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import HamburgerIcon from "Components/HamburgerIcon";
+import "./TestNavBar.scss";
 
 import styles from "./TestNavBar.module.scss";
 
