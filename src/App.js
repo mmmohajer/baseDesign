@@ -9,6 +9,7 @@ import TestModal from "TestComponents/TestModal";
 import AdminNav from "TestComponents/TestAdminNav";
 import TestAdminNav from "./TestComponents/TestAdminNav";
 import TestDiv from "./TestComponents/TestDiv";
+import TestCard from "./TestComponents/TestCard";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
       <TestModal /> */}
       {/* <TestAdminNav /> */}
       <TestDiv />
+      <TestCard />
     </div>
   );
 };
