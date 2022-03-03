@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Carousel from "Components/Carousel";
+import CarouselItem from "Components/Carousel/subs/CarouselItem";
 
 const TestCaraousel = () => {
   const [moveRight, setMoveRight] = useState(false);
@@ -18,59 +19,59 @@ const TestCaraousel = () => {
         transitionDuration={0.25}
         transition_timing_function="ease-in"
       >
-        <div className="w-per-100 flex flex--jc--between flex--ai--center">
+        <CarouselItem className="w-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 1
           </p>
           <p className="bgPrimary textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 2
           </p>
-        </div>
+        </CarouselItem>
 
-        <div className="w-per-100 flex flex--jc--between flex--ai--center">
+        <CarouselItem className="w-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 3
           </p>
           <p className="bgPrimary textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 4
           </p>
-        </div>
+        </CarouselItem>
 
-        <div className="w-per-100 flex flex--jc--between flex--ai--center">
+        <CarouselItem className="w-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 5
           </p>
           <p className="bgPrimary textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 6
           </p>
-        </div>
+        </CarouselItem>
 
-        <div className="w-per-100 flex flex--jc--between flex--ai--center">
+        <CarouselItem className="w-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 7
           </p>
           <p className="bgPrimary textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 8
           </p>
-        </div>
+        </CarouselItem>
 
-        <div className="w-per-100 flex flex--jc--between flex--ai--center">
+        <CarouselItem className="w-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 9
           </p>
           <p className="bgPrimary textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 10
           </p>
-        </div>
+        </CarouselItem>
 
-        <div className="w-per-100 flex flex--jc--between flex--ai--center">
+        <CarouselItem className="w-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 11
           </p>
           <p className="bgPrimary textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 12
           </p>
-        </div>
+        </CarouselItem>
       </Carousel>
       <button onClick={() => setMoveRight(true)}>Right</button>
       <button onClick={() => setMoveLeft(true)}>Left</button>
