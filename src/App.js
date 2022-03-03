@@ -5,6 +5,7 @@ import TestNavBar from "TestComponents/TestNavBar";
 import TestCaraousel from "TestComponents/TestCaraousel";
 import TestIcon from "TestComponents/TestIcon";
 import TestAlert from "TestComponents/TestAlert";
+import TestModal from "TestComponents/TestModal";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <TestCaraousel />
       </div>
       <TestAlert />
+      <TestModal />
     </div>
   );
 };
