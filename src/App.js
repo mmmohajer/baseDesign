@@ -4,6 +4,7 @@ import cx from "classnames";
 import TestNavBar from "TestComponents/TestNavBar";
 import TestCaraousel from "TestComponents/TestCaraousel";
 import TestIcon from "TestComponents/TestIcon";
+import TestAlert from "TestComponents/TestAlert";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <div className="w-px-400 ml-auto mr-auto">
         <TestCaraousel />
       </div>
+      <TestAlert />
     </div>
   );
 };
