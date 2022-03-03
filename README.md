@@ -184,28 +184,96 @@ Notice: In order to make any changes in the way of appearing of the mobile menu,
 
 ## Components
 
-**1. Icon** <br>
+### [Icon](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Icon) <br>
+
 This component is used in order to add icons to your project, and the props for this component are: <br>
-**type**: The type of the icon. One of the following options: <br>
+**- type**: The type of the icon. One of the following options: <br>
 `[search]` <br>
-**fill**: Filling color of the icon as a string (It can be a hex color or a color name) <br>
-**stroke**: Stroke color of the icon, as a string (It can be a hex color or a color name) <br>
-**scale**: Determine the scale/size of the icon. An integer value can be passes as a value to this prop. <br>
+**- fill**: Filling color of the icon as a string (It can be a hex color or a color name) <br>
+**- stroke**: Stroke color of the icon, as a string (It can be a hex color or a color name) <br>
+**- scale**: Determine the scale/size of the icon. An integer value can be passes as a value to this prop. <br>
 
 **Example** <br>
 `<Icon type="search" fill="black" stroke="black" scale={1} />` <br>
 
 <hr>
 
-**2. HamburgerIcon** <br>
+### [HamburgerIcon](https://github.com/mmmohajer/baseDesign/tree/master/src/components/HamburgerIcon) <br>
+
 This is a hamburgur icon with a nice animation on click to close and open the icon. Available props for this component are: <br>
 **type**: The type of the hamburger icon. One of the following options: <br>
 `[1, 2, 3, 4, 5, 6]` <br>
-**onOpenedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the opened hamburger icon <br>
-**onClosedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the closed hamburger icon <br>
+**- onOpenedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the opened hamburger icon <br>
+**- onClosedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the closed hamburger icon <br>
 
 **Example** <br>
 `<HamburgerIcon type={1} onOpenedIconClick={() => console.log("Open")} onClosedIconClick={() => console.log("Close")} />`
+
+<hr>
+
+### [Desktop Navbar](https://github.com/mmmohajer/baseDesign/tree/master/src/components/NavBar)
+
+4 components are provided in this section that should be used in a nested way to create a fully flexible desktop navbar. <br>
+The order of nesting of these components is as follows: <br>
+
+```
+<NavBar>
+      <NavItem>
+          <SubNavContainer>
+              <SubNavItem>
+              </SubNavItem>
+              ...
+          </SubNavContainer>
+      </NavItem>
+      ...
+ </NavBar>
+```
+
+**1. [NavBar](https://github.com/mmmohajer/baseDesign/blob/master/src/components/NavBar/NavBar.js)**
+This is the container for all components in the navbar (For example the Logo, menu, and register button), also It is fully responsive. you can use our SCSS classes for styling this component. <br>
+**2. [NavItem](https://github.com/mmmohajer/baseDesign/blob/master/src/components/NavBar/subs/NavItem.js)**
+Using this component you can create your menu. Available prop for this component is:  
+**- isActive**: This prop gets a boolean value indicating whether the navItem is active or not. There is a SCSS class for active NavItem(`iswad_navItem_active`).<br>
+**3. [SubNavContainer](https://github.com/mmmohajer/baseDesign/blob/master/src/components/NavBar/subs/SubNavContainer.js)**
+This is a wrapper around the SubNavItem components and creates your submenu area. Available prop for this component is:
+**- isActive**: This is a boolean value indicating which SCSS class should be used for this component.(`iswad_subNavContainer_noActive` or `iswad_subNavContainer_active`).<br>
+**4. [SubNavItem](https://github.com/mmmohajer/baseDesign/blob/master/src/components/NavBar/subs/SubNavItem.js)**:
+Using this component you can create submenus for each NavItem. This component uses `iswad_subNavItem` SCSS class as style.
+**Example**<br>
+For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/DesktopNav.js).
+
+<hr>
+
+### [Mobile Navbar](https://github.com/mmmohajer/baseDesign/tree/master/src/components/MobNav)
+
+4 component are provided in this section which should be used in a nested way to create a fully flexible mobile navbar.
+The order of nesting of these components is as follows:
+
+```
+<MobNav>
+      <MobNavItem>
+          <MobSubNavContainer>
+              <MobSubNavItem>
+              </MobSubNavItem>
+              ...
+          </MobSubNavContainer>
+      </MobNavItem>
+      ...
+ </MobNav>
+```
+
+**1. [MobNav](https://github.com/mmmohajer/baseDesign/blob/master/src/components/MobNav/MobNav.js)**
+This is the container for all components in the navbar (For example the menu, and register button), also It is fully responsive. you can use our SCSS classes for styling this component. <br>
+**2. [MobNavItem](https://github.com/mmmohajer/baseDesign/blob/master/src/components/MobNav/subs/MobNavItem.js)**
+Using this component you can create your navigation bar. Available prop for this component is:
+**- isActive**: This prop gets a boolean value indicating whether the MobnavItem is active or not. There is a SCSS class for active MobNavItem(`iswad_mobNavItem_active`).<br>
+**3. [MobSubNavContainer](https://github.com/mmmohajer/baseDesign/blob/master/src/components/MobNav/subs/MobSubNavContainer.js)**
+This is a wrapper around the MobSubNavItem components. Available prop for this component is:
+**- isActive**: This is a boolean value indicating which SCSS class should be used for this component.(`iswad_mobSubNavContainer_noActive` or `iswad_mobSubNavContainer_active`).<br>
+**4. [MobSubNavItem](https://github.com/mmmohajer/baseDesign/blob/master/src/components/MobNav/subs/MobSubNavItem.js)**
+Using this component you can create submenus for each MobNavItem. This component uses `iswad_mobSubNavItem` SCSS class as style.
+**Example**<br>
+For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/MobileNav.js).
 
 ## License
 
