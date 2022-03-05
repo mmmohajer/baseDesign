@@ -127,7 +127,6 @@ const Carousel = ({
       <style>
         {`
           .${styles.sliderContainer} {
-            background-color: purple
             -webkit-transition: all ${transition_timing_function} ${transitionDuration}s;
             -moz-transition: all ${transition_timing_function} ${transitionDuration}s;
             -o-transition: all ${transition_timing_function} ${transitionDuration}s;

@@ -7,9 +7,10 @@ import TestIcon from "TestComponents/TestIcon";
 import TestAlert from "TestComponents/TestAlert";
 import TestModal from "TestComponents/TestModal";
 import AdminNav from "TestComponents/TestAdminNav";
-import TestAdminNav from "./TestComponents/TestAdminNav";
-import TestDiv from "./TestComponents/TestDiv";
-import TestCard from "./TestComponents/TestCard";
+import TestAdminNav from "TestComponents/TestAdminNav";
+import TestDiv from "TestComponents/TestDiv";
+import TestCard from "TestComponents/TestCard";
+import TestTable from "TestComponents/TestTable";
 
 const Home = () => {
   return (
@@ -26,6 +27,8 @@ const Home = () => {
       {/* <TestAdminNav /> */}
       <TestDiv />
       <TestCard />
+      <TestTable />
+      <div className="height-px-200 w-per-100 bgPrimary m2"></div>
     </div>
   );
 };
