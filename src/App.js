@@ -27,6 +27,10 @@ const Home = () => {
       {/* <TestAdminNav /> */}
       <TestDiv />
       <TestCard />
+      <img
+        src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/000000/external-woman-back-to-school-vitaliy-gorbachev-lineal-color-vitaly-gorbachev-2.png"
+        width={30}
+      />
       <TestTable />
       <div className="height-px-200 w-per-100 bgPrimary m2"></div>
     </div>

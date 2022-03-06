@@ -4,8 +4,13 @@
 
   &_headContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+  }
+
+  &_search {
+    padding: 2px 8px;
+    width: 150px;
   }
 }
 
