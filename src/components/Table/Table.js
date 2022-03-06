@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import cx from "classnames";
 
 import Th from "./subs/Th";
@@ -15,9 +15,12 @@ const Table = ({
   search,
   selectedData,
   setSelectedData,
+  sortIconColors,
+  rowsPerPage,
+  currentPage,
+  setCurrentPage,
   ...props
 }) => {
-  const tableRef = useRef();
   const [filter, setFilter] = useState({ first_name: "", last_name: "" });
   const [filteredData, setFilteredData] = useState([]);
   const [sortedData, setSortedData] = useState([]);
@@ -25,6 +28,7 @@ const Table = ({
   const [allIsChecked, setAllIsChecked] = useState(false);
   const [isSorted, setIsSorted] = useState({});
   const [sortIconColor, setSortIconColor] = useState({});
+  const [pageData, setPageData] = useState({});
 
   const searchHandler = (e, head) => {
     const key = head?.value || head;
@@ -33,6 +37,9 @@ const Table = ({
     setFilter(curFilter);
 
     setTimeout(() => {
+      if (currentPage !== 1) {
+        setCurrentPage(1);
+      }
       let localSortedData = [...data];
       localSortedData = localSortedData.filter((d) => {
         const curSearchElem = d[key]?.value || d[key];
@@ -63,7 +70,7 @@ const Table = ({
     const localSortIconColor = { ...sortIconColor };
     headLines.map((h) => {
       if (h?.isSortable) {
-        localSortIconColor[h?.value || h] = "silver";
+        localSortIconColor[h?.value || h] = sortIconColors["REG"] || "silver";
       }
     });
     setSortIconColor(localSortIconColor);
@@ -86,6 +93,7 @@ const Table = ({
   }, [isChecked]);
 
   const sortHandler = (head) => {
+    setCurrentPage(1);
     const key = head?.value || head;
     let localIsSorted = { ...isSorted };
     const curKey = Object.keys(localIsSorted)[0] || false;
@@ -102,14 +110,14 @@ const Table = ({
 
     const localSortIconColor = { ...sortIconColor };
     Object.keys(localSortIconColor).map((k) => {
-      localSortIconColor[k] = "silver";
+      localSortIconColor[k] = sortIconColors["REG"] || "silver";
     });
     if (localIsSorted[key] === 1) {
-      localSortIconColor[key] = "green";
+      localSortIconColor[key] = sortIconColors["ASC"] || "green";
     } else if (localIsSorted[key] === 2) {
-      localSortIconColor[key] = "red";
+      localSortIconColor[key] = sortIconColors["DESC"] || "red";
     } else {
-      localSortIconColor[key] = "silver";
+      localSortIconColor[key] = sortIconColors["REG"] || "silver";
     }
     setSortIconColor(localSortIconColor);
   };
@@ -122,7 +130,6 @@ const Table = ({
         localData.sort((a, b) => {
           const firstVal = a[curKey]?.value || a[curKey];
           const secondVal = b[curKey]?.value || b[curKey];
-          console.log(firstVal);
           return firstVal > secondVal ? 1 : secondVal > firstVal ? -1 : 0;
         });
         setSortedData(localData);
@@ -138,6 +145,14 @@ const Table = ({
       }
     }
   }, [isSorted]);
+
+  useEffect(() => {
+    let localPageData = [...sortedData];
+    const firstIdx = (currentPage - 1) * rowsPerPage;
+    const lastIdx = currentPage * rowsPerPage - 1;
+    localPageData = localPageData.slice(firstIdx, lastIdx);
+    setPageData(localPageData);
+  }, [currentPage, sortedData, filteredData]);
 
   return (
     <>
@@ -208,36 +223,38 @@ const Table = ({
               </Td>
             ))}
           </Th>
-          {sortedData.map((curRow, idx) => (
-            <Tr key={idx}>
-              {isSelectable && (
-                <Td style={{ width: `25px` }}>
-                  <div>
-                    <input
-                      type="checkbox"
-                      checked={isChecked[curRow["iswad_table_idx"]]}
-                      onChange={(e) => {
-                        const localIsChecked = { ...isChecked };
-                        localIsChecked[curRow["iswad_table_idx"]] =
-                          e.target.checked;
-                        setIsChecked(localIsChecked);
-                      }}
-                    />
-                  </div>
-                </Td>
-              )}
-              {headLines.map((curCol, idx1) => (
-                <Td
-                  key={idx1}
-                  style={curCol?.width && { width: `${curCol.width}px` }}
-                >
-                  {curRow[curCol?.value || curCol]?.display ||
-                    curRow[curCol?.value || curCol] ||
-                    curRow[curCol]}
-                </Td>
-              ))}
-            </Tr>
-          ))}
+          {pageData?.length
+            ? pageData.map((curRow, idx) => (
+                <Tr key={idx}>
+                  {isSelectable && (
+                    <Td style={{ width: `25px` }}>
+                      <div>
+                        <input
+                          type="checkbox"
+                          checked={isChecked[curRow["iswad_table_idx"]]}
+                          onChange={(e) => {
+                            const localIsChecked = { ...isChecked };
+                            localIsChecked[curRow["iswad_table_idx"]] =
+                              e.target.checked;
+                            setIsChecked(localIsChecked);
+                          }}
+                        />
+                      </div>
+                    </Td>
+                  )}
+                  {headLines.map((curCol, idx1) => (
+                    <Td
+                      key={idx1}
+                      style={curCol?.width && { width: `${curCol.width}px` }}
+                    >
+                      {curRow[curCol?.value || curCol]?.display ||
+                        curRow[curCol?.value || curCol] ||
+                        curRow[curCol]}
+                    </Td>
+                  ))}
+                </Tr>
+              ))
+            : ""}
         </div>
       </div>
       <style>

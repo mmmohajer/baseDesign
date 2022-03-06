@@ -48,6 +48,12 @@ const TestTable = (props) => {
     });
   }, [data]);
 
+  useEffect(() => {
+    console.log(selectedData);
+  }, [selectedData]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+
   return (
     <>
       <Table
@@ -56,10 +62,15 @@ const TestTable = (props) => {
         colWidth={400}
         tableWidth={2025}
         isSelectable={true}
-        // search={search}
+        search={search}
         selectedData={selectedData}
         setSelectedData={setSelectedData}
+        sortIconColors={{ ASC: "green", DESC: "red", REG: "silver" }}
+        rowsPerPage={10}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
       />
+      <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>
     </>
   );
 };
