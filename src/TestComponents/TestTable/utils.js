@@ -5,14 +5,14 @@ export const headLines = [
   {
     value: "first_name",
     display: "First Name",
-    width: 400,
+    width: 300,
     hasSearch: true,
     isSortable: true,
   },
   {
     value: "last_name",
     display: "Last Name",
-    width: 400,
+    width: 300,
     hasSearch: true,
     isSortable: true,
   },
@@ -20,7 +20,7 @@ export const headLines = [
   {
     value: "gender",
     display: "Gender",
-    width: 400,
+    width: 300,
     hasSearch: true,
     isSortable: true,
   },

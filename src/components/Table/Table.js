@@ -21,6 +21,7 @@ const Table = ({
   currentPage,
   setCurrentPage,
   showDefaultPagination,
+  numberOfShownPages,
   ...props
 }) => {
   const [filter, setFilter] = useState({ first_name: "", last_name: "" });
@@ -32,6 +33,31 @@ const Table = ({
   const [sortIconColor, setSortIconColor] = useState({});
   const [pageData, setPageData] = useState({});
   const [numberOfTotalPages, setNumberOfTotalPages] = useState(1);
+  const [tableTotalWidth, setTableTotalWidth] = useState("100%");
+
+  const calcTotalWidth = () => {
+    let totalWidth = 0;
+    let allCols = headLines.length;
+    headLines.map((h) => {
+      if (h?.width) {
+        totalWidth += h.width;
+        allCols -= 1;
+      }
+    });
+    totalWidth += colWidth * allCols;
+    if (isSelectable) {
+      totalWidth += 25;
+    }
+    setTableTotalWidth(`${totalWidth}px`);
+  };
+
+  useEffect(() => {
+    if (!tableWidth) {
+      calcTotalWidth();
+    } else {
+      setTableTotalWidth(tableWidth);
+    }
+  }, []);
 
   const searchHandler = (e, head) => {
     const key = head?.value || head;
@@ -271,7 +297,7 @@ const Table = ({
         </div>
         {showDefaultPagination && numberOfTotalPages ? (
           <Pagination
-            numberOfShownPages={5}
+            numberOfShownPages={numberOfShownPages || 5}
             currentPage={currentPage}
             numberOfTotalPages={numberOfTotalPages}
             setCurrentPage={setCurrentPage}
@@ -289,7 +315,7 @@ const Table = ({
           }
 
           .iswad_table {
-            width: ${tableWidth}px;
+            width: ${tableTotalWidth};
           }
           `}
       </style>
