@@ -28,6 +28,8 @@ import FShare from "Images/js-images/icons/svg/fshare.svg";
 import Video from "Images/js-images/icons/svg/video.svg";
 import FVideo from "Images/js-images/icons/svg/fvideo.svg";
 import Plus from "Images/js-images/icons/svg/plus.svg";
+import DoubleRight from "Images/js-images/icons/svg/doubleRight.svg";
+import DoubleLeft from "Images/js-images/icons/svg/doubleLeft.svg";
 
 function Icon({ type, fill, stroke, scale, ...props }) {
   const otherProps = allowedProps(props);
@@ -192,6 +194,22 @@ function Icon({ type, fill, stroke, scale, ...props }) {
         {...otherProps}
       />
     ),
+    doubleRight: (
+      <DoubleRight
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
+    ),
+    doubleLeft: (
+      <DoubleLeft
+        fill={fill}
+        stroke={stroke}
+        style={{ transform: `scale(${scale})` }}
+        {...otherProps}
+      />
+    ),
   };
   return <>{iconTypes[type]}</>;
 }
@@ -219,6 +237,8 @@ Icon.propTypes = {
     "share",
     "fshare",
     "plus",
+    "doubleRight",
+    "doubleLeft",
   ]),
   fill: PropTypes.string,
   stroke: PropTypes.string,

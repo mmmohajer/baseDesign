@@ -11,6 +11,7 @@ import TestAdminNav from "TestComponents/TestAdminNav";
 import TestDiv from "TestComponents/TestDiv";
 import TestCard from "TestComponents/TestCard";
 import TestTable from "TestComponents/TestTable";
+import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
   return (
@@ -33,6 +34,7 @@ const Home = () => {
       />
       <TestTable />
       <div className="height-px-200 w-per-100 bgPrimary m2"></div>
+      <TestPagination />
     </div>
   );
 };
