@@ -5,6 +5,7 @@ import Th from "./subs/Th";
 import Tr from "./subs/tr";
 import Td from "./subs/Td";
 import Icon from "Components/Icon";
+import Pagination from "Components/Pagination";
 
 const Table = ({
   headLines,
@@ -19,6 +20,7 @@ const Table = ({
   rowsPerPage,
   currentPage,
   setCurrentPage,
+  showDefaultPagination,
   ...props
 }) => {
   const [filter, setFilter] = useState({ first_name: "", last_name: "" });
@@ -29,6 +31,7 @@ const Table = ({
   const [isSorted, setIsSorted] = useState({});
   const [sortIconColor, setSortIconColor] = useState({});
   const [pageData, setPageData] = useState({});
+  const [numberOfTotalPages, setNumberOfTotalPages] = useState(1);
 
   const searchHandler = (e, head) => {
     const key = head?.value || head;
@@ -147,6 +150,14 @@ const Table = ({
   }, [isSorted]);
 
   useEffect(() => {
+    setNumberOfTotalPages(Math.ceil(sortedData.length / rowsPerPage));
+  }, [sortedData]);
+
+  useEffect(() => {
+    console.log(numberOfTotalPages);
+  }, [numberOfTotalPages]);
+
+  useEffect(() => {
     let localPageData = [...sortedData];
     const firstIdx = (currentPage - 1) * rowsPerPage;
     const lastIdx = currentPage * rowsPerPage - 1;
@@ -156,106 +167,120 @@ const Table = ({
 
   return (
     <>
-      <div className={cx("w-per-100 of-x-auto")}>
-        <div
-          className={cx(
-            "flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table"
-          )}
-          {...props}
-        >
-          <Th className="">
-            {isSelectable && (
-              <Td style={{ width: `25px` }}>
-                <input
-                  type="checkbox"
-                  checked={allIsChecked}
-                  onChange={(e) => {
-                    setAllIsChecked(e.target.checked);
-                    const localIsChecked = { ...isChecked };
-                    Object.keys(localIsChecked).map((obj) => {
-                      localIsChecked[obj] = e.target.checked;
-                    });
-                    setIsChecked(localIsChecked);
-                  }}
-                />
-              </Td>
+      <div>
+        <div className={cx("w-per-100 of-x-auto")}>
+          <div
+            className={cx(
+              "flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table"
             )}
-            {headLines.map((head, idx) => (
-              <Td
-                className=""
-                style={head?.width && { width: `${head.width}px` }}
-                key={idx}
-              >
-                <div className="flex w-per-100 flex--jc--between flex--ai--center">
-                  <div className="w-per-100 iswad_table_headContainer">
-                    <div className="m1">{head?.display || head}</div>
-                    {head.hasSearch && (
-                      <div className="">
-                        {search ? (
-                          search({
-                            value: filter[head?.value || head],
-                            onChange: (e) => searchHandler(e, head),
-                          })
-                        ) : (
-                          <input
-                            type="search"
-                            value={filter[head?.value || head]}
-                            onChange={(e) => searchHandler(e, head)}
-                            className="iswad_table_search"
-                          />
-                        )}
+            {...props}
+          >
+            <Th className="">
+              {isSelectable && (
+                <Td style={{ width: `25px` }}>
+                  <input
+                    type="checkbox"
+                    checked={allIsChecked}
+                    onChange={(e) => {
+                      setAllIsChecked(e.target.checked);
+                      const localIsChecked = { ...isChecked };
+                      Object.keys(localIsChecked).map((obj) => {
+                        localIsChecked[obj] = e.target.checked;
+                      });
+                      setIsChecked(localIsChecked);
+                    }}
+                  />
+                </Td>
+              )}
+              {headLines.map((head, idx) => (
+                <Td
+                  className=""
+                  style={head?.width && { width: `${head.width}px` }}
+                  key={idx}
+                >
+                  <div className="flex w-per-100 flex--jc--between flex--ai--center">
+                    <div className="w-per-100 iswad_table_headContainer">
+                      <div className="m1">{head?.display || head}</div>
+                      {head.hasSearch && (
+                        <div className="">
+                          {search ? (
+                            search({
+                              value: filter[head?.value || head],
+                              onChange: (e) => searchHandler(e, head),
+                            })
+                          ) : (
+                            <input
+                              type="search"
+                              value={filter[head?.value || head]}
+                              onChange={(e) => searchHandler(e, head)}
+                              className="iswad_table_search"
+                            />
+                          )}
+                        </div>
+                      )}
+                    </div>
+                    {head?.isSortable && (
+                      <div
+                        className="mouse-hand"
+                        onClick={() => sortHandler(head)}
+                      >
+                        <Icon
+                          type="down"
+                          fill={sortIconColor[head?.value || head]}
+                          stroke={sortIconColor[head?.value || head]}
+                        />
                       </div>
                     )}
                   </div>
-                  {head?.isSortable && (
-                    <div
-                      className="mouse-hand"
-                      onClick={() => sortHandler(head)}
-                    >
-                      <Icon
-                        type="down"
-                        fill={sortIconColor[head?.value || head]}
-                        stroke={sortIconColor[head?.value || head]}
-                      />
-                    </div>
-                  )}
-                </div>
-              </Td>
-            ))}
-          </Th>
-          {pageData?.length
-            ? pageData.map((curRow, idx) => (
-                <Tr key={idx}>
-                  {isSelectable && (
-                    <Td style={{ width: `25px` }}>
-                      <div>
-                        <input
-                          type="checkbox"
-                          checked={isChecked[curRow["iswad_table_idx"]]}
-                          onChange={(e) => {
-                            const localIsChecked = { ...isChecked };
-                            localIsChecked[curRow["iswad_table_idx"]] =
-                              e.target.checked;
-                            setIsChecked(localIsChecked);
-                          }}
-                        />
-                      </div>
-                    </Td>
-                  )}
-                  {headLines.map((curCol, idx1) => (
-                    <Td
-                      key={idx1}
-                      style={curCol?.width && { width: `${curCol.width}px` }}
-                    >
-                      {curRow[curCol?.value || curCol]?.display ||
-                        curRow[curCol?.value || curCol] ||
-                        curRow[curCol]}
-                    </Td>
-                  ))}
-                </Tr>
-              ))
-            : ""}
+                </Td>
+              ))}
+            </Th>
+            {pageData?.length
+              ? pageData.map((curRow, idx) => (
+                  <Tr key={idx}>
+                    {isSelectable && (
+                      <Td style={{ width: `25px` }}>
+                        <div>
+                          <input
+                            type="checkbox"
+                            checked={isChecked[curRow["iswad_table_idx"]]}
+                            onChange={(e) => {
+                              const localIsChecked = { ...isChecked };
+                              localIsChecked[curRow["iswad_table_idx"]] =
+                                e.target.checked;
+                              setIsChecked(localIsChecked);
+                            }}
+                          />
+                        </div>
+                      </Td>
+                    )}
+                    {headLines.map((curCol, idx1) => (
+                      <Td
+                        key={idx1}
+                        style={curCol?.width && { width: `${curCol.width}px` }}
+                      >
+                        {curRow[curCol?.value || curCol]?.display ||
+                          curRow[curCol?.value || curCol] ||
+                          curRow[curCol]}
+                      </Td>
+                    ))}
+                  </Tr>
+                ))
+              : ""}
+          </div>
         </div>
+        {showDefaultPagination && numberOfTotalPages ? (
+          <Pagination
+            numberOfShownPages={5}
+            currentPage={currentPage}
+            numberOfTotalPages={numberOfTotalPages}
+            setCurrentPage={setCurrentPage}
+            showFirstLastIcon={true}
+          />
+        ) : (
+          ""
+        )}
+        {numberOfTotalPages}
       </div>
       <style>
         {`

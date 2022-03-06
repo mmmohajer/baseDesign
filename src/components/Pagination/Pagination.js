@@ -13,31 +13,38 @@ const Pagination = ({
   const [shownPages, setShownPages] = useState([]);
 
   const calcShownPage = (curPage) => {
-    let count = 1;
-    const localArray = [curPage];
-    let prevPage = curPage;
-    let nextPage = curPage;
-    while (count < numberOfShownPages) {
-      prevPage -= 1;
-      nextPage += 1;
-      if (prevPage >= 1) {
-        localArray.push(prevPage);
-        count += 1;
+    let localArray = [];
+    if (numberOfShownPages < numberOfTotalPages) {
+      let count = 1;
+      localArray.push(curPage);
+      let prevPage = curPage;
+      let nextPage = curPage;
+      while (count < numberOfShownPages) {
+        prevPage -= 1;
+        nextPage += 1;
+        if (prevPage >= 1) {
+          localArray.push(prevPage);
+          count += 1;
+        }
+        if (nextPage <= numberOfTotalPages) {
+          count += 1;
+          localArray.push(nextPage);
+        }
       }
-      if (nextPage <= numberOfTotalPages) {
-        count += 1;
-        localArray.push(nextPage);
+      localArray.sort(function (a, b) {
+        return a - b;
+      });
+    } else {
+      for (let i = 1; i <= numberOfTotalPages; i++) {
+        localArray.push(i);
       }
     }
-    localArray.sort(function (a, b) {
-      return a - b;
-    });
     setShownPages(localArray);
   };
 
   useEffect(() => {
     calcShownPage(currentPage);
-  }, [currentPage]);
+  }, [currentPage, numberOfTotalPages]);
 
   return (
     <>

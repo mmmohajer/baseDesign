@@ -69,6 +69,7 @@ const TestTable = (props) => {
         rowsPerPage={10}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
+        showDefaultPagination={true}
       />
       <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>
     </>

@@ -43,3 +43,15 @@
     border-right: none;
   }
 }
+
+.iswad_pagination {
+  background-color: transparent;
+
+  &_item {
+    margin: 1rem;
+
+    &_active {
+      color: red;
+    }
+  }
+}
