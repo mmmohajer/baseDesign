@@ -18,7 +18,7 @@ Then you can install the npm package related to this project: <br>
 ## Usage
 
 In order to use our css classes in your project, you need to do the following import, in your main js file (usually index.js) at the root of your project: <br>
-`import basedesign-iswad/dist/style.js` <br>
+`import "basedesign-iswad/dist/styles.min.css"` <br>
 
 In order to work with our components, you can import them as follows: <br>
 `import {ComponentName} from "basedesign-iswad"` <br>
