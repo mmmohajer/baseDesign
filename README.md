@@ -220,13 +220,55 @@ This component is used in order to add icons to your project, and the props for 
 ### [HamburgerIcon](https://github.com/mmmohajer/baseDesign/tree/master/src/components/HamburgerIcon) <br>
 
 This is a hamburgur icon with a nice animation on click to close and open the icon. Available props for this component are: <br>
-**type**: The type of the hamburger icon. One of the following options: <br>
-`[1, 2, 3, 4, 5, 6]` <br>
+
+**- onClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the hamburger icon <br>
 **- onOpenedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the opened hamburger icon <br>
 **- onClosedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the closed hamburger icon <br>
+**- iconToggler**: This is a boolean type prop indicating whether or not the hamburger menu icon should be toggleable using the component that this prop is passed to. <br>
+**- setIconToggler**: This is a function type prop, that is used to set the iconToggler value. This prop should pass to the hamburger menu toggle handler component. <br>
+**- cssConfig**: Using cssConfig you can configure the CSS of the HamburgerIcon. There are different props that you can set. <br>
+
+- `hamburgerMenuContainerWidth`: a number that specifies the width of the hamburger menu container. <br>
+- `hamburgerMenuContainerHeight`: a number that specifies the height of the hamburger menu container. <br>
+- `hamburgerMenuContainerBgColor`: a string that specifies the background color of the hamburger menu container. <br>
+- `hamburgerMenuContainerBorder`: a string that specifies the border of the hamburger menu container. <br>
+- `hamburgerMenuContainerBorderRadius`: a number that specifies the border radius of the hamburger menu container. <br>
+- `hamburgerMenuContainerPadding`: a number that specifies the padding of the hamburger menu container.<br>
+- `hamburgerMenuTopWidth`: a number that specifies the top width of the hamburger menu. <br>
+- `hamburgerMenuMiddleWidth`: a number that specifies the middle width of the hamburger menu. <br>
+- `hamburgerMenuBottomWidth`: a number that specifies the bottom width of the hamburger menu. <br>
+- `hamburgerMenuHeight`: a number that specifies the height of the hamburger menu. <br>
+- `hamburgerMenuBgColor`: a string that specifies the background color of the hamburger menu. <br>
+- `hamburgerMenuSpace`: a number that specifies the space of the hamburger menu. <br>
+- `hamburgerMenuBorderRadius`: a number that specifies the border radius of the hamburger menu. <br>
+- `hamburgerMenuClosedIconWidth`: a number that specifies the of the hamburger menu. <br>
+- `hamburgerMenuTransitionDuration`: a number that specifies the transition duration of the hamburger menu. <br>
+- `hamburgerMenuContainerXPadding`: a number that specifies the right and left padding of the hamburger menu container. <br>
+- `hamburgerMenuTransform`: one of the following options that specifies the transformation of the hamburger menu: <br>
+- - scale(-1, 1) <br>
+- - scale(1, 1) <br>
+- - scale(1, -1) <br>
+- - scale(-1, -1) <br>
 
 **Example** <br>
-`<HamburgerIcon type={1} onOpenedIconClick={() => console.log("Open")} onClosedIconClick={() => console.log("Close")} />`
+
+```
+const cssConfigShape = {
+    hamburgerMenuBgColor = 'white'
+}
+const [iconToggler, setIconToggler] = useState(true);
+
+<HamburgerIcon
+    iconToggler={true}
+    onOpenedIconClick={() => console.log("Open")}
+    onClosedIconClick={() => console.log("Close")}
+    cssConfig={cssConfigShape}
+/>
+<button onClick={()=>setIconToggler(true)}> </button>
+
+```
+
+<hr>
 
 <hr>
 
