@@ -270,8 +270,6 @@ const [iconToggler, setIconToggler] = useState(true);
 
 <hr>
 
-<hr>
-
 ### [Desktop Navbar](https://github.com/mmmohajer/baseDesign/tree/master/src/components/NavBar)
 
 4 components are provided in this section that should be used in a nested way to create a fully flexible desktop navbar. <br>
