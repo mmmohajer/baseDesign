@@ -197,7 +197,7 @@ const Table = ({
   return (
     <>
       <div>
-        <div className={cx("w-per-100 of-x-auto p1")}>
+        <div className={cx("w-per-100 of-x-auto")}>
           <div
             className={cx(
               "flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table"
