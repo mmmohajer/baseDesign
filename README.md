@@ -161,6 +161,7 @@ Sample: `<div class="flex">` OR `<div class="no-display"></div>` OR `<div class=
 `flex--jc--(start, center, end, betwwen, around, evenly)` Use this classes to define the `justify-content` value <br>
 `flex--ai--(start, center, end)` Use this classes to define the `align-items` value <br>
 `flex--dir--(row, col)` Use this classes to define the direction (column, row) <br>
+`flex--dir--(row, col)` Use this classes to define the direction (column, row) <br>
 `flex--gr--(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` --> Flex grow value <br>
 `flex--wrap` Use this classes if you need to assignee a wrap value to flex-wrap property <br>
 `show-flex-in-(sm-md-lg, md-lg, lg, md-sm-xsm, sm-xsm, xsm)` Use this classes to show a flex div in specific Dimension (`sm` : small, `md` : medium, `lg` : large)<br>
@@ -186,6 +187,27 @@ Sample: `<button class="btn-large">` <br>
 `input` --> basic form for an input <br>
 `required` --> use this class for required inputs <br>
 Sample: `<div class="input">` <br>
+
+<hr>
+
+**15. Opacity** <br>
+`op-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` --> Opacity in percentage <br>
+Sample: `<img class="op-60">` <br>
+
+<hr>
+
+**16. General Classes** <br>
+`mouse-hand` --> Pointer Cursor <br>
+`z-(0, 10, 100, 1000, 10000, 100000)` --> Z-index classes <br>
+`f-(left, right)` --> Float left or right <br>
+`of-(y, x)-(hidden, scroll, auto)` --> Overflow <br>
+
+**17. Mobile Menu Bar** <br>
+`menu-mob-icon` --> Mobile Menu Icon <br>
+`menu-mob-closed-icon` --> Closing icon <br>
+`menu-mob-hr` <br>
+`menu-mob-hr-active` <br>
+Notice: In order to make any changes in the way of appearing of the mobile menu, you need to change these two classes `hamburger-menu-hr` `hamburger-menu-hr-active`, in the `_mobmenu.scss` file <br>
 
 <hr>
 
@@ -333,6 +355,106 @@ This is a wrapper around the MobSubNavItem components. Available prop for this c
 Using this component you can create submenus for each MobNavItem. This component uses `iswad_mobSubNavItem` SCSS class as style.
 **Example**<br>
 For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/MobileNav.js).
+
+### [Flexible Carousel](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel) <br>
+
+This is a flexible Carousel that contain two components, <br>
+
+**1. [Carousel](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel) <br>
+The carousel component is a container of all carousel items, and the props for this component are: <br>
+**- moveRight**: this is a boolean prop that activates the right movement by default `false` but when we change it to `true` the item start moving to the right. <br>
+**- setMoveRight\*\*: this is a function that reset the move right prop.<br>
+
+**- moveLeft**: this is a boolean prop that activates the left movement by default `false` but when we change it to `true` the item start moving to the left.<br>
+**- setMoveLeft**: this is a function that reset the move left prop. <br>
+
+**- moveToItemWithNum**: this is an integer prop that takes the element's id that we want to access, by default `1` the current element. <br>
+**- setMoveToItemWithNum**: this is a function that change the moveToItemWithNum value <br>
+**- transitionDuration**:this is a number prop that change the duration of transition by default `0.3` <br>
+**- transition_timing_function**:this is a prop that take one of these `ease`,`linear`,`ease-in`,`ease-out`,`ease-in-out`,`inherit` as value to define how the transition work .<br>
+
+\*\*2. [CarouselItem](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel/subs) <br>
+Using this component you can create the carousel items also It is fully responsive. you can use our SCSS classes for styling this component. <br>
+
+The order of nesting of these components is as follows:
+
+```
+      const [moveLeft, setMoveLeft] = useState(false);
+      const [moveToItemWithNum, setMoveToItemWithNum] = useState(1);
+      <Carousel
+        moveLeft={moveLeft}
+        setMoveLeft={setMoveLeft}
+        moveToItemWithNum={moveToItemWithNum}
+        setMoveToItemWithNum={setMoveToItemWithNum}
+      >
+        <CarouselItem>
+          <p>
+            Item 1
+          </p>
+          <p>
+            Item 2
+          </p>
+        </CarouselItem>
+      </Carousel>
+      <button onClick={() => setMoveLeft(true)}>Left</button>
+      <button onClick={() => setMoveToItemWithNum(4)}>Jump To number 4</button>
+```
+
+### [Flexible Div](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Div) <br>
+
+This is a flexible Div that gives you some options to make the basic style of a div easier, <br><br>
+The props for this component are:
+
+**- type**: this is a prop that takes `flex` or `block` as the value of display, by default `block` <br>
+
+**- direction**: this is a prop that takes one of the two values `horizontal` to have div with a flex-direction row or `vertical` to have div with a flex-direction column, by default `horizontal` <br>
+
+**- hAlign**: 'Horizontal Align' this is a prop that takes one of the three values and each value depends on the direction, by default `start`
+
+- `center`:
+- - In `vertical` direction **hAlign** play the rule of `align-items : center`. <br>
+- - In `horizontal` direction **hAlign** play the rule of `justify-content : center`. <br><br>
+
+- `end`:
+- - In `vertical` direction **hAlign** play the rule of `align-items : end`. <br>
+- - In `horizontal` direction **hAlign** play the rule of `justify-content : end`. <br><br>
+
+- `start`:
+- - In `vertical` direction **hAlign** play the rule of `align-items : start`. <br>
+- - In `horizontal` direction **hAlign** play the rule of `justify-content : start`. <br><br>
+
+**- vAlign**: 'Vertical Align' this is a prop that takes three values and each value depends on the direction, by default `start`
+
+- `center`:
+- - In `horizontal` direction **hAlign** play the rule of `align-items : center`. <br>
+- - In `vertical` direction **hAlign** play the rule of `justify-content : center`. <br><br>
+- `end`:
+- - In `horizontal` direction **hAlign** play the rule of `align-items : end`. <br>
+- - In `vertical` direction **hAlign** play the rule of `justify-content : end`. <br><br>
+
+- `start`:
+- - In `horizontal` direction **hAlign** play the rule of `align-items : start`. <br>
+- - In `vertical` direction **hAlign** play the rule of `justify-content : start`. <br><br>
+
+**- textAlign**: this is a prop that takes one of the three values ` centre` to make the text at the centre or `left` to make the text at the left or `right` to make the text at the right, by default `left` <br>
+**- distributedBetween**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-between`, by default `false` <br>
+**- distributedAround**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-around`, by default `false` <br>
+**- className**:this is a prop where you could include more styling <br>
+
+The order of nesting of these components is as follows:
+
+```
+    <Div
+        type="flex"
+        direction="horizontal"
+        hAlign="center"
+        vAlign="center"
+        distributedAround
+        className="bgRed height-px-400"
+      >
+        .......
+    </Div>
+```
 
 ## License
 
