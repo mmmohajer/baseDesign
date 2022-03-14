@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import cx from "classnames";
+import PropTypes from "prop-types";
+
+import defaultPropsMap from "Constants/defaultProps";
+const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
 import Icon from "Components/Icon";
 
@@ -86,6 +90,20 @@ const Pagination = ({
       </div>
     </>
   );
+};
+
+Pagination.propTypes = {
+  ...defaultPropTypes,
+  numberOfShownPages: PropTypes.number,
+  numberOfTotalPages: PropTypes.number,
+  currentPage: PropTypes.number,
+  setCurrentPage: PropTypes.func,
+  showFirstLastIcon: PropTypes.bool,
+};
+
+Pagination.defaultProps = {
+  showFirstLastIcon: true,
+  currentPage: 1,
 };
 
 export default Pagination;
