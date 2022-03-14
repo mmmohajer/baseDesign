@@ -59,18 +59,18 @@ const TestTable = (props) => {
       <Table
         headLines={headLines}
         data={data}
-        colWidth={400}
+        // colWidth={400}
         // tableWidth={"2025px"}
         isSelectable={true}
         search={search}
         selectedData={selectedData}
         setSelectedData={setSelectedData}
-        sortIconColors={{ ASC: "green", DESC: "red", REG: "silver" }}
+        // sortIconColors={{ ASC: "green", DESC: "red", REG: "silver" }}
         rowsPerPage={10}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        showDefaultPagination={true}
-        numberOfShownPages={5}
+        // showDefaultPagination={true}
+        // numberOfShownPages={5}
       />
       <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>
     </>

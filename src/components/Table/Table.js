@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import cx from "classnames";
+import PropTypes from "prop-types";
+
+import defaultPropsMap from "Constants/defaultProps";
+const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
 import Th from "./subs/Th";
 import Tr from "./subs/tr";
 import Td from "./subs/Td";
 import Icon from "Components/Icon";
 import Pagination from "Components/Pagination";
+import propTypes from "prop-types";
 
 const Table = ({
   headLines,
@@ -180,14 +185,12 @@ const Table = ({
   }, [sortedData]);
 
   useEffect(() => {
-    console.log(numberOfTotalPages);
-  }, [numberOfTotalPages]);
-
-  useEffect(() => {
     let localPageData = [...sortedData];
-    const firstIdx = (currentPage - 1) * rowsPerPage;
-    const lastIdx = currentPage * rowsPerPage - 1;
-    localPageData = localPageData.slice(firstIdx, lastIdx);
+    if (rowsPerPage) {
+      const firstIdx = (currentPage - 1) * rowsPerPage;
+      const lastIdx = currentPage * rowsPerPage - 1;
+      localPageData = localPageData.slice(firstIdx, lastIdx);
+    }
     setPageData(localPageData);
   }, [currentPage, sortedData, filteredData]);
 
@@ -306,7 +309,6 @@ const Table = ({
         ) : (
           ""
         )}
-        {numberOfTotalPages}
       </div>
       <style>
         {`
@@ -321,6 +323,36 @@ const Table = ({
       </style>
     </>
   );
+};
+
+Table.propTypes = {
+  ...defaultPropTypes,
+  headLines: PropTypes.array,
+  data: PropTypes.arrayOf(propTypes.object),
+  colWidth: PropTypes.number,
+  tableWidth: PropTypes.string,
+  isSelectable: PropTypes.bool,
+  search: PropTypes.func,
+  selectedData: PropTypes.arrayOf(propTypes.object),
+  setSelectedData: PropTypes.func,
+  sortIconColors: PropTypes.shape({
+    ASC: PropTypes.string,
+    DESC: PropTypes.string,
+    REG: PropTypes.string,
+  }),
+  rowsPerPage: PropTypes.number,
+  currentPage: PropTypes.number,
+  setCurrentPage: PropTypes.func,
+  showDefaultPagination: PropTypes.bool,
+  numberOfShownPages: PropTypes.number,
+};
+
+Table.defaultProps = {
+  colWidth: 300,
+  isSelectable: false,
+  sortIconColors: { ASC: "green", DESC: "red", REG: "silver" },
+  showDefaultPagination: true,
+  numberOfShownPages: 5,
 };
 
 export default Table;
