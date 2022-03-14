@@ -35,7 +35,7 @@ const Home = () => {
       <div className="p1">
         <TestTable />
       </div>
-      <div className="height-px-200 w-per-100 bgPrimary m2"></div>
+      <div className="height-px-200 w-per-100 bgPrimary"></div>
       {/* <TestPagination /> */}
     </div>
   );

@@ -356,6 +356,8 @@ Using this component you can create submenus for each MobNavItem. This component
 **Example**<br>
 For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/MobileNav.js).
 
+<hr>
+
 ### [Flexible Carousel](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel) <br>
 
 This is a flexible Carousel that contain two components, <br>
@@ -399,6 +401,8 @@ The order of nesting of these components is as follows:
       <button onClick={() => setMoveLeft(true)}>Left</button>
       <button onClick={() => setMoveToItemWithNum(4)}>Jump To number 4</button>
 ```
+
+<hr>
 
 ### [Flexible Div](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Div) <br>
 
@@ -455,6 +459,42 @@ The order of nesting of these components is as follows:
         .......
     </Div>
 ```
+
+<hr>
+
+## Modifialble CSS Classes:
+
+iswad_adminNav <br>
+iswad_adminNav_active <br>
+iswad_adminNavItem <br>
+iswad_adminNavItem_active <br>
+iswad_alert <br>
+iswad_alertItem <br>
+iswad_alertItem_active <br>
+iswad_mobNav <br>
+iswad_mobNav_active <br>
+iswad_mobNavItem <br>
+iswad_mobNavItem_active <br>
+iswad_mobSubNavContainer <br>
+iswad_mobSubNavContainer_noActive <br>
+iswad_mobSubNavContainer_active <br>
+iswad_mobSubNavItem <br>
+iswad_navItem <br>
+iswad_navItem_active <br>
+iswad_subNavContainer <br>
+iswad_subNavContainer_noActive <br>
+iswad_subNavContainer_active <br>
+iswad_subNavItem <br>
+iswad_pagination_item <br>
+iswad_pagination_item_active <br>
+iswad_table <br>
+iswad_table_headContainer <br>
+iswad_table_search <br>
+iswad_th <br>
+iswad_tr <br>
+iswad_td <br>
+
+<hr>
 
 ## License
 

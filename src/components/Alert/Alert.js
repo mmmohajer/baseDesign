@@ -4,7 +4,7 @@ import cx from "classnames";
 const Alert = ({ children, className, ...props }) => {
   return (
     <>
-      <div className={cx(className)} {...props}>
+      <div className={cx("iswad_alert_container", className)} {...props}>
         {children}
       </div>
     </>

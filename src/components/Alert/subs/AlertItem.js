@@ -6,8 +6,8 @@ const AlertItem = ({ children, isActive, className, ...props }) => {
     <>
       <div
         className={cx(
-          "iswad_alertItem",
-          isActive && "iswad_alertItem_active",
+          "iswad_alert_item",
+          isActive && "iswad_alert_item_active",
           className
         )}
         {...props}
