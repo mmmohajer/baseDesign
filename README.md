@@ -462,6 +462,24 @@ The order of nesting of these components is as follows:
 
 <hr>
 
+### [Flexible Modal](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Modal) <br>
+
+This is a flexible Modal that gives you some options to make the basic style of a Modal easier, <br><br>
+The props for this component are:
+
+**- fullHeightclassName**: this is a prop that gives you the hand to add more styling to your full-screen background <br>
+**- className**: this is a prop that gives you the hand to add more styling to your Modal <br>
+
+The order of nesting of these components is as follows:
+
+```
+    <Modal>
+        <div>Hello</div>
+    </Modal>
+```
+
+<hr>
+
 ## Modifialble CSS Classes:
 
 iswad_adminNav <br>
