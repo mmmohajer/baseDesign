@@ -553,5 +553,3 @@ This project is licensed under the terms of the MIT license.
 ## How to Contribute
 
 To collaborate on this repository you need to make a request from the owner of this repository (https://github.com/mmmohajer) and then you need to push your changes into a new branch and create pull request.
-
-This is just for test
