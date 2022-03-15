@@ -358,26 +358,69 @@ For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master
 
 <hr>
 
+### [Table](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Table)
+
+Using this component you can create a flexible table. Available props for this component are: <br>
+
+- **headLines**: This prop indicates the table headings. This prop has the following features:<br>
+- - **value**: This is the variable in your data. <br>
+- - **display**: This is the text that will be shown in the table header for this value. <br>
+- - **isSortable**: This is a boolean variable indicating whether or not the column should be sortable. <br>
+- - **hasSearch**: This is a boolean variable indicating whether or not the column should has search component. <br>
+- - **example**: <br>
+
+```
+const headLines = [
+    {
+        value: "user_name",
+        display: "Username",
+        width: 300,
+        hasSearch: true,
+        isSortable: true,
+    },
+    "password",
+];
+```
+
+- **data**: This prop indicates the data that will be displayed in the table. <br>
+- **colWidth**: This prop indicates the default width of the columns.<br>
+- **isSelectable**: This prop indicates whether rows of the table are selectable or not. When this prop is true then a checkbox appears in the right side of the table for selecting rows. <br>
+- **search**: we have an default search component but if you want to use your one you should pass a functional component to this prop. <br>
+- **selectedData**: This is the data which have been selected.<br>
+- **setSelectedData**: This is the data that you want to select.<br>
+- **sortIconColors**: Using this prop you can choose different colors for sort icon in this states : <br>
+- - **ASC** (ascending)<br>
+- - **REG** (regular)<br>
+- - **DESC** (descending)<br>
+- **rowsPerPage**: This prop indicates the number of rows per page. <br>
+- **currentPage**: This prop is a number that indicates the current page. <br>
+- **setCurrentPage**: Using this prop you can set a number as the current page of table. <br>
+- **showDefaultPagination**: This prop indicates whether the default pagination should be shown or not. If you want to use your custom pagination component set this false otherwise true. <br>
+- **numberOfShownPages**: This prop indicates the number of page that should be shown. <br>
+
+**Example**<br>
+For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestTable/TestTable.js).
+
+<hr>
+
 ### [Flexible Carousel](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel) <br>
 
 This is a flexible Carousel that contain two components, <br>
 
-**1. [Carousel](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel) <br>
+**1. [Carousel](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel)** <br>
 The carousel component is a container of all carousel items, and the props for this component are: <br>
-**- moveRight**: this is a boolean prop that activates the right movement by default `false` but when we change it to `true` the item start moving to the right. <br>
-**- setMoveRight\*\*: this is a function that reset the move right prop.<br>
 
-**- moveLeft**: this is a boolean prop that activates the left movement by default `false` but when we change it to `true` the item start moving to the left.<br>
-**- setMoveLeft**: this is a function that reset the move left prop. <br>
+- **moveRight**: this is a boolean prop that activates the right movement by default `false` but when we change it to `true` the item start moving to the right.<br>
+- **setMoveRight**: this is a function that reset the move right prop.<br>
+- **moveLeft**: this is a boolean prop that activates the left movement by default `false` but when we change it to `true` the item start moving to the left.<br>
+- **setMoveLeft**: this is a function that reset the move left prop. <br>
+- **moveToItemWithNum**: this is an integer prop that takes the element's id that we want to access, by default `1` the current element. <br>
+- **setMoveToItemWithNum**: this is a function that change the moveToItemWithNum value <br>
+- **transitionDuration**:this is a number prop that change the duration of transition by default `0.3` <br>
+- **transition_timing_function**:this is a prop that take one of these `ease`,`linear`,`ease-in`,`ease-out`,`ease-in-out`,`inherit` as value to define how the transition work .<br>
 
-**- moveToItemWithNum**: this is an integer prop that takes the element's id that we want to access, by default `1` the current element. <br>
-**- setMoveToItemWithNum**: this is a function that change the moveToItemWithNum value <br>
-**- transitionDuration**:this is a number prop that change the duration of transition by default `0.3` <br>
-**- transition_timing_function**:this is a prop that take one of these `ease`,`linear`,`ease-in`,`ease-out`,`ease-in-out`,`inherit` as value to define how the transition work .<br>
-
-\*\*2. [CarouselItem](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel/subs) <br>
+**2. [CarouselItem](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel/subs)** <br>
 Using this component you can create the carousel items also It is fully responsive. you can use our SCSS classes for styling this component. <br>
-
 The order of nesting of these components is as follows:
 
 ```
@@ -406,44 +449,35 @@ The order of nesting of these components is as follows:
 
 ### [Flexible Div](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Div) <br>
 
-This is a flexible Div that gives you some options to make the basic style of a div easier, <br><br>
-The props for this component are:
+This is a flexible Div that gives you some options to make the basic style of a div easier, <br>
+The props for this component are: <br>
 
-**- type**: this is a prop that takes `flex` or `block` as the value of display, by default `block` <br>
-
-**- direction**: this is a prop that takes one of the two values `horizontal` to have div with a flex-direction row or `vertical` to have div with a flex-direction column, by default `horizontal` <br>
-
-**- hAlign**: 'Horizontal Align' this is a prop that takes one of the three values and each value depends on the direction, by default `start`
-
+- **type**: this is a prop that takes `flex` or `block` as the value of display, by default `block` <br>
+- **direction**: this is a prop that takes one of the two values `horizontal` to have div with a flex-direction row or `vertical` to have div with a flex-direction column, by default `horizontal` <br>
+- **hAlign**: 'Horizontal Align' this is a prop that takes one of the three values and each value depends on the direction, by default `start`
 - `center`:
 - - In `vertical` direction **hAlign** play the rule of `align-items : center`. <br>
-- - In `horizontal` direction **hAlign** play the rule of `justify-content : center`. <br><br>
-
+- - In `horizontal` direction **hAlign** play the rule of `justify-content : center`. <br>
 - `end`:
 - - In `vertical` direction **hAlign** play the rule of `align-items : end`. <br>
-- - In `horizontal` direction **hAlign** play the rule of `justify-content : end`. <br><br>
-
+- - In `horizontal` direction **hAlign** play the rule of `justify-content : end`. <br>
 - `start`:
 - - In `vertical` direction **hAlign** play the rule of `align-items : start`. <br>
-- - In `horizontal` direction **hAlign** play the rule of `justify-content : start`. <br><br>
-
-**- vAlign**: 'Vertical Align' this is a prop that takes three values and each value depends on the direction, by default `start`
-
+- - In `horizontal` direction **hAlign** play the rule of `justify-content : start`. <br>
+- **vAlign**: 'Vertical Align' this is a prop that takes three values and each value depends on the direction, by default `start`
 - `center`:
-- - In `horizontal` direction **hAlign** play the rule of `align-items : center`. <br>
-- - In `vertical` direction **hAlign** play the rule of `justify-content : center`. <br><br>
+- - In `horizontal` direction **hAlign** play the rule of `align-items : center`.
+- - In `vertical` direction **hAlign** play the rule of `justify-content : center`.
 - `end`:
-- - In `horizontal` direction **hAlign** play the rule of `align-items : end`. <br>
-- - In `vertical` direction **hAlign** play the rule of `justify-content : end`. <br><br>
-
+- - In `horizontal` direction **hAlign** play the rule of `align-items : end`.
+- - In `vertical` direction **hAlign** play the rule of `justify-content : end`.
 - `start`:
-- - In `horizontal` direction **hAlign** play the rule of `align-items : start`. <br>
-- - In `vertical` direction **hAlign** play the rule of `justify-content : start`. <br><br>
-
-**- textAlign**: this is a prop that takes one of the three values ` centre` to make the text at the centre or `left` to make the text at the left or `right` to make the text at the right, by default `left` <br>
-**- distributedBetween**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-between`, by default `false` <br>
-**- distributedAround**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-around`, by default `false` <br>
-**- className**:this is a prop where you could include more styling <br>
+- - In `horizontal` direction **hAlign** play the rule of `align-items : start`.
+- - In `vertical` direction **hAlign** play the rule of `justify-content : start`.
+- **textAlign**: this is a prop that takes one of the three values ` centre` to make the text at the centre or `left` to make the text at the left or `right` to make the text at the right, by default `left` <br>
+- **distributedBetween**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-between`, by default `false` <br>
+- **distributedAround**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-around`, by default `false` <br>
+- **className**:this is a prop where you could include more styling <br>
 
 The order of nesting of these components is as follows:
 
@@ -464,13 +498,11 @@ The order of nesting of these components is as follows:
 
 ### [Flexible Modal](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Modal) <br>
 
-This is a flexible Modal that gives you some options to make the basic style of a Modal easier, <br><br>
-The props for this component are:
+This is a flexible Modal that gives you some options to make the basic style of a Modal easier, The props for this component are:
 
-**- fullHeightclassName**: this is a prop that gives you the hand to add more styling to your full-screen background <br>
-**- className**: this is a prop that gives you the hand to add more styling to your Modal <br>
-
-The order of nesting of these components is as follows:
+- **fullHeightclassName**: this is a prop that gives you the hand to add more styling to your full-screen background <br>
+- **className**: this is a prop that gives you the hand to add more styling to your Modal <br>
+  The order of nesting of these components is as follows:
 
 ```
     <Modal>
