@@ -512,6 +512,35 @@ This is a flexible Modal that gives you some options to make the basic style of 
 
 <hr>
 
+### [Flexible Admin Nav](https://github.com/mmmohajer/baseDesign/tree/master/src/components/AdminNav) <br>
+
+This is a flexible Admin Nav that contain two components, and gives a basic form of admin nav <br>
+
+**1. [AdminNav](https://github.com/mmmohajer/baseDesign/tree/master/src/components/AdminNav)**
+The AdminNav component is a container of all AdminNav items, and the props of this component are: <br>
+
+**- isActive**: This prop gets a boolean value indicating whether the navItem is active or not.<br>
+**- className**: this is a prop that gives you the hand to add more styling to your Modal <br>
+
+**2. [AdminNavItem](https://github.com/mmmohajer/baseDesign/tree/master/src/components/AdminNav/subs)**
+Using this component you can create the AdminNav items also It is fully responsive. you can use our SCSS classes for styling this component. <br>
+And the props of this component are: <br>
+
+**- isActive**: This prop gets a boolean value indicating whether the navItem is active or not.<br>
+**- className**: this is a prop that gives you the hand to add more styling to your Modal <br>
+
+The order of nesting of these components is as follows:
+
+```
+    <AdminNav isActive={true}>
+      <AdminNavItem>
+        .........
+      </AdminNavItem>
+    </AdminNav>
+```
+
+<hr>
+
 ## Modifialble CSS Classes:
 
 iswad_adminNav <br>
