@@ -73,6 +73,11 @@ ul {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+  hyphens: auto;
+}
+
 .br-rad-px-5 {
   border-radius: 5px;
 }
