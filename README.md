@@ -12,6 +12,17 @@ This repository is designed in order to develop basic components and create hand
 - [Usage](#usage)
 - [Classes](#classes)
 - [Components](#components)
+- - [Icon](#icon)
+- - [HamburgerIcon](#hamburgericon)
+- - [DesktopNavbar](#desktopnavbar)
+- - [MobileNavbar](#mobilenavbar)
+- - [Carousel](#carousel)
+- - [Div](#div)
+- - [Modal](#modal)
+- - [AdminNavbar](#adminnavbar)
+- - [Pagination](#pagination)
+- - [Card](#card)
+- - [Alert](#alert)
 - [License](#license)
 
 ## Installation
@@ -38,6 +49,7 @@ In order to work with our components, you can import them as follows: <br>
 `text-ltr` --> Align: left to right<br>
 `text-rtl` --> Align: right to left <br>
 `text-center` --> Align: center<br>
+`text-justify` --> Align: justify<br>
 Sample: `<div class="text-ltr">Hello</div>`
 
 <hr>
@@ -211,6 +223,7 @@ Notice: In order to make any changes in the way of appearing of the mobile menu,
 
 <hr>
 
+
 **15. Opacity** <br>
 `op-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` --> Opacity in percentage <br>
 Sample: `<img class="op-60">` <br>
@@ -225,61 +238,60 @@ Sample: `<img class="op-60">` <br>
 
 ## Components
 
-### [Icon](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Icon) <br>
+### Icon 
 
-This component is used in order to add icons to your project, and the props for this component are: <br>
+This component is used in order to add icons to your project, and the props of this component are: <br>
 **- type**: The type of the icon. One of the following options: <br>
 `[search]` <br>
 **- fill**: Filling color of the icon as a string (It can be a hex color or a color name) <br>
 **- stroke**: Stroke color of the icon, as a string (It can be a hex color or a color name) <br>
 **- scale**: Determine the scale/size of the icon. An integer value can be passes as a value to this prop. <br>
 
-**Example** <br>
+#### Example
 `<Icon type="search" fill="black" stroke="black" scale={1} />` <br>
 
 <hr>
 
-### [HamburgerIcon](https://github.com/mmmohajer/baseDesign/tree/master/src/components/HamburgerIcon) <br>
+### HamburgerIcon
 
-This is a hamburgur icon with a nice animation on click to close and open the icon. Available props for this component are: <br>
+This is a hamburgur icon with a nice animation on click to close and open the icon. Available props of this component are: <br>
 
-**- onClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the hamburger icon <br>
-**- onOpenedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the opened hamburger icon <br>
-**- onClosedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the closed hamburger icon <br>
-**- iconToggler**: This is a boolean type prop indicating whether or not the hamburger menu icon should be toggleable using the component that this prop is passed to. <br>
-**- setIconToggler**: This is a function type prop, that is used to set the iconToggler value. This prop should pass to the hamburger menu toggle handler component. <br>
-**- cssConfig**: Using cssConfig you can configure the CSS of the HamburgerIcon. There are different props that you can set. <br>
+- **onClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the hamburger icon <br>
+- **onOpenedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the opened hamburger icon <br>
+- **onClosedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the closed hamburger icon <br>
+- **iconToggler**: This is a boolean type prop indicating whether or not the hamburger menu icon should be toggleable using the component that this prop is passed to. <br>
+- **setIconToggler**: This is a function type prop, that is used to set the iconToggler value. This prop should pass to the hamburger menu toggle handler component. <br>
+- **cssConfig**: Using cssConfig you can configure the CSS of the HamburgerIcon. There are different props that you can set. <br>
 
-- `hamburgerMenuContainerWidth`: a number that specifies the width of the hamburger menu container. <br>
-- `hamburgerMenuContainerHeight`: a number that specifies the height of the hamburger menu container. <br>
-- `hamburgerMenuContainerBgColor`: a string that specifies the background color of the hamburger menu container. <br>
-- `hamburgerMenuContainerBorder`: a string that specifies the border of the hamburger menu container. <br>
-- `hamburgerMenuContainerBorderRadius`: a number that specifies the border radius of the hamburger menu container. <br>
-- `hamburgerMenuContainerPadding`: a number that specifies the padding of the hamburger menu container.<br>
-- `hamburgerMenuTopWidth`: a number that specifies the top width of the hamburger menu. <br>
-- `hamburgerMenuMiddleWidth`: a number that specifies the middle width of the hamburger menu. <br>
-- `hamburgerMenuBottomWidth`: a number that specifies the bottom width of the hamburger menu. <br>
-- `hamburgerMenuHeight`: a number that specifies the height of the hamburger menu. <br>
-- `hamburgerMenuBgColor`: a string that specifies the background color of the hamburger menu. <br>
-- `hamburgerMenuSpace`: a number that specifies the space of the hamburger menu. <br>
-- `hamburgerMenuBorderRadius`: a number that specifies the border radius of the hamburger menu. <br>
-- `hamburgerMenuClosedIconWidth`: a number that specifies the of the hamburger menu. <br>
-- `hamburgerMenuTransitionDuration`: a number that specifies the transition duration of the hamburger menu. <br>
-- `hamburgerMenuContainerXPadding`: a number that specifies the right and left padding of the hamburger menu container. <br>
-- `hamburgerMenuTransform`: one of the following options that specifies the transformation of the hamburger menu: <br>
-- - scale(-1, 1) <br>
-- - scale(1, 1) <br>
-- - scale(1, -1) <br>
-- - scale(-1, -1) <br>
+- -  `hamburgerMenuContainerWidth`: a number that specifies the width of the hamburger menu container. <br>
+- -  `hamburgerMenuContainerHeight`: a number that specifies the height of the hamburger menu container. <br>
+- -  `hamburgerMenuContainerBgColor`: a string that specifies the background color of the hamburger menu container. <br>
+- - `hamburgerMenuContainerBorder`: a string that specifies the border of the hamburger menu container. <br>
+- - `hamburgerMenuContainerBorderRadius`: a number that specifies the border radius of the hamburger menu container. <br>
+- - `hamburgerMenuContainerPadding`: a number that specifies the padding of the hamburger menu container.<br>
+- - `hamburgerMenuTopWidth`: a number that specifies the top width of the hamburger menu. <br>
+- - `hamburgerMenuMiddleWidth`: a number that specifies the middle width of the hamburger menu. <br>
+- - `hamburgerMenuBottomWidth`: a number that specifies the bottom width of the hamburger menu. <br>
+- - `hamburgerMenuHeight`: a number that specifies the height of the hamburger menu. <br>
+- - `hamburgerMenuBgColor`: a string that specifies the background color of the hamburger menu. <br>
+- - `hamburgerMenuSpace`: a number that specifies the space of the hamburger menu. <br>
+- - `hamburgerMenuBorderRadius`: a number that specifies the border radius of the hamburger menu. <br>
+- - `hamburgerMenuClosedIconWidth`: a number that specifies the of the hamburger menu. <br>
+- - `hamburgerMenuTransitionDuration`: a number that specifies the transition duration of the hamburger menu. <br>
+- - `hamburgerMenuContainerXPadding`: a number that specifies the right and left padding of the hamburger menu container. <br>
+- - `hamburgerMenuTransform`: one of the following options that specifies the transformation of the hamburger menu: <br>
+- - - scale(-1, 1) <br>
+- - - scale(1, 1) <br>
+- - - scale(1, -1) <br>
+- - - scale(-1, -1) <br>
 
-**Example** <br>
+#### Example
 
 ```
 const cssConfigShape = {
     hamburgerMenuBgColor = 'white'
 }
 const [iconToggler, setIconToggler] = useState(true);
-
 <HamburgerIcon
     iconToggler={true}
     onOpenedIconClick={() => console.log("Open")}
@@ -287,12 +299,11 @@ const [iconToggler, setIconToggler] = useState(true);
     cssConfig={cssConfigShape}
 />
 <button onClick={()=>setIconToggler(true)}> </button>
-
 ```
 
 <hr>
 
-### [Desktop Navbar](https://github.com/mmmohajer/baseDesign/tree/master/src/components/NavBar)
+### DesktopNavbar
 
 4 components are provided in this section that should be used in a nested way to create a fully flexible desktop navbar. <br>
 The order of nesting of these components is as follows: <br>
@@ -310,22 +321,23 @@ The order of nesting of these components is as follows: <br>
  </NavBar>
 ```
 
-**1. [NavBar](https://github.com/mmmohajer/baseDesign/blob/master/src/components/NavBar/NavBar.js)**
-This is the container for all components in the navbar (For example the Logo, menu, and register button), also It is fully responsive. you can use our SCSS classes for styling this component. <br>
-**2. [NavItem](https://github.com/mmmohajer/baseDesign/blob/master/src/components/NavBar/subs/NavItem.js)**
+#### 1. NavBar
+This is the container for all components in the navbar (For example the Logo, menu, and register button), also It is fully responsive. you can use our SCSS classes for styling this component.
+#### 2. NavItem
 Using this component you can create your menu. Available prop for this component is:  
 **- isActive**: This prop gets a boolean value indicating whether the navItem is active or not. There is a SCSS class for active NavItem(`iswad_navItem_active`).<br>
-**3. [SubNavContainer](https://github.com/mmmohajer/baseDesign/blob/master/src/components/NavBar/subs/SubNavContainer.js)**
+#### 3. SubNavContainer
 This is a wrapper around the SubNavItem components and creates your submenu area. Available prop for this component is:
 **- isActive**: This is a boolean value indicating which SCSS class should be used for this component.(`iswad_subNavContainer_noActive` or `iswad_subNavContainer_active`).<br>
-**4. [SubNavItem](https://github.com/mmmohajer/baseDesign/blob/master/src/components/NavBar/subs/SubNavItem.js)**:
-Using this component you can create submenus for each NavItem. This component uses `iswad_subNavItem` SCSS class as style.
-**Example**<br>
+#### 4. SubNavItem
+Using this component you can create submenus for each NavItem. This component uses `iswad_subNavItem` SCSS class as style.<br>
+
+#### Example
 For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/DesktopNav.js).
 
 <hr>
 
-### [Mobile Navbar](https://github.com/mmmohajer/baseDesign/tree/master/src/components/MobNav)
+### MobileNavbar
 
 4 component are provided in this section which should be used in a nested way to create a fully flexible mobile navbar.
 The order of nesting of these components is as follows:
@@ -343,42 +355,69 @@ The order of nesting of these components is as follows:
  </MobNav>
 ```
 
-**1. [MobNav](https://github.com/mmmohajer/baseDesign/blob/master/src/components/MobNav/MobNav.js)**
+#### 1. MobNav
 This is the container for all components in the navbar (For example the menu, and register button), also It is fully responsive. you can use our SCSS classes for styling this component. <br>
-**2. [MobNavItem](https://github.com/mmmohajer/baseDesign/blob/master/src/components/MobNav/subs/MobNavItem.js)**
+#### 2. MobNavItem
 Using this component you can create your navigation bar. Available prop for this component is:
-**- isActive**: This prop gets a boolean value indicating whether the MobnavItem is active or not. There is a SCSS class for active MobNavItem(`iswad_mobNavItem_active`).<br>
-**3. [MobSubNavContainer](https://github.com/mmmohajer/baseDesign/blob/master/src/components/MobNav/subs/MobSubNavContainer.js)**
+- **isActive**: This prop gets a boolean value indicating whether the MobnavItem is active or not. There is a SCSS class for active MobNavItem(`iswad_mobNavItem_active`).<br>
+#### 3. MobSubNavContainer
 This is a wrapper around the MobSubNavItem components. Available prop for this component is:
-**- isActive**: This is a boolean value indicating which SCSS class should be used for this component.(`iswad_mobSubNavContainer_noActive` or `iswad_mobSubNavContainer_active`).<br>
-**4. [MobSubNavItem](https://github.com/mmmohajer/baseDesign/blob/master/src/components/MobNav/subs/MobSubNavItem.js)**
-Using this component you can create submenus for each MobNavItem. This component uses `iswad_mobSubNavItem` SCSS class as style.
-**Example**<br>
+- **isActive**: This is a boolean value indicating which SCSS class should be used for this component.(`iswad_mobSubNavContainer_noActive` or `iswad_mobSubNavContainer_active`).<br>
+#### 4. MobSubNavItem
+Using this component you can create submenus for each MobNavItem. This component uses `iswad_mobSubNavItem` SCSS class as style.<br>
+
+#### Example
 For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/MobileNav.js).
 
 <hr>
 
-### [Flexible Carousel](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel) <br>
+### Table
 
-This is a flexible Carousel that contain two components, <br>
+Using this component you can create a flexible table. Available props for this component are: <br>
 
-**1. [Carousel](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel) <br>
-The carousel component is a container of all carousel items, and the props for this component are: <br>
-**- moveRight**: this is a boolean prop that activates the right movement by default `false` but when we change it to `true` the item start moving to the right. <br>
-**- setMoveRight\*\*: this is a function that reset the move right prop.<br>
+- **headLines**: This prop indicates the table headings. This prop has the following features:<br>
+- - **value**: This is the variable in your data. <br>
+- - **display**: This is the text that will be shown in the table header for this value. <br>
+- - **isSortable**: This is a boolean variable indicating whether or not the column should be sortable. <br>
+- - **hasSearch**: This is a boolean variable indicating whether or not the column should has search component. <br>
+- - **example**: <br>
 
-**- moveLeft**: this is a boolean prop that activates the left movement by default `false` but when we change it to `true` the item start moving to the left.<br>
-**- setMoveLeft**: this is a function that reset the move left prop. <br>
+```
+const headLines = [
+    {
+        value: "user_name",
+        display: "Username",
+        width: 300,
+        hasSearch: true,
+        isSortable: true,
+    },
+    "password",
+];
+```
+- **data**: This prop indicates the data that will be displayed in the table. <br>
+- **colWidth**: This prop indicates the default width of the columns.<br>
+- **isSelectable**: This prop indicates whether rows of the table are selectable or not. When this prop is true then a checkbox appears in the right side of the table for selecting rows. <br>
+- **search**: we have an default search component but if you want to use your one you should pass a functional component to this prop. <br>
+- **selectedData**: This is the data which have been selected.<br>
+- **setSelectedData**: This is the data that you want to select.<br>
+- **sortIconColors**: Using this prop you can choose different colors for sort icon in this states : <br>
+- - **ASC** (ascending)<br>
+- - **REG** (regular)<br>
+- - **DESC** (descending)<br>
+- **rowsPerPage**: This prop indicates the number of rows per page. <br>
+- **currentPage**: This prop is a number that indicates the current page. <br>
+- **setCurrentPage**: Using this prop you can set a number as the current page of table. <br>
+- **showDefaultPagination**: This prop indicates whether the default pagination should be shown or not. If you want to use your custom pagination component set this false otherwise true. <br>
+- **numberOfShownPages**: This prop indicates the number of page that should be shown. <br>
 
-**- moveToItemWithNum**: this is an integer prop that takes the element's id that we want to access, by default `1` the current element. <br>
-**- setMoveToItemWithNum**: this is a function that change the moveToItemWithNum value <br>
-**- transitionDuration**:this is a number prop that change the duration of transition by default `0.3` <br>
-**- transition_timing_function**:this is a prop that take one of these `ease`,`linear`,`ease-in`,`ease-out`,`ease-in-out`,`inherit` as value to define how the transition work .<br>
+#### Example
+For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestTable/TestTable.js).
 
-\*\*2. [CarouselItem](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Carousel/subs) <br>
-Using this component you can create the carousel items also It is fully responsive. you can use our SCSS classes for styling this component. <br>
+<hr>
 
-The order of nesting of these components is as follows:
+### Carousel
+
+This is a flexible Carousel that contains two components. The nesting order of these components is as follows:
 
 ```
       const [moveLeft, setMoveLeft] = useState(false);
@@ -402,18 +441,52 @@ The order of nesting of these components is as follows:
       <button onClick={() => setMoveToItemWithNum(4)}>Jump To number 4</button>
 ```
 
+#### 1. Carousel
+The carousel component is a container of all carousel items, and the props of this component are: <br>
+
+- **moveRight**: this is a boolean prop that activates the right movement by default `false` but when we change it to `true` the item start moving to the right. <br>
+- **setMoveRight**: this is a function that reset the move right prop.<br>
+
+- **moveLeft**: this is a boolean prop that activates the left movement by default `false` but when we change it to `true` the item start moving to the left.<br>
+- **setMoveLeft**: this is a function that reset the move left prop. <br>
+
+- **moveToItemWithNum**: this is an integer prop that takes the element's id that we want to access, by default `1` the current element. <br>
+- **setMoveToItemWithNum**: this is a function that change the moveToItemWithNum value <br>
+- **transitionDuration**:this is a number prop that change the duration of transition by default `0.3` <br>
+- **transition_timing_function**:this is a prop that take one of these `ease`,`linear`,`ease-in`,`ease-out`,`ease-in-out`,`inherit` as value to define how the transition work .<br>
+
+#### 2. CarouselItem
+
+Using this component you can create the carousel items also It is fully responsive. you can use our SCSS classes for styling this component. <br>
+#### Example
+For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestCaraousel/TestCaraousel.js).
+
 <hr>
 
-### [Flexible Div](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Div) <br>
+### Div
 
-This is a flexible Div that gives you some options to make the basic style of a div easier, <br><br>
-The props for this component are:
+This is a flexible Div that provides you some options to make the basic style of a div easier. <br>
+The order of nesting of this component is as follows:
 
-**- type**: this is a prop that takes `flex` or `block` as the value of display, by default `block` <br>
+```
+    <Div
+        type="flex"
+        direction="horizontal"
+        hAlign="center"
+        vAlign="center"
+        distributedAround
+        className="bgRed height-px-400"
+      >
+        ...
+    </Div>
+```
 
-**- direction**: this is a prop that takes one of the two values `horizontal` to have div with a flex-direction row or `vertical` to have div with a flex-direction column, by default `horizontal` <br>
+The props of this component are: <br>
 
-**- hAlign**: 'Horizontal Align' this is a prop that takes one of the three values and each value depends on the direction, by default `start`
+- **type**: this is a prop that takes `flex` or `block` as the value of display, by default `block` <br>
+- **direction**: this is a prop that takes one of the two values `horizontal` to have div with a flex-direction row or `vertical` to have div with a flex-direction column, by default `horizontal` <br>
+
+- **hAlign**: 'Horizontal Align' this is a prop that takes one of the three values and each value depends on the direction, by default `start`
 
 - `center`:
 - - In `vertical` direction **hAlign** play the rule of `align-items : center`. <br>
@@ -427,11 +500,12 @@ The props for this component are:
 - - In `vertical` direction **hAlign** play the rule of `align-items : start`. <br>
 - - In `horizontal` direction **hAlign** play the rule of `justify-content : start`. <br><br>
 
-**- vAlign**: 'Vertical Align' this is a prop that takes three values and each value depends on the direction, by default `start`
+- **vAlign**: 'Vertical Align' this is a prop that takes three values and each value depends on the direction, by default `start`
 
 - `center`:
 - - In `horizontal` direction **hAlign** play the rule of `align-items : center`. <br>
 - - In `vertical` direction **hAlign** play the rule of `justify-content : center`. <br><br>
+
 - `end`:
 - - In `horizontal` direction **hAlign** play the rule of `align-items : end`. <br>
 - - In `vertical` direction **hAlign** play the rule of `justify-content : end`. <br><br>
@@ -440,37 +514,17 @@ The props for this component are:
 - - In `horizontal` direction **hAlign** play the rule of `align-items : start`. <br>
 - - In `vertical` direction **hAlign** play the rule of `justify-content : start`. <br><br>
 
-**- textAlign**: this is a prop that takes one of the three values ` centre` to make the text at the centre or `left` to make the text at the left or `right` to make the text at the right, by default `left` <br>
-**- distributedBetween**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-between`, by default `false` <br>
-**- distributedAround**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-around`, by default `false` <br>
-**- className**:this is a prop where you could include more styling <br>
-
-The order of nesting of these components is as follows:
-
-```
-    <Div
-        type="flex"
-        direction="horizontal"
-        hAlign="center"
-        vAlign="center"
-        distributedAround
-        className="bgRed height-px-400"
-      >
-        .......
-    </Div>
-```
+- **textAlign**: this is a prop that takes one of the three values ` centre` to make the text at the centre or `left` to make the text at the left or `right` to make the text at the right, by default `left` <br>
+- **distributedBetween**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-between`, by default `false` <br>
+- **distributedAround**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-around`, by default `false` <br>
+- **className**:this is a prop where you could include more styling <br>
 
 <hr>
 
-### [Flexible Modal](https://github.com/mmmohajer/baseDesign/tree/master/src/components/Modal) <br>
+### Modal
 
-This is a flexible Modal that gives you some options to make the basic style of a Modal easier, <br><br>
-The props for this component are:
-
-**- fullHeightclassName**: this is a prop that gives you the hand to add more styling to your full-screen background <br>
-**- className**: this is a prop that gives you the hand to add more styling to your Modal <br>
-
-The order of nesting of these components is as follows:
+This is a flexible Modal that gives you some options to make the basic style of a Modal easier,
+The order of nesting of this component is as follows:
 
 ```
     <Modal>
@@ -478,40 +532,142 @@ The order of nesting of these components is as follows:
     </Modal>
 ```
 
+The props of this component are: <br>
+
+- **fullHeightclassName**: this is a prop that gives you the hand to add more styling to your full-screen background <br>
+- **className**: this is a prop that gives you the hand to add more styling to your Modal <br>
+
 <hr>
 
-## Modifialble CSS Classes:
+### AdminNavbar
 
-iswad_adminNav <br>
-iswad_adminNav_active <br>
-iswad_adminNavItem <br>
-iswad_adminNavItem_active <br>
-iswad_alert <br>
-iswad_alertItem <br>
-iswad_alertItem_active <br>
-iswad_mobNav <br>
-iswad_mobNav_active <br>
-iswad_mobNavItem <br>
-iswad_mobNavItem_active <br>
-iswad_mobSubNavContainer <br>
-iswad_mobSubNavContainer_noActive <br>
-iswad_mobSubNavContainer_active <br>
-iswad_mobSubNavItem <br>
-iswad_navItem <br>
-iswad_navItem_active <br>
-iswad_subNavContainer <br>
-iswad_subNavContainer_noActive <br>
-iswad_subNavContainer_active <br>
-iswad_subNavItem <br>
-iswad_pagination_item <br>
-iswad_pagination_item_active <br>
-iswad_table <br>
-iswad_table_headContainer <br>
-iswad_table_search <br>
-iswad_th <br>
-iswad_tr <br>
-iswad_td <br>
+This is a flexible Admin Nav that contains two components and provides a basic form of admin nav.
+The order of nesting of these components is as follows:
 
+```
+    <AdminNav isActive={true}>
+      <AdminNavItem>
+        ...
+      </AdminNavItem>
+    </AdminNav>
+```
+
+#### 1. AdminNav
+The AdminNav component is a container of all AdminNav items, and the props of this component are: <br>
+
+- **isActive**: This prop gets a boolean value indicating whether the navItem is active or not.<br>
+- **className**: this is a prop that gives you the hand to add more styling to your AdminNav <br>
+
+#### 2. AdminNavItem
+Using this component you can create the AdminNav items also It is fully responsive. you can use our SCSS classes for styling this component and the props of this component are: <br>
+
+- **isActive**: This prop gets a boolean value indicating whether the navItem is active or not.<br>
+- **className**: this is a prop that gives you the hand to add more styling to your AdminNav <br>
+
+<hr>
+
+### Pagination
+
+This is a flexible Pagination with all its functionality, and gives a basic form of Pagination.
+The order of nesting of this component is as follows:
+
+```
+    const [currentPage, setCurrentPage] = useState(1);
+    <Pagination
+        numberOfShownPages={5}
+        currentPage={currentPage}
+        numberOfTotalPages={25}
+        setCurrentPage={setCurrentPage}
+        showFirstLastIcon={true}
+      />
+```
+
+The clickable icons of this component are:<br>
+
+- **last**: This is an icon that you can use if you want to access the last pages. <br>
+- **first**:This is an icon that you can use if you want to access the first pages. <br>
+
+The props of this component are:
+
+- **numberOfShownPages**:this is an integer prop that takes the number of shown pages. <br>
+- **numberOfTotalPages**:this is an integer prop that takes the number of available pages. <br>
+- **currentPage**:this is an integer prop that takes the id of the current page (The pages' Ids start by 1 not by 0). <br>
+- **setCurrentPage**: this is a function that change the currentPage value. <br>
+- **showFirstLastIcon**: This prop gets a boolean value indicating the presence of the directions icon. <br>
+
+<hr>
+
+### Card
+
+This is a flexible Card with column direction that contain three components and the order of nesting of this component is as follows:
+
+```
+    <Card>
+        <CardHeader>Header</CardHeader>
+        <CardBody>Body</CardBody>
+        <CardFooter>Footer</CardFooter>
+    </Card>
+```
+
+#### 1. CardBody
+#### 2. CardFooter
+#### 3. CardHeader
+
+The prop of these components is: <br>
+- **className**: This is a prop that gives you the hand to add more styling to your Card. <br>
+
+<hr>
+
+### Alert
+
+This is a flexible Alert that contain two components, and provides a basic form of Alert. The order of nesting of these components is as follows:
+
+```
+      <Alert className="...">
+          <AlertItem
+            className="..."
+            isActive=true
+          >
+            ...
+          </AlertItem>
+      </Alert>
+```
+
+#### 1. Alert
+The Alert component is a container of Alert items, you can use our SCSS classes for styling this component and the props of this component are: <br>
+
+- **className**: this is a prop that gives you the hand to add more styling to your Alert. <br>
+#### 2. AlertItem
+Using this component you can create the Alert item also It is fully responsive. you can use our SCSS classes for styling this component and the props of this component are: 
+
+- **isActive**: This prop gets a boolean value indicating whether the Alert is active or not.
+- **className**: this is a prop that gives you the hand to add more styling to your Alert. 
+
+
+<hr>
+
+### Paragraph 
+This is a flexible `<p>` that gives you some options to make the basic style of a `<p>` easier and also makes your code more consistent. 
+
+#### Example 
+``` 
+  <Div>
+    <Paragraph> This is some text in a paragraph. </Paragraph>
+  <Div>
+```
+<hr>
+
+### Text 
+This is a flexible `<span>` that gives you some options to make the basic style of a `<span>` easier and also makes your code more consistent. Text is an inline element while Div is a block-level element.
+#### Example 
+``` 
+  <Div>
+    Hello
+    <Text className="...">
+      World!!
+    </Text>
+  <Div>
+```
 <hr>
 
 ## License
