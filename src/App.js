@@ -11,6 +11,7 @@ import TestAdminNav from "TestComponents/TestAdminNav";
 import TestDiv from "TestComponents/TestDiv";
 import TestCard from "TestComponents/TestCard";
 import TestTable from "TestComponents/TestTable";
+import TestHeading from "TestComponents/TestHeading";
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -27,6 +28,9 @@ const Home = () => {
       <TestModal /> */}
       {/* <TestAdminNav /> */}
       <TestDiv />
+      <div className="ml3">
+        <TestHeading />
+      </div>
       <TestCard />
       <img
         src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/000000/external-woman-back-to-school-vitaliy-gorbachev-lineal-color-vitaly-gorbachev-2.png"
