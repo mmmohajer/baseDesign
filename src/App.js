@@ -14,12 +14,16 @@ import TestTable from "TestComponents/TestTable";
 import TestHeading from "TestComponents/TestHeading";
 import TestImage from "TestComponents/TestImage";
 import TestParagraph from "TestComponents/TestParagraph";
+import TestText from "TestComponents/TestText";
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
   return (
     <div className="container">
       <TestNavBar />
+      <div>
+        <TestText />
+      </div>
       <div className="flex flex--jc--center p2 flex--ai--center w-per-100 flex--wrap bgYellow">
         <TestIcon />
       </div>
