@@ -10,7 +10,9 @@ import Carousel from "./components/Carousel";
 import CarouselItem from "./components/Carousel/subs/CarouselItem";
 import Div from "./components/Div";
 import HamburgerIcon from "./components/HamburgerIcon";
+import Heading from "./components/Heading";
 import Icon from "./components/Icon";
+import Image from "./components/Image";
 import MobNav from "./components/MobNav";
 import MobNavItem from "./components/MobNav/subs/MobNavItem";
 import MobSubNavContainer from "./components/MobNav/subs/MobSubNavContainer";
@@ -20,6 +22,10 @@ import NavBar from "./components/NavBar";
 import NavItem from "./components/NavBar/subs/NavItem";
 import SubNavContainer from "./components/NavBar/subs/SubNavContainer";
 import SubNavItem from "./components/NavBar/subs/SubNavItem";
+import Pagination from "./components/Pagination";
+import Paragraph from "./components/Paragraph";
+import Table from "./components/Table";
+import Text from "./components/Text";
 
 export {
   AdminNav,
@@ -34,7 +40,9 @@ export {
   CarouselItem,
   Div,
   HamburgerIcon,
+  Heading,
   Icon,
+  Image,
   MobNav,
   MobNavItem,
   MobSubNavContainer,
@@ -44,4 +52,8 @@ export {
   NavItem,
   SubNavContainer,
   SubNavItem,
+  Pagination,
+  Paragraph,
+  Table,
+  Text,
 };
