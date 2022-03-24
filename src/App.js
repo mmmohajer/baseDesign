@@ -11,6 +11,7 @@ import TestAdminNav from "TestComponents/TestAdminNav";
 import TestDiv from "TestComponents/TestDiv";
 import TestCard from "TestComponents/TestCard";
 import TestTable from "TestComponents/TestTable";
+import TestImage from "TestComponents/TestImage";
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -19,6 +20,9 @@ const Home = () => {
       <TestNavBar />
       <div className="flex flex--jc--center p2 flex--ai--center w-per-100 flex--wrap bgYellow">
         <TestIcon />
+      </div>
+      <div className="flex flex--jc--center my2">
+      <TestImage />
       </div>
       <div className="w-px-400 ml-auto mr-auto">
         <TestCaraousel />
