@@ -13,6 +13,7 @@ import TestCard from "TestComponents/TestCard";
 import TestTable from "TestComponents/TestTable";
 import TestHeading from "TestComponents/TestHeading";
 import TestImage from "TestComponents/TestImage";
+import TestParagraph from "TestComponents/TestParagraph";
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
       <div className="flex flex--jc--center my2">
         <TestImage />
       </div>
+      <TestParagraph />
       <div className="w-px-400 ml-auto mr-auto">
         <TestCaraousel />
       </div>
