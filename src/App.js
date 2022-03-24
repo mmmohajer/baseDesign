@@ -11,12 +11,16 @@ import TestAdminNav from "TestComponents/TestAdminNav";
 import TestDiv from "TestComponents/TestDiv";
 import TestCard from "TestComponents/TestCard";
 import TestTable from "TestComponents/TestTable";
+import TestText from "TestComponents/TestText";
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
   return (
     <div className="container">
       <TestNavBar />
+      <div>
+        <TestText />
+      </div>
       <div className="flex flex--jc--center p2 flex--ai--center w-per-100 flex--wrap bgYellow">
         <TestIcon />
       </div>
