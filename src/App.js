@@ -11,11 +11,8 @@ import TestAdminNav from "TestComponents/TestAdminNav";
 import TestDiv from "TestComponents/TestDiv";
 import TestCard from "TestComponents/TestCard";
 import TestTable from "TestComponents/TestTable";
-<<<<<<< HEAD
 import TestHeading from "TestComponents/TestHeading";
-=======
 import TestImage from "TestComponents/TestImage";
->>>>>>> e95c865561c126170c39a800b0f03f5b804a38bd
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -26,7 +23,7 @@ const Home = () => {
         <TestIcon />
       </div>
       <div className="flex flex--jc--center my2">
-      <TestImage />
+        <TestImage />
       </div>
       <div className="w-px-400 ml-auto mr-auto">
         <TestCaraousel />
