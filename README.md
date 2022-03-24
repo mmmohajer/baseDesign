@@ -38,6 +38,7 @@ In order to work with our components, you can import them as follows: <br>
 `text-ltr` --> Align: left to right<br>
 `text-rtl` --> Align: right to left <br>
 `text-center` --> Align: center<br>
+`text-justify` --> Align: justify<br>
 Sample: `<div class="text-ltr">Hello</div>`
 
 <hr>
