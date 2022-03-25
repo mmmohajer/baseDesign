@@ -11,7 +11,7 @@ import CarouselItem from "./components/Carousel/subs/CarouselItem";
 import Div from "./components/Div";
 import HamburgerIcon from "./components/HamburgerIcon";
 import Heading from "./components/Heading";
-// import Icon from "./components/Icon";
+import Icon from "./components/Icon";
 import Image from "./components/Image";
 import MobNav from "./components/MobNav";
 import MobNavItem from "./components/MobNav/subs/MobNavItem";
@@ -41,7 +41,7 @@ export {
   Div,
   HamburgerIcon,
   Heading,
-  // Icon,
+  Icon,
   Image,
   MobNav,
   MobNavItem,
