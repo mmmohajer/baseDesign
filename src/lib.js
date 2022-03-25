@@ -24,7 +24,7 @@ import SubNavContainer from "./components/NavBar/subs/SubNavContainer";
 import SubNavItem from "./components/NavBar/subs/SubNavItem";
 // import Pagination from "./components/Pagination";
 import Paragraph from "./components/Paragraph";
-import Table from "./components/Table";
+// import Table from "./components/Table";
 import Text from "./components/Text";
 
 export {
@@ -54,6 +54,6 @@ export {
   SubNavItem,
   // Pagination,
   Paragraph,
-  Table,
+  // Table,
   Text,
 };
