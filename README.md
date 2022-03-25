@@ -23,6 +23,7 @@ This repository is designed in order to develop basic components and create hand
 - - [Pagination](#pagination)
 - - [Card](#card)
 - - [Alert](#alert)
+- [Editable Css Classes](#editable-css-classes)
 - [License](#license)
 
 ## Installation
@@ -704,6 +705,69 @@ This is a flexible `<span>` that gives you some options to make the basic style 
     </Text>
   <Div>
 ```
+
+<hr>
+
+## Editable Css Classes
+
+These editable css classes can change the styles of pre-defined components by ISWAD
+
+### AdminNav
+
+`.iswad_adminNav`
+`.iswad_adminNav_active`
+`.iswad_adminNavItem`
+`.iswad_adminNavItem_active`
+
+<hr>
+
+### Alert
+
+`.iswad_alert_container`
+`.iswad_alert_item`
+`.iswad_alert_item_active`
+
+<hr>
+
+### Mobile Navbar
+
+`.iswad_mobNav`
+`.iswad_mobNav_active`
+`.iswad_mobNavItem`
+`.iswad_mobNavItem_active`
+`.iswad_mobSubNavContainer`
+`.iswad_mobSubNavContainer_noActive`
+`.iswad_mobSubNavContainer_active`
+`.iswad_mobSubNavItem`
+
+<hr>
+
+### Desktop Navbar
+
+`.iswad_navItem`
+`.iswad_navItem_active`
+`.iswad_subNavContainer`
+`.iswad_subNavContainer_noActive`
+`.iswad_subNavContainer_active`
+`.iswad_subNavItem`
+
+<hr>
+
+### Pagination
+
+`.iswad_pagination`
+`.iswad_pagination_item`
+`.iswad_pagination_item_active`
+
+<hr>
+
+### Table
+
+`.iswad_table`
+`.iswad_table_search`
+`.iswad_td`
+`.iswad_th`
+`.iswad_tr`
 
 <hr>
 
