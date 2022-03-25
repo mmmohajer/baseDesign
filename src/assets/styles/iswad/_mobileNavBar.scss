@@ -1,0 +1,33 @@
+.iswad_mobNav {
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+
+  &_active {
+    transform: translateX(0);
+  }
+}
+
+.iswad_mobNavItem,
+.iswad_mobSubNavItem {
+  &:hover {
+    border-color: $primaryColor;
+    background: rgba($primaryColor, 0.1);
+    color: $primaryColor;
+  }
+  &_active {
+    border-color: $primaryColor;
+    background: linear-gradient(
+      rgba($primaryColor, 0.2),
+      rgba($primaryColor, 0.3)
+    );
+    color: $primaryColor !important;
+  }
+}
+
+.iswad_mobSubNavContainer {
+  display: none;
+
+  &_active {
+    display: flex;
+  }
+}

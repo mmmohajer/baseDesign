@@ -23,7 +23,7 @@ const MobSubNavContainer = ({ children, className, isActive, ...props }) => {
         ref={(el) => (SubNavContainerElement.current = el)}
         {...props}
         className={cx(
-          "flex flex--dir--col iswad_mobSubNavContainer iswad_mobSubNavContainer_noActive",
+          "flex flex--dir--col iswad_mobSubNavContainer",
           className
         )}
       >

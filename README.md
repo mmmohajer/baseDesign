@@ -334,7 +334,7 @@ Using this component you can create your menu. Available prop for this component
 #### 3. SubNavContainer
 
 This is a wrapper around the SubNavItem components and creates your submenu area. Available prop for this component is:
-**- isActive**: This is a boolean value indicating which SCSS class should be used for this component.(`iswad_subNavContainer_noActive` or `iswad_subNavContainer_active`).<br>
+**- isActive**: This is a boolean value <br>
 
 #### 4. SubNavItem
 
@@ -378,7 +378,7 @@ Using this component you can create your navigation bar. Available prop for this
 
 This is a wrapper around the MobSubNavItem components. Available prop for this component is:
 
-- **isActive**: This is a boolean value indicating which SCSS class should be used for this component.(`iswad_mobSubNavContainer_noActive` or `iswad_mobSubNavContainer_active`).<br>
+- **isActive**: This is a boolean value <br>
 
 #### 4. MobSubNavItem
 
@@ -736,7 +736,6 @@ These editable css classes can change the styles of pre-defined components by IS
 `.iswad_mobNavItem` <br>
 `.iswad_mobNavItem_active` <br>
 `.iswad_mobSubNavContainer` <br>
-`.iswad_mobSubNavContainer_noActive` <br>
 `.iswad_mobSubNavContainer_active` <br>
 `.iswad_mobSubNavItem` <br>
 
@@ -747,7 +746,6 @@ These editable css classes can change the styles of pre-defined components by IS
 `.iswad_navItem` <br>
 `.iswad_navItem_active` <br>
 `.iswad_subNavContainer` <br>
-`.iswad_subNavContainer_noActive` <br>
 `.iswad_subNavContainer_active` <br>
 `.iswad_subNavItem` <br>
 
@@ -764,6 +762,7 @@ These editable css classes can change the styles of pre-defined components by IS
 ### Table
 
 `.iswad_table` <br>
+`.iswad_table_headContainer` <br>
 `.iswad_table_search` <br>
 `.iswad_td` <br>
 `.iswad_th` <br>
