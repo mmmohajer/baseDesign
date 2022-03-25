@@ -8,8 +8,8 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 import Th from "./subs/Th";
 import Tr from "./subs/tr";
 import Td from "./subs/Td";
-import Icon from "Components/Icon";
-import Pagination from "Components/Pagination";
+import Icon from "../Icon";
+import Pagination from "../Pagination";
 import propTypes from "prop-types";
 
 const Table = ({
