@@ -2,8 +2,6 @@ import React from "react";
 import cx from "classnames";
 import PropTypes from "prop-types";
 
-import styles from "./Icon.module.scss";
-
 import allowedProps from "Utils/allowedProps";
 import defaultPropsMap from "Constants/defaultProps";
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
