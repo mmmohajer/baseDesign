@@ -22,7 +22,7 @@ import NavBar from "./components/NavBar";
 import NavItem from "./components/NavBar/subs/NavItem";
 import SubNavContainer from "./components/NavBar/subs/SubNavContainer";
 import SubNavItem from "./components/NavBar/subs/SubNavItem";
-// import Pagination from "./components/Pagination";
+import Pagination from "./components/Pagination";
 import Paragraph from "./components/Paragraph";
 // import Table from "./components/Table";
 import Text from "./components/Text";
@@ -52,7 +52,7 @@ export {
   NavItem,
   SubNavContainer,
   SubNavItem,
-  // Pagination,
+  Pagination,
   Paragraph,
   // Table,
   Text,

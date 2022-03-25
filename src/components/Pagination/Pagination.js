@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import defaultPropsMap from "Constants/defaultProps";
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import Icon from "Components/Icon";
+import Icon from "../Icon";
 
 const Pagination = ({
   numberOfShownPages,
