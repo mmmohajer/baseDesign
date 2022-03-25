@@ -714,60 +714,60 @@ These editable css classes can change the styles of pre-defined components by IS
 
 ### AdminNav
 
-`.iswad_adminNav`
-`.iswad_adminNav_active`
-`.iswad_adminNavItem`
-`.iswad_adminNavItem_active`
+`.iswad_adminNav` <br>
+`.iswad_adminNav_active` <br>
+`.iswad_adminNavItem` <br>
+`.iswad_adminNavItem_active` <br>
 
 <hr>
 
 ### Alert
 
-`.iswad_alert_container`
-`.iswad_alert_item`
-`.iswad_alert_item_active`
+`.iswad_alert_container` <br>
+`.iswad_alert_item` <br>
+`.iswad_alert_item_active` <br>
 
 <hr>
 
 ### Mobile Navbar
 
-`.iswad_mobNav`
-`.iswad_mobNav_active`
-`.iswad_mobNavItem`
-`.iswad_mobNavItem_active`
-`.iswad_mobSubNavContainer`
-`.iswad_mobSubNavContainer_noActive`
-`.iswad_mobSubNavContainer_active`
-`.iswad_mobSubNavItem`
+`.iswad_mobNav` <br>
+`.iswad_mobNav_active` <br>
+`.iswad_mobNavItem` <br>
+`.iswad_mobNavItem_active` <br>
+`.iswad_mobSubNavContainer` <br>
+`.iswad_mobSubNavContainer_noActive` <br>
+`.iswad_mobSubNavContainer_active` <br>
+`.iswad_mobSubNavItem` <br>
 
 <hr>
 
 ### Desktop Navbar
 
-`.iswad_navItem`
-`.iswad_navItem_active`
-`.iswad_subNavContainer`
-`.iswad_subNavContainer_noActive`
-`.iswad_subNavContainer_active`
-`.iswad_subNavItem`
+`.iswad_navItem` <br>
+`.iswad_navItem_active` <br>
+`.iswad_subNavContainer` <br>
+`.iswad_subNavContainer_noActive` <br>
+`.iswad_subNavContainer_active` <br>
+`.iswad_subNavItem` <br>
 
 <hr>
 
 ### Pagination
 
-`.iswad_pagination`
-`.iswad_pagination_item`
-`.iswad_pagination_item_active`
+`.iswad_pagination` <br>
+`.iswad_pagination_item` <br>
+`.iswad_pagination_item_active` <br>
 
 <hr>
 
 ### Table
 
-`.iswad_table`
-`.iswad_table_search`
-`.iswad_td`
-`.iswad_th`
-`.iswad_tr`
+`.iswad_table` <br>
+`.iswad_table_search` <br>
+`.iswad_td` <br>
+`.iswad_th` <br>
+`.iswad_tr` <br>
 
 <hr>
 
