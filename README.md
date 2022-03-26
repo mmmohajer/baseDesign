@@ -12,22 +12,22 @@ This repository is designed in order to develop basic components and create hand
 - [Usage](#usage)
 - [Classes](#classes)
 - [Components](#components)
- - [AdminNavbar](#adminnavbar)
- - [Alert](#alert)
- - [Card](#card)
- - [Carousel](#carousel)
- - [DesktopNavbar](#desktopnavbar)
- - [Div](#div)
- - [HamburgerIcon](#hamburgericon)
- - [Heading](#heading)
- - [Icon](#icon)
- - [Image](#image)
- - [MobileNavbar](#mobilenavbar)
- - [Modal](#modal)
- - [Pagination](#pagination)
- - [Paragraph](#paragraph)
- - [Table](#table)
- - [Text](#text)
+  - [AdminNavbar](#adminnavbar)
+  - [Alert](#alert)
+  - [Card](#card)
+  - [Carousel](#carousel)
+  - [DesktopNavbar](#desktopnavbar)
+  - [Div](#div)
+  - [HamburgerIcon](#hamburgericon)
+  - [Heading](#heading)
+  - [Icon](#icon)
+  - [Image](#image)
+  - [MobileNavbar](#mobilenavbar)
+  - [Modal](#modal)
+  - [Pagination](#pagination)
+  - [Paragraph](#paragraph)
+  - [Table](#table)
+  - [Text](#text)
 - [Editable Css Classes](#editable-css-classes)
 - [License](#license)
 
@@ -257,6 +257,7 @@ The order of nesting of these components is as follows:
       </AdminNavItem>
     </AdminNav>
 ```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestAdminNav/TestAdminNav.js).
 
 #### 1. AdminNav
 
@@ -274,21 +275,6 @@ Using this component you can create the AdminNav items also It is fully responsi
 
 <hr>
 
-### Icon
-
-This component is used in order to add icons to your project, and the props of this component are: <br>
-**- type**: The type of the icon. One of the following options: <br>
-`[search]` <br>
-**- fill**: Filling color of the icon as a string (It can be a hex color or a color name) <br>
-**- stroke**: Stroke color of the icon, as a string (It can be a hex color or a color name) <br>
-**- scale**: Determine the scale/size of the icon. An integer value can be passes as a value to this prop. <br>
-
-#### Example
-
-`<Icon type="search" fill="black" stroke="black" scale={1} />` <br>
-
-<hr>
-
 ### Alert
 
 This is a flexible Alert that contain two components, and provides a basic form of Alert. The order of nesting of these components is as follows:
@@ -303,6 +289,7 @@ This is a flexible Alert that contain two components, and provides a basic form 
           </AlertItem>
       </Alert>
 ```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestAlert/TestAlert.js).
 
 #### 1. Alert
 
@@ -330,6 +317,7 @@ This is a flexible Card with column direction that contain three components and 
         <CardFooter>Footer</CardFooter>
     </Card>
 ```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestCard/TestCard.js).
 
 #### 1. CardBody
 
@@ -369,6 +357,8 @@ This is a flexible Carousel that contains two components. The nesting order of t
       <button onClick={() => setMoveToItemWithNum(4)}>Jump To number 4</button>
 ```
 
+For a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestCaraousel/TestCaraousel.js).
+
 #### 1. Carousel
 
 The carousel component is a container of all carousel items, and the props of this component are: <br>
@@ -387,10 +377,6 @@ The carousel component is a container of all carousel items, and the props of th
 #### 2. CarouselItem
 
 Using this component you can create the carousel items also It is fully responsive. you can use our SCSS classes for styling this component. <br>
-
-#### Example
-
-For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestCaraousel/TestCaraousel.js).
 
 <hr>
 
@@ -413,6 +399,8 @@ The order of nesting of these components is as follows: <br>
  </NavBar>
 ```
 
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/DesktopNav.js).
+
 #### 1. NavBar
 
 This is the container for all components in the navbar (For example the Logo, menu, and register button), also It is fully responsive. you can use our SCSS classes for styling this component.
@@ -431,17 +419,13 @@ This is a wrapper around the SubNavItem components and creates your submenu area
 
 Using this component you can create submenus for each NavItem. This component uses `iswad_subNavItem` SCSS class as style.<br>
 
-#### Example
-
-For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/DesktopNav.js).
-
 <hr>
 
 
 ### Div
 
 This is a flexible Div that provides you some options to make the basic style of a div easier. <br>
-The order of nesting of this component is as follows:
+ This is an example that shows how to use this component:
 
 ```
     <Div
@@ -455,6 +439,7 @@ The order of nesting of this component is as follows:
         ...
     </Div>
 ```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestDiv/TestDiv.js).
 
 The props of this component are: <br>
 
@@ -464,30 +449,30 @@ The props of this component are: <br>
 - **hAlign**: 'Horizontal Align' this is a prop that takes one of the three values and each value depends on the direction, by default `start`
 
 - `center`:
- - In `vertical` direction **hAlign** play the rule of `align-items : center`. <br>
- - In `horizontal` direction **hAlign** play the rule of `justify-content : center`. <br><br>
+  - In `vertical` direction **hAlign** play the rule of `align-items : center`. <br>
+  - In `horizontal` direction **hAlign** play the rule of `justify-content : center`. <br><br>
 
 - `end`:
- - In `vertical` direction **hAlign** play the rule of `align-items : end`. <br>
- - In `horizontal` direction **hAlign** play the rule of `justify-content : end`. <br><br>
+  - In `vertical` direction **hAlign** play the rule of `align-items : end`. <br>
+  - In `horizontal` direction **hAlign** play the rule of `justify-content : end`. <br><br>
 
 - `start`:
- - In `vertical` direction **hAlign** play the rule of `align-items : start`. <br>
- - In `horizontal` direction **hAlign** play the rule of `justify-content : start`. <br><br>
+  - In `vertical` direction **hAlign** play the rule of `align-items : start`. <br>
+  - In `horizontal` direction **hAlign** play the rule of `justify-content : start`. <br><br>
 
 - **vAlign**: 'Vertical Align' this is a prop that takes three values and each value depends on the direction, by default `start`.
 
 - `center`:
- - In `horizontal` direction **hAlign** play the rule of `align-items : center`. <br>
+  - In `horizontal` direction **hAlign** play the rule of `align-items : center`. <br>
  - In `vertical` direction **hAlign** play the rule of `justify-content : center`. <br><br>
 
 - `end`:
- - In `horizontal` direction **hAlign** play the rule of `align-items : end`. <br>
- - In `vertical` direction **hAlign** play the rule of `justify-content : end`. <br><br>
+  - In `horizontal` direction **hAlign** play the rule of `align-items : end`. <br>
+  - In `vertical` direction **hAlign** play the rule of `justify-content : end`. <br><br>
 
 - `start`:
- - In `horizontal` direction **hAlign** play the rule of `align-items : start`. <br>
- - In `vertical` direction **hAlign** play the rule of `justify-content : start`. <br><br>
+  - In `horizontal` direction **hAlign** play the rule of `align-items : start`. <br>
+  - In `vertical` direction **hAlign** play the rule of `justify-content : start`. <br><br>
 
 - **textAlign**: this is a prop that takes one of the three values ` centre` to make the text at the centre or `left` to make the text at the left or `right` to make the text at the right, by default `left` <br>
 - **distributedBetween**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-between`, by default `false` <br>
@@ -498,7 +483,24 @@ The props of this component are: <br>
 
 ### HamburgerIcon
 
-This is a hamburgur icon with a nice animation on click to close and open the icon. Available props of this component are: <br>
+This is a hamburgur icon with a nice animation on click to close and open the icon.
+ This is an example that shows how to use this component:
+
+```
+const cssConfigShape = {
+    hamburgerMenuBgColor = 'white'
+}
+const [iconToggler, setIconToggler] = useState(true);
+<HamburgerIcon
+    iconToggler={true}
+    onOpenedIconClick={() => console.log("Open")}
+    onClosedIconClick={() => console.log("Close")}
+    cssConfig={cssConfigShape}
+/>
+<button onClick={()=>setIconToggler(true)}> </button>
+```
+
+Available props of this component are: <br>
 
 - **onClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the hamburger icon <br>
 - **onOpenedIconClick**: This is a function type prop, that determines what action must happen as soon as a user clicks on the opened hamburger icon <br>
@@ -529,21 +531,23 @@ This is a hamburgur icon with a nice animation on click to close and open the ic
    - scale(1, -1) <br>
    - scale(-1, -1) <br>
 
-#### Example
 
-```
-const cssConfigShape = {
-    hamburgerMenuBgColor = 'white'
-}
-const [iconToggler, setIconToggler] = useState(true);
-<HamburgerIcon
-    iconToggler={true}
-    onOpenedIconClick={() => console.log("Open")}
-    onClosedIconClick={() => console.log("Close")}
-    cssConfig={cssConfigShape}
-/>
-<button onClick={()=>setIconToggler(true)}> </button>
-```
+<hr>
+
+### Icon
+
+This component is used in order to add icons to your project. This is an example that shows how to use this component:<br>
+
+`<Icon type="search" fill="black" stroke="black" scale={1} />` <br>
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestIcon/TestIcon.js).<br>
+
+The props of this component are: <br>
+- **type**: This is the type of icon.
+- **fill**: Filling color of the icon as a string (It can be a hex color or a color name) <br>
+
+Also, each type of icon have other different props as you see in the above example "search" icon has the following props:  
+- **stroke**: Stroke color of the icon, as a string (It can be a hex color or a color name) <br>
+- **scale**: Determine the scale/size of the icon. An integer value can be passes as a value to this prop. <br>
 
 <hr>
 
@@ -564,6 +568,7 @@ The order of nesting of these components is as follows:
       ...
  </MobNav>
 ```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/MobileNav.js).<br>
 
 #### 1. MobNav
 
@@ -585,22 +590,18 @@ This is a wrapper around the MobSubNavItem components. Available prop for this c
 
 Using this component you can create submenus for each MobNavItem. This component uses `iswad_mobSubNavItem` SCSS class as style.<br>
 
-#### Example
-
-For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/MobileNav.js).
-
 <hr>
 
 ### Modal
 
-This is a flexible Modal that gives you some options to make the basic style of a Modal easier,
-The order of nesting of this component is as follows:
+This is a flexible Modal that gives you some options to make the basic style of a Modal easier. This is an example that shows how to use this component:
 
 ```
     <Modal>
         <div>Hello</div>
     </Modal>
 ```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestModal/TestModal.js).<br>
 
 The props of this component are: <br>
 
@@ -612,7 +613,7 @@ The props of this component are: <br>
 ### Pagination
 
 This is a flexible Pagination with all its functionality, and gives a basic form of Pagination.
-The order of nesting of this component is as follows:
+This is an example that shows how to use this component:
 
 ```
     const [currentPage, setCurrentPage] = useState(1);
@@ -624,6 +625,7 @@ The order of nesting of this component is as follows:
         showFirstLastIcon={true}
       />
 ```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestPagination/TestPagination.js).<br>
 
 The clickable icons of this component are:<br>
 
@@ -642,30 +644,54 @@ The props of this component are:
 
 ### Paragraph
 
-This is a flexible `<p>` that gives you some options to make the basic style of a `<p>` easier and also makes your code more consistent. The parameters that it takes are like `<p>`. You can use our SCSS classes for styling using `className` prop as follows: 
+This is a flexible `<p>` that gives you some options to make the basic style of a `<p>` easier and also makes your code more consistent. This is an example that shows how to use this component: <br>
+
+`<Paragraph> This is some text in a paragraph. </Paragraph>`
+
+The props that it takes are like `<p>`. You can use our SCSS classes for styling using `className` prop as follows: 
 - **className**: This is a prop that gives you the hand to add more styling to your Alert.
 
-#### Example
-
-```
-  <Div>
-    <Paragraph> This is some text in a paragraph. </Paragraph>
-  <Div>
-```
 
 <hr>
 
 
 ### Table
 
-Using this component you can create a flexible table. Available props for this component are: <br>
+Using this component you can create a flexible table. This is an example that shows how to use this component: <br>
+```
+  const search = (props) => {
+    return <Search {...props} />;
+  };
 
+  const [selectedData, setSelectedData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  
+      <Table
+        headLines={headLines}
+        data={data}
+        colWidth={400}
+        tableWidth={"2025px"}
+        isSelectable={true}
+        search={search}
+        selectedData={selectedData}
+        setSelectedData={setSelectedData}
+        sortIconColors={{ ASC: "green", DESC: "red", REG: "silver" }}
+        rowsPerPage={10}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        showDefaultPagination={true}
+        numberOfShownPages={5}
+      />
+```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestTable/TestTable.js).<br>
+
+ Available props for this component are: <br>
 - **headLines**: This prop indicates the table headings. This prop has the following features:<br>
  - **value**: This is the variable in your data. <br>
  - **display**: This is the text that will be shown in the table header for this value. <br>
  - **isSortable**: This is a boolean variable indicating whether or not the column should be sortable. <br>
  - **hasSearch**: This is a boolean variable indicating whether or not the column should has search component. <br>
- - **Example**: <br>
+ - **Example for headlines**: <br>
 
     ```
     const headLines = [
@@ -680,7 +706,28 @@ Using this component you can create a flexible table. Available props for this c
     ];
     ```
 
-- **data**: This prop indicates the data that will be displayed in the table. <br>
+- **data**: This prop indicates the data that will be displayed in the table. This is an for data. <br>
+    ```
+    [
+      {
+        "id": 1,
+        "first_name": "Brewer",
+        "last_name": "Archibald",
+        "email": "barchibald0@photobucket.com",
+        "gender": "Agender",
+        "ip_address": "7.23.122.248"
+      },
+      {
+        "id": 2,
+        "first_name": "Harli",
+        "last_name": "Panswick",
+        "email": "hpanswick1@japanpost.jp",
+        "gender": "Male",
+        "ip_address": "242.244.91.66"
+      },
+      ...
+      ]
+    ```
 - **colWidth**: This prop indicates the default width of the columns.<br>
 - **isSelectable**: This prop indicates whether rows of the table are selectable or not. When this prop is true then a checkbox appears in the right side of the table for selecting rows. <br>
 - **search**: we have an default search component but if you want to use your one you should pass a functional component to this prop. <br>
@@ -696,9 +743,6 @@ Using this component you can create a flexible table. Available props for this c
 - **showDefaultPagination**: This prop indicates whether the default pagination should be shown or not. If you want to use your custom pagination component set this false otherwise true. <br>
 - **numberOfShownPages**: This prop indicates the number of page that should be shown. <br>
 
-#### Example
-
-For an example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestTable/TestTable.js).
 
 <hr>
 
