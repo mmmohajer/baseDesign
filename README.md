@@ -727,11 +727,11 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 
  Available props for this component are: <br>
 - **headLines**: This prop indicates the table headings. This prop has the following features:<br>
- - **value**: This is the variable in your data. <br>
- - **display**: This is the text that will be shown in the table header for this value. <br>
- - **isSortable**: This is a boolean variable indicating whether or not the column should be sortable. <br>
- - **hasSearch**: This is a boolean variable indicating whether or not the column should has search component. <br>
- - **Example for headlines**: <br>
+  - **value**: This is the variable in your data. <br>
+  - **display**: This is the text that will be shown in the table header for this value. <br>
+  - **isSortable**: This is a boolean variable indicating whether or not the column should be sortable. <br>
+  - **hasSearch**: This is a boolean variable indicating whether or not the column should has search component. <br>
+  - **Example for headlines**: <br>
 
     ```
     const headLines = [
@@ -774,9 +774,9 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 - **selectedData**: This is the data which have been selected.<br>
 - **setSelectedData**: This is the data that you want to select.<br>
 - **sortIconColors**: Using this prop you can choose different colors for sort icon in this states : <br>
- - **ASC** (ascending)<br>
- - **REG** (regular)<br>
- - **DESC** (descending)<br>
+  - **ASC** (ascending)<br>
+  - **REG** (regular)<br>
+  - **DESC** (descending)<br>
 - **rowsPerPage**: This prop indicates the number of rows per page. <br>
 - **currentPage**: This prop is a number that indicates the current page. <br>
 - **setCurrentPage**: Using this prop you can set a number as the current page of table. <br>
