@@ -1,0 +1,7 @@
+.iswad_alertItem {
+  display: none;
+
+  &_active {
+    display: flex;
+  }
+}

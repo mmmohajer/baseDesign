@@ -1,0 +1,13 @@
+.iswad_adminNav {
+  display: none;
+
+  &_active {
+    display: flex;
+  }
+}
+
+.iswad_adminNavItem {
+  &_active {
+    color: red;
+  }
+}

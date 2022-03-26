@@ -1,0 +1,75 @@
+.btn {
+  border-radius: $btnBorderRadius;
+  padding: $btnPadding;
+  cursor: pointer;
+  font-size: $fontSize;
+  background-color: $btnBgColor;
+
+  @include atSmall {
+    font-size: $fontSmallSize;
+  }
+
+  @include atMedium {
+    font-size: $fontMediumSize;
+  }
+
+  @include atLarge {
+    font-size: $fontLargeSize;
+  }
+
+  &:hover {
+    background-color: $btnColorHover;
+  }
+}
+
+.btn-large {
+  width: $btnLarge;
+
+  @include atSmall {
+    width: $btnSmallSizeLarge;
+  }
+
+  @include atMedium {
+    width: $btnMediumSizeLarge;
+  }
+
+  @include atLarge {
+    width: $btnLargeSizeLarge;
+  }
+}
+
+.btn-medium {
+  width: $btnMedium;
+
+  @include atSmall {
+    width: $btnSmallSizeMedium;
+  }
+
+  @include atMedium {
+    width: $btnMediumSizeMedium;
+  }
+
+  @include atLarge {
+    width: $btnLargeSizeMedium;
+  }
+}
+
+.btn-small {
+  width: $btnSmall;
+
+  @include atSmall {
+    width: $btnSmallSizeSmall;
+  }
+
+  @include atMedium {
+    width: $btnMediumSizeSmall;
+  }
+
+  @include atLarge {
+    width: $btnLargeSizeSmall;
+  }
+}
+
+.btn-full {
+  width: 100%;
+}

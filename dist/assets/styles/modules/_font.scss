@@ -1,0 +1,25 @@
+@each $size in $fontPxArray {
+  .fs-px-#{$size} {
+    font-size: #{$size}px;
+  }
+}
+
+@each $size in $fontRemArray {
+  .fs-r-#{$size} {
+    font-size: #{$size}rem;
+  }
+}
+
+@each $weight in $fontWeightArray {
+  .fw-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+.f-b {
+  font-weight: bold;
+}
+
+.f-i {
+  font-style: italic;
+}

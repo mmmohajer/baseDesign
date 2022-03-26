@@ -1,0 +1,13 @@
+.iswad_alert {
+  &_container {
+    background-color: red;
+  }
+
+  &_item {
+    display: none;
+
+    &_active {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.iswad_table {
+  border: solid 1px black;
+  border-radius: 10px;
+
+  &_headContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_search {
+    padding: 2px 8px;
+    width: 150px;
+  }
+}
+
+.iswad_th {
+  background-color: yellow;
+  border-bottom: solid 1px black;
+}
+
+.iswad_tr {
+  border-bottom: solid 1px black;
+  &:nth-child(odd) {
+    background-color: red;
+  }
+  &:nth-child(even) {
+    background-color: silver;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.iswad_td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: solid 1px black;
+  padding: 8px;
+
+  &:last-child {
+    border-right: none;
+  }
+}
