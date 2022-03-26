@@ -509,27 +509,44 @@ Available props of this component are: <br>
 - **setIconToggler**: This is a function type prop, that is used to set the iconToggler value. This prop should pass to the hamburger menu toggle handler component. <br>
 - **cssConfig**: Using cssConfig you can configure the CSS of the HamburgerIcon. There are different props that you can set. <br>
 
- - `hamburgerMenuContainerWidth`: a number that specifies the width of the hamburger menu container. <br>
- - `hamburgerMenuContainerHeight`: a number that specifies the height of the hamburger menu container. <br>
- - `hamburgerMenuContainerBgColor`: a string that specifies the background color of the hamburger menu container. <br>
- - `hamburgerMenuContainerBorder`: a string that specifies the border of the hamburger menu container. <br>
- - `hamburgerMenuContainerBorderRadius`: a number that specifies the border radius of the hamburger menu container. <br>
- - `hamburgerMenuContainerPadding`: a number that specifies the padding of the hamburger menu container.<br>
- - `hamburgerMenuTopWidth`: a number that specifies the top width of the hamburger menu. <br>
- - `hamburgerMenuMiddleWidth`: a number that specifies the middle width of the hamburger menu. <br>
- - `hamburgerMenuBottomWidth`: a number that specifies the bottom width of the hamburger menu. <br>
- - `hamburgerMenuHeight`: a number that specifies the height of the hamburger menu. <br>
- - `hamburgerMenuBgColor`: a string that specifies the background color of the hamburger menu. <br>
- - `hamburgerMenuSpace`: a number that specifies the space of the hamburger menu. <br>
- - `hamburgerMenuBorderRadius`: a number that specifies the border radius of the hamburger menu. <br>
- - `hamburgerMenuClosedIconWidth`: a number that specifies the of the hamburger menu. <br>
- - `hamburgerMenuTransitionDuration`: a number that specifies the transition duration of the hamburger menu. <br>
- - `hamburgerMenuContainerXPadding`: a number that specifies the right and left padding of the hamburger menu container. <br>
- - `hamburgerMenuTransform`: one of the following options that specifies the transformation of the hamburger menu: <br>
-   - scale(-1, 1) <br>
-   - scale(1, 1) <br>
-   - scale(1, -1) <br>
-   - scale(-1, -1) <br>
+  - `hamburgerMenuContainerWidth`: a number that specifies the width of the hamburger menu container. <br>
+  - `hamburgerMenuContainerHeight`: a number that specifies the height of the hamburger menu container. <br>
+  - `hamburgerMenuContainerBgColor`: a string that specifies the background color of the hamburger menu container. <br>
+  - `hamburgerMenuContainerBorder`: a string that specifies the border of the hamburger menu container. <br>
+  - `hamburgerMenuContainerBorderRadius`: a number that specifies the border radius of the hamburger menu container. <br>
+  - `hamburgerMenuContainerPadding`: a number that specifies the padding of the hamburger menu container.<br>
+  - `hamburgerMenuTopWidth`: a number that specifies the top width of the hamburger menu. <br>
+  - `hamburgerMenuMiddleWidth`: a number that specifies the middle width of the hamburger menu. <br>
+  - `hamburgerMenuBottomWidth`: a number that specifies the bottom width of the hamburger menu. <br>
+  - `hamburgerMenuHeight`: a number that specifies the height of the hamburger menu. <br>
+  - `hamburgerMenuBgColor`: a string that specifies the background color of the hamburger menu. <br>
+  - `hamburgerMenuSpace`: a number that specifies the space of the hamburger menu. <br>
+  - `hamburgerMenuBorderRadius`: a number that specifies the border radius of the hamburger menu. <br>
+  - `hamburgerMenuClosedIconWidth`: a number that specifies the of the hamburger menu. <br>
+  - `hamburgerMenuTransitionDuration`: a number that specifies the transition duration of the hamburger menu. <br>
+  - `hamburgerMenuContainerXPadding`: a number that specifies the right and left padding of the hamburger menu container. <br>
+  - `hamburgerMenuTransform`: one of the following options that specifies the transformation of the hamburger menu: <br>
+    - scale(-1, 1) <br>
+    - scale(1, 1) <br>
+    - scale(1, -1) <br>
+    - scale(-1, -1) <br>
+
+
+<hr>
+
+### Heading 
+Headings are titles or subtitles that you want to display on a webpage. This is a flexible heading tag that gives you some options to make the basic style of a heading easier and also makes your code more consistent. This is an example that shows how to use this component:
+```
+    <Heading className="textBlue" type={3}>
+        this is Heading with type 3. It's like h3. 
+    </Heading>
+```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestHeading/TestHeading.js).<br>
+
+The props that it takes are like `<h1>` to `<h6>` tags in HTML. Also, the other props of this component are:
+
+- **className**: This is a prop that allows you to add more styling to your Heading.
+- **type**: This is a number that indicates how important is the heading. The range of this prop is from 1 to 6. when the type is equal to 1 your Heading looks like `<h1>` and when it is equal to 6 the Heading looks like `<h6>`. 
 
 
 <hr>
@@ -548,6 +565,27 @@ The props of this component are: <br>
 Also, each type of icon have other different props as you see in the above example "search" icon has the following props:  
 - **stroke**: Stroke color of the icon, as a string (It can be a hex color or a color name) <br>
 - **scale**: Determine the scale/size of the icon. An integer value can be passes as a value to this prop. <br>
+
+<hr>
+
+
+### Image
+
+This is a flexible `<img />` that gives you some options to make the basic style of a `<img />` easier and also makes your code more consistent. This is an example that shows how to use this component:
+
+```
+    <Image
+        src="https://picsum.photos/200"
+        alt="Random Image"
+        width={350}
+        height={350}
+    />
+```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestImage/TestImage.js).<br>
+
+The props that it takes are like `<img />`. You can use our SCSS classes for styling using `className` prop as follows:
+
+- **className**: This is a prop that gives you the hand to add more styling to your Image.
 
 <hr>
 
@@ -648,8 +686,10 @@ This is a flexible `<p>` that gives you some options to make the basic style of 
 
 `<Paragraph> This is some text in a paragraph. </Paragraph>`
 
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestParagraph/TestParagraph.js).<br>
+
 The props that it takes are like `<p>`. You can use our SCSS classes for styling using `className` prop as follows: 
-- **className**: This is a prop that gives you the hand to add more styling to your Alert.
+- **className**: This is a prop that gives you the hand to add more styling to your Paragraph.
 
 
 <hr>
@@ -748,18 +788,21 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 
 ### Text
 
-This is a flexible `<span>` that gives you some options to make the basic style of a `<span>` easier and also makes your code more consistent. Text is an inline element while Div is a block-level element.
-
-#### Example
+This is a flexible `<span>` that gives you some options to make the basic style of a `<span>` easier and also makes your code more consistent. Text is an inline element while Div is a block-level element. This is an example that shows how to use this component:
 
 ```
   <Div>
     Hello
-    <Text className="...">
+    <Text className="bgBlue">
       World!!
     </Text>
   <Div>
 ```
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestText/TestText.js).<br>
+
+The props that it takes are like `<span>`. You can use our SCSS classes for styling using className prop as follows:
+
+- **className**: This is a prop that gives you the hand to add more styling to your Text.
 
 <hr>
 
