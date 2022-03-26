@@ -443,8 +443,8 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 
 The props of this component are: <br>
 
-- **type**: this is a prop that takes `flex` or `block` as the value of display, by default `block` <br>
-- **direction**: this is a prop that takes one of the two values `horizontal` to have div with a flex-direction row or `vertical` to have div with a flex-direction column, by default `horizontal` <br>
+- **type**: This is a prop that takes `flex` or `block` as the value of display, by default `block` <br>
+- **direction**: This is a prop that takes one of the two values `horizontal` to have div with a flex-direction row or `vertical` to have div with a flex-direction column, by default `horizontal` <br>
 
 - **hAlign**: 'Horizontal Align' this is a prop that takes one of the three values and each value depends on the direction, by default `start`
 
@@ -474,10 +474,10 @@ The props of this component are: <br>
   - In `horizontal` direction **hAlign** play the rule of `align-items : start`. <br>
   - In `vertical` direction **hAlign** play the rule of `justify-content : start`. <br><br>
 
-- **textAlign**: this is a prop that takes one of the three values ` centre` to make the text at the centre or `left` to make the text at the left or `right` to make the text at the right, by default `left` <br>
-- **distributedBetween**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-between`, by default `false` <br>
-- **distributedAround**:this is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-around`, by default `false` <br>
-- **className**:this is a prop where you could include more styling <br>
+- **textAlign**: This is a prop that takes one of the three values ` centre` to make the text at the centre or `left` to make the text at the left or `right` to make the text at the right, by default `left` <br>
+- **distributedBetween**: This is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-between`, by default `false` <br>
+- **distributedAround**: This is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-around`, by default `false` <br>
+- **className**: This is a prop where you could include more styling. <br>
 
 <hr>
 
