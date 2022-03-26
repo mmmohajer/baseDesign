@@ -15,6 +15,7 @@ import TestHeading from "TestComponents/TestHeading";
 import TestImage from "TestComponents/TestImage";
 import TestParagraph from "TestComponents/TestParagraph";
 import TestText from "TestComponents/TestText";
+import TestButton from "TestComponents/TestButton";
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -61,6 +62,9 @@ const Home = () => {
         of Letraset sheets containing Lorem Ipsum passages, and more recently
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
+      </div>
+      <div className="w-per-100 p1 bgRed">
+        <TestButton />
       </div>
     </div>
   );

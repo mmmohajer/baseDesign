@@ -1,20 +1,13 @@
 import React from "react";
 
-const Text = ({
-  children,
-  className,
-  ...props
-}) => {
+const Text = React.forwardRef(({ children, className, ...props }, ref) => {
   return (
     <>
-      <span
-        className={className}
-        {...props}
-      >
+      <span className={className} {...props} ref={ref}>
         {children}
       </span>
     </>
   );
-};
+});
 
 export default Text;

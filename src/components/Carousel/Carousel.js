@@ -107,7 +107,6 @@ const Carousel = ({
 
   return (
     <>
-      <div>Crausel</div>
       <div className="w-per-100 of-x-hidden">
         <div
           className={cx("flex", styles.sliderContainer)}

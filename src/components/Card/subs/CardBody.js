@@ -1,14 +1,14 @@
 import React from "react";
 import cx from "classnames";
 
-const CardBody = ({ children, className, ...props }) => {
+const CardBody = React.forwardRef(({ children, className, ...props }, ref) => {
   return (
     <>
-      <div className={cx(className)} {...props}>
+      <div className={cx(className)} {...props} ref={ref}>
         {children}
       </div>
     </>
   );
-};
+});
 
 export default CardBody;
