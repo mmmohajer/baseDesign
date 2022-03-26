@@ -16,6 +16,7 @@ import TestImage from "TestComponents/TestImage";
 import TestParagraph from "TestComponents/TestParagraph";
 import TestText from "TestComponents/TestText";
 import TestButton from "TestComponents/TestButton";
+import TestForm from "TestComponents/TestForm";
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -65,6 +66,9 @@ const Home = () => {
       </div>
       <div className="w-per-100 p1 bgRed">
         <TestButton />
+      </div>
+      <div className="w-per-100 p1 bgRed my1">
+        <TestForm />
       </div>
     </div>
   );
