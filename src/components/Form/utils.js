@@ -1,3 +1,26 @@
+import PropTypes from "prop-types";
+
+const arrayOfErrorValidators = [
+  "required",
+  "minRequired",
+  "maxRequired",
+  "email",
+];
+
+const validatorsShape = {
+  type: PropTypes.oneOf(arrayOfErrorValidators).isRequired,
+  message: PropTypes.string.isRequired,
+  minRequired: PropTypes.number,
+  maxRequired: PropTypes.number,
+};
+
+export const toBeValidatedFieldsShape = {
+  input_name: PropTypes.string.isRequired,
+  validators: PropTypes.arrayOf(PropTypes.shape(validatorsShape)),
+  errorMessageHandler: PropTypes.func.isRequired,
+  errorActivateHandler: PropTypes.func,
+};
+
 export const validate = (
   val,
   validator,

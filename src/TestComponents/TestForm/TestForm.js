@@ -26,30 +26,32 @@ const TestForm = () => {
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
   const [emailErrorIsActive, setEmailErrorIsActive] = useState(false);
 
+  const toBeValidatedFields = [
+    {
+      input_name: "first_name",
+      validators: firstNameValidators,
+      errorMessageHandler: setFirstNameErrorMessage,
+      errorActivateHandler: setFirstNameErrorIsActive,
+    },
+    {
+      input_name: "last_name",
+      validators: lastNameValidators,
+      errorMessageHandler: setLastNameErrorMessage,
+      errorActivateHandler: setLastNameErrorIsActive,
+    },
+    {
+      input_name: "email",
+      validators: emailValidators,
+      errorMessageHandler: setEmailErrorMessage,
+      errorActivateHandler: setEmailErrorIsActive,
+    },
+  ];
+
   return (
     <>
       <Form
         className="textWhite py1"
-        toBeValidatedFields={[
-          {
-            input_name: "first_name",
-            validators: firstNameValidators,
-            errorMessageHandler: setFirstNameErrorMessage,
-            errorActivateHandler: setFirstNameErrorIsActive,
-          },
-          {
-            input_name: "last_name",
-            validators: lastNameValidators,
-            errorMessageHandler: setLastNameErrorMessage,
-            errorActivateHandler: setLastNameErrorIsActive,
-          },
-          {
-            input_name: "email",
-            validators: emailValidators,
-            errorMessageHandler: setEmailErrorMessage,
-            errorActivateHandler: setEmailErrorIsActive,
-          },
-        ]}
+        toBeValidatedFields={toBeValidatedFields}
         onSubmit={() => console.log("Yay")}
       >
         <Label className="textBlack" htmlFor="sample">

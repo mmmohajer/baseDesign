@@ -1,12 +1,17 @@
 import React, { useCallback } from "react";
 import cx from "classnames";
+import PropTypes from "prop-types";
 
-import { validate } from "./utils";
+import defaultPropsMap from "Constants/defaultProps";
+const { defaultProps, defaultPropTypes } = defaultPropsMap;
+
+import { validate, toBeValidatedFieldsShape } from "./utils";
 
 const Form = React.forwardRef(
   ({ onSubmit, toBeValidatedFields, className, children, ...props }, ref) => {
     const submitHandler = useCallback((e) => {
       e.preventDefault();
+      let is_validated = true;
       if (toBeValidatedFields?.length) {
         toBeValidatedFields.forEach((item) => {
           let curElement = e.target[item["input_name"]];
@@ -20,13 +25,16 @@ const Form = React.forwardRef(
               ) {
                 item?.errorMessageHandler(item["validators"][idx]?.message);
                 item?.errorActivateHandler(true);
+                is_validated = false;
                 break;
               }
             }
           }
         });
       }
-      onSubmit();
+      if (is_validated) {
+        onSubmit();
+      }
     });
 
     return (
@@ -43,5 +51,17 @@ const Form = React.forwardRef(
     );
   }
 );
+
+Form.propTypes = {
+  ...defaultPropTypes,
+  onSubmit: PropTypes.func,
+  toBeValidatedFields: PropTypes.arrayOf(
+    PropTypes.shape(toBeValidatedFieldsShape).isRequired
+  ),
+};
+
+Form.defaultProps = {
+  ...defaultProps,
+};
 
 export default Form;
