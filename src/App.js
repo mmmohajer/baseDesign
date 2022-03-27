@@ -67,7 +67,7 @@ const Home = () => {
       <div className="w-per-100 p1 bgRed">
         <TestButton />
       </div>
-      <div className="w-per-100 p1 bgRed my1">
+      <div className="w-per-100 p1 my1">
         <TestForm />
       </div>
     </div>
