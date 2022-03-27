@@ -74,7 +74,7 @@ createReactComponent() {
     
     local innerJsFileAddr="src/TestComponents/Test$compName/Test$compName.js"
     local innerIndexFileAddr="src/TestComponents/Test$compName/index.js"
-    local innersassFileAddr="src/TestComponents/Test$compName/$compName.module.scss"
+    local innersassFileAddr="src/TestComponents/Test$compName/Test$compName.module.scss"
     
     echo "$jsContext" >> $innerJsFileAddr
     echo "$indexContext" >> "$innerIndexFileAddr"

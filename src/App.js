@@ -17,6 +17,7 @@ import TestParagraph from "TestComponents/TestParagraph";
 import TestText from "TestComponents/TestText";
 import TestButton from "TestComponents/TestButton";
 import TestForm from "TestComponents/TestForm";
+import TestRow from "TestComponents/TestRow";
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -70,6 +71,7 @@ const Home = () => {
       <div className="w-per-100 p1 my1">
         <TestForm />
       </div>
+      <TestRow />
     </div>
   );
 };
