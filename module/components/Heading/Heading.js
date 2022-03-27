@@ -28,7 +28,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
-var Heading = function Heading(_ref) {
+var Heading = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var children = _ref.children,
       type = _ref.type,
       className = _ref.className,
@@ -38,39 +38,53 @@ var Heading = function Heading(_ref) {
     case 1:
       return /*#__PURE__*/_react["default"].createElement("h1", (0, _extends2["default"])({
         className: className
-      }, props), children);
+      }, props, {
+        ref: ref
+      }), children);
 
     case 2:
       return /*#__PURE__*/_react["default"].createElement("h2", (0, _extends2["default"])({
         className: className
-      }, props), children);
+      }, props, {
+        ref: ref
+      }), children);
 
     case 3:
       return /*#__PURE__*/_react["default"].createElement("h3", (0, _extends2["default"])({
         className: className
-      }, props), children);
+      }, props, {
+        ref: ref
+      }), children);
 
     case 4:
       return /*#__PURE__*/_react["default"].createElement("h4", (0, _extends2["default"])({
         className: className
-      }, props), children);
+      }, props, {
+        ref: ref
+      }), children);
 
     case 5:
       return /*#__PURE__*/_react["default"].createElement("h5", (0, _extends2["default"])({
         className: className
-      }, props), children);
+      }, props, {
+        ref: ref
+      }), children);
 
     case 6:
       return /*#__PURE__*/_react["default"].createElement("h6", (0, _extends2["default"])({
         className: className
-      }, props), children);
+      }, props, {
+        ref: ref
+      }), children);
 
     default:
       return /*#__PURE__*/_react["default"].createElement("h1", (0, _extends2["default"])({
         className: className
-      }, props), children);
+      }, props, {
+        ref: ref
+      }), children);
   }
-};
+});
 
 Heading.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   type: _propTypes["default"].number

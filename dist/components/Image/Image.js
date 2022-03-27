@@ -30,7 +30,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
-var Image = function Image(_ref) {
+var Image = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var children = _ref.children,
       src = _ref.src,
       alt = _ref.alt,
@@ -40,8 +40,10 @@ var Image = function Image(_ref) {
     src: src,
     alt: alt,
     className: className
-  }, props)));
-};
+  }, props, {
+    ref: ref
+  })));
+});
 
 Image.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   src: _propTypes["default"].string,

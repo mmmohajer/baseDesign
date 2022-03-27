@@ -15,14 +15,16 @@ var _react = _interopRequireDefault(require("react"));
 
 var _excluded = ["children", "className"];
 
-var Paragragh = function Paragragh(_ref) {
+var Paragragh = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var children = _ref.children,
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("p", (0, _extends2["default"])({
     className: className
-  }, props), children));
-};
+  }, props, {
+    ref: ref
+  }), children));
+});
 
 var _default = Paragragh;
 exports["default"] = _default;

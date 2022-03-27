@@ -1,0 +1,21 @@
+.iswad_input {
+  &_container {
+    justify-content: start;
+    position: relative;
+  }
+
+  &_field_container {
+    margin-bottom: 1rem;
+  }
+
+  &_errorMessage {
+    display: none;
+    color: red;
+    position: absolute;
+    top: 1rem;
+
+    &_active {
+      display: block;
+    }
+  }
+}

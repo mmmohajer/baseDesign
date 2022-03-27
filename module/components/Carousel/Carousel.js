@@ -233,7 +233,7 @@ var Carousel = function Carousel(_ref) {
 
     setMoveToItemWithNum(false);
   }, [moveToItemWithNum]);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", null, "Crausel"), /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: "w-per-100 of-x-hidden"
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])("flex", _CarouselModule["default"].sliderContainer),

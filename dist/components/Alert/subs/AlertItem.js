@@ -17,15 +17,17 @@ var _classnames = _interopRequireDefault(require("classnames"));
 
 var _excluded = ["children", "isActive", "className"];
 
-var AlertItem = function AlertItem(_ref) {
+var AlertItem = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var children = _ref.children,
       isActive = _ref.isActive,
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])("iswad_alert_item", isActive && "iswad_alert_item_active", className)
-  }, props), children));
-};
+  }, props, {
+    ref: ref
+  }), children));
+});
 
 var _default = AlertItem;
 exports["default"] = _default;

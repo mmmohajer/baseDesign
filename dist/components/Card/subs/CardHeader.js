@@ -17,14 +17,16 @@ var _classnames = _interopRequireDefault(require("classnames"));
 
 var _excluded = ["children", "className"];
 
-var CardHeader = function CardHeader(_ref) {
+var CardHeader = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var children = _ref.children,
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])(className)
-  }, props), children));
-};
+  }, props, {
+    ref: ref
+  }), children));
+});
 
 var _default = CardHeader;
 exports["default"] = _default;

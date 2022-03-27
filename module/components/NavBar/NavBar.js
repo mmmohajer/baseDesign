@@ -17,14 +17,15 @@ var _classnames = _interopRequireDefault(require("classnames"));
 
 var _excluded = ["children", "className"];
 
-var NavBar = function NavBar(_ref) {
+var NavBar = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var children = _ref.children,
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({}, props, {
-    className: (0, _classnames["default"])("w-per-100 flex", className)
+    className: (0, _classnames["default"])("w-per-100 flex", className),
+    ref: ref
   }), children));
-};
+});
 
 var _default = NavBar;
 exports["default"] = _default;
