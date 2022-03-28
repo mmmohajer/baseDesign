@@ -82,7 +82,7 @@ const DesktopNav = ({
               className="mouse-hand"
             />
             <input
-              type="text"
+              type="search"
               className={cx(
                 "br-rad-px-10 fs-px-18",
                 styles.searchInput,

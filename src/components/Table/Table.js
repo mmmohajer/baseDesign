@@ -243,7 +243,6 @@ const Table = ({
                               type="search"
                               value={filter[head?.value || head]}
                               onChange={(e) => searchHandler(e, head)}
-                              className="iswad_table_search"
                             />
                           )}
                         </div>
