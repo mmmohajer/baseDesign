@@ -62,7 +62,7 @@ const TestTable = (props) => {
         // colWidth={400}
         // tableWidth={"2025px"}
         isSelectable={true}
-        search={search}
+        // search={search}
         selectedData={selectedData}
         setSelectedData={setSelectedData}
         // sortIconColors={{ ASC: "green", DESC: "red", REG: "silver" }}

@@ -18,6 +18,7 @@ import TestText from "TestComponents/TestText";
 import TestButton from "TestComponents/TestButton";
 import TestForm from "TestComponents/TestForm";
 import TestRow from "TestComponents/TestRow";
+import TestSearch from "TestComponents/TestSearch";
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -72,6 +73,9 @@ const Home = () => {
         <TestForm />
       </div>
       <TestRow />
+      <div className="m2">
+        <TestSearch />
+      </div>
     </div>
   );
 };

@@ -9,22 +9,25 @@ import styles from "./Row.module.scss";
 
 import { showInCssClass } from "Utils/utils";
 
-const Row = ({ showIn, className, children, ...props }) => {
-  return (
-    <>
-      <div
-        className={cx(
-          "row",
-          showIn && showInCssClass("flex", showIn),
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </div>
-    </>
-  );
-};
+const Row = React.forwardRef(
+  ({ showIn, className, children, ...props }, ref) => {
+    return (
+      <>
+        <div
+          className={cx(
+            "row",
+            showIn && showInCssClass("flex", showIn),
+            className
+          )}
+          {...props}
+          ref={ref}
+        >
+          {children}
+        </div>
+      </>
+    );
+  }
+);
 
 Row.propTypes = {
   ...defaultPropTypes,

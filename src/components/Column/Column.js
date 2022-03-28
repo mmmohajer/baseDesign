@@ -11,38 +11,41 @@ import { showInCssClass } from "Utils/utils";
 
 const arrayOfColSize = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-const Column = ({ xs, sm, md, lg, showIn, className, children, ...props }) => {
-  const getCssClass = (num, size) => {
-    if (size === "xs") {
-      return `row--${num}`;
-    } else if (size === "sm") {
-      return `row--sm--${num}`;
-    } else if (size === "md") {
-      return `row--md--${num}`;
-    } else if (size === "lg") {
-      return `row--lg--${num}`;
-    }
-  };
+const Column = React.forwardRef(
+  ({ xs, sm, md, lg, showIn, className, children, ...props }, ref) => {
+    const getCssClass = (num, size) => {
+      if (size === "xs") {
+        return `row--${num}`;
+      } else if (size === "sm") {
+        return `row--sm--${num}`;
+      } else if (size === "md") {
+        return `row--md--${num}`;
+      } else if (size === "lg") {
+        return `row--lg--${num}`;
+      }
+    };
 
-  return (
-    <>
-      <div
-        className={cx(
-          "row",
-          getCssClass(xs, "xs"),
-          getCssClass(sm, "sm"),
-          getCssClass(md, "md"),
-          getCssClass(lg, "lg"),
-          showIn && showInCssClass("flex", showIn),
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </div>
-    </>
-  );
-};
+    return (
+      <>
+        <div
+          className={cx(
+            "row",
+            getCssClass(xs, "xs"),
+            getCssClass(sm, "sm"),
+            getCssClass(md, "md"),
+            getCssClass(lg, "lg"),
+            showIn && showInCssClass("flex", showIn),
+            className
+          )}
+          {...props}
+          ref={ref}
+        >
+          {children}
+        </div>
+      </>
+    );
+  }
+);
 
 Column.propTypes = {
   ...defaultPropTypes,

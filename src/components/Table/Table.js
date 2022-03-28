@@ -9,6 +9,7 @@ import Th from "./subs/Th";
 import Tr from "./subs/tr";
 import Td from "./subs/Td";
 import Icon from "../Icon";
+import Search from "../Search";
 import Pagination from "../Pagination";
 import propTypes from "prop-types";
 
@@ -238,7 +239,7 @@ const Table = ({
                               onChange: (e) => searchHandler(e, head),
                             })
                           ) : (
-                            <input
+                            <Search
                               type="search"
                               value={filter[head?.value || head]}
                               onChange={(e) => searchHandler(e, head)}
