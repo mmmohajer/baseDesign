@@ -21,7 +21,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _utils = require("./utils");
+var _utils = require("../../utils/utils");
 
 var _excluded = ["children", "type", "direction", "hAlign", "vAlign", "textAlign", "distributedBetween", "distributedAround", "showIn", "className"];
 
