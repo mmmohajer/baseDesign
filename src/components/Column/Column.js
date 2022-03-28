@@ -7,9 +7,11 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
 import styles from "./Column.module.scss";
 
+import { showInCssClass } from "Utils/utils";
+
 const arrayOfColSize = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-const Column = ({ xs, sm, md, lg, className, children, ...props }) => {
+const Column = ({ xs, sm, md, lg, showIn, className, children, ...props }) => {
   const getCssClass = (num, size) => {
     if (size === "xs") {
       return `row--${num}`;
@@ -31,6 +33,7 @@ const Column = ({ xs, sm, md, lg, className, children, ...props }) => {
           getCssClass(sm, "sm"),
           getCssClass(md, "md"),
           getCssClass(lg, "lg"),
+          showIn && showInCssClass("flex", showIn),
           className
         )}
         {...props}
@@ -47,6 +50,7 @@ Column.propTypes = {
   sm: PropTypes.oneOf(arrayOfColSize),
   md: PropTypes.oneOf(arrayOfColSize),
   lg: PropTypes.oneOf(arrayOfColSize),
+  showIn: PropTypes.array,
 };
 
 Column.defaultProps = {
@@ -55,6 +59,7 @@ Column.defaultProps = {
   sm: 12,
   md: 12,
   lg: 12,
+  showIn: ["xs", "sm", "md", "lg"],
 };
 
 export default Column;

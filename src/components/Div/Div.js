@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import defaultPropsMap from "Constants/defaultProps";
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import { showInCssClass } from "./utils";
+import { showInCssClass } from "Utils/utils";
 
 const Div = React.forwardRef(
   (
