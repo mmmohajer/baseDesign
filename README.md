@@ -257,6 +257,7 @@ The order of nesting of these components is as follows:
       </AdminNavItem>
     </AdminNav>
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestAdminNav/TestAdminNav.js).
 
 #### 1. AdminNav
@@ -289,6 +290,7 @@ This is a flexible Alert that contain two components, and provides a basic form 
           </AlertItem>
       </Alert>
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestAlert/TestAlert.js).
 
 #### 1. Alert
@@ -317,6 +319,7 @@ This is a flexible Card with column direction that contain three components and 
         <CardFooter>Footer</CardFooter>
     </Card>
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestCard/TestCard.js).
 
 #### 1. CardBody
@@ -380,7 +383,6 @@ Using this component you can create the carousel items also It is fully responsi
 
 <hr>
 
-
 ### DesktopNavbar
 
 4 components are provided in this section that should be used in a nested way to create a fully flexible desktop navbar. <br>
@@ -407,7 +409,8 @@ This is the container for all components in the navbar (For example the Logo, me
 
 #### 2. NavItem
 
-Using this component you can create your menu. Available prop for this component is:  
+Using this component you can create your menu. Available prop for this component is:
+
 - **isActive**: This prop gets a boolean value indicating whether the navItem is active or not. There is a SCSS class for active NavItem(`iswad_navItem_active`).<br>
 
 #### 3. SubNavContainer
@@ -421,11 +424,10 @@ Using this component you can create submenus for each NavItem. This component us
 
 <hr>
 
-
 ### Div
 
 This is a flexible Div that provides you some options to make the basic style of a div easier. <br>
- This is an example that shows how to use this component:
+This is an example that shows how to use this component:
 
 ```
     <Div
@@ -439,6 +441,7 @@ This is a flexible Div that provides you some options to make the basic style of
         ...
     </Div>
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestDiv/TestDiv.js).
 
 The props of this component are: <br>
@@ -449,14 +452,17 @@ The props of this component are: <br>
 - **hAlign**: 'Horizontal Align' this is a prop that takes one of the three values and each value depends on the direction, by default `start`
 
 - `center`:
+
   - In `vertical` direction **hAlign** play the rule of `align-items : center`. <br>
   - In `horizontal` direction **hAlign** play the rule of `justify-content : center`. <br><br>
 
 - `end`:
+
   - In `vertical` direction **hAlign** play the rule of `align-items : end`. <br>
   - In `horizontal` direction **hAlign** play the rule of `justify-content : end`. <br><br>
 
 - `start`:
+
   - In `vertical` direction **hAlign** play the rule of `align-items : start`. <br>
   - In `horizontal` direction **hAlign** play the rule of `justify-content : start`. <br><br>
 
@@ -464,13 +470,15 @@ The props of this component are: <br>
 
 - `center`:
   - In `horizontal` direction **hAlign** play the rule of `align-items : center`. <br>
- - In `vertical` direction **hAlign** play the rule of `justify-content : center`. <br><br>
+- In `vertical` direction **hAlign** play the rule of `justify-content : center`. <br><br>
 
 - `end`:
+
   - In `horizontal` direction **hAlign** play the rule of `align-items : end`. <br>
   - In `vertical` direction **hAlign** play the rule of `justify-content : end`. <br><br>
 
 - `start`:
+
   - In `horizontal` direction **hAlign** play the rule of `align-items : start`. <br>
   - In `vertical` direction **hAlign** play the rule of `justify-content : start`. <br><br>
 
@@ -484,7 +492,7 @@ The props of this component are: <br>
 ### HamburgerIcon
 
 This is a hamburgur icon with a nice animation on click to close and open the icon.
- This is an example that shows how to use this component:
+This is an example that shows how to use this component:
 
 ```
 const cssConfigShape = {
@@ -531,23 +539,24 @@ Available props of this component are: <br>
     - scale(1, -1) <br>
     - scale(-1, -1) <br>
 
-
 <hr>
 
-### Heading 
+### Heading
+
 Headings are titles or subtitles that you want to display on a webpage. This is a flexible heading tag that gives you some options to make the basic style of a heading easier and also makes your code more consistent. This is an example that shows how to use this component:
+
 ```
     <Heading className="textBlue" type={3}>
-        this is Heading with type 3. It's like h3. 
+        this is Heading with type 3. It's like h3.
     </Heading>
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestHeading/TestHeading.js).<br>
 
 The props that it takes are like `<h1>` to `<h6>` tags in HTML. Also, the other props of this component are:
 
 - **className**: This is a prop that allows you to add more styling to your Heading.
-- **type**: This is a number that indicates how important is the heading. The range of this prop is from 1 to 6. when the type is equal to 1 your Heading looks like `<h1>` and when it is equal to 6 the Heading looks like `<h6>`. 
-
+- **type**: This is a number that indicates how important is the heading. The range of this prop is from 1 to 6. when the type is equal to 1 your Heading looks like `<h1>` and when it is equal to 6 the Heading looks like `<h6>`.
 
 <hr>
 
@@ -559,15 +568,16 @@ This component is used in order to add icons to your project. This is an example
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestIcon/TestIcon.js).<br>
 
 The props of this component are: <br>
+
 - **type**: This is the type of icon.
 - **fill**: Filling color of the icon as a string (It can be a hex color or a color name) <br>
 
-Also, each type of icon have other different props as you see in the above example "search" icon has the following props:  
+Also, each type of icon have other different props as you see in the above example "search" icon has the following props:
+
 - **stroke**: Stroke color of the icon, as a string (It can be a hex color or a color name) <br>
 - **scale**: Determine the scale/size of the icon. An integer value can be passes as a value to this prop. <br>
 
 <hr>
-
 
 ### Image
 
@@ -581,6 +591,7 @@ This is a flexible `<img />` that gives you some options to make the basic style
         height={350}
     />
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestImage/TestImage.js).<br>
 
 The props that it takes are like `<img />`. You can use our SCSS classes for styling using `className` prop as follows:
@@ -606,6 +617,7 @@ The order of nesting of these components is as follows:
       ...
  </MobNav>
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/MobileNav.js).<br>
 
 #### 1. MobNav
@@ -639,6 +651,7 @@ This is a flexible Modal that gives you some options to make the basic style of 
         <div>Hello</div>
     </Modal>
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestModal/TestModal.js).<br>
 
 The props of this component are: <br>
@@ -663,6 +676,7 @@ This is an example that shows how to use this component:
         showFirstLastIcon={true}
       />
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestPagination/TestPagination.js).<br>
 
 The clickable icons of this component are:<br>
@@ -688,16 +702,16 @@ This is a flexible `<p>` that gives you some options to make the basic style of 
 
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestParagraph/TestParagraph.js).<br>
 
-The props that it takes are like `<p>`. You can use our SCSS classes for styling using `className` prop as follows: 
+The props that it takes are like `<p>`. You can use our SCSS classes for styling using `className` prop as follows:
+
 - **className**: This is a prop that gives you the hand to add more styling to your Paragraph.
 
-
 <hr>
-
 
 ### Table
 
 Using this component you can create a flexible table. This is an example that shows how to use this component: <br>
+
 ```
   const search = (props) => {
     return <Search {...props} />;
@@ -705,7 +719,7 @@ Using this component you can create a flexible table. This is an example that sh
 
   const [selectedData, setSelectedData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  
+
       <Table
         headLines={headLines}
         data={data}
@@ -723,10 +737,13 @@ Using this component you can create a flexible table. This is an example that sh
         numberOfShownPages={5}
       />
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestTable/TestTable.js).<br>
 
- Available props for this component are: <br>
+Available props for this component are: <br>
+
 - **headLines**: This prop indicates the table headings. This prop has the following features:<br>
+
   - **value**: This is the variable in your data. <br>
   - **display**: This is the text that will be shown in the table header for this value. <br>
   - **isSortable**: This is a boolean variable indicating whether or not the column should be sortable. <br>
@@ -747,27 +764,27 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
     ```
 
 - **data**: This prop indicates the data that will be displayed in the table. This is an for data. <br>
-    ```
-    [
-      {
-        "id": 1,
-        "first_name": "Brewer",
-        "last_name": "Archibald",
-        "email": "barchibald0@photobucket.com",
-        "gender": "Agender",
-        "ip_address": "7.23.122.248"
-      },
-      {
-        "id": 2,
-        "first_name": "Harli",
-        "last_name": "Panswick",
-        "email": "hpanswick1@japanpost.jp",
-        "gender": "Male",
-        "ip_address": "242.244.91.66"
-      },
-      ...
-      ]
-    ```
+  ```
+  [
+    {
+      "id": 1,
+      "first_name": "Brewer",
+      "last_name": "Archibald",
+      "email": "barchibald0@photobucket.com",
+      "gender": "Agender",
+      "ip_address": "7.23.122.248"
+    },
+    {
+      "id": 2,
+      "first_name": "Harli",
+      "last_name": "Panswick",
+      "email": "hpanswick1@japanpost.jp",
+      "gender": "Male",
+      "ip_address": "242.244.91.66"
+    },
+    ...
+    ]
+  ```
 - **colWidth**: This prop indicates the default width of the columns.<br>
 - **isSelectable**: This prop indicates whether rows of the table are selectable or not. When this prop is true then a checkbox appears in the right side of the table for selecting rows. <br>
 - **search**: we have an default search component but if you want to use your one you should pass a functional component to this prop. <br>
@@ -783,7 +800,6 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 - **showDefaultPagination**: This prop indicates whether the default pagination should be shown or not. If you want to use your custom pagination component set this false otherwise true. <br>
 - **numberOfShownPages**: This prop indicates the number of page that should be shown. <br>
 
-
 <hr>
 
 ### Text
@@ -798,6 +814,7 @@ This is a flexible `<span>` that gives you some options to make the basic style 
     </Text>
   <Div>
 ```
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestText/TestText.js).<br>
 
 The props that it takes are like `<span>`. You can use our SCSS classes for styling using className prop as follows:
@@ -861,7 +878,6 @@ These editable css classes can change the styles of pre-defined components by IS
 
 `.iswad_table` <br>
 `.iswad_table_headContainer` <br>
-`.iswad_table_search` <br>
 `.iswad_td` <br>
 `.iswad_th` <br>
 `.iswad_tr` <br>
