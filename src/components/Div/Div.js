@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import defaultPropsMap from "Constants/defaultProps";
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
+import { showInCssClass } from "./utils";
+
 const Div = React.forwardRef(
   (
     {
@@ -16,6 +18,7 @@ const Div = React.forwardRef(
       textAlign,
       distributedBetween,
       distributedAround,
+      showIn,
       className,
       ...props
     },
@@ -47,6 +50,7 @@ const Div = React.forwardRef(
             distributedAround && "flex--jc--around",
             textAlign === "center" && "text-center",
             textAlign === "right" && "text-rtl",
+            showIn && showInCssClass(type, showIn),
             className
           )}
           {...props}
@@ -68,6 +72,7 @@ Div.propTypes = {
   distributedBetween: PropTypes.bool,
   distributedAround: PropTypes.bool,
   textAlign: PropTypes.oneOf(["left", "center", "right"]),
+  showIn: PropTypes.array,
 };
 
 Div.defaultProps = {
@@ -79,6 +84,7 @@ Div.defaultProps = {
   distributedBetween: false,
   distributedAround: false,
   textAlign: "left",
+  showIn: ["xs", "sm", "md", "lg"],
 };
 
 export default Div;

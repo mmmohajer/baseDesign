@@ -13,7 +13,11 @@ const TestDiv = () => {
         distributedAround
         className="bgRed height-px-400"
       >
-        <Div textAlign="right" className="blue height-px-100 bgBlue w-per-20">
+        <Div
+          textAlign="right"
+          className="blue height-px-100 bgBlue w-per-20"
+          showIn={["md", "lg"]}
+        >
           Hello
         </Div>
         <Div
