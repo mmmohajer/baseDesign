@@ -8,7 +8,7 @@ import Search from "Components/Search";
 const TestSearch = () => {
   return (
     <>
-      <Search />
+      <Search closable={false} />
     </>
   );
 };

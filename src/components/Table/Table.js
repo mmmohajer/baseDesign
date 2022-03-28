@@ -240,7 +240,6 @@ const Table = ({
                             })
                           ) : (
                             <Search
-                              type="search"
                               value={filter[head?.value || head]}
                               onChange={(e) => searchHandler(e, head)}
                             />

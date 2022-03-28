@@ -73,7 +73,7 @@ const Home = () => {
         <TestForm />
       </div>
       <TestRow />
-      <div className="m2">
+      <div className="m2 bgPurple p2">
         <TestSearch />
       </div>
     </div>

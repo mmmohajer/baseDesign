@@ -21,38 +21,40 @@ const Search = React.forwardRef(
 
     return (
       <>
-        <div
-          className={cx(
-            "min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center iswad_search_container"
-          )}
-        >
-          {closable ? (
-            <Icon
-              onClick={() => setActiveSearch(!activeSearch)}
-              type="search"
-              scale={0.8}
-              fill={iconFillColor}
-              stroke={iconStrokeColor}
-              className="mouse-hand"
-            />
-          ) : (
-            <Icon
-              type="search"
-              scale={0.8}
-              fill={iconFillColor}
-              stroke={iconStrokeColor}
-              className={cx("mouse-hand")}
-            />
-          )}
-          <input
-            type="search"
+        <div className="flex">
+          <div
             className={cx(
-              "iswad_search_input",
-              activeSearch && "iswad_search_input_active",
-              className
+              "min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center iswad_search_container"
             )}
-            {...props}
-          />
+          >
+            {closable ? (
+              <Icon
+                onClick={() => setActiveSearch(!activeSearch)}
+                type="search"
+                scale={0.8}
+                fill={iconFillColor}
+                stroke={iconStrokeColor}
+                className="mouse-hand"
+              />
+            ) : (
+              <Icon
+                type="search"
+                scale={0.8}
+                fill={iconFillColor}
+                stroke={iconStrokeColor}
+                className={cx(closable && "mouse-hand")}
+              />
+            )}
+            <input
+              type="search"
+              className={cx(
+                "iswad_search_input",
+                activeSearch && "iswad_search_input_active",
+                className
+              )}
+              {...props}
+            />
+          </div>
         </div>
       </>
     );
