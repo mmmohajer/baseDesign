@@ -341,7 +341,6 @@ var Table = function Table(_ref) {
         return searchHandler(e, head);
       }
     }) : /*#__PURE__*/_react["default"].createElement(_Search["default"], {
-      type: "search",
       value: filter[(head === null || head === void 0 ? void 0 : head.value) || head],
       onChange: function onChange(e) {
         return searchHandler(e, head);
