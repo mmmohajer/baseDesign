@@ -30,6 +30,7 @@ import SubNavItem from "./components/NavBar/subs/SubNavItem";
 import Pagination from "./components/Pagination";
 import Paragraph from "./components/Paragraph";
 import Row from "./components/Row";
+import Search from "./components/Search";
 import Table from "./components/Table";
 import Text from "./components/Text";
 
@@ -66,6 +67,7 @@ export {
   Pagination,
   Paragraph,
   Row,
+  Search,
   Table,
   Text,
 };

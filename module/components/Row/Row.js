@@ -34,15 +34,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
-var Row = function Row(_ref) {
+var Row = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var showIn = _ref.showIn,
       className = _ref.className,
       children = _ref.children,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])("row", showIn && (0, _utils.showInCssClass)("flex", showIn), className)
-  }, props), children));
-};
+  }, props, {
+    ref: ref
+  }), children));
+});
 
 Row.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   showIn: _propTypes["default"].array

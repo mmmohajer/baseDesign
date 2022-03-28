@@ -35,6 +35,8 @@ var _Td = _interopRequireDefault(require("./subs/Td"));
 
 var _Icon = _interopRequireDefault(require("../Icon"));
 
+var _Search = _interopRequireDefault(require("../Search"));
+
 var _Pagination = _interopRequireDefault(require("../Pagination"));
 
 var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages"];
@@ -338,7 +340,7 @@ var Table = function Table(_ref) {
       onChange: function onChange(e) {
         return searchHandler(e, head);
       }
-    }) : /*#__PURE__*/_react["default"].createElement("input", {
+    }) : /*#__PURE__*/_react["default"].createElement(_Search["default"], {
       type: "search",
       value: filter[(head === null || head === void 0 ? void 0 : head.value) || head],
       onChange: function onChange(e) {

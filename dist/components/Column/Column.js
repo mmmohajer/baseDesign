@@ -35,7 +35,7 @@ var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 var arrayOfColSize = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-var Column = function Column(_ref) {
+var Column = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var xs = _ref.xs,
       sm = _ref.sm,
       md = _ref.md,
@@ -59,8 +59,10 @@ var Column = function Column(_ref) {
 
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])("row", getCssClass(xs, "xs"), getCssClass(sm, "sm"), getCssClass(md, "md"), getCssClass(lg, "lg"), showIn && (0, _utils.showInCssClass)("flex", showIn), className)
-  }, props), children));
-};
+  }, props, {
+    ref: ref
+  }), children));
+});
 
 Column.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   xs: _propTypes["default"].oneOf(arrayOfColSize),
