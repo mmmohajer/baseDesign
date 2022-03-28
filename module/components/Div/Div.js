@@ -21,7 +21,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _excluded = ["children", "type", "direction", "hAlign", "vAlign", "textAlign", "distributedBetween", "distributedAround", "className"];
+var _utils = require("./utils");
+
+var _excluded = ["children", "type", "direction", "hAlign", "vAlign", "textAlign", "distributedBetween", "distributedAround", "showIn", "className"];
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -39,10 +41,11 @@ var Div = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       textAlign = _ref.textAlign,
       distributedBetween = _ref.distributedBetween,
       distributedAround = _ref.distributedAround,
+      showIn = _ref.showIn,
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-    className: (0, _classnames["default"])(type === "flex" && "flex", direction === "vertical" && "flex--dir--col", direction === "vertical" && hAlign === "center" && "flex--ai--center", direction !== "vertical" && hAlign === "center" && "flex--jc--center", direction === "vertical" && hAlign === "end" && "flex--ai--end", direction !== "vertical" && hAlign === "end" && "flex--jc--end", direction === "vertical" && vAlign === "center" && "flex--jc--center", direction !== "vertical" && vAlign === "center" && "flex--ai--center", direction === "vertical" && vAlign === "end" && "flex--jc--end", direction !== "vertical" && vAlign === "end" && "flex--ai--end", distributedBetween && "flex--jc--between", distributedAround && "flex--jc--around", textAlign === "center" && "text-center", textAlign === "right" && "text-rtl", className)
+    className: (0, _classnames["default"])(type === "flex" && "flex", direction === "vertical" && "flex--dir--col", direction === "vertical" && hAlign === "center" && "flex--ai--center", direction !== "vertical" && hAlign === "center" && "flex--jc--center", direction === "vertical" && hAlign === "end" && "flex--ai--end", direction !== "vertical" && hAlign === "end" && "flex--jc--end", direction === "vertical" && vAlign === "center" && "flex--jc--center", direction !== "vertical" && vAlign === "center" && "flex--ai--center", direction === "vertical" && vAlign === "end" && "flex--jc--end", direction !== "vertical" && vAlign === "end" && "flex--ai--end", distributedBetween && "flex--jc--between", distributedAround && "flex--jc--around", textAlign === "center" && "text-center", textAlign === "right" && "text-rtl", showIn && (0, _utils.showInCssClass)(type, showIn), className)
   }, props, {
     ref: ref
   }), children));
@@ -55,7 +58,8 @@ Div.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   vAlign: _propTypes["default"].oneOf(["start", "center", "end"]),
   distributedBetween: _propTypes["default"].bool,
   distributedAround: _propTypes["default"].bool,
-  textAlign: _propTypes["default"].oneOf(["left", "center", "right"])
+  textAlign: _propTypes["default"].oneOf(["left", "center", "right"]),
+  showIn: _propTypes["default"].array
 });
 Div.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   type: "block",
@@ -64,7 +68,8 @@ Div.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   vAlign: "start",
   distributedBetween: false,
   distributedAround: false,
-  textAlign: "left"
+  textAlign: "left",
+  showIn: ["xs", "sm", "md", "lg"]
 });
 var _default = Div;
 exports["default"] = _default;
