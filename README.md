@@ -247,7 +247,7 @@ Sample: `<img class="op-60">` <br>
 
 ### AdminNavbar
 
-This is a flexible Admin Nav that contains two components and provides a basic form of admin nav.
+This is a flexible Admin Nav that contains two components and provides a basic form of admin nav.  
 The order of nesting of these components is as follows:
 
 ```
@@ -257,21 +257,21 @@ The order of nesting of these components is as follows:
       </AdminNavItem>
     </AdminNav>
 ```
+You can use our SCSS classes for styling these components also you can pass any props to these components, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestAdminNav/TestAdminNav.js).
 
 #### 1. AdminNav
 
-The AdminNav component is a container of all AdminNav items, and the props of this component are: <br>
+The AdminNav component is a container of all AdminNav items, and the prop of this component is: <br>
 
 - **isActive**: This prop gets a boolean value indicating whether the navItem is active or not.<br>
-- **className**: this is a prop that gives you the hand to add more styling to your AdminNav <br>
 
 #### 2. AdminNavItem
 
-Using this component you can create the AdminNav items also It is fully responsive. you can use our SCSS classes for styling this component and the props of this component are: <br>
+Using this component you can create the AdminNav items also It is fully responsive.The prop of this component is: <br>
 
 - **isActive**: This prop gets a boolean value indicating whether the navItem is active or not.<br>
-- **className**: this is a prop that gives you the hand to add more styling to your AdminNav. <br>
 
 <hr>
 
@@ -289,20 +289,19 @@ This is a flexible Alert that contain two components, and provides a basic form 
           </AlertItem>
       </Alert>
 ```
+You can use our SCSS classes for styling these components also you can pass any props to these components, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestAlert/TestAlert.js).
 
 #### 1. Alert
 
-The Alert component is a container of Alert items, you can use our SCSS classes for styling this component and the props of this component are: <br>
-
-- **className**: this is a prop that gives you the hand to add more styling to your Alert. <br>
+The Alert component is a container of Alert items.
 
 #### 2. AlertItem
 
-Using this component you can create the Alert item also It is fully responsive. you can use our SCSS classes for styling this component and the props of this component are:
+Using this component you can create the Alert item also It is fully responsive.
 
 - **isActive**: This prop gets a boolean value indicating whether the Alert is active or not.
-- **className**: this is a prop that gives you the hand to add more styling to your Alert.
 
 <hr>
 
@@ -317,6 +316,8 @@ This is a flexible Card with column direction that contain three components and 
         <CardFooter>Footer</CardFooter>
     </Card>
 ```
+You can use our SCSS classes for styling these components also you can pass any props to these components, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestCard/TestCard.js).
 
 #### 1. CardBody
@@ -324,10 +325,6 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 #### 2. CardFooter
 
 #### 3. CardHeader
-
-The prop of these components is: <br>
-
-- **className**: This is a prop that gives you the hand to add more styling to your Card. <br>
 
 <hr>
 
@@ -356,6 +353,7 @@ This is a flexible Carousel that contains two components. The nesting order of t
       <button onClick={() => setMoveLeft(true)}>Left</button>
       <button onClick={() => setMoveToItemWithNum(4)}>Jump To number 4</button>
 ```
+You can use our SCSS classes for styling these components also you can pass any props to these components, such as onClick, className, etc.
 
 For a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestCaraousel/TestCaraousel.js).
 
@@ -376,7 +374,7 @@ The carousel component is a container of all carousel items, and the props of th
 
 #### 2. CarouselItem
 
-Using this component you can create the carousel items also It is fully responsive. you can use our SCSS classes for styling this component. <br>
+Using this component you can create the carousel items also It is fully responsive.
 
 <hr>
 
@@ -398,12 +396,13 @@ The order of nesting of these components is as follows: <br>
       ...
  </NavBar>
 ```
+You can use our SCSS classes for styling these components also you can pass any props to these components, such as onClick, className, etc.
 
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/DesktopNav.js).
 
 #### 1. NavBar
 
-This is the container for all components in the navbar (For example the Logo, menu, and register button), also It is fully responsive. you can use our SCSS classes for styling this component.
+This is the container for all components in the navbar (For example the Logo, menu, and register button), also It is fully responsive.
 
 #### 2. NavItem
 
@@ -413,7 +412,7 @@ Using this component you can create your menu. Available prop for this component
 #### 3. SubNavContainer
 
 This is a wrapper around the SubNavItem components and creates your submenu area. Available prop for this component is:
-**- isActive**: This is a boolean value <br>
+- **isActive**: This is a boolean value <br>
 
 #### 4. SubNavItem
 
@@ -439,6 +438,8 @@ This is a flexible Div that provides you some options to make the basic style of
         ...
     </Div>
 ```
+You can use our SCSS classes for styling this component also you can pass any props to this component, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestDiv/TestDiv.js).
 
 The props of this component are: <br>
@@ -477,7 +478,6 @@ The props of this component are: <br>
 - **textAlign**: This is a prop that takes one of the three values ` centre` to make the text at the centre or `left` to make the text at the left or `right` to make the text at the right, by default `left` <br>
 - **distributedBetween**: This is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-between`, by default `false` <br>
 - **distributedAround**: This is a boolean prop, by default `false` but if you set it, it will play the role of `justify-content : space-around`, by default `false` <br>
-- **className**: This is a prop where you could include more styling. <br>
 
 <hr>
 
@@ -538,14 +538,16 @@ Available props of this component are: <br>
 Headings are titles or subtitles that you want to display on a webpage. This is a flexible heading tag that gives you some options to make the basic style of a heading easier and also makes your code more consistent. This is an example that shows how to use this component:
 ```
     <Heading className="textBlue" type={3}>
-        this is Heading with type 3. It's like h3. 
+        This is Heading with type 3. It's like h3. 
     </Heading>
 ```
+You can use our SCSS classes for styling this component also you can pass any props to this component, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestHeading/TestHeading.js).<br>
 
 The props that it takes are like `<h1>` to `<h6>` tags in HTML. Also, the other props of this component are:
 
-- **className**: This is a prop that allows you to add more styling to your Heading.
+
 - **type**: This is a number that indicates how important is the heading. The range of this prop is from 1 to 6. when the type is equal to 1 your Heading looks like `<h1>` and when it is equal to 6 the Heading looks like `<h6>`. 
 
 
@@ -556,6 +558,9 @@ The props that it takes are like `<h1>` to `<h6>` tags in HTML. Also, the other 
 This component is used in order to add icons to your project. This is an example that shows how to use this component:<br>
 
 `<Icon type="search" fill="black" stroke="black" scale={1} />` <br>
+
+You can use our SCSS classes for styling this component also you can pass any props to this component, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestIcon/TestIcon.js).<br>
 
 The props of this component are: <br>
@@ -581,11 +586,11 @@ This is a flexible `<img />` that gives you some options to make the basic style
         height={350}
     />
 ```
+You can use our SCSS classes for styling these components. The props that it takes are like `<img />`, you can pass any props to these components, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestImage/TestImage.js).<br>
 
-The props that it takes are like `<img />`. You can use our SCSS classes for styling using `className` prop as follows:
-
-- **className**: This is a prop that gives you the hand to add more styling to your Image.
+ 
 
 <hr>
 
@@ -606,11 +611,13 @@ The order of nesting of these components is as follows:
       ...
  </MobNav>
 ```
+You can use our SCSS classes for styling these components also you can pass any props to these components, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestNavBar/MobileNav.js).<br>
 
 #### 1. MobNav
 
-This is the container for all components in the navbar (For example the menu, and register button), also It is fully responsive. you can use our SCSS classes for styling this component. <br>
+This is the container for all components in the navbar (For example the menu, and register button), also It is fully responsive. <br>
 
 #### 2. MobNavItem
 
@@ -639,12 +646,14 @@ This is a flexible Modal that gives you some options to make the basic style of 
         <div>Hello</div>
     </Modal>
 ```
+You can use our SCSS classes for styling this component also you can pass any props to this component, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestModal/TestModal.js).<br>
 
-The props of this component are: <br>
+Available prop for this component is: <br>
 
 - **fullHeightclassName**: This is a prop that gives you the hand to add more styling to your full-screen background <br>
-- **className**: This is a prop that gives you the hand to add more styling to your Modal <br>
+
 
 <hr>
 
@@ -663,6 +672,8 @@ This is an example that shows how to use this component:
         showFirstLastIcon={true}
       />
 ```
+You can use our SCSS classes for styling this component also you can pass any props to this component, such as onClick, className, etc.
+
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestPagination/TestPagination.js).<br>
 
 The clickable icons of this component are:<br>
@@ -686,10 +697,9 @@ This is a flexible `<p>` that gives you some options to make the basic style of 
 
 `<Paragraph> This is some text in a paragraph. </Paragraph>`
 
-To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestParagraph/TestParagraph.js).<br>
+You can use our SCSS classes for styling this component.The props that it takes are like `<p>`, you can pass any props to this component, such as onClick, className, etc.
 
-The props that it takes are like `<p>`. You can use our SCSS classes for styling using `className` prop as follows: 
-- **className**: This is a prop that gives you the hand to add more styling to your Paragraph.
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestParagraph/TestParagraph.js).<br>
 
 
 <hr>
@@ -768,6 +778,20 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
       ...
       ]
     ```
+        
+    data also have a display feature that is different from value. using this           feature you can represent data better. so data has two features: value and          display. There is an example here: 
+        
+    ```
+      useEffect(() => {
+        data.map((d) => {
+          d["gender"] = {
+            value: d["gender"],
+            display: genderConverter(d["gender"]),
+          };
+        });
+      }, [data]);
+  ```
+  *genderConverter function returns a proper icon for each gender. 
 - **colWidth**: This prop indicates the default width of the columns.<br>
 - **isSelectable**: This prop indicates whether rows of the table are selectable or not. When this prop is true then a checkbox appears in the right side of the table for selecting rows. <br>
 - **search**: we have an default search component but if you want to use your one you should pass a functional component to this prop. <br>
@@ -867,7 +891,7 @@ These editable css classes can change the styles of pre-defined components by IS
 `.iswad_tr` <br>
 
 <hr>
-
+ 
 ## License
 
 This project is licensed under the terms of the MIT license.
