@@ -133,7 +133,9 @@ In order to work with our components, you can import them as follows: <br>
 - `text(Primary, Faded, Info, Inverse, Success, Warning, Danger, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` &#8594; Use this classes to define the text color of an element<br>
 - `bg(Primary, Faded, Info, Inverse, Success, Warning, Danger, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` &#8594; Use this classes to define background color of an element<br>
 
-**Sample**`<div class="text-third bg-green"></div>`
+**Sample**
+
+`<div class="text-third bg-green"></div>`
 
 
 <hr>
@@ -241,7 +243,7 @@ In order to work with our components, you can import them as follows: <br>
 **Sample**
 
  `<button class="btn-large">` <br>
- 
+
 **Note:** You can also use our customized classes to define your desired button with the desired size, color, background color, and borders. <br>
 
 <hr>
