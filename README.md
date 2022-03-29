@@ -51,195 +51,253 @@ In order to work with our components, you can import them as follows: <br>
 
 ## Classes
 
-**1. Alignments** <br>
-`text-ltr` &#8594; Align: left to right<br>
-`text-rtl` &#8594; Align: right to left <br>
-`text-center` &#8594; Align: center<br>
-`text-justify` &#8594; Align: justify<br>
-Sample: `<div class="text-ltr">Hello</div>`
+### 1. Alignments
+- `text-ltr` &#8594; Align: left to right<br>
+- `text-rtl` &#8594; Align: right to left <br>
+- `text-center` &#8594; Align: center<br>
+- `text-justify` &#8594; Align: justify<br>
+
+**Sample**
+
+`<div class="text-ltr">Hello</div>`
 
 <hr>
 
-**2. Widths** <br>
-`w-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Width in percentage <br>
-`w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` &#8594; Width in pixels <br>
-`min-w-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Min width in percentage <br>
-`min-w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` &#8594; Min width in pixels <br>
-`max-w-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Max width in percentage <br>
-`max-w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` &#8594; Max width in pixels <br>
-`w-inherit` &#8594; Width: inherit <br>
-Sample: `<div className="w-per-10"> Div</div>` OR `<div class="grid grid--cols--auto"></div>` <br>
+### 2. Widths
+- `w-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Width in percentage <br>
+- `w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` &#8594; Width in pixels <br>
+- `min-w-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Min width in percentage <br>
+- `min-w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` &#8594; Min width in pixels <br>
+- `max-w-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Max width in percentage <br>
+- `max-w-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500, 550, 600)` &#8594; Max width in pixels <br>
+- `w-inherit` &#8594; Width: inherit <br>
+
+**Sample**
+
+`<div className="w-per-10"> Div</div>` OR `<div class="grid grid--cols--auto"></div>` <br>
 
 <hr>
 
-**3. Heights** <br>
-`height-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500)` &#8594; Heights in px <br>
-`height-vh-(oneFourth, oneThird, half, twoThird, threeFourth, full)` Heights in vh <br>
-`min-height-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500)` &#8594; Min heights in px <br>
-`max-height-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500)` &#8594; Max heights in px <br>
-`min-height-vh-(oneFourth, oneThird, half, twoThird, threeFourth, full)` &#8594; Min heights in vh <br>
-`max-height-vh-(oneFourth, oneThird, half, twoThird, threeFourth, full)` &#8594; Max heights in vh <br>
-Sample: `<div class="height-px-10">` <br>
+### 3. Heights
+- `height-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500)` &#8594; Heights in px <br>
+- `height-vh-(oneFourth, oneThird, half, twoThird, threeFourth, full)` Heights in vh <br>
+- `min-height-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500)` &#8594; Min heights in px <br>
+- `max-height-px-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 125, 150, 175, 200, 250, 300, 350, 400, 450, 500)` &#8594; Max heights in px <br>
+- `min-height-vh-(oneFourth, oneThird, half, twoThird, threeFourth, full)` &#8594; Min heights in vh <br>
+- `max-height-vh-(oneFourth, oneThird, half, twoThird, threeFourth, full)` &#8594; Max heights in vh <br>
+
+**Sample**
+
+ `<div class="height-px-10">` <br>
 
 <hr>
 
-**4. Heading** <br>
-`h1` &#8594; use this class to make a flexible head in all dimensions(32px at small 40px at medium 48px at large) <br>
-`h2` &#8594; use this class to make a flexible head in all dimensions(26px at small 32px at medium 36px at large) <br>
-`h3` &#8594; use this class to make a flexible head in all dimensions(22px at small 24px at medium 28px at large) <br>
-Sample: `<div class="h1">` <br>
+### 4. Heading
+- `h1` &#8594; use this class to make a flexible head in all dimensions(32px at small 40px at medium 48px at large) <br>
+- `h2` &#8594; use this class to make a flexible head in all dimensions(26px at small 32px at medium 36px at large) <br>
+- `h3` &#8594; use this class to make a flexible head in all dimensions(22px at small 24px at medium 28px at large) <br>
+
+**Sample**
+
+ `<div class="h1">` <br>
 
 <hr>
 
-**5. Margins and Paddings** <br>
-`m(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin value (`1` => 0.5rem) <br>
-`mt(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin top value (`1` => 0.5rem) <br>
-`mr(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin right value (`1` => 0.5rem) <br>
-`mb(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin bottom value (`1` => 0.5rem) <br>
-`ml(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin left value (`1` => 0.5rem) <br>
-`my(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin right and left value (`1` => 0.5rem) <br>
-`mx(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin top and bottom value (`1` => 0.5rem) <br>
-`p(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding value (`1` => 0.5rem) <br>
-`pt(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding top value (`1` => 0.5rem) <br>
-`pr(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding right value (`1` => 0.5rem) <br>
-`pb(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding bottom value (`1` => 0.5rem) <br>
-`pl(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding left value (`1` => 0.5rem) <br>
-`py(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding right and left value (`1` => 0.5rem) <br>
-`px(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding top and bottom value (`1` => 0.5rem) <br>
-`ml-auto` <br>
-`mr-auto` <br>
-Sample: `<div className="m5"> Div</div>` OR `<div class="grid grid--cols--auto"></div>` <br>
+### 5. Margins and Paddings
+
+- `m(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin value (`1` => 0.5rem) <br>
+- `mt(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin top value (`1` => 0.5rem) <br>
+- `mr(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin right value (`1` => 0.5rem) <br>
+- `mb(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin bottom value (`1` => 0.5rem) <br>
+- `ml(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin left value (`1` => 0.5rem) <br>
+- `my(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin right and left value (`1` => 0.5rem) <br>
+- `mx(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set margin top and bottom value (`1` => 0.5rem) <br>
+- `p(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding value (`1` => 0.5rem) <br>
+- `pt(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding top value (`1` => 0.5rem) <br>
+- `pr(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding right value (`1` => 0.5rem) <br>
+- `pb(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding bottom value (`1` => 0.5rem) <br>
+- `pl(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding left value (`1` => 0.5rem) <br>
+- `py(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding right and left value (`1` => 0.5rem) <br>
+- `px(1, 2, 3, 4, 5, 6, 7, 8)` Use this classes to set padding top and bottom value (`1` => 0.5rem) <br>
+- `ml-auto` <br>
+- `mr-auto` <br>
+
+**Sample**
+
+ `<div className="m5"> Div</div>` OR `<div class="grid grid--cols--auto"></div>` <br>
 
 <hr>
 
-**6. Colors** <br>
-`text(Primary, Faded, Info, Inverse, Success, Warning, Danger, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` &#8594; Use this classes to define the text color of an element<br>
-`bg(Primary, Faded, Info, Inverse, Success, Warning, Danger, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` &#8594; Use this classes to define background color of an element<br>
-Sample: `<div class="text-third bg-green"></div>`
+### 6. Colors
+
+- `text(Primary, Faded, Info, Inverse, Success, Warning, Danger, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` &#8594; Use this classes to define the text color of an element<br>
+- `bg(Primary, Faded, Info, Inverse, Success, Warning, Danger, Blue, Red, Black, White, Orange, Purple, Yellow, Green, Pink, Cyan, Silver)` &#8594; Use this classes to define background color of an element<br>
+
+**Sample**`<div class="text-third bg-green"></div>`
+
 
 <hr>
 
-**7. Hover Color** <br>
-`hover-text-(primary, faded, info, inverse, success, warning, danger, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` &#8594; Color text when hovering on an element <br>
-`hover-bg-(primary, faded, info, inverse, success, warning, danger, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` &#8594; Background color when hovering on an element <br>
-Sample: `<a class="hover-bg-primary"></a>` <br>
+### 7. Hover Color
+- `hover-text-(primary, faded, info, inverse, success, warning, danger, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` &#8594; Color text when hovering on an element <br>
+- `hover-bg-(primary, faded, info, inverse, success, warning, danger, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` &#8594; Background color when hovering on an element <br>
+
+**Sample**
+
+ `<a class="hover-bg-primary"></a>` <br>
 
 <hr>
 
-**8. Borders** <br>
-`br-rad-px-(5, 10, 15, 20, 25, 30, 35, 40, 45, 50)` &#8594; Use this classes to define the border radius in pixels. <br>
-`br-rad-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Use this classes to define the border radius in percentage. <br>
-`br-(all, top, left, right, bottom)-(dotted, dashed, solid, double, groove, ridge, inset, outset, hidden)-(1, 2, 3, 4)` &#8594; Use this classes to define the direction, style, and thickness of borders in pixels. <br>
-`br-color-(primary, faded, info, inverse, success, warning, danger, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` &#8594; Use this classes to define the color of borders. <br>
-`br-none` &#8594; Use this class to remove all borders
+### 8. Borders
+- `br-rad-px-(5, 10, 15, 20, 25, 30, 35, 40, 45, 50)` &#8594; Use this classes to define the border radius in pixels. <br>
+- `br-rad-per-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Use this classes to define the border radius in percentage. <br>
+- `br-(all, top, left, right, bottom)-(dotted, dashed, solid, double, groove, ridge, inset, outset, hidden)-(1, 2, 3, 4)` &#8594; Use this classes to define the direction, style, and thickness of borders in pixels. <br>
+- `br-color-(primary, faded, info, inverse, success, warning, danger, red, blue, black, white, orange, purple, yellow, green, pink, cyan, silver)` &#8594; Use this classes to define the color of borders. <br>
+- `br-none` &#8594; Use this class to remove all borders
 
-Sample: `<div class="br-bottom-double-2 br-color-red">Hello</div>`
+**Sample**
 
-<hr>
-
-**8. Fonts** <br>
-`fs-px-(8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32)` &#8594; Font size in pixels <br>
-`fs-r-(1, 2, 3, 4, 5, 6, 7, 8)` &#8594; Font size in rem <br>
-`fw-(100, 200, 300, 400, 500, 600, 700, 800, 900, 1000)` &#8594; Font weight <br>
-`f-b` &#8594; Bold Text <br>
-`f-i` &#8594; Italic text <br>
-Sample: `<p class="fs-r-2 fw-600 f-i">Something</p>` <br>
+ `<div class="br-bottom-double-2 br-color-red">Hello</div>`
 
 <hr>
 
-**9. Position** <br>
-`pos-abs` &#8594; Make the position absolute <br>
-`pos-abs--(lt, rt, center, lb, rb)` &#8594; Define the position of an absolute element <br>
-`pos-fix` &#8594; Make the position fixed <br>
-`pos-fix--(lt, rt, center, lb, rb)` &#8594; Define the position of a fixed element <br>
-`pos-rel` &#8594; Make the position relative <br>
-`pos-sticky` &#8594; Make the position sticky <br>
-`pos-sticky--(lt, rt, center, lb, rb)` &#8594; Define the position of a sticky element <br>
+### 9. Fonts
+- `fs-px-(8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32)` &#8594; Font size in pixels <br>
+- `fs-r-(1, 2, 3, 4, 5, 6, 7, 8)` &#8594; Font size in rem <br>
+- `fw-(100, 200, 300, 400, 500, 600, 700, 800, 900, 1000)` &#8594; Font weight <br>
+- `f-b` &#8594; Bold Text <br>
+- `f-i` &#8594; Italic text <br>
 
-Sample: `<div class="pos-abs pos-abs--lt">` <br>
+**Sample**
 
-<hr>
-
-**10. display** <br>
-`block` Display : block <br>
-`no-display` Display : none <br>
-`flex` &#8594; Display : Flex <br>
-`grid` Display : Grid <br>
-`show-block-in-(sm-md-lg, md-lg, lg, md-sm-xsm, sm-xsm, xsm)` Use this classes to show a block div in specific Dimension (`sm` : small, `md` : medium, `lg` : large)<br>
-Sample: `<div class="flex">` OR `<div class="no-display"></div>` OR `<div class="block"></div>` <br>
+ `<p class="fs-r-2 fw-600 f-i">Something</p>` <br>
 
 <hr>
 
-**11. Grid and Flex** <br>
-`row` &#8594; Use this classes to define a flex element with row direction <br>
-`row--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Use this class to define how much element you want in any column<br>
-`row--sm--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Small Devices <br>
-`row--md--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Medium Size Devices<br>
-`row--lg--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Large Devices<br>
-`flex--jc--(start, center, end, betwwen, around, evenly)` Use this classes to define the `justify-content` value <br>
-`flex--ai--(start, center, end)` Use this classes to define the `align-items` value <br>
-`flex--dir--(row, col)` Use this classes to define the direction (column, row) <br>
-`flex--dir--(row, col)` Use this classes to define the direction (column, row) <br>
-`flex--gr--(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Flex grow value <br>
-`flex--wrap` Use this classes if you need to assignee a wrap value to flex-wrap property <br>
-`show-flex-in-(sm-md-lg, md-lg, lg, md-sm-xsm, sm-xsm, xsm)` Use this classes to show a flex div in specific Dimension (`sm` : small, `md` : medium, `lg` : large)<br>
-`grid--cols--(auto, oneFourth, oneThird, oneHalf)` Use this class to define how much element you want in any column <br>
-Sample: `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-oneThird text-red p4 text-center">First Div</div>` OR `<div class="grid grid--cols--auto"></div>` <br>
+### 10. Position
+
+- `pos-abs` &#8594; Make the position absolute <br>
+- `pos-abs--(lt, rt, center, lb, rb)` &#8594; Define the position of an absolute element <br>
+- `pos-fix` &#8594; Make the position fixed <br>
+- `pos-fix--(lt, rt, center, lb, rb)` &#8594; Define the position of a fixed element <br>
+- `pos-rel` &#8594; Make the position relative <br>
+- `pos-sticky` &#8594; Make the position sticky <br>
+- `pos-sticky--(lt, rt, center, lb, rb)` &#8594; Define the position of a sticky element <br>
+
+**Sample**
+
+ `<div class="pos-abs pos-abs--lt">` <br>
 
 <hr>
 
-**12. Links** <br>
-`link` &#8594; Basic form for links <br>
-Sample: `<a class="link"></a>` <br>
+### 11. display
+
+- `block` Display : block <br>
+- `no-display` Display : none <br>
+- `flex` &#8594; Display : Flex <br>
+- `grid` Display : Grid <br>
+- `show-block-in-(sm-md-lg, md-lg, lg, md-sm-xsm, sm-xsm, xsm)` Use this classes to show a block div in specific Dimension (`sm` : small, `md` : medium, `lg` : large)<br>
+
+**Sample**
+
+ `<div class="flex">` OR `<div class="no-display"></div>` OR `<div class="block"></div>` <br>
 
 <hr>
 
-**13. Buttons** <br>
-`btn-(large, medium, small, full)` &#8594; Use `large`, `medium` and `small` to define the size of button, `full` to take the full of size <br>
-Sample: `<button class="btn-large">` <br>
+### 12. Grid and Flex
+
+- `row` &#8594; Use this classes to define a flex element with row direction <br>
+- `row--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Use this class to define how much element you want in any column<br>
+- `row--sm--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Small Devices <br>
+- `row--md--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Medium Size Devices<br>
+- `row--lg--(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Large Devices<br>
+- `flex--jc--(start, center, end, betwwen, around, evenly)` Use this classes to define the `justify-content` value <br>
+- `flex--ai--(start, center, end)` Use this classes to define the `align-items` value <br>
+- `flex--dir--(row, col)` Use this classes to define the direction (column, row) <br>
+- `flex--dir--(row, col)` Use this classes to define the direction (column, row) <br>
+- `flex--gr--(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12)` &#8594; Flex grow value <br>
+- `flex--wrap` Use this classes if you need to assignee a wrap value to flex-wrap property <br>
+- `show-flex-in-(sm-md-lg, md-lg, lg, md-sm-xsm, sm-xsm, xsm)` Use this classes to show a flex div in specific Dimension (`sm` : small, `md` : medium, `lg` : large)<br>
+- `grid--cols--(auto, oneFourth, oneThird, oneHalf)` Use this class to define how much element you want in any column <br>
+
+**Sample**
+
+ `<div className="row--12 row--sm--10 row--md--8 row--lg--6 bg-blue box-oneThird text-red p4 text-center">First Div</div>` OR `<div class="grid grid--cols--auto"></div>` <br>
+
+<hr>
+
+### 13. Links
+- `link` &#8594; Basic form for links <br>
+
+**Sample**
+
+`<a class="link"></a>` <br>
+
+<hr>
+
+### 14. Buttons
+- `btn-(large, medium, small, full)` &#8594; Use `large`, `medium` and `small` to define the size of button, `full` to take the full of size <br>
+
+**Sample**
+
+ `<button class="btn-large">` <br>
+ 
 **Note:** You can also use our customized classes to define your desired button with the desired size, color, background color, and borders. <br>
 
 <hr>
 
-**14. Forms** <br>
-`input` &#8594; basic form for an input <br>
-`required` &#8594; use this class for required inputs <br>
-Sample: `<div class="input">` <br>
+### 15. Forms
+- `input` &#8594; basic form for an input <br>
+- `required` &#8594; use this class for required inputs <br>
+
+**Sample**
+
+ `<div class="input">` <br>
 
 <hr>
 
-**15. Opacity** <br>
-`op-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Opacity in percentage <br>
-Sample: `<img class="op-60">` <br>
+### 16. Opacity
+- `op-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Opacity in percentage <br>
+
+**Sample**
+
+ `<img class="op-60">` <br>
 
 <hr>
 
-**16. General Classes** <br>
-`mouse-hand` &#8594; Pointer Cursor <br>
-`z-(0, 10, 100, 1000, 10000, 100000)` &#8594; Z-index classes <br>
-`f-(left, right)` &#8594; Float left or right <br>
-`of-(y, x)-(hidden, scroll, auto)` &#8594; Overflow <br>
+### 17. General Classes
+- `mouse-hand` &#8594; Pointer Cursor <br>
+- `z-(0, 10, 100, 1000, 10000, 100000)` &#8594; Z-index classes <br>
+- `f-(left, right)` &#8594; Float left or right <br>
+- `of-(y, x)-(hidden, scroll, auto)` &#8594; Overflow <br>
 
-**17. Mobile Menu Bar** <br>
-`menu-mob-icon` &#8594; Mobile Menu Icon <br>
-`menu-mob-closed-icon` &#8594; Closing icon <br>
-`menu-mob-hr` <br>
-`menu-mob-hr-active` <br>
-Notice: In order to make any changes in the way of appearing of the mobile menu, you need to change these two classes `hamburger-menu-hr` `hamburger-menu-hr-active`, in the `_mobmenu.scss` file <br>
+<hr> 
 
-<hr>
+### 18. Mobile Menu Bar
+- `menu-mob-icon` &#8594; Mobile Menu Icon <br>
+- `menu-mob-closed-icon` &#8594; Closing icon <br>
+- `menu-mob-hr` <br>
+- `menu-mob-hr-active` <br>
 
-**15. Opacity** <br>
-`op-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Opacity in percentage <br>
-Sample: `<img class="op-60">` <br>
+
+Notice: In order to make any changes in the way of appearing of the mobile menu, you need to change these two classes `hamburger-menu-hr` - `hamburger-menu-hr-active`, in the `_mobmenu.scss` file <br>
 
 <hr>
 
-**16. General Classes** <br>
-`mouse-hand` &#8594; Pointer Cursor <br>
-`z-(0, 10, 100, 1000, 10000, 100000)` &#8594; Z-index classes <br>
-`f-(left, right)` &#8594; Float left or right <br>
-`of-(y, x)-(hidden, scroll, auto)` &#8594; Overflow <br>
+### 19. Opacity
+- `op-(0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)` &#8594; Opacity in percentage <br>
+
+**Sample**
+
+ `<img class="op-60">` <br>
+
+<hr>
+
+### 20. General Classes
+- `mouse-hand` &#8594; Pointer Cursor <br>
+- `z-(0, 10, 100, 1000, 10000, 100000)` &#8594; Z-index classes <br>
+- `f-(left, right)` &#8594; Float left or right <br>
+- `of-(y, x)-(hidden, scroll, auto)` &#8594; Overflow <br>
 
 <hr>
 
