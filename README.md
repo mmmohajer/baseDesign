@@ -14,18 +14,25 @@ This repository is designed in order to develop basic components and create hand
 - [Components](#components)
   - [AdminNavbar](#adminnavbar)
   - [Alert](#alert)
+  - [Button](#button)
   - [Card](#card)
   - [Carousel](#carousel)
+  - [Column](#column)
   - [DesktopNavbar](#desktopnavbar)
   - [Div](#div)
+  - [Form](#form)
   - [HamburgerIcon](#hamburgericon)
   - [Heading](#heading)
   - [Icon](#icon)
   - [Image](#image)
+  - [Input](#input)
+  - [Label](#label)
   - [MobileNavbar](#mobilenavbar)
   - [Modal](#modal)
   - [Pagination](#pagination)
   - [Paragraph](#paragraph)
+  - [Row](#row)
+  - [Search](#search)
   - [Table](#table)
   - [Text](#text)
 - [Editable Css Classes](#editable-css-classes)
@@ -365,6 +372,38 @@ Using this component you can create the Alert item also It is fully responsive.
 
 <hr>
 
+### Button
+
+This is a flexible and clickable Button. This is like `<button>` in HTML but it has some more props which help you to create your button easier. Inside Button you can put text and any tag that you can put in `<button>`.  This is an example that shows how to use this component:
+
+```
+    const buttonRef = useRef();
+    useEffect(() => {
+      if (buttonRef?.current) {
+        buttonRef.current.classList.add("bgBlue");
+      }
+      console.log(buttonRef);
+    }, [buttonRef]);
+ 
+        <Button
+          className="bgRed textWhite py1"
+          onClick={() => console.log("Hello")}
+          fullWidth
+          ref={(el) => (buttonRef.current = el)}
+        >
+          Click Me!
+        </Button>
+```
+You can use our SCSS classes for styling this component also you can pass any props to this component, such as onClick, className, etc.
+
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestButton/TestButton.js).
+
+Available prop for this component is: 
+
+- **fullWidth**: This prop gets a boolean value indicating whether the width of the button should be 100% or not (It sets `w-per-100` as className). 
+
+<hr>
+
 ### Card
 
 This is a flexible Card with column direction that contain three components and the order of nesting of this component is as follows:
@@ -438,6 +477,31 @@ Using this component you can create the carousel items also It is fully responsi
 
 <hr>
 
+### Column 
+Using column component you can create a column. This is an example that shows how to use this component: 
+
+```
+      <Row>
+        <Column xs={12} sm={8} md={6} lg={4} className="bgRed">
+          Hello
+        </Column>
+        <Column xs={12} sm={4} md={6} lg={8} className="bgBlue">
+          Bye
+        </Column>
+      </Row>
+```
+You can use our SCSS classes for styling this component also you can pass any props to these component, such as onClick, className, etc.
+
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestRow/TestRow.js).
+
+Available props for this component is:
+- **xs**: This prop is a number between 1 and 12 which indicate the size of column in xs screen. 
+- **sm**: This prop is a number between 1 and 12 which indicate the size of column in sm screen. 
+- **md**: This prop is a number between 1 and 12 which indicate the size of column in md screen. 
+- **lg**: This prop is a number between 1 and 12 which indicate the size of column in lg screen. 
+The default value for this props is 12. 
+
+<hr>
 
 ### DesktopNavbar
 
@@ -479,7 +543,6 @@ This is a wrapper around the SubNavItem components and creates your submenu area
 Using this component you can create submenus for each NavItem. This component uses `iswad_subNavItem` SCSS class as style.<br>
 
 <hr>
-
 
 ### Div
 
@@ -650,7 +713,52 @@ You can use our SCSS classes for styling these components. The props that it tak
 
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestImage/TestImage.js).<br>
 
- 
+<hr>
+
+### Input 
+
+This is a flexible `<input />` that gives you some options to make the basic style of a `<input />` easier and also makes your code more consistent. This is an example that shows how to use this component:
+
+```
+    <Input
+      type="text"
+      name="first_name"
+      fullWidth
+      placeholder="Type your first name"
+      value={firstName}
+      onChange={(e) => {
+        setFirstName(e.target.value);
+        setFirstNameErrorIsActive(false);
+        setFirstNameErrorMessage("");
+      }}
+      errorMessage={fistNameErrorMessage}
+      errorIsActive={fistNameErrorIsActive}
+    />
+```
+You can use our SCSS classes for styling these components. The props that it takes are like `<input />`, you can pass any props to these components, such as onClick, className, etc.
+
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestForm/TestForm.js).
+
+Available props for this component is:
+- **type**: This prop is a sting that indicates the type of input (for example email, checkbox, etc). 
+- **fullWidth**:This prop is a boolean value indicating whether the width of the button should be 100% or not (It sets w-per-100 as className).
+- **errorMessage**: This prop is a string value that indicates the error message when an error accrued.
+- **errorIsActive**: This prop is a boolean that indicates whether error messages should be shown or not for this input. 
+
+<hr>
+
+### Label 
+
+This is a flexible `<label>` that gives you some options to make the basic style of a `<label>` easier and also makes your code more consistent. This is an example that shows how to use this component: <br>
+
+`        <Label className="textBlack" htmlFor="sample">
+          First Name
+        </Label>
+`
+
+You can use our SCSS classes for styling this component.The props that it takes are like `<label>`, you can pass any props to this component, such as onClick, className, etc.
+
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestForm/TestForm.js).<br>
 
 <hr>
 
@@ -764,6 +872,30 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 
 <hr>
 
+### Row 
+Using Row component you can create a row. This is an example that shows how to use this component: 
+
+```
+      <Row>
+        <Column xs={12} sm={8} md={6} lg={4} className="bgRed">
+          Hello
+        </Column>
+        <Column xs={12} sm={4} md={6} lg={8} className="bgBlue">
+          Bye
+        </Column>
+      </Row>
+```
+You can use our SCSS classes for styling this component also you can pass any props to these component, such as onClick, className, etc.
+
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestRow/TestRow.js).
+
+Available props for this component is:
+- **xs**: This prop is a number between 1 and 12 which indicate the size of row in xs screen. 
+- **sm**: This prop is a number between 1 and 12 which indicate the size of row in sm screen. 
+- **md**: This prop is a number between 1 and 12 which indicate the size of row in md screen. 
+- **lg**: This prop is a number between 1 and 12 which indicate the size of row in lg screen. 
+The default value for this props is 12. 
+<hr>
 
 ### Table
 
@@ -884,9 +1016,7 @@ This is a flexible `<span>` that gives you some options to make the basic style 
 ```
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/Document/src/TestComponents/TestText/TestText.js).<br>
 
-The props that it takes are like `<span>`. You can use our SCSS classes for styling using className prop as follows:
-
-- **className**: This is a prop that gives you the hand to add more styling to your Text.
+You can use our SCSS classes for styling this component also you can pass any props to these component, such as onClick, className, etc. The props that it takes are like `<span>`. 
 
 <hr>
 
