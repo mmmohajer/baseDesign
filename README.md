@@ -604,6 +604,56 @@ The props of this component are: <br>
 
 <hr>
 
+### Form
+ The Form component is a container for different types of inputs. This is a form which used to collecting users informations and inputs and also gives you some options to make the basic style of a form easier and makes your code more consistent. This is an example that shows how to use this component:
+```
+  const [firstName, setFirstName] = useState("");
+  const [fistNameErrorMessage, setFirstNameErrorMessage] = useState("");
+  const [fistNameErrorIsActive, setFirstNameErrorIsActive] = useState(false);
+
+  const toBeValidatedFields = [
+    {
+      input_name: "first_name",
+      validators: firstNameValidators,
+      errorMessageHandler: setFirstNameErrorMessage,
+      errorActivateHandler: setFirstNameErrorIsActive,
+    },
+  ];
+  
+    <Form
+        className="textWhite py1"
+        toBeValidatedFields={toBeValidatedFields}
+        onSubmit={() => console.log("Yay")}
+    >
+        <Label className="textBlack" htmlFor="sample">
+          First Name
+        </Label>
+        <Input
+          type="text"
+          name="first_name"
+          fullWidth
+          placeholder="Type your first name"
+          value={firstName}
+          onChange={(e) => {
+            setFirstName(e.target.value);
+            setFirstNameErrorIsActive(false);
+            setFirstNameErrorMessage("");
+          }}
+          errorMessage={fistNameErrorMessage}
+          errorIsActive={fistNameErrorIsActive}
+        />
+    </Form>
+```
+You can use our SCSS classes for styling this component also you can pass any props to this component, such as onClick, className, etc.
+
+To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestForm/TestForm.js).<br>
+
+ Available props for this component are:
+- **toBeValidatedFields**: This prop is an array, in this array we define validation variables for each input. 
+- **onSubmit**: This prop is a function which runs when the form submitted. 
+
+<hr>
+
 ### HamburgerIcon
 
 This is a hamburgur icon with a nice animation on click to close and open the icon.
@@ -894,7 +944,7 @@ Available props for this component is:
 - **sm**: This prop is a number between 1 and 12 which indicate the size of row in sm screen. 
 - **md**: This prop is a number between 1 and 12 which indicate the size of row in md screen. 
 - **lg**: This prop is a number between 1 and 12 which indicate the size of row in lg screen. 
-The default value for this props is 12. 
+ 
 <hr>
 
 ### Table
@@ -927,7 +977,7 @@ Using this component you can create a flexible table. This is an example that sh
 ```
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestTable/TestTable.js).<br>
 
- Available props for this component are: <br>
+Available props for this component are: <br>
 - **headLines**: This prop indicates the table headings. This prop has the following features:<br>
   - **value**: This is the variable in your data. <br>
   - **display**: This is the text that will be shown in the table header for this value. <br>
