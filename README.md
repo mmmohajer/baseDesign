@@ -377,19 +377,10 @@ Using this component you can create the Alert item also It is fully responsive.
 This is a flexible and clickable Button. This is like `<button>` in HTML but it has some more props which help you to create your button easier. Inside Button you can put text and any tag that you can put in `<button>`.  This is an example that shows how to use this component:
 
 ```
-    const buttonRef = useRef();
-    useEffect(() => {
-      if (buttonRef?.current) {
-        buttonRef.current.classList.add("bgBlue");
-      }
-      console.log(buttonRef);
-    }, [buttonRef]);
- 
         <Button
           className="bgRed textWhite py1"
           onClick={() => console.log("Hello")}
           fullWidth
-          ref={(el) => (buttonRef.current = el)}
         >
           Click Me!
         </Button>
