@@ -505,13 +505,14 @@ You can use our SCSS classes for styling this component also you can pass any pr
 
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestRow/TestRow.js).
 
-Available props for this component is:
-
+Available props for this component are:
+- **showIn**: This is a prop that takes some of "xs", "sm", "md" and "lg", these values define in what screen sizes this component must be shown in.  
 - **xs**: This prop is a number between 1 and 12 which indicate the size of column in xs screen.
 - **sm**: This prop is a number between 1 and 12 which indicate the size of column in sm screen.
 - **md**: This prop is a number between 1 and 12 which indicate the size of column in md screen.
 - **lg**: This prop is a number between 1 and 12 which indicate the size of column in lg screen.
-  The default value for this props is 12.
+
+ The default value for the last four props is 12.
 
 <hr>
 
@@ -584,6 +585,7 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 The props of this component are: <br>
 
 - **type**: This is a prop that takes `flex` or `block` as the value of display, by default `block` <br>
+- **showIn**: This is a prop that takes some of "xs", "sm", "md" and "lg", these values define in what screen sizes this component must be shown in.  
 - **direction**: This is a prop that takes one of the two values `horizontal` to have div with a flex-direction row or `vertical` to have div with a flex-direction column, by default `horizontal` <br>
 
 - **hAlign**: 'Horizontal Align' this is a prop that takes one of the three values and each value depends on the direction, by default `start`
@@ -970,13 +972,14 @@ You can use our SCSS classes for styling this component also you can pass any pr
 
 To see a more complete example, click [here](https://github.com/mmmohajer/baseDesign/blob/master/src/TestComponents/TestRow/TestRow.js).
 
-Available props for this component is:
-
+Available props for this component are:
+- **showIn**: This is a prop that takes some of "xs", "sm", "md" and "lg", these values define in what screen sizes this component must be shown in.  
 - **xs**: This prop is a number between 1 and 12 which indicate the size of row in xs screen.
 - **sm**: This prop is a number between 1 and 12 which indicate the size of row in sm screen.
 - **md**: This prop is a number between 1 and 12 which indicate the size of row in md screen.
 - **lg**: This prop is a number between 1 and 12 which indicate the size of row in lg screen.
-
+ 
+  The default value for the last four props is 12.
 <hr>
 
 ### Table
