@@ -21,7 +21,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _excluded = ["type", "className", "fullWidth", "errorMessage", "errorIsActive", "children"];
+var _utils = require("../../utils/utils");
+
+var _excluded = ["type", "className", "fullWidth", "errorMessage", "errorIsActive", "children", "id"];
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -37,6 +39,7 @@ var Input = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       errorMessage = _ref.errorMessage,
       errorIsActive = _ref.errorIsActive,
       children = _ref.children,
+      id = _ref.id,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--dir--col iswad_input_container"
@@ -46,7 +49,8 @@ var Input = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     className: (0, _classnames["default"])("iswad_input", className, fullWidth && "w-per-100")
   }, props, {
     ref: ref,
-    type: type
+    type: type,
+    id: id || (0, _utils.randomStr)(16)
   }))), errorMessage !== null && errorMessage !== void 0 && errorMessage.length ? /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])("iswad_input_errorMessage", errorIsActive && "iswad_input_errorMessage_active")
   }, /*#__PURE__*/_react["default"].createElement("span", null, errorMessage)) : ""));

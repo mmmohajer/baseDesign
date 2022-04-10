@@ -9,7 +9,7 @@ exports.validate = exports.toBeValidatedFieldsShape = void 0;
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var arrayOfErrorValidators = ["required", "minRequired", "maxRequired", "email"];
+var arrayOfErrorValidators = ["required", "minRequired", "maxRequired", "email", "same"];
 var validatorsShape = {
   type: _propTypes["default"].oneOf(arrayOfErrorValidators).isRequired,
   message: _propTypes["default"].string.isRequired,
@@ -27,6 +27,7 @@ exports.toBeValidatedFieldsShape = toBeValidatedFieldsShape;
 var validate = function validate(val, validator) {
   var minRequired = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
   var maxRequired = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+  var toBeSameFieldVal = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
   validator = validator.toLowerCase();
   var validated = true;
 
@@ -50,6 +51,12 @@ var validate = function validate(val, validator) {
 
   if (validator === "email") {
     validated = validateEmail(val);
+  }
+
+  if (validator === "same") {
+    if (val !== toBeSameFieldVal) {
+      validated = false;
+    }
   }
 
   return validated;

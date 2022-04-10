@@ -45,33 +45,63 @@ var TestForm = function TestForm() {
 
   var _useState7 = (0, _react.useState)(""),
       _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
-      fistNameErrorMessage = _useState8[0],
-      setFirstNameErrorMessage = _useState8[1];
+      password = _useState8[0],
+      setPassword = _useState8[1];
 
-  var _useState9 = (0, _react.useState)(false),
+  var _useState9 = (0, _react.useState)(""),
       _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
-      fistNameErrorIsActive = _useState10[0],
-      setFirstNameErrorIsActive = _useState10[1];
+      repeatedPassword = _useState10[0],
+      setRepeatedPassword = _useState10[1];
 
   var _useState11 = (0, _react.useState)(""),
       _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
-      lastNameErrorMessage = _useState12[0],
-      setLastNameErrorMessage = _useState12[1];
+      fistNameErrorMessage = _useState12[0],
+      setFirstNameErrorMessage = _useState12[1];
 
   var _useState13 = (0, _react.useState)(false),
       _useState14 = (0, _slicedToArray2["default"])(_useState13, 2),
-      lastNameErrorIsActive = _useState14[0],
-      setLastNameErrorIsActive = _useState14[1];
+      fistNameErrorIsActive = _useState14[0],
+      setFirstNameErrorIsActive = _useState14[1];
 
   var _useState15 = (0, _react.useState)(""),
       _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
-      emailErrorMessage = _useState16[0],
-      setEmailErrorMessage = _useState16[1];
+      lastNameErrorMessage = _useState16[0],
+      setLastNameErrorMessage = _useState16[1];
 
   var _useState17 = (0, _react.useState)(false),
       _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
-      emailErrorIsActive = _useState18[0],
-      setEmailErrorIsActive = _useState18[1];
+      lastNameErrorIsActive = _useState18[0],
+      setLastNameErrorIsActive = _useState18[1];
+
+  var _useState19 = (0, _react.useState)(""),
+      _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
+      emailErrorMessage = _useState20[0],
+      setEmailErrorMessage = _useState20[1];
+
+  var _useState21 = (0, _react.useState)(false),
+      _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
+      emailErrorIsActive = _useState22[0],
+      setEmailErrorIsActive = _useState22[1];
+
+  var _useState23 = (0, _react.useState)(""),
+      _useState24 = (0, _slicedToArray2["default"])(_useState23, 2),
+      passwordErrorMessage = _useState24[0],
+      setPasswordErrorMessage = _useState24[1];
+
+  var _useState25 = (0, _react.useState)(false),
+      _useState26 = (0, _slicedToArray2["default"])(_useState25, 2),
+      passwordErrorIsActive = _useState26[0],
+      setPasswordErrorIsActive = _useState26[1];
+
+  var _useState27 = (0, _react.useState)(""),
+      _useState28 = (0, _slicedToArray2["default"])(_useState27, 2),
+      repeatedPasswordErrorMessage = _useState28[0],
+      setRepeatedPasswordErrorMessage = _useState28[1];
+
+  var _useState29 = (0, _react.useState)(false),
+      _useState30 = (0, _slicedToArray2["default"])(_useState29, 2),
+      repeatedPasswordErrorIsActive = _useState30[0],
+      setRepeatedPasswordErrorIsActive = _useState30[1];
 
   var toBeValidatedFields = [{
     input_name: "first_name",
@@ -88,6 +118,16 @@ var TestForm = function TestForm() {
     validators: _utils.emailValidators,
     errorMessageHandler: setEmailErrorMessage,
     errorActivateHandler: setEmailErrorIsActive
+  }, {
+    input_name: "password",
+    validators: _utils.passwordValidators,
+    errorMessageHandler: setPasswordErrorMessage,
+    errorActivateHandler: setPasswordErrorIsActive
+  }, {
+    input_name: "repeatedPassword",
+    validators: (0, _utils.repeatedPasswordValidators)(password),
+    errorMessageHandler: setRepeatedPasswordErrorMessage,
+    errorActivateHandler: setRepeatedPasswordErrorIsActive
   }];
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Form["default"], {
     className: "textWhite py1",
@@ -135,6 +175,30 @@ var TestForm = function TestForm() {
     },
     errorMessage: emailErrorMessage,
     errorIsActive: emailErrorIsActive
+  }), /*#__PURE__*/_react["default"].createElement(_Input["default"], {
+    type: "password",
+    name: "password",
+    placeholder: "Type your password",
+    value: password,
+    onChange: function onChange(e) {
+      setPassword(e.target.value);
+      setPasswordErrorIsActive(false);
+      setPasswordErrorMessage("");
+    },
+    errorMessage: passwordErrorMessage,
+    errorIsActive: passwordErrorIsActive
+  }), /*#__PURE__*/_react["default"].createElement(_Input["default"], {
+    type: "password",
+    name: "repeatedPassword",
+    placeholder: "Repeat your password",
+    value: repeatedPassword,
+    onChange: function onChange(e) {
+      setRepeatedPassword(e.target.value);
+      setRepeatedPasswordErrorIsActive(false);
+      setRepeatedPasswordErrorMessage("");
+    },
+    errorMessage: repeatedPasswordErrorMessage,
+    errorIsActive: repeatedPasswordErrorIsActive
   }), /*#__PURE__*/_react["default"].createElement(_Input["default"], {
     type: "checkbox",
     name: "sample3"

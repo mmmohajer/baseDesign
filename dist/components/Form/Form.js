@@ -53,17 +53,18 @@ var Form = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         var curElement = e.target[item["input_name"]];
 
         for (var idx = 0; idx < item["validators"].length; idx++) {
-          var _item$validators$idx, _item$validators$idx2, _item$validators$idx3;
+          var _item$validators$idx, _item$validators$idx2, _item$validators$idx3, _item$validators$idx4;
 
           var validator = (_item$validators$idx = item["validators"][idx]) === null || _item$validators$idx === void 0 ? void 0 : _item$validators$idx.type;
           var minRequired = (_item$validators$idx2 = item["validators"][idx]) === null || _item$validators$idx2 === void 0 ? void 0 : _item$validators$idx2.minRequired;
           var maxRequired = (_item$validators$idx3 = item["validators"][idx]) === null || _item$validators$idx3 === void 0 ? void 0 : _item$validators$idx3.maxRequired;
+          var toBeSameFieldVal = (_item$validators$idx4 = item["validators"][idx]) === null || _item$validators$idx4 === void 0 ? void 0 : _item$validators$idx4.toBeSameFieldVal;
 
           if (validator) {
-            if (!(0, _utils.validate)(curElement.value, validator, minRequired, maxRequired)) {
-              var _item$validators$idx4;
+            if (!(0, _utils.validate)(curElement.value, validator, minRequired, maxRequired, toBeSameFieldVal)) {
+              var _item$validators$idx5;
 
-              item === null || item === void 0 ? void 0 : item.errorMessageHandler((_item$validators$idx4 = item["validators"][idx]) === null || _item$validators$idx4 === void 0 ? void 0 : _item$validators$idx4.message);
+              item === null || item === void 0 ? void 0 : item.errorMessageHandler((_item$validators$idx5 = item["validators"][idx]) === null || _item$validators$idx5 === void 0 ? void 0 : _item$validators$idx5.message);
               item === null || item === void 0 ? void 0 : item.errorActivateHandler(true);
               is_validated = false;
               break;

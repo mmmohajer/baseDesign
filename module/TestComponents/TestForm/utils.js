@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.lastNameValidators = exports.firstNameValidators = exports.emailValidators = void 0;
+exports.repeatedPasswordValidators = exports.passwordValidators = exports.lastNameValidators = exports.firstNameValidators = exports.emailValidators = void 0;
 var firstNameValidators = [{
   type: "required",
   message: "First name is required"
@@ -38,4 +38,27 @@ var emailValidators = [{
   message: "Must be a valid email address"
 }];
 exports.emailValidators = emailValidators;
+var passwordValidators = [{
+  type: "required",
+  message: "Password is required"
+}, {
+  type: "minRequired",
+  message: "PAssword must be at least 3 characters",
+  minRequired: 3
+}, {
+  type: "maxRequired",
+  message: "Password must be at less than 8 characters",
+  maxRequired: 8
+}];
+exports.passwordValidators = passwordValidators;
+
+var repeatedPasswordValidators = function repeatedPasswordValidators(toBeSameFieldVal) {
+  return [{
+    type: "same",
+    message: "Password and repeated password fields must be the same.",
+    toBeSameFieldVal: toBeSameFieldVal
+  }];
+};
+
+exports.repeatedPasswordValidators = repeatedPasswordValidators;
 //# sourceMappingURL=utils.js.map
