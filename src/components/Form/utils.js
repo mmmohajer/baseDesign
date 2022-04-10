@@ -5,6 +5,7 @@ const arrayOfErrorValidators = [
   "minRequired",
   "maxRequired",
   "email",
+  "same",
 ];
 
 const validatorsShape = {
@@ -25,7 +26,8 @@ export const validate = (
   val,
   validator,
   minRequired = null,
-  maxRequired = null
+  maxRequired = null,
+  toBeSameFieldVal = null
 ) => {
   validator = validator.toLowerCase();
   let validated = true;
@@ -50,6 +52,12 @@ export const validate = (
 
   if (validator === "email") {
     validated = validateEmail(val);
+  }
+
+  if (validator === "same") {
+    if (val !== toBeSameFieldVal) {
+      validated = false;
+    }
   }
 
   return validated;

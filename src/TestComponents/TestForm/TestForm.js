@@ -10,12 +10,16 @@ import {
   firstNameValidators,
   lastNameValidators,
   emailValidators,
+  passwordValidators,
+  repeatedPasswordValidators,
 } from "./utils";
 
 const TestForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatedPassword, setRepeatedPassword] = useState("");
 
   const [fistNameErrorMessage, setFirstNameErrorMessage] = useState("");
   const [fistNameErrorIsActive, setFirstNameErrorIsActive] = useState(false);
@@ -25,6 +29,14 @@ const TestForm = () => {
 
   const [emailErrorMessage, setEmailErrorMessage] = useState("");
   const [emailErrorIsActive, setEmailErrorIsActive] = useState(false);
+
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState("");
+  const [passwordErrorIsActive, setPasswordErrorIsActive] = useState(false);
+
+  const [repeatedPasswordErrorMessage, setRepeatedPasswordErrorMessage] =
+    useState("");
+  const [repeatedPasswordErrorIsActive, setRepeatedPasswordErrorIsActive] =
+    useState(false);
 
   const toBeValidatedFields = [
     {
@@ -44,6 +56,18 @@ const TestForm = () => {
       validators: emailValidators,
       errorMessageHandler: setEmailErrorMessage,
       errorActivateHandler: setEmailErrorIsActive,
+    },
+    {
+      input_name: "password",
+      validators: passwordValidators,
+      errorMessageHandler: setPasswordErrorMessage,
+      errorActivateHandler: setPasswordErrorIsActive,
+    },
+    {
+      input_name: "repeatedPassword",
+      validators: repeatedPasswordValidators(password),
+      errorMessageHandler: setRepeatedPasswordErrorMessage,
+      errorActivateHandler: setRepeatedPasswordErrorIsActive,
     },
   ];
 
@@ -96,6 +120,32 @@ const TestForm = () => {
           }}
           errorMessage={emailErrorMessage}
           errorIsActive={emailErrorIsActive}
+        />
+        <Input
+          type="password"
+          name="password"
+          placeholder="Type your password"
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setPasswordErrorIsActive(false);
+            setPasswordErrorMessage("");
+          }}
+          errorMessage={passwordErrorMessage}
+          errorIsActive={passwordErrorIsActive}
+        />
+        <Input
+          type="password"
+          name="repeatedPassword"
+          placeholder="Repeat your password"
+          value={repeatedPassword}
+          onChange={(e) => {
+            setRepeatedPassword(e.target.value);
+            setRepeatedPasswordErrorIsActive(false);
+            setRepeatedPasswordErrorMessage("");
+          }}
+          errorMessage={repeatedPasswordErrorMessage}
+          errorIsActive={repeatedPasswordErrorIsActive}
         />
         <Input type="checkbox" name="sample3" />
         <Input type="radio" name="sample4" />

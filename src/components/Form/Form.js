@@ -19,9 +19,16 @@ const Form = React.forwardRef(
             let validator = item["validators"][idx]?.type;
             let minRequired = item["validators"][idx]?.minRequired;
             let maxRequired = item["validators"][idx]?.maxRequired;
+            let toBeSameFieldVal = item["validators"][idx]?.toBeSameFieldVal;
             if (validator) {
               if (
-                !validate(curElement.value, validator, minRequired, maxRequired)
+                !validate(
+                  curElement.value,
+                  validator,
+                  minRequired,
+                  maxRequired,
+                  toBeSameFieldVal
+                )
               ) {
                 item?.errorMessageHandler(item["validators"][idx]?.message);
                 item?.errorActivateHandler(true);

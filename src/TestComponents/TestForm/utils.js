@@ -33,3 +33,25 @@ export const emailValidators = [
     message: "Must be a valid email address",
   },
 ];
+
+export const passwordValidators = [
+  { type: "required", message: "Password is required" },
+  {
+    type: "minRequired",
+    message: "PAssword must be at least 3 characters",
+    minRequired: 3,
+  },
+  {
+    type: "maxRequired",
+    message: "Password must be at less than 8 characters",
+    maxRequired: 8,
+  },
+];
+
+export const repeatedPasswordValidators = (toBeSameFieldVal) => [
+  {
+    type: "same",
+    message: "Password and repeated password fields must be the same.",
+    toBeSameFieldVal,
+  },
+];

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import defaultPropsMap from "Constants/defaultProps";
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
+import { randomStr } from "Utils/utils";
 
 const Input = React.forwardRef(
   (
@@ -14,6 +15,7 @@ const Input = React.forwardRef(
       errorMessage,
       errorIsActive,
       children,
+      id,
       ...props
     },
     ref
@@ -27,6 +29,7 @@ const Input = React.forwardRef(
               {...props}
               ref={ref}
               type={type}
+              id={id || randomStr(16)}
             />
           </div>
           {errorMessage?.length ? (
