@@ -3,6 +3,10 @@ node_modules
 build
 .DS_Store
 .idea
-*.test.js*
-__test__
+dist/*.test.js*
+dist/__test__
+lib/*.test.js*
+lib/__test__
+module/*.test.js*
+module/__test__
 
