@@ -60,7 +60,6 @@
     "grunt-bump": "^0.8.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.5.1",
-    "jest-css-modules": "^2.1.0",
     "jest-css-modules-transform": "^4.3.0",
     "mini-css-extract-plugin": "^2.4.5",
     "mow": "^0.0.2",
