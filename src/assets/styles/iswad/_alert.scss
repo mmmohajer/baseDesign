@@ -1,13 +1,19 @@
 .iswad_alert {
   &_container {
-    background-color: red;
+    position: fixed;
+    width: 100%;
+    max-width: 600px;
+    right: 0;
+    top: 0;
+    z-index: 100000000000000;
   }
 
   &_item {
-    display: none;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(200%);
 
     &_active {
-      display: flex;
+      transform: translateX(0);
     }
   }
 }
