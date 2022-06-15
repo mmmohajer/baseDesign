@@ -1,1 +1,1 @@
-export { default } from "./TestPagination";
+export { default } from './TestPagination';

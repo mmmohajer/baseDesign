@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import Pagination from "Components/Pagination";
-import "./TestPagination.scss";
+import Pagination from 'Components/Pagination';
+import './TestPagination.scss';
 
 const TestPagination = () => {
   const [currentPage, setCurrentPage] = useState(1);

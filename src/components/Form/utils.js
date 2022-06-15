@@ -1,25 +1,19 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-const arrayOfErrorValidators = [
-  "required",
-  "minRequired",
-  "maxRequired",
-  "email",
-  "same",
-];
+const arrayOfErrorValidators = ['required', 'minRequired', 'maxRequired', 'email', 'same'];
 
 const validatorsShape = {
   type: PropTypes.oneOf(arrayOfErrorValidators).isRequired,
   message: PropTypes.string.isRequired,
   minRequired: PropTypes.number,
-  maxRequired: PropTypes.number,
+  maxRequired: PropTypes.number
 };
 
 export const toBeValidatedFieldsShape = {
   input_name: PropTypes.string.isRequired,
   validators: PropTypes.arrayOf(PropTypes.shape(validatorsShape)),
   errorMessageHandler: PropTypes.func.isRequired,
-  errorActivateHandler: PropTypes.func,
+  errorActivateHandler: PropTypes.func
 };
 
 export const validate = (
@@ -32,29 +26,29 @@ export const validate = (
   validator = validator.toLowerCase();
   let validated = true;
 
-  if (validator === "required") {
+  if (validator === 'required') {
     if (!val) {
       validated = false;
     }
   }
 
-  if (validator === "minrequired") {
+  if (validator === 'minrequired') {
     if (val?.length < minRequired) {
       validated = false;
     }
   }
 
-  if (validator === "maxrequired") {
+  if (validator === 'maxrequired') {
     if (val?.length > maxRequired) {
       validated = false;
     }
   }
 
-  if (validator === "email") {
+  if (validator === 'email') {
     validated = validateEmail(val);
   }
 
-  if (validator === "same") {
+  if (validator === 'same') {
     if (val !== toBeSameFieldVal) {
       validated = false;
     }

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Div from "Components/Div";
+import Div from 'Components/Div';
 
 const TestDiv = () => {
   return (
@@ -11,19 +11,13 @@ const TestDiv = () => {
         hAlign="center"
         vAlign="center"
         distributedAround
-        className="bgRed height-px-400"
-      >
-        <Div
-          textAlign="right"
-          className="blue height-px-100 bgBlue w-per-20"
-          showIn={["md", "lg"]}
-        >
+        className="bgRed height-px-400">
+        <Div textAlign="right" className="blue height-px-100 bgBlue w-per-20" showIn={['md', 'lg']}>
           Hello
         </Div>
         <Div
           className="blue height-px-100 bgPurple w-per-20"
-          onClick={() => console.log("Hello")}
-        ></Div>
+          onClick={() => console.log('Hello')}></Div>
       </Div>
     </>
   );

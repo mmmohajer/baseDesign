@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import cx from "classnames";
+import React, { useState } from 'react';
+import cx from 'classnames';
 
-import TestNavBar from "TestComponents/TestNavBar";
-import TestCaraousel from "TestComponents/TestCaraousel";
-import TestIcon from "TestComponents/TestIcon";
-import TestAlert from "TestComponents/TestAlert";
-import TestModal from "TestComponents/TestModal";
-import AdminNav from "TestComponents/TestAdminNav";
-import TestAdminNav from "TestComponents/TestAdminNav";
-import TestDiv from "TestComponents/TestDiv";
-import TestCard from "TestComponents/TestCard";
-import TestTable from "TestComponents/TestTable";
-import TestHeading from "TestComponents/TestHeading";
-import TestImage from "TestComponents/TestImage";
-import TestParagraph from "TestComponents/TestParagraph";
-import TestText from "TestComponents/TestText";
-import TestButton from "TestComponents/TestButton";
-import TestForm from "TestComponents/TestForm";
-import TestRow from "TestComponents/TestRow";
-import TestSearch from "TestComponents/TestSearch";
+import TestNavBar from 'TestComponents/TestNavBar';
+import TestCaraousel from 'TestComponents/TestCaraousel';
+import TestIcon from 'TestComponents/TestIcon';
+import TestAlert from 'TestComponents/TestAlert';
+import TestModal from 'TestComponents/TestModal';
+import AdminNav from 'TestComponents/TestAdminNav';
+import TestAdminNav from 'TestComponents/TestAdminNav';
+import TestDiv from 'TestComponents/TestDiv';
+import TestCard from 'TestComponents/TestCard';
+import TestTable from 'TestComponents/TestTable';
+import TestHeading from 'TestComponents/TestHeading';
+import TestImage from 'TestComponents/TestImage';
+import TestParagraph from 'TestComponents/TestParagraph';
+import TestText from 'TestComponents/TestText';
+import TestButton from 'TestComponents/TestButton';
+import TestForm from 'TestComponents/TestForm';
+import TestRow from 'TestComponents/TestRow';
+import TestSearch from 'TestComponents/TestSearch';
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -56,15 +56,13 @@ const Home = () => {
       <div className="height-px-200 w-per-100 bgPrimary"></div>
       {/* <TestPagination /> */}
       <div className="text-justify w-px-400 flex flex--jc--center flex--ai--center ml-auto mr-auto">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book. It has survived not only five
+        centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+        passages, and more recently with desktop publishing software like Aldus PageMaker including
+        versions of Lorem Ipsum.
       </div>
       <div className="w-per-100 p1 bgRed">
         <TestButton />

@@ -1,5 +1,5 @@
-import React from "react";
-import cx from "classnames";
+import React from 'react';
+import cx from 'classnames';
 
 const Label = React.forwardRef(({ className, children, ...props }, ref) => {
   return (

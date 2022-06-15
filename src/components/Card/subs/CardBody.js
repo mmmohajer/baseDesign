@@ -1,5 +1,5 @@
-import React from "react";
-import cx from "classnames";
+import React from 'react';
+import cx from 'classnames';
 
 const CardBody = React.forwardRef(({ children, className, ...props }, ref) => {
   return (

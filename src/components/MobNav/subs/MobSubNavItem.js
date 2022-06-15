@@ -1,10 +1,10 @@
-import React from "react";
-import cx from "classnames";
+import React from 'react';
+import cx from 'classnames';
 
 const MobSubNavItem = ({ children, className, ...props }) => {
   return (
     <>
-      <div {...props} className={cx("iswad_mobSubNavItem", className)}>
+      <div {...props} className={cx('iswad_mobSubNavItem', className)}>
         {children}
       </div>
     </>

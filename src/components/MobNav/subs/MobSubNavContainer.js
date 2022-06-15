@@ -1,20 +1,16 @@
-import React, { useEffect, useRef } from "react";
-import cx from "classnames";
+import React, { useEffect, useRef } from 'react';
+import cx from 'classnames';
 
-import "../MobNav.scss";
+import '../MobNav.scss';
 
 const MobSubNavContainer = ({ children, className, isActive, ...props }) => {
   const SubNavContainerElement = useRef();
 
   useEffect(() => {
     if (isActive) {
-      SubNavContainerElement.current.classList.add(
-        "iswad_mobSubNavContainer_active"
-      );
+      SubNavContainerElement.current.classList.add('iswad_mobSubNavContainer_active');
     } else {
-      SubNavContainerElement.current.classList.remove(
-        "iswad_mobSubNavContainer_active"
-      );
+      SubNavContainerElement.current.classList.remove('iswad_mobSubNavContainer_active');
     }
   }, [isActive]);
   return (
@@ -22,11 +18,7 @@ const MobSubNavContainer = ({ children, className, isActive, ...props }) => {
       <div
         ref={(el) => (SubNavContainerElement.current = el)}
         {...props}
-        className={cx(
-          "flex flex--dir--col iswad_mobSubNavContainer",
-          className
-        )}
-      >
+        className={cx('flex flex--dir--col iswad_mobSubNavContainer', className)}>
         {children}
       </div>
     </>

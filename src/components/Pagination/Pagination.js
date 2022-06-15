@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
 
-import defaultPropsMap from "Constants/defaultProps";
+import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import Icon from "../Icon";
+import Icon from '../Icon';
 
 const Pagination = ({
   numberOfShownPages,
   numberOfTotalPages,
   currentPage,
   setCurrentPage,
-  showFirstLastIcon,
+  showFirstLastIcon
 }) => {
   const [shownPages, setShownPages] = useState([]);
 
@@ -56,36 +56,33 @@ const Pagination = ({
         {showFirstLastIcon && !shownPages.includes(1) ? (
           <div
             className="flex flex--jc--center flex--ai--center mouse-hand"
-            onClick={() => setCurrentPage(1)}
-          >
+            onClick={() => setCurrentPage(1)}>
             <Icon type="doubleLeft" scale={0.8} />
           </div>
         ) : (
-          ""
+          ''
         )}
         {shownPages.map((p, idx) => (
           <div
             className={cx(
-              "mouse-hand iswad_pagination_item",
-              p === currentPage && "iswad_pagination_item_active"
+              'mouse-hand iswad_pagination_item',
+              p === currentPage && 'iswad_pagination_item_active'
             )}
             key={idx}
             onClick={() => {
               setCurrentPage(p);
-            }}
-          >
+            }}>
             {p}
           </div>
         ))}
         {showFirstLastIcon && !shownPages.includes(numberOfTotalPages) ? (
           <div
             className="flex flex--jc--center flex--ai--center mouse-hand"
-            onClick={() => setCurrentPage(numberOfTotalPages)}
-          >
+            onClick={() => setCurrentPage(numberOfTotalPages)}>
             <Icon type="doubleRight" scale={0.8} />
           </div>
         ) : (
-          ""
+          ''
         )}
       </div>
     </>
@@ -98,12 +95,12 @@ Pagination.propTypes = {
   numberOfTotalPages: PropTypes.number,
   currentPage: PropTypes.number,
   setCurrentPage: PropTypes.func,
-  showFirstLastIcon: PropTypes.bool,
+  showFirstLastIcon: PropTypes.bool
 };
 
 Pagination.defaultProps = {
   showFirstLastIcon: true,
-  currentPage: 1,
+  currentPage: 1
 };
 
 export default Pagination;

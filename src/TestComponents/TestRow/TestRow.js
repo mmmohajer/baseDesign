@@ -1,10 +1,10 @@
-import React from "react";
-import cx from "classnames";
+import React from 'react';
+import cx from 'classnames';
 
-import styles from "./TestRow.module.scss";
+import styles from './TestRow.module.scss';
 
-import Row from "Components/Row";
-import Column from "Components/Column";
+import Row from 'Components/Row';
+import Column from 'Components/Column';
 
 const TestRow = () => {
   return (

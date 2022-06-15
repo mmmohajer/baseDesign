@@ -1,28 +1,28 @@
-import React from "react";
+import React from 'react';
 
-import Icon from "Components/Icon";
+import Icon from 'Components/Icon';
 
 const arrayOfIcons = [
-  "search",
-  "up",
-  "down",
-  "left",
-  "right",
-  "dash",
-  "image",
-  "fimage",
-  "mic",
-  "fmic",
-  "notification",
-  "fnotification",
-  "setting",
-  "fsetting",
-  "x",
-  "video",
-  "fvideo",
-  "share",
-  "fshare",
-  "plus",
+  'search',
+  'up',
+  'down',
+  'left',
+  'right',
+  'dash',
+  'image',
+  'fimage',
+  'mic',
+  'fmic',
+  'notification',
+  'fnotification',
+  'setting',
+  'fsetting',
+  'x',
+  'video',
+  'fvideo',
+  'share',
+  'fshare',
+  'plus'
 ];
 
 const TestIcon = () => {

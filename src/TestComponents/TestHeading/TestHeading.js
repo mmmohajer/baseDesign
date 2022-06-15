@@ -1,14 +1,10 @@
-import React from "react";
-import Heading from "Components/Heading";
+import React from 'react';
+import Heading from 'Components/Heading';
 
 const TestHeading = () => {
   return (
     <>
-      <Heading
-        className="textBlue"
-        type={1}
-        onClick={() => console.log("Hello")}
-      >
+      <Heading className="textBlue" type={1} onClick={() => console.log('Hello')}>
         Heading 1
       </Heading>
       <Heading className="textBlue" type={2}>

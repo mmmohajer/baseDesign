@@ -1,16 +1,16 @@
-import React, { useRef, useEffect } from "react";
-import cx from "classnames";
+import React, { useRef, useEffect } from 'react';
+import cx from 'classnames';
 
-import "../Navbar.scss";
+import '../Navbar.scss';
 
 const NavItem = ({ children, className, isActive, ...props }) => {
   const navItemElement = useRef();
 
   useEffect(() => {
     if (isActive) {
-      navItemElement.current.classList.add("iswad_navItem_active");
+      navItemElement.current.classList.add('iswad_navItem_active');
     } else {
-      navItemElement.current.classList.remove("iswad_navItem_active");
+      navItemElement.current.classList.remove('iswad_navItem_active');
     }
   }, [isActive]);
   return (
@@ -18,11 +18,7 @@ const NavItem = ({ children, className, isActive, ...props }) => {
       <div
         ref={(el) => (navItemElement.current = el)}
         {...props}
-        className={cx(
-          "flex flex--jc--center flex--ai--center pos-rel iswad_navItem",
-          className
-        )}
-      >
+        className={cx('flex flex--jc--center flex--ai--center pos-rel iswad_navItem', className)}>
         {children}
       </div>
     </>

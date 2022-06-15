@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
-import cx from "classnames";
+import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
 
-import Table from "Components/Table";
-import Search from "./Search";
+import Table from 'Components/Table';
+import Search from './Search';
 
-import { headLines, data } from "./utils";
+import { headLines, data } from './utils';
 
-import "./TestTable.scss";
+import './TestTable.scss';
 
 const TestTable = (props) => {
   const genderConverter = (gender) => {
-    if (gender === "Male") {
+    if (gender === 'Male') {
       return (
         <img
           src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/000000/external-man-back-to-school-vitaliy-gorbachev-lineal-color-vitaly-gorbachev-2.png"
           width={30}
         />
       );
-    } else if (gender === "Female") {
+    } else if (gender === 'Female') {
       return (
         <img
           src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/000000/external-woman-back-to-school-vitaliy-gorbachev-lineal-color-vitaly-gorbachev-2.png"
@@ -26,10 +26,7 @@ const TestTable = (props) => {
       );
     } else {
       return (
-        <img
-          src="https://img.icons8.com/pastel-glyph/64/000000/person-male--v1.png"
-          width={30}
-        />
+        <img src="https://img.icons8.com/pastel-glyph/64/000000/person-male--v1.png" width={30} />
       );
     }
   };
@@ -41,9 +38,9 @@ const TestTable = (props) => {
 
   useEffect(() => {
     data.map((d) => {
-      d["gender"] = {
-        value: d["gender"],
-        display: genderConverter(d["gender"]),
+      d['gender'] = {
+        value: d['gender'],
+        display: genderConverter(d['gender'])
       };
     });
   }, [data]);

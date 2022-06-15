@@ -1,1 +1,1 @@
-export { default } from "./TestText";
+export { default } from './TestText';

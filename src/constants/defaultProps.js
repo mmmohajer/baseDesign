@@ -1,9 +1,9 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 const defaultProps = {
-  id: "",
-  className: "",
+  id: '',
+  className: '',
   data: undefined,
-  tag: "div",
+  tag: 'div'
 };
 
 const defaultPropTypes = {
@@ -11,11 +11,11 @@ const defaultPropTypes = {
   className: PropTypes.string,
   data: PropTypes.object,
   tag: PropTypes.string,
-  style: PropTypes.object,
+  style: PropTypes.object
 };
 
 const buttonEvents = {
-  onClick: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 const inputEvents = {
@@ -23,13 +23,13 @@ const inputEvents = {
   onBlur: PropTypes.func,
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func,
-  onKeyPress: PropTypes.func,
+  onKeyPress: PropTypes.func
 };
 
 const allowedProps = [
   ...Object.keys(defaultPropTypes),
   ...Object.keys(buttonEvents),
-  ...Object.keys(inputEvents),
+  ...Object.keys(inputEvents)
 ];
 
 const exports = { defaultProps, defaultPropTypes, allowedProps };

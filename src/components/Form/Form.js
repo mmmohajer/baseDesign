@@ -1,11 +1,11 @@
-import React, { useCallback } from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
+import React, { useCallback } from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
 
-import defaultPropsMap from "Constants/defaultProps";
+import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import { validate, toBeValidatedFieldsShape } from "./utils";
+import { validate, toBeValidatedFieldsShape } from './utils';
 
 const Form = React.forwardRef(
   ({ onSubmit, toBeValidatedFields, className, children, ...props }, ref) => {
@@ -14,23 +14,17 @@ const Form = React.forwardRef(
       let is_validated = true;
       if (toBeValidatedFields?.length) {
         toBeValidatedFields.forEach((item) => {
-          let curElement = e.target[item["input_name"]];
-          for (let idx = 0; idx < item["validators"].length; idx++) {
-            let validator = item["validators"][idx]?.type;
-            let minRequired = item["validators"][idx]?.minRequired;
-            let maxRequired = item["validators"][idx]?.maxRequired;
-            let toBeSameFieldVal = item["validators"][idx]?.toBeSameFieldVal;
+          let curElement = e.target[item['input_name']];
+          for (let idx = 0; idx < item['validators'].length; idx++) {
+            let validator = item['validators'][idx]?.type;
+            let minRequired = item['validators'][idx]?.minRequired;
+            let maxRequired = item['validators'][idx]?.maxRequired;
+            let toBeSameFieldVal = item['validators'][idx]?.toBeSameFieldVal;
             if (validator) {
               if (
-                !validate(
-                  curElement.value,
-                  validator,
-                  minRequired,
-                  maxRequired,
-                  toBeSameFieldVal
-                )
+                !validate(curElement.value, validator, minRequired, maxRequired, toBeSameFieldVal)
               ) {
-                item?.errorMessageHandler(item["validators"][idx]?.message);
+                item?.errorMessageHandler(item['validators'][idx]?.message);
                 item?.errorActivateHandler(true);
                 is_validated = false;
                 break;
@@ -46,12 +40,7 @@ const Form = React.forwardRef(
 
     return (
       <>
-        <form
-          className={cx(className)}
-          {...props}
-          ref={ref}
-          onSubmit={(e) => submitHandler(e)}
-        >
+        <form className={cx(className)} {...props} ref={ref} onSubmit={(e) => submitHandler(e)}>
           {children}
         </form>
       </>
@@ -62,13 +51,11 @@ const Form = React.forwardRef(
 Form.propTypes = {
   ...defaultPropTypes,
   onSubmit: PropTypes.func,
-  toBeValidatedFields: PropTypes.arrayOf(
-    PropTypes.shape(toBeValidatedFieldsShape).isRequired
-  ),
+  toBeValidatedFields: PropTypes.arrayOf(PropTypes.shape(toBeValidatedFieldsShape).isRequired)
 };
 
 Form.defaultProps = {
-  ...defaultProps,
+  ...defaultProps
 };
 
 export default Form;

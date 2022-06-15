@@ -1,5 +1,5 @@
-import allowedKeys from "./allowedKeys";
-import defaultProps from "Constants/defaultProps";
+import allowedKeys from './allowedKeys';
+import defaultProps from 'Constants/defaultProps';
 
 const { allowedProps: allowedPropsArray } = defaultProps;
 

@@ -1,7 +1,6 @@
 export const randomStr = (length) => {
-  let result = "";
-  let characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = '';
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   let charactersLength = characters.length;
   for (let i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -11,52 +10,52 @@ export const randomStr = (length) => {
 
 export const showInCssClass = (type, showIn) => {
   if (
-    showIn.includes("xs") &&
-    showIn.includes("sm") &&
-    showIn.includes("md") &&
-    showIn.includes("lg")
+    showIn.includes('xs') &&
+    showIn.includes('sm') &&
+    showIn.includes('md') &&
+    showIn.includes('lg')
   ) {
-    return "";
+    return '';
   } else if (
-    !showIn.includes("xs") &&
-    showIn.includes("sm") &&
-    showIn.includes("md") &&
-    showIn.includes("lg")
+    !showIn.includes('xs') &&
+    showIn.includes('sm') &&
+    showIn.includes('md') &&
+    showIn.includes('lg')
   ) {
     return `show-${type}-in-sm-md-lg`;
   } else if (
-    !showIn.includes("xs") &&
-    !showIn.includes("sm") &&
-    showIn.includes("md") &&
-    showIn.includes("lg")
+    !showIn.includes('xs') &&
+    !showIn.includes('sm') &&
+    showIn.includes('md') &&
+    showIn.includes('lg')
   ) {
     return `show-${type}-in-md-lg`;
   } else if (
-    !showIn.includes("xs") &&
-    !showIn.includes("sm") &&
-    !showIn.includes("md") &&
-    showIn.includes("lg")
+    !showIn.includes('xs') &&
+    !showIn.includes('sm') &&
+    !showIn.includes('md') &&
+    showIn.includes('lg')
   ) {
     return `show-${type}-in-lg`;
   } else if (
-    showIn.includes("xs") &&
-    showIn.includes("sm") &&
-    showIn.includes("md") &&
-    !showIn.includes("lg")
+    showIn.includes('xs') &&
+    showIn.includes('sm') &&
+    showIn.includes('md') &&
+    !showIn.includes('lg')
   ) {
     return `show-${type}-in-md-sm-xsm`;
   } else if (
-    showIn.includes("xs") &&
-    showIn.includes("sm") &&
-    !showIn.includes("md") &&
-    !showIn.includes("lg")
+    showIn.includes('xs') &&
+    showIn.includes('sm') &&
+    !showIn.includes('md') &&
+    !showIn.includes('lg')
   ) {
     return `show-${type}-in-sm-xsm`;
   } else if (
-    showIn.includes("xs") &&
-    !showIn.includes("sm") &&
-    !showIn.includes("md") &&
-    !showIn.includes("lg")
+    showIn.includes('xs') &&
+    !showIn.includes('sm') &&
+    !showIn.includes('md') &&
+    !showIn.includes('lg')
   ) {
     return `show-${type}-in-xsm`;
   } else {

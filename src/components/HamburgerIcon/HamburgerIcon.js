@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
 
-import defaultPropsMap from "Constants/defaultProps";
+import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import { cssClassMaps, cssConfigShape, cssDefaultConfig } from "./utils";
+import { cssClassMaps, cssConfigShape, cssDefaultConfig } from './utils';
 
-import { css } from "./styles";
+import { css } from './styles';
 
 function HamburgerIcon({
   onClick,
@@ -15,7 +15,7 @@ function HamburgerIcon({
   onClosedIconClick,
   cssConfig,
   iconToggler,
-  setIconToggler,
+  setIconToggler
 }) {
   const appliedCssConfig = { ...cssDefaultConfig, ...cssConfig };
   const [isIconOpened, setIsIconOpened] = useState(true);
@@ -23,20 +23,20 @@ function HamburgerIcon({
   useEffect(() => {
     if (iconToggler) {
       const menuIcon =
-        document.querySelector(`.${cssClassMaps["hamburgerMenuIcon"]}`) ||
-        document.querySelector(`.${cssClassMaps["hamburgerMenuClosedIcon"]}`);
-      menuIcon.classList.toggle(cssClassMaps["hamburgerMenuIcon"]);
-      menuIcon.classList.toggle(cssClassMaps["hamburgerMenuClosedIcon"]);
+        document.querySelector(`.${cssClassMaps['hamburgerMenuIcon']}`) ||
+        document.querySelector(`.${cssClassMaps['hamburgerMenuClosedIcon']}`);
+      menuIcon.classList.toggle(cssClassMaps['hamburgerMenuIcon']);
+      menuIcon.classList.toggle(cssClassMaps['hamburgerMenuClosedIcon']);
       setIconToggler(false);
     }
   }, [iconToggler, setIconToggler]);
 
   const menuIconToggleHandler = () => {
     const menuIcon =
-      document.querySelector(`.${cssClassMaps["hamburgerMenuIcon"]}`) ||
-      document.querySelector(`.${cssClassMaps["hamburgerMenuClosedIcon"]}`);
-    menuIcon.classList.toggle(cssClassMaps["hamburgerMenuIcon"]);
-    menuIcon.classList.toggle(cssClassMaps["hamburgerMenuClosedIcon"]);
+      document.querySelector(`.${cssClassMaps['hamburgerMenuIcon']}`) ||
+      document.querySelector(`.${cssClassMaps['hamburgerMenuClosedIcon']}`);
+    menuIcon.classList.toggle(cssClassMaps['hamburgerMenuIcon']);
+    menuIcon.classList.toggle(cssClassMaps['hamburgerMenuClosedIcon']);
     if (isIconOpened && onOpenedIconClick) {
       onOpenedIconClick();
     }
@@ -50,11 +50,8 @@ function HamburgerIcon({
   };
   return (
     <>
-      <div
-        className={cx(cssClassMaps["hamburgerMenuContainer"])}
-        onClick={menuIconToggleHandler}
-      >
-        <div className={cx(cssClassMaps["hamburgerMenuIcon"])}></div>
+      <div className={cx(cssClassMaps['hamburgerMenuContainer'])} onClick={menuIconToggleHandler}>
+        <div className={cx(cssClassMaps['hamburgerMenuIcon'])}></div>
       </div>
 
       <style>{css(cssClassMaps, appliedCssConfig)}</style>
@@ -69,12 +66,12 @@ HamburgerIcon.propTypes = {
   onClosedIconClick: PropTypes.func,
   cssConfig: PropTypes.shape(cssConfigShape),
   iconToggler: PropTypes.bool,
-  setIconToggler: PropTypes.func,
+  setIconToggler: PropTypes.func
 };
 
 HamburgerIcon.defaultProps = {
   ...defaultProps,
-  cssConfig: cssDefaultConfig,
+  cssConfig: cssDefaultConfig
 };
 
 export default HamburgerIcon;

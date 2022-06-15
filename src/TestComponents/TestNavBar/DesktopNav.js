@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import cx from "classnames";
+import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
 
-import styles from "./TestNavBar.module.scss";
+import styles from './TestNavBar.module.scss';
 
-import Icon from "Components/Icon";
-import NavBar from "Components/NavBar";
-import NavItem from "Components/NavBar/subs/NavItem";
-import SubNavContainer from "Components/NavBar/subs/SubNavContainer";
-import SubNavItem from "Components/NavBar/subs/SubNavItem";
+import Icon from 'Components/Icon';
+import NavBar from 'Components/NavBar';
+import NavItem from 'Components/NavBar/subs/NavItem';
+import SubNavContainer from 'Components/NavBar/subs/SubNavContainer';
+import SubNavItem from 'Components/NavBar/subs/SubNavItem';
 
 const DesktopNav = ({
   activeMenu,
@@ -15,7 +15,7 @@ const DesktopNav = ({
   activeSubMenues,
   menuClickHandler,
   MENUES,
-  SUB_MENUES,
+  SUB_MENUES
 }) => {
   const [activeSearch, setActiveSearch] = useState(false);
 
@@ -23,9 +23,8 @@ const DesktopNav = ({
     <>
       <NavBar
         className={cx(
-          "w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse bgInverse"
-        )}
-      >
+          'w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse bgInverse'
+        )}>
         <div className="flex flex--jc--start flex--ai--center">
           <div className="w-px-200 height-px-50 bgSilver flex flex--jc--center flex--ai--center">
             Logo 200x50
@@ -34,28 +33,25 @@ const DesktopNav = ({
             {MENUES.map((menu, idx1) => (
               <NavItem
                 className={cx(
-                  "mx1 px1 flex flex--ai--center textWhite br-rad-px-10 height-px-40 br-color-primary"
+                  'mx1 px1 flex flex--ai--center textWhite br-rad-px-10 height-px-40 br-color-primary'
                 )}
                 onClick={() => menuClickHandler(menu)}
                 isActive={activeMenu === menu}
-                key={idx1}
-              >
+                key={idx1}>
                 <div className="mouse-hand">{menu}</div>
                 {menu in SUB_MENUES && (
                   <SubNavContainer
                     className={cx(
-                      "bgInverse w-px-200 flex flex--jc--center flex--dir--col flex--ai--center br-rad-px-10"
+                      'bgInverse w-px-200 flex flex--jc--center flex--dir--col flex--ai--center br-rad-px-10'
                     )}
                     onClick={() => setActiveMenu(menu)}
-                    isActive={activeSubMenues.includes(menu)}
-                  >
+                    isActive={activeSubMenues.includes(menu)}>
                     {SUB_MENUES[menu].map((subMenu, idx2) => (
                       <SubNavItem
                         className={cx(
-                          "br-rad-px-10 textWhite p1 w-per-100 flex flex--jc--center flex--ai--center mouse-hand"
+                          'br-rad-px-10 textWhite p1 w-per-100 flex flex--jc--center flex--ai--center mouse-hand'
                         )}
-                        key={idx2}
-                      >
+                        key={idx2}>
                         {subMenu}
                       </SubNavItem>
                     ))}
@@ -69,10 +65,9 @@ const DesktopNav = ({
         <div className="flex flex--jc--center flex--ai--center">
           <div
             className={cx(
-              "mr2 min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center",
+              'mr2 min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center',
               styles.search
-            )}
-          >
+            )}>
             <Icon
               onClick={() => setActiveSearch(!activeSearch)}
               type="search"
@@ -84,19 +79,18 @@ const DesktopNav = ({
             <input
               type="search"
               className={cx(
-                "br-rad-px-10 fs-px-18",
+                'br-rad-px-10 fs-px-18',
                 styles.searchInput,
-                activeSearch && "pl1 pr1",
+                activeSearch && 'pl1 pr1',
                 activeSearch && styles.searchInput_active
               )}
             />
           </div>
           <button
             className={cx(
-              "show-flex-in-md-lg bgPrimary fs-px-16 br-hidden-1 br-color-primary btn-small mouse-hand br-rad-px-10 height-px-40 flex flex--ai--center flex--jc--center px2",
+              'show-flex-in-md-lg bgPrimary fs-px-16 br-hidden-1 br-color-primary btn-small mouse-hand br-rad-px-10 height-px-40 flex flex--ai--center flex--jc--center px2',
               styles.logRegBtn
-            )}
-          >
+            )}>
             Login/Register
           </button>
         </div>

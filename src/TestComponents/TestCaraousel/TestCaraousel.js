@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import Carousel from "Components/Carousel";
-import CarouselItem from "Components/Carousel/subs/CarouselItem";
+import Carousel from 'Components/Carousel';
+import CarouselItem from 'Components/Carousel/subs/CarouselItem';
 
 const TestCaraousel = () => {
   const [moveRight, setMoveRight] = useState(false);
@@ -17,8 +17,7 @@ const TestCaraousel = () => {
         moveToItemWithNum={moveToItemWithNum}
         setMoveToItemWithNum={setMoveToItemWithNum}
         transitionDuration={0.25}
-        transition_timing_function="ease-in"
-      >
+        transition_timing_function="ease-in">
         <CarouselItem className="w-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 1

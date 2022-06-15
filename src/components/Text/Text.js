@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Text = React.forwardRef(({ children, className, ...props }, ref) => {
   return (

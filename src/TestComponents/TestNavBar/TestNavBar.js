@@ -1,45 +1,40 @@
-import React, { useState } from "react";
-import cx from "classnames";
+import React, { useState } from 'react';
+import cx from 'classnames';
 
-import "./DesktopNav";
-import DesktopNav from "./DesktopNav";
-import MobileNav from "./MobileNav";
-import HamburgerIcon from "Components/HamburgerIcon";
-import "./TestNavBar.scss";
+import './DesktopNav';
+import DesktopNav from './DesktopNav';
+import MobileNav from './MobileNav';
+import HamburgerIcon from 'Components/HamburgerIcon';
+import './TestNavBar.scss';
 
-import styles from "./TestNavBar.module.scss";
+import styles from './TestNavBar.module.scss';
 
-const MENUES = ["Home", "About Us", "Services", "Contact Us"];
+const MENUES = ['Home', 'About Us', 'Services', 'Contact Us'];
 const SUB_MENUES = {
-  "About Us": ["Team", "Support", "Careers"],
-  Services: [
-    "Software Development",
-    "App Development",
-    "MVP Development",
-    "Web Design",
-  ],
+  'About Us': ['Team', 'Support', 'Careers'],
+  Services: ['Software Development', 'App Development', 'MVP Development', 'Web Design']
 };
 
 const HamIconCssConfig = {
-  hamburgerMenuContainerBgColor: "transparent",
-  hamburgerMenuContainerBorder: "none",
+  hamburgerMenuContainerBgColor: 'transparent',
+  hamburgerMenuContainerBorder: 'none',
   hamburgerMenuContainerBorderRadius: 10,
   hamburgerMenuTopWidth: 15,
   hamburgerMenuMiddleWidth: 25,
   hamburgerMenuBottomWidth: 35,
   hamburgerMenuHeight: 4,
-  hamburgerMenuBgColor: "white",
+  hamburgerMenuBgColor: 'white',
   hamburgerMenuSpace: 10,
   hamburgerMenuBorderRadius: 5,
   hamburgerMenuClosedIconWidth: 25,
   hamburgerMenuTransitionDuration: 0.3,
   hamburgerMenuContainerXPadding: 0,
-  hamburgerMenuTransform: "scale(-1, 1)",
+  hamburgerMenuTransform: 'scale(-1, 1)'
 };
 
 const TestNavBar = () => {
   const [activeSubMenues, setActiveSubMenues] = useState([]);
-  const [activeMenu, setActiveMenu] = useState("Home");
+  const [activeMenu, setActiveMenu] = useState('Home');
   const [mobMenuIsActive, setMobMenuIsActive] = useState(false);
   const [iconToggler, setIconToggler] = useState(false);
 
@@ -89,10 +84,9 @@ const TestNavBar = () => {
       </div>
       <div
         className={cx(
-          "show-flex-in-md-sm-xsm",
-          "w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 height-px-60 br-bottom-solid-1 br-color-inverse bgInverse pos-rel"
-        )}
-      >
+          'show-flex-in-md-sm-xsm',
+          'w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 height-px-60 br-bottom-solid-1 br-color-inverse bgInverse pos-rel'
+        )}>
         <div className="w-px-200 height-px-50 bgSilver flex flex--jc--center flex--ai--center">
           Logo 200x50
         </div>
@@ -106,10 +100,9 @@ const TestNavBar = () => {
         </div>
         <div
           className={cx(
-            "height-vh-full w-per-80 pos-fix pos-fix--rt flex flex--dir--col z-10000 iswad_mobNav",
-            mobMenuIsActive && "iswad_mobNav_active"
-          )}
-        >
+            'height-vh-full w-per-80 pos-fix pos-fix--rt flex flex--dir--col z-10000 iswad_mobNav',
+            mobMenuIsActive && 'iswad_mobNav_active'
+          )}>
           <div className="height-px-60"></div>
           <MobileNav
             activeMenu={activeMenu}

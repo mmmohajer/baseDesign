@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
 
-import defaultPropsMap from "Constants/defaultProps";
+import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import Th from "./subs/Th";
-import Tr from "./subs/tr";
-import Td from "./subs/Td";
-import Icon from "../Icon";
-import Search from "../Search";
-import Pagination from "../Pagination";
-import propTypes from "prop-types";
+import Th from './subs/Th';
+import Tr from './subs/tr';
+import Td from './subs/Td';
+import Icon from '../Icon';
+import Search from '../Search';
+import Pagination from '../Pagination';
+import propTypes from 'prop-types';
 
 const Table = ({
   headLines,
@@ -30,7 +30,7 @@ const Table = ({
   numberOfShownPages,
   ...props
 }) => {
-  const [filter, setFilter] = useState({ first_name: "", last_name: "" });
+  const [filter, setFilter] = useState({ first_name: '', last_name: '' });
   const [filteredData, setFilteredData] = useState([]);
   const [sortedData, setSortedData] = useState([]);
   const [isChecked, setIsChecked] = useState({});
@@ -39,7 +39,7 @@ const Table = ({
   const [sortIconColor, setSortIconColor] = useState({});
   const [pageData, setPageData] = useState({});
   const [numberOfTotalPages, setNumberOfTotalPages] = useState(1);
-  const [tableTotalWidth, setTableTotalWidth] = useState("100%");
+  const [tableTotalWidth, setTableTotalWidth] = useState('100%');
 
   const calcTotalWidth = () => {
     let totalWidth = 0;
@@ -91,7 +91,7 @@ const Table = ({
     if (data.length) {
       const localData = [...data];
       localData.map((d) => {
-        d["iswad_table_idx"] = count;
+        d['iswad_table_idx'] = count;
         localIsChecked[count] = false;
         count += 1;
       });
@@ -105,7 +105,7 @@ const Table = ({
     const localSortIconColor = { ...sortIconColor };
     headLines.map((h) => {
       if (h?.isSortable) {
-        localSortIconColor[h?.value || h] = sortIconColors["REG"] || "silver";
+        localSortIconColor[h?.value || h] = sortIconColors['REG'] || 'silver';
       }
     });
     setSortIconColor(localSortIconColor);
@@ -117,9 +117,9 @@ const Table = ({
       Object.keys(isChecked).map((idx) => {
         if (isChecked[idx]) {
           const toBeAdded = {
-            ...sortedData.find((d) => d["iswad_table_idx"] === parseInt(idx)),
+            ...sortedData.find((d) => d['iswad_table_idx'] === parseInt(idx))
           };
-          delete toBeAdded["iswad_table_idx"];
+          delete toBeAdded['iswad_table_idx'];
           localSelectedData.push(toBeAdded);
         }
       });
@@ -145,14 +145,14 @@ const Table = ({
 
     const localSortIconColor = { ...sortIconColor };
     Object.keys(localSortIconColor).map((k) => {
-      localSortIconColor[k] = sortIconColors["REG"] || "silver";
+      localSortIconColor[k] = sortIconColors['REG'] || 'silver';
     });
     if (localIsSorted[key] === 1) {
-      localSortIconColor[key] = sortIconColors["ASC"] || "green";
+      localSortIconColor[key] = sortIconColors['ASC'] || 'green';
     } else if (localIsSorted[key] === 2) {
-      localSortIconColor[key] = sortIconColors["DESC"] || "red";
+      localSortIconColor[key] = sortIconColors['DESC'] || 'red';
     } else {
-      localSortIconColor[key] = sortIconColors["REG"] || "silver";
+      localSortIconColor[key] = sortIconColors['REG'] || 'silver';
     }
     setSortIconColor(localSortIconColor);
   };
@@ -198,13 +198,10 @@ const Table = ({
   return (
     <>
       <div>
-        <div className={cx("w-per-100 of-x-auto")}>
+        <div className={cx('w-per-100 of-x-auto')}>
           <div
-            className={cx(
-              "flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table"
-            )}
-            {...props}
-          >
+            className={cx('flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table')}
+            {...props}>
             <Th className="">
               {isSelectable && (
                 <Td style={{ width: `25px` }}>
@@ -223,11 +220,7 @@ const Table = ({
                 </Td>
               )}
               {headLines.map((head, idx) => (
-                <Td
-                  className=""
-                  style={head?.width && { width: `${head.width}px` }}
-                  key={idx}
-                >
+                <Td className="" style={head?.width && { width: `${head.width}px` }} key={idx}>
                   <div className="flex w-per-100 flex--jc--between flex--ai--center">
                     <div className="w-per-100 iswad_table_headContainer">
                       <div className="m1">{head?.display || head}</div>
@@ -236,7 +229,7 @@ const Table = ({
                           {search ? (
                             search({
                               value: filter[head?.value || head],
-                              onChange: (e) => searchHandler(e, head),
+                              onChange: (e) => searchHandler(e, head)
                             })
                           ) : (
                             <Search
@@ -248,10 +241,7 @@ const Table = ({
                       )}
                     </div>
                     {head?.isSortable && (
-                      <div
-                        className="mouse-hand"
-                        onClick={() => sortHandler(head)}
-                      >
+                      <div className="mouse-hand" onClick={() => sortHandler(head)}>
                         <Icon
                           type="down"
                           fill={sortIconColor[head?.value || head]}
@@ -271,11 +261,10 @@ const Table = ({
                         <div>
                           <input
                             type="checkbox"
-                            checked={isChecked[curRow["iswad_table_idx"]]}
+                            checked={isChecked[curRow['iswad_table_idx']]}
                             onChange={(e) => {
                               const localIsChecked = { ...isChecked };
-                              localIsChecked[curRow["iswad_table_idx"]] =
-                                e.target.checked;
+                              localIsChecked[curRow['iswad_table_idx']] = e.target.checked;
                               setIsChecked(localIsChecked);
                             }}
                           />
@@ -283,10 +272,7 @@ const Table = ({
                       </Td>
                     )}
                     {headLines.map((curCol, idx1) => (
-                      <Td
-                        key={idx1}
-                        style={curCol?.width && { width: `${curCol.width}px` }}
-                      >
+                      <Td key={idx1} style={curCol?.width && { width: `${curCol.width}px` }}>
                         {curRow[curCol?.value || curCol]?.display ||
                           curRow[curCol?.value || curCol] ||
                           curRow[curCol]}
@@ -294,7 +280,7 @@ const Table = ({
                     ))}
                   </Tr>
                 ))
-              : ""}
+              : ''}
           </div>
         </div>
         {showDefaultPagination && numberOfTotalPages ? (
@@ -306,7 +292,7 @@ const Table = ({
             showFirstLastIcon={true}
           />
         ) : (
-          ""
+          ''
         )}
       </div>
       <style>
@@ -337,21 +323,21 @@ Table.propTypes = {
   sortIconColors: PropTypes.shape({
     ASC: PropTypes.string,
     DESC: PropTypes.string,
-    REG: PropTypes.string,
+    REG: PropTypes.string
   }),
   rowsPerPage: PropTypes.number,
   currentPage: PropTypes.number,
   setCurrentPage: PropTypes.func,
   showDefaultPagination: PropTypes.bool,
-  numberOfShownPages: PropTypes.number,
+  numberOfShownPages: PropTypes.number
 };
 
 Table.defaultProps = {
   colWidth: 300,
   isSelectable: false,
-  sortIconColors: { ASC: "green", DESC: "red", REG: "silver" },
+  sortIconColors: { ASC: 'green', DESC: 'red', REG: 'silver' },
   showDefaultPagination: true,
-  numberOfShownPages: 5,
+  numberOfShownPages: 5
 };
 
 export default Table;

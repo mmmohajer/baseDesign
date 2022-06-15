@@ -1,33 +1,33 @@
-import React from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
+import React from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
 
-import allowedProps from "Utils/allowedProps";
-import defaultPropsMap from "Constants/defaultProps";
+import allowedProps from 'Utils/allowedProps';
+import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import Search from "Images/js-images/icons/svg/search.svg";
-import Up from "Images/js-images/icons/svg/up.svg";
-import Down from "Images/js-images/icons/svg/down.svg";
-import Left from "Images/js-images/icons/svg/left.svg";
-import Right from "Images/js-images/icons/svg/right.svg";
-import Dash from "Images/js-images/icons/svg/dash.svg";
-import FImage from "Images/js-images/icons/svg/fimage.svg";
-import Image from "Images/js-images/icons/svg/image.svg";
-import FMic from "Images/js-images/icons/svg/fmic.svg";
-import Mic from "Images/js-images/icons/svg/mic.svg";
-import Notification from "Images/js-images/icons/svg/notification.svg";
-import FNotification from "Images/js-images/icons/svg/fnotification.svg";
-import Setting from "Images/js-images/icons/svg/setting.svg";
-import FSetting from "Images/js-images/icons/svg/fsetting.svg";
-import X from "Images/js-images/icons/svg/x.svg";
-import Share from "Images/js-images/icons/svg/share.svg";
-import FShare from "Images/js-images/icons/svg/fshare.svg";
-import Video from "Images/js-images/icons/svg/video.svg";
-import FVideo from "Images/js-images/icons/svg/fvideo.svg";
-import Plus from "Images/js-images/icons/svg/plus.svg";
-import DoubleRight from "Images/js-images/icons/svg/doubleRight.svg";
-import DoubleLeft from "Images/js-images/icons/svg/doubleLeft.svg";
+import Search from 'Images/js-images/icons/svg/search.svg';
+import Up from 'Images/js-images/icons/svg/up.svg';
+import Down from 'Images/js-images/icons/svg/down.svg';
+import Left from 'Images/js-images/icons/svg/left.svg';
+import Right from 'Images/js-images/icons/svg/right.svg';
+import Dash from 'Images/js-images/icons/svg/dash.svg';
+import FImage from 'Images/js-images/icons/svg/fimage.svg';
+import Image from 'Images/js-images/icons/svg/image.svg';
+import FMic from 'Images/js-images/icons/svg/fmic.svg';
+import Mic from 'Images/js-images/icons/svg/mic.svg';
+import Notification from 'Images/js-images/icons/svg/notification.svg';
+import FNotification from 'Images/js-images/icons/svg/fnotification.svg';
+import Setting from 'Images/js-images/icons/svg/setting.svg';
+import FSetting from 'Images/js-images/icons/svg/fsetting.svg';
+import X from 'Images/js-images/icons/svg/x.svg';
+import Share from 'Images/js-images/icons/svg/share.svg';
+import FShare from 'Images/js-images/icons/svg/fshare.svg';
+import Video from 'Images/js-images/icons/svg/video.svg';
+import FVideo from 'Images/js-images/icons/svg/fvideo.svg';
+import Plus from 'Images/js-images/icons/svg/plus.svg';
+import DoubleRight from 'Images/js-images/icons/svg/doubleRight.svg';
+import DoubleLeft from 'Images/js-images/icons/svg/doubleLeft.svg';
 
 function Icon({ type, fill, stroke, scale, ...props }) {
   const otherProps = allowedProps(props);
@@ -40,53 +40,21 @@ function Icon({ type, fill, stroke, scale, ...props }) {
         {...otherProps}
       />
     ),
-    up: (
-      <Up
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
-    ),
+    up: <Up fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />,
     down: (
-      <Down
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <Down fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
     left: (
-      <Left
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <Left fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
     right: (
-      <Right
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <Right fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
     dash: (
-      <Dash
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <Dash fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
     image: (
-      <Image
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <Image fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
     fimage: (
       <FImage
@@ -97,29 +65,12 @@ function Icon({ type, fill, stroke, scale, ...props }) {
       />
     ),
     mic: (
-      <Mic
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <Mic fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
     fmic: (
-      <FMic
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <FMic fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
-    x: (
-      <X
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
-    ),
+    x: <X fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />,
     setting: (
       <Setting
         fill={fill}
@@ -153,20 +104,10 @@ function Icon({ type, fill, stroke, scale, ...props }) {
       />
     ),
     plus: (
-      <Plus
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <Plus fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
     video: (
-      <Video
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <Video fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
     fvideo: (
       <FVideo
@@ -177,12 +118,7 @@ function Icon({ type, fill, stroke, scale, ...props }) {
       />
     ),
     share: (
-      <Share
-        fill={fill}
-        stroke={stroke}
-        style={{ transform: `scale(${scale})` }}
-        {...otherProps}
-      />
+      <Share fill={fill} stroke={stroke} style={{ transform: `scale(${scale})` }} {...otherProps} />
     ),
     fshare: (
       <FShare
@@ -207,7 +143,7 @@ function Icon({ type, fill, stroke, scale, ...props }) {
         style={{ transform: `scale(${scale})` }}
         {...otherProps}
       />
-    ),
+    )
   };
   return <>{iconTypes[type]}</>;
 }
@@ -215,39 +151,39 @@ function Icon({ type, fill, stroke, scale, ...props }) {
 Icon.propTypes = {
   ...defaultPropTypes,
   type: PropTypes.oneOf([
-    "search",
-    "up",
-    "down",
-    "left",
-    "right",
-    "dash",
-    "image",
-    "fimage",
-    "mic",
-    "fmic",
-    "notification",
-    "fnotification",
-    "setting",
-    "fsetting",
-    "x",
-    "video",
-    "fvideo",
-    "share",
-    "fshare",
-    "plus",
-    "doubleRight",
-    "doubleLeft",
+    'search',
+    'up',
+    'down',
+    'left',
+    'right',
+    'dash',
+    'image',
+    'fimage',
+    'mic',
+    'fmic',
+    'notification',
+    'fnotification',
+    'setting',
+    'fsetting',
+    'x',
+    'video',
+    'fvideo',
+    'share',
+    'fshare',
+    'plus',
+    'doubleRight',
+    'doubleLeft'
   ]),
   fill: PropTypes.string,
-  stroke: PropTypes.string,
+  stroke: PropTypes.string
 };
 
 Icon.defaultProps = {
   ...defaultProps,
-  type: "search",
-  fill: "black",
-  stroke: "black",
-  scale: 1,
+  type: 'search',
+  fill: 'black',
+  stroke: 'black',
+  scale: 1
 };
 
 export default Icon;

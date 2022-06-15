@@ -1,20 +1,16 @@
-import React, { useEffect, useRef } from "react";
-import cx from "classnames";
+import React, { useEffect, useRef } from 'react';
+import cx from 'classnames';
 
-import "../Navbar.scss";
+import '../Navbar.scss';
 
 const SubNavContainer = ({ children, className, isActive, ...props }) => {
   const SubNavContainerElement = useRef();
 
   useEffect(() => {
     if (isActive) {
-      SubNavContainerElement.current.classList.add(
-        "iswad_subNavContainer_active"
-      );
+      SubNavContainerElement.current.classList.add('iswad_subNavContainer_active');
     } else {
-      SubNavContainerElement.current.classList.remove(
-        "iswad_subNavContainer_active"
-      );
+      SubNavContainerElement.current.classList.remove('iswad_subNavContainer_active');
     }
   }, [isActive]);
   return (
@@ -22,11 +18,7 @@ const SubNavContainer = ({ children, className, isActive, ...props }) => {
       <div
         ref={(el) => (SubNavContainerElement.current = el)}
         {...props}
-        className={cx(
-          "pos-abs pos-abs--lb z-100000 iswad_subNavContainer",
-          className
-        )}
-      >
+        className={cx('pos-abs pos-abs--lb z-100000 iswad_subNavContainer', className)}>
         {children}
       </div>
     </>

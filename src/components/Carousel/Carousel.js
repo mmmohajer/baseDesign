@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
 
-import defaultPropsMap from "Constants/defaultProps";
+import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from "./Carousel.module.scss";
-import propTypes from "prop-types";
+import styles from './Carousel.module.scss';
+import propTypes from 'prop-types';
 
 const Carousel = ({
   children,
@@ -17,7 +17,7 @@ const Carousel = ({
   moveToItemWithNum,
   setMoveToItemWithNum,
   transitionDuration,
-  transition_timing_function,
+  transition_timing_function
 }) => {
   const sliderContainer = useRef();
   const [activeIndices, setActiveIndices] = useState([children.length, 0, 1]);
@@ -46,7 +46,7 @@ const Carousel = ({
 
   const multipleMoveHandler = async (curActiveIdx, dir) => {
     sliderContainer.current.classList.remove(styles.notransition);
-    dir === "right"
+    dir === 'right'
       ? sliderContainer.current.classList.add(styles.moveRight)
       : sliderContainer.current.classList.add(styles.moveLeft);
     await wait(transitionDuration * 1000);
@@ -73,12 +73,12 @@ const Carousel = ({
   const goToItemWithNum = async (num, curActiveIdx = activeIndices[1]) => {
     if (curActiveIdx < num - 1) {
       curActiveIdx += 1;
-      multipleMoveHandler(curActiveIdx, "right");
+      multipleMoveHandler(curActiveIdx, 'right');
       await wait(transitionDuration * 1000 + 100);
       goToItemWithNum(num, curActiveIdx);
     } else if (curActiveIdx > num - 1) {
       curActiveIdx -= 1;
-      multipleMoveHandler(curActiveIdx, "left");
+      multipleMoveHandler(curActiveIdx, 'left');
       await wait(transitionDuration * 1000 + 100);
       goToItemWithNum(num, curActiveIdx);
     }
@@ -109,14 +109,10 @@ const Carousel = ({
     <>
       <div className="w-per-100 of-x-hidden">
         <div
-          className={cx("flex", styles.sliderContainer)}
-          ref={(el) => (sliderContainer.current = el)}
-        >
+          className={cx('flex', styles.sliderContainer)}
+          ref={(el) => (sliderContainer.current = el)}>
           {activeIndices.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex flex--jc--center flex--ai--center w-per-100"
-            >
+            <div key={idx} className="flex flex--jc--center flex--ai--center w-per-100">
               {children[item]}
             </div>
           ))}
@@ -147,13 +143,13 @@ Carousel.propTypes = {
   setMoveToItemWithNum: PropTypes.func,
   transitionDuration: PropTypes.number,
   transition_timing_function: PropTypes.oneOf([
-    "ease",
-    "linear",
-    "ease-in",
-    "ease-out",
-    "ease-in-out",
-    "inherit",
-  ]),
+    'ease',
+    'linear',
+    'ease-in',
+    'ease-out',
+    'ease-in-out',
+    'inherit'
+  ])
 };
 
 Carousel.defaultProps = {
@@ -162,7 +158,7 @@ Carousel.defaultProps = {
   moveLeft: false,
   moveToItemWithNum: 1,
   transitionDuration: 0.3,
-  transition_timing_function: "linear",
+  transition_timing_function: 'linear'
 };
 
 export default Carousel;
