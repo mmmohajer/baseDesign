@@ -7,16 +7,13 @@
   }
   &_active {
     border-color: $primaryColor;
-    background: linear-gradient(
-      rgba($primaryColor, 0.2),
-      rgba($primaryColor, 0.3)
-    );
+    background: linear-gradient(rgba($primaryColor, 0.2), rgba($primaryColor, 0.3));
     color: $primaryColor !important;
   }
 }
 
 .iswad_subNavContainer {
-  transform: translateX(-25%);
+  width: 100%;
   display: none;
 
   &_active {

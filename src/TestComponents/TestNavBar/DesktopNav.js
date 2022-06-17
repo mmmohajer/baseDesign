@@ -23,7 +23,7 @@ const DesktopNav = ({
     <>
       <NavBar
         className={cx(
-          'w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse bgInverse'
+          'pos-rel w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse bgInverse'
         )}>
         <div className="flex flex--jc--start flex--ai--center">
           <div className="w-px-200 height-px-50 bgSilver flex flex--jc--center flex--ai--center">

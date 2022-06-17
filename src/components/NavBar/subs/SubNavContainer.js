@@ -18,7 +18,7 @@ const SubNavContainer = ({ children, className, isActive, ...props }) => {
       <div
         ref={(el) => (SubNavContainerElement.current = el)}
         {...props}
-        className={cx('pos-abs pos-abs--lb z-100000 iswad_subNavContainer', className)}>
+        className={cx('pos-abs pos-abs--lb z-10 iswad_subNavContainer', className)}>
         {children}
       </div>
     </>

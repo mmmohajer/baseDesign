@@ -6,7 +6,7 @@ import Modal from 'Components/Modal';
 const TestModal = () => {
   return (
     <>
-      <Modal>
+      <Modal fullHeightclassName="op-60">
         <div>Hello</div>
       </Modal>
     </>

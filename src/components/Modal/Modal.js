@@ -6,16 +6,10 @@ const Modal = ({ children, fullHeightclassName, className, ...props }) => {
     <>
       <div
         className={cx(
-          'pos-fix pos-fix--lt w-per-100 height-vh-full bgFaded op-50 z-10000',
+          'pos-fix pos-fix--lt w-per-100 height-vh-full op-50 bgFaded z-10',
           fullHeightclassName
         )}></div>
-      <div
-        className={cx(
-          'pos-fix pos-fix--center bgRed w-per-100 flex flex--jc--center flex--ai--center z-100000',
-          className
-        )}>
-        {children}
-      </div>
+      <div className={cx('pos-fix pos-fix--center z-100', className)}>{children}</div>
     </>
   );
 };

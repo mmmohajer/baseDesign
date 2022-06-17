@@ -18,7 +18,7 @@ const NavItem = ({ children, className, isActive, ...props }) => {
       <div
         ref={(el) => (navItemElement.current = el)}
         {...props}
-        className={cx('flex flex--jc--center flex--ai--center pos-rel iswad_navItem', className)}>
+        className={cx('flex flex--jc--center flex--ai--center iswad_navItem', className)}>
         {children}
       </div>
     </>

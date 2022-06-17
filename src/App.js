@@ -24,7 +24,8 @@ import TestSearch from 'TestComponents/TestSearch';
 const Home = () => {
   return (
     <div className="container">
-      <TestNavBar />
+      <TestAdminNav />
+      <TestModal />
       <div>
         <TestText />
       </div>
