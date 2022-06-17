@@ -33,9 +33,9 @@ var SubNavContainer = function SubNavContainer(_ref) {
   var SubNavContainerElement = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     if (isActive) {
-      SubNavContainerElement.current.classList.add("iswad_subNavContainer_active");
+      SubNavContainerElement.current.classList.add('iswad_subNavContainer_active');
     } else {
-      SubNavContainerElement.current.classList.remove("iswad_subNavContainer_active");
+      SubNavContainerElement.current.classList.remove('iswad_subNavContainer_active');
     }
   }, [isActive]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -43,7 +43,7 @@ var SubNavContainer = function SubNavContainer(_ref) {
       return SubNavContainerElement.current = el;
     }
   }, props, {
-    className: (0, _classnames["default"])("pos-abs pos-abs--lb z-100000 iswad_subNavContainer", className)
+    className: (0, _classnames["default"])('pos-abs pos-abs--lb z-10 iswad_subNavContainer', className)
   }), children));
 };
 

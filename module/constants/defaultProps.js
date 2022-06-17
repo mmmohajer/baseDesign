@@ -12,10 +12,10 @@ var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var defaultProps = {
-  id: "",
-  className: "",
+  id: '',
+  className: '',
   data: undefined,
-  tag: "div"
+  tag: 'div'
 };
 var defaultPropTypes = {
   id: _propTypes["default"].string,

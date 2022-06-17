@@ -53,17 +53,17 @@ function HamburgerIcon(_ref) {
 
   (0, _react.useEffect)(function () {
     if (iconToggler) {
-      var menuIcon = document.querySelector(".".concat(_utils.cssClassMaps["hamburgerMenuIcon"])) || document.querySelector(".".concat(_utils.cssClassMaps["hamburgerMenuClosedIcon"]));
-      menuIcon.classList.toggle(_utils.cssClassMaps["hamburgerMenuIcon"]);
-      menuIcon.classList.toggle(_utils.cssClassMaps["hamburgerMenuClosedIcon"]);
+      var menuIcon = document.querySelector(".".concat(_utils.cssClassMaps['hamburgerMenuIcon'])) || document.querySelector(".".concat(_utils.cssClassMaps['hamburgerMenuClosedIcon']));
+      menuIcon.classList.toggle(_utils.cssClassMaps['hamburgerMenuIcon']);
+      menuIcon.classList.toggle(_utils.cssClassMaps['hamburgerMenuClosedIcon']);
       setIconToggler(false);
     }
   }, [iconToggler, setIconToggler]);
 
   var menuIconToggleHandler = function menuIconToggleHandler() {
-    var menuIcon = document.querySelector(".".concat(_utils.cssClassMaps["hamburgerMenuIcon"])) || document.querySelector(".".concat(_utils.cssClassMaps["hamburgerMenuClosedIcon"]));
-    menuIcon.classList.toggle(_utils.cssClassMaps["hamburgerMenuIcon"]);
-    menuIcon.classList.toggle(_utils.cssClassMaps["hamburgerMenuClosedIcon"]);
+    var menuIcon = document.querySelector(".".concat(_utils.cssClassMaps['hamburgerMenuIcon'])) || document.querySelector(".".concat(_utils.cssClassMaps['hamburgerMenuClosedIcon']));
+    menuIcon.classList.toggle(_utils.cssClassMaps['hamburgerMenuIcon']);
+    menuIcon.classList.toggle(_utils.cssClassMaps['hamburgerMenuClosedIcon']);
 
     if (isIconOpened && onOpenedIconClick) {
       onOpenedIconClick();
@@ -81,10 +81,10 @@ function HamburgerIcon(_ref) {
   };
 
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])(_utils.cssClassMaps["hamburgerMenuContainer"]),
+    className: (0, _classnames["default"])(_utils.cssClassMaps['hamburgerMenuContainer']),
     onClick: menuIconToggleHandler
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])(_utils.cssClassMaps["hamburgerMenuIcon"])
+    className: (0, _classnames["default"])(_utils.cssClassMaps['hamburgerMenuIcon'])
   })), /*#__PURE__*/_react["default"].createElement("style", null, (0, _styles.css)(_utils.cssClassMaps, appliedCssConfig)));
 }
 

@@ -45,7 +45,7 @@ var DesktopNav = function DesktopNav(_ref) {
       setActiveSearch = _useState2[1];
 
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_NavBar["default"], {
-    className: (0, _classnames["default"])("w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse bgInverse")
+    className: (0, _classnames["default"])('pos-rel w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse bgInverse')
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--jc--start flex--ai--center"
   }, /*#__PURE__*/_react["default"].createElement("div", {
@@ -54,7 +54,7 @@ var DesktopNav = function DesktopNav(_ref) {
     className: "flex"
   }, MENUES.map(function (menu, idx1) {
     return /*#__PURE__*/_react["default"].createElement(_NavItem["default"], {
-      className: (0, _classnames["default"])("mx1 px1 flex flex--ai--center textWhite br-rad-px-10 height-px-40 br-color-primary"),
+      className: (0, _classnames["default"])('mx1 px1 flex flex--ai--center textWhite br-rad-px-10 height-px-40 br-color-primary'),
       onClick: function onClick() {
         return menuClickHandler(menu);
       },
@@ -63,21 +63,21 @@ var DesktopNav = function DesktopNav(_ref) {
     }, /*#__PURE__*/_react["default"].createElement("div", {
       className: "mouse-hand"
     }, menu), menu in SUB_MENUES && /*#__PURE__*/_react["default"].createElement(_SubNavContainer["default"], {
-      className: (0, _classnames["default"])("bgInverse w-px-200 flex flex--jc--center flex--dir--col flex--ai--center br-rad-px-10"),
+      className: (0, _classnames["default"])('bgInverse w-px-200 flex flex--jc--center flex--dir--col flex--ai--center br-rad-px-10'),
       onClick: function onClick() {
         return setActiveMenu(menu);
       },
       isActive: activeSubMenues.includes(menu)
     }, SUB_MENUES[menu].map(function (subMenu, idx2) {
       return /*#__PURE__*/_react["default"].createElement(_SubNavItem["default"], {
-        className: (0, _classnames["default"])("br-rad-px-10 textWhite p1 w-per-100 flex flex--jc--center flex--ai--center mouse-hand"),
+        className: (0, _classnames["default"])('br-rad-px-10 textWhite p1 w-per-100 flex flex--jc--center flex--ai--center mouse-hand'),
         key: idx2
       }, subMenu);
     })));
   }))), /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--jc--center flex--ai--center"
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])("mr2 min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center", _TestNavBarModule["default"].search)
+    className: (0, _classnames["default"])('mr2 min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center', _TestNavBarModule["default"].search)
   }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     onClick: function onClick() {
       return setActiveSearch(!activeSearch);
@@ -89,9 +89,9 @@ var DesktopNav = function DesktopNav(_ref) {
     className: "mouse-hand"
   }), /*#__PURE__*/_react["default"].createElement("input", {
     type: "search",
-    className: (0, _classnames["default"])("br-rad-px-10 fs-px-18", _TestNavBarModule["default"].searchInput, activeSearch && "pl1 pr1", activeSearch && _TestNavBarModule["default"].searchInput_active)
+    className: (0, _classnames["default"])('br-rad-px-10 fs-px-18', _TestNavBarModule["default"].searchInput, activeSearch && 'pl1 pr1', activeSearch && _TestNavBarModule["default"].searchInput_active)
   })), /*#__PURE__*/_react["default"].createElement("button", {
-    className: (0, _classnames["default"])("show-flex-in-md-lg bgPrimary fs-px-16 br-hidden-1 br-color-primary btn-small mouse-hand br-rad-px-10 height-px-40 flex flex--ai--center flex--jc--center px2", _TestNavBarModule["default"].logRegBtn)
+    className: (0, _classnames["default"])('show-flex-in-md-lg bgPrimary fs-px-16 br-hidden-1 br-color-primary btn-small mouse-hand br-rad-px-10 height-px-40 flex flex--ai--center flex--jc--center px2', _TestNavBarModule["default"].logRegBtn)
   }, "Login/Register"))));
 };
 

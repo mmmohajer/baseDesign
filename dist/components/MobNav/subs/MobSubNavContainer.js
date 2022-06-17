@@ -33,9 +33,9 @@ var MobSubNavContainer = function MobSubNavContainer(_ref) {
   var SubNavContainerElement = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     if (isActive) {
-      SubNavContainerElement.current.classList.add("iswad_mobSubNavContainer_active");
+      SubNavContainerElement.current.classList.add('iswad_mobSubNavContainer_active');
     } else {
-      SubNavContainerElement.current.classList.remove("iswad_mobSubNavContainer_active");
+      SubNavContainerElement.current.classList.remove('iswad_mobSubNavContainer_active');
     }
   }, [isActive]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -43,7 +43,7 @@ var MobSubNavContainer = function MobSubNavContainer(_ref) {
       return SubNavContainerElement.current = el;
     }
   }, props, {
-    className: (0, _classnames["default"])("flex flex--dir--col iswad_mobSubNavContainer", className)
+    className: (0, _classnames["default"])('flex flex--dir--col iswad_mobSubNavContainer', className)
   }), children));
 };
 

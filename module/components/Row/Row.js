@@ -40,7 +40,7 @@ var Row = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       children = _ref.children,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-    className: (0, _classnames["default"])("row", showIn && (0, _utils.showInCssClass)("flex", showIn), className)
+    className: (0, _classnames["default"])('row', showIn && (0, _utils.showInCssClass)('flex', showIn), className)
   }, props, {
     ref: ref
   }), children));
@@ -50,7 +50,7 @@ Row.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   showIn: _propTypes["default"].array
 });
 Row.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  showIn: ["xs", "sm", "md", "lg"]
+  showIn: ['xs', 'sm', 'md', 'lg']
 });
 var _default = Row;
 exports["default"] = _default;

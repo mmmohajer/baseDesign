@@ -14,7 +14,9 @@ var _classnames = _interopRequireDefault(require("classnames"));
 var _Modal = _interopRequireDefault(require("../../Components/Modal"));
 
 var TestModal = function TestModal() {
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Modal["default"], null, /*#__PURE__*/_react["default"].createElement("div", null, "Hello")));
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Modal["default"], {
+    fullHeightclassName: "op-60"
+  }, /*#__PURE__*/_react["default"].createElement("div", null, "Hello")));
 };
 
 var _default = TestModal;

@@ -46,19 +46,19 @@ var Column = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
   var getCssClass = function getCssClass(num, size) {
-    if (size === "xs") {
+    if (size === 'xs') {
       return "row--".concat(num);
-    } else if (size === "sm") {
+    } else if (size === 'sm') {
       return "row--sm--".concat(num);
-    } else if (size === "md") {
+    } else if (size === 'md') {
       return "row--md--".concat(num);
-    } else if (size === "lg") {
+    } else if (size === 'lg') {
       return "row--lg--".concat(num);
     }
   };
 
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-    className: (0, _classnames["default"])("row", getCssClass(xs, "xs"), getCssClass(sm, "sm"), getCssClass(md, "md"), getCssClass(lg, "lg"), showIn && (0, _utils.showInCssClass)("flex", showIn), className)
+    className: (0, _classnames["default"])('row', getCssClass(xs, 'xs'), getCssClass(sm, 'sm'), getCssClass(md, 'md'), getCssClass(lg, 'lg'), showIn && (0, _utils.showInCssClass)('flex', showIn), className)
   }, props, {
     ref: ref
   }), children));
@@ -76,7 +76,7 @@ Column.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   sm: 12,
   md: 12,
   lg: 12,
-  showIn: ["xs", "sm", "md", "lg"]
+  showIn: ['xs', 'sm', 'md', 'lg']
 });
 var _default = Column;
 exports["default"] = _default;

@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/TestComponents/TestPagination/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA","sourcesContent":["export { default } from \"./TestPagination\";\n"],"file":"index.js"}
+{"version":3,"sources":["../../../src/TestComponents/TestPagination/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './TestPagination';\n"],"file":"index.js"}

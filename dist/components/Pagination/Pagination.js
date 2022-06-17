@@ -95,9 +95,9 @@ var Pagination = function Pagination(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     type: "doubleLeft",
     scale: 0.8
-  })) : "", shownPages.map(function (p, idx) {
+  })) : '', shownPages.map(function (p, idx) {
     return /*#__PURE__*/_react["default"].createElement("div", {
-      className: (0, _classnames["default"])("mouse-hand iswad_pagination_item", p === currentPage && "iswad_pagination_item_active"),
+      className: (0, _classnames["default"])('mouse-hand iswad_pagination_item', p === currentPage && 'iswad_pagination_item_active'),
       key: idx,
       onClick: function onClick() {
         setCurrentPage(p);
@@ -111,7 +111,7 @@ var Pagination = function Pagination(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     type: "doubleRight",
     scale: 0.8
-  })) : ""));
+  })) : ''));
 };
 
 Pagination.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {

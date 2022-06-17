@@ -33,9 +33,9 @@ var NavItem = function NavItem(_ref) {
   var navItemElement = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     if (isActive) {
-      navItemElement.current.classList.add("iswad_navItem_active");
+      navItemElement.current.classList.add('iswad_navItem_active');
     } else {
-      navItemElement.current.classList.remove("iswad_navItem_active");
+      navItemElement.current.classList.remove('iswad_navItem_active');
     }
   }, [isActive]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -43,7 +43,7 @@ var NavItem = function NavItem(_ref) {
       return navItemElement.current = el;
     }
   }, props, {
-    className: (0, _classnames["default"])("flex flex--jc--center flex--ai--center pos-rel iswad_navItem", className)
+    className: (0, _classnames["default"])('flex flex--jc--center flex--ai--center iswad_navItem', className)
   }), children));
 };
 

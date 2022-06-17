@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/TestComponents/TestTable/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA","sourcesContent":["export { default } from \"./TestTable\";\n"],"file":"index.js"}
+{"version":3,"sources":["../../../src/TestComponents/TestTable/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './TestTable';\n"],"file":"index.js"}

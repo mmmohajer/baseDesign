@@ -23,7 +23,7 @@ var Alert = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     ref: ref,
-    className: (0, _classnames["default"])("iswad_alert_container", className)
+    className: (0, _classnames["default"])('iswad_alert_container', className)
   }, props), children));
 });
 

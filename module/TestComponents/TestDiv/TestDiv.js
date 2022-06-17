@@ -22,11 +22,11 @@ var TestDiv = function TestDiv() {
   }, /*#__PURE__*/_react["default"].createElement(_Div["default"], {
     textAlign: "right",
     className: "blue height-px-100 bgBlue w-per-20",
-    showIn: ["md", "lg"]
+    showIn: ['md', 'lg']
   }, "Hello"), /*#__PURE__*/_react["default"].createElement(_Div["default"], {
     className: "blue height-px-100 bgPurple w-per-20",
     onClick: function onClick() {
-      return console.log("Hello");
+      return console.log('Hello');
     }
   })));
 };

@@ -125,7 +125,7 @@ var Carousel = function Carousel(_ref) {
           switch (_context3.prev = _context3.next) {
             case 0:
               sliderContainer.current.classList.remove(_CarouselModule["default"].notransition);
-              dir === "right" ? sliderContainer.current.classList.add(_CarouselModule["default"].moveRight) : sliderContainer.current.classList.add(_CarouselModule["default"].moveLeft);
+              dir === 'right' ? sliderContainer.current.classList.add(_CarouselModule["default"].moveRight) : sliderContainer.current.classList.add(_CarouselModule["default"].moveLeft);
               _context3.next = 4;
               return wait(transitionDuration * 1000);
 
@@ -178,7 +178,7 @@ var Carousel = function Carousel(_ref) {
               }
 
               curActiveIdx += 1;
-              multipleMoveHandler(curActiveIdx, "right");
+              multipleMoveHandler(curActiveIdx, 'right');
               _context4.next = 6;
               return wait(transitionDuration * 1000 + 100);
 
@@ -194,7 +194,7 @@ var Carousel = function Carousel(_ref) {
               }
 
               curActiveIdx -= 1;
-              multipleMoveHandler(curActiveIdx, "left");
+              multipleMoveHandler(curActiveIdx, 'left');
               _context4.next = 14;
               return wait(transitionDuration * 1000 + 100);
 
@@ -236,7 +236,7 @@ var Carousel = function Carousel(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: "w-per-100 of-x-hidden"
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])("flex", _CarouselModule["default"].sliderContainer),
+    className: (0, _classnames["default"])('flex', _CarouselModule["default"].sliderContainer),
     ref: function ref(el) {
       return sliderContainer.current = el;
     }
@@ -256,14 +256,14 @@ Carousel.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   moveToItemWithNum: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].number]),
   setMoveToItemWithNum: _propTypes["default"].func,
   transitionDuration: _propTypes["default"].number,
-  transition_timing_function: _propTypes["default"].oneOf(["ease", "linear", "ease-in", "ease-out", "ease-in-out", "inherit"])
+  transition_timing_function: _propTypes["default"].oneOf(['ease', 'linear', 'ease-in', 'ease-out', 'ease-in-out', 'inherit'])
 });
 Carousel.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   moveRight: false,
   moveLeft: false,
   moveToItemWithNum: 1,
   transitionDuration: 0.3,
-  transition_timing_function: "linear"
+  transition_timing_function: 'linear'
 });
 var _default = Carousel;
 exports["default"] = _default;

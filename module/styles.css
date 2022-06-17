@@ -3474,7 +3474,7 @@ ul {
 }
 
 .iswad_subNavContainer {
-  transform: translateX(-25%);
+  width: 100%;
   display: none;
 }
 .iswad_subNavContainer_active {

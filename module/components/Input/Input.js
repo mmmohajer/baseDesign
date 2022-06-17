@@ -46,18 +46,18 @@ var Input = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "iswad_input_field_container"
   }, /*#__PURE__*/_react["default"].createElement("input", (0, _extends2["default"])({
-    className: (0, _classnames["default"])("iswad_input", className, fullWidth && "w-per-100")
+    className: (0, _classnames["default"])('iswad_input', className, fullWidth && 'w-per-100')
   }, props, {
     ref: ref,
     type: type,
     id: id || (0, _utils.randomStr)(16)
   }))), errorMessage !== null && errorMessage !== void 0 && errorMessage.length ? /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])("iswad_input_errorMessage", errorIsActive && "iswad_input_errorMessage_active")
-  }, /*#__PURE__*/_react["default"].createElement("span", null, errorMessage)) : ""));
+    className: (0, _classnames["default"])('iswad_input_errorMessage', errorIsActive && 'iswad_input_errorMessage_active')
+  }, /*#__PURE__*/_react["default"].createElement("span", null, errorMessage)) : ''));
 });
 
 Input.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
-  type: _propTypes["default"].oneOf(["button", "checkbox", "color", "date", "datetime-local", "email", "file", "hidden", "image", "month", "number", "password", "radio", "range", "reset", "search", "submit", "tel", "text", "time", "url", "week"]),
+  type: _propTypes["default"].oneOf(['button', 'checkbox', 'color', 'date', 'datetime-local', 'email', 'file', 'hidden', 'image', 'month', 'number', 'password', 'radio', 'range', 'reset', 'search', 'submit', 'tel', 'text', 'time', 'url', 'week']),
   fullWidth: _propTypes["default"].bool,
   errorMessage: _propTypes["default"].string,
   errorIsActive: _propTypes["default"].bool

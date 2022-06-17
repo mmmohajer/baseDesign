@@ -16,14 +16,14 @@ var _AlertItem = _interopRequireDefault(require("../../Components/Alert/subs/Ale
 require("./TestAlert.scss");
 
 var arrayOfNotifications = [{
-  key: "key1",
-  message: "Notif1",
-  type: "success",
+  key: 'key1',
+  message: 'Notif1',
+  type: 'success',
   isActive: true
 }, {
-  key: "key2",
-  message: "Notif2",
-  type: "error",
+  key: 'key2',
+  message: 'Notif2',
+  type: 'error',
   isActive: false
 }];
 

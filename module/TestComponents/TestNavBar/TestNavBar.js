@@ -31,26 +31,26 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var MENUES = ["Home", "About Us", "Services", "Contact Us"];
+var MENUES = ['Home', 'About Us', 'Services', 'Contact Us'];
 var SUB_MENUES = {
-  "About Us": ["Team", "Support", "Careers"],
-  Services: ["Software Development", "App Development", "MVP Development", "Web Design"]
+  'About Us': ['Team', 'Support', 'Careers'],
+  Services: ['Software Development', 'App Development', 'MVP Development', 'Web Design']
 };
 var HamIconCssConfig = {
-  hamburgerMenuContainerBgColor: "transparent",
-  hamburgerMenuContainerBorder: "none",
+  hamburgerMenuContainerBgColor: 'transparent',
+  hamburgerMenuContainerBorder: 'none',
   hamburgerMenuContainerBorderRadius: 10,
   hamburgerMenuTopWidth: 15,
   hamburgerMenuMiddleWidth: 25,
   hamburgerMenuBottomWidth: 35,
   hamburgerMenuHeight: 4,
-  hamburgerMenuBgColor: "white",
+  hamburgerMenuBgColor: 'white',
   hamburgerMenuSpace: 10,
   hamburgerMenuBorderRadius: 5,
   hamburgerMenuClosedIconWidth: 25,
   hamburgerMenuTransitionDuration: 0.3,
   hamburgerMenuContainerXPadding: 0,
-  hamburgerMenuTransform: "scale(-1, 1)"
+  hamburgerMenuTransform: 'scale(-1, 1)'
 };
 
 var TestNavBar = function TestNavBar() {
@@ -59,7 +59,7 @@ var TestNavBar = function TestNavBar() {
       activeSubMenues = _useState2[0],
       setActiveSubMenues = _useState2[1];
 
-  var _useState3 = (0, _react.useState)("Home"),
+  var _useState3 = (0, _react.useState)('Home'),
       _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
       activeMenu = _useState4[0],
       setActiveMenu = _useState4[1];
@@ -120,7 +120,7 @@ var TestNavBar = function TestNavBar() {
     MENUES: MENUES,
     SUB_MENUES: SUB_MENUES
   })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])("show-flex-in-md-sm-xsm", "w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 height-px-60 br-bottom-solid-1 br-color-inverse bgInverse pos-rel")
+    className: (0, _classnames["default"])('show-flex-in-md-sm-xsm', 'w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 height-px-60 br-bottom-solid-1 br-color-inverse bgInverse pos-rel')
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "w-px-200 height-px-50 bgSilver flex flex--jc--center flex--ai--center"
   }, "Logo 200x50"), /*#__PURE__*/_react["default"].createElement("div", {
@@ -133,7 +133,7 @@ var TestNavBar = function TestNavBar() {
     iconToggler: iconToggler,
     setIconToggler: setIconToggler
   })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])("height-vh-full w-per-80 pos-fix pos-fix--rt flex flex--dir--col z-10000 iswad_mobNav", mobMenuIsActive && "iswad_mobNav_active")
+    className: (0, _classnames["default"])('height-vh-full w-per-80 pos-fix pos-fix--rt flex flex--dir--col z-10000 iswad_mobNav', mobMenuIsActive && 'iswad_mobNav_active')
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "height-px-60"
   }), /*#__PURE__*/_react["default"].createElement(_MobileNav["default"], {

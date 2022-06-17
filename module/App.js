@@ -55,7 +55,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 var Home = function Home() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react["default"].createElement(_TestNavBar["default"], null), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_TestText["default"], null)), /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement(_TestAdminNav["default"], null), /*#__PURE__*/_react["default"].createElement(_TestModal["default"], null), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_TestText["default"], null)), /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--jc--center p2 flex--ai--center w-per-100 flex--wrap bgYellow"
   }, /*#__PURE__*/_react["default"].createElement(_TestIcon["default"], null)), /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--jc--center my2"

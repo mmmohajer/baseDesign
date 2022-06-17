@@ -21,7 +21,7 @@ var TestButton = function TestButton() {
   var buttonRef = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     if (buttonRef !== null && buttonRef !== void 0 && buttonRef.current) {
-      buttonRef.current.classList.add("bgBlue");
+      buttonRef.current.classList.add('bgBlue');
     }
 
     console.log(buttonRef);
@@ -29,7 +29,7 @@ var TestButton = function TestButton() {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Button["default"], {
     className: "bgRed textWhite py1",
     onClick: function onClick() {
-      return console.log("Hello");
+      return console.log('Hello');
     },
     fullWidth: true,
     ref: function ref(el) {

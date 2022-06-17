@@ -16,7 +16,7 @@ var TestHeading = function TestHeading() {
     className: "textBlue",
     type: 1,
     onClick: function onClick() {
-      return console.log("Hello");
+      return console.log('Hello');
     }
   }, "Heading 1"), /*#__PURE__*/_react["default"].createElement(_Heading["default"], {
     className: "textBlue",

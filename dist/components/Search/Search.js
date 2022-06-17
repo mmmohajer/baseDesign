@@ -62,7 +62,7 @@ var Search = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex"
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])("min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center iswad_search_container")
+    className: (0, _classnames["default"])('min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center iswad_search_container')
   }, closable ? /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     onClick: function onClick() {
       return setActiveSearch(!activeSearch);
@@ -77,10 +77,10 @@ var Search = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     scale: 0.8,
     fill: iconFillColor,
     stroke: iconStrokeColor,
-    className: (0, _classnames["default"])(closable && "mouse-hand")
+    className: (0, _classnames["default"])(closable && 'mouse-hand')
   }), /*#__PURE__*/_react["default"].createElement("input", (0, _extends2["default"])({
     type: "search",
-    className: (0, _classnames["default"])("iswad_search_input", activeSearch && "iswad_search_input_active", className)
+    className: (0, _classnames["default"])('iswad_search_input', activeSearch && 'iswad_search_input_active', className)
   }, props)))));
 });
 
@@ -91,8 +91,8 @@ Search.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
 });
 Search.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   closable: true,
-  iconFillColor: "grey",
-  iconStrokeColor: "gray"
+  iconFillColor: 'grey',
+  iconStrokeColor: 'gray'
 });
 var _default = Search;
 exports["default"] = _default;

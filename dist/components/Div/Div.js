@@ -45,31 +45,31 @@ var Div = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-    className: (0, _classnames["default"])(type === "flex" && "flex", direction === "vertical" && "flex--dir--col", direction === "vertical" && hAlign === "center" && "flex--ai--center", direction !== "vertical" && hAlign === "center" && "flex--jc--center", direction === "vertical" && hAlign === "end" && "flex--ai--end", direction !== "vertical" && hAlign === "end" && "flex--jc--end", direction === "vertical" && vAlign === "center" && "flex--jc--center", direction !== "vertical" && vAlign === "center" && "flex--ai--center", direction === "vertical" && vAlign === "end" && "flex--jc--end", direction !== "vertical" && vAlign === "end" && "flex--ai--end", distributedBetween && "flex--jc--between", distributedAround && "flex--jc--around", textAlign === "center" && "text-center", textAlign === "right" && "text-rtl", showIn && (0, _utils.showInCssClass)(type, showIn), className)
+    className: (0, _classnames["default"])(type === 'flex' && 'flex', direction === 'vertical' && 'flex--dir--col', direction === 'vertical' && hAlign === 'center' && 'flex--ai--center', direction !== 'vertical' && hAlign === 'center' && 'flex--jc--center', direction === 'vertical' && hAlign === 'end' && 'flex--ai--end', direction !== 'vertical' && hAlign === 'end' && 'flex--jc--end', direction === 'vertical' && vAlign === 'center' && 'flex--jc--center', direction !== 'vertical' && vAlign === 'center' && 'flex--ai--center', direction === 'vertical' && vAlign === 'end' && 'flex--jc--end', direction !== 'vertical' && vAlign === 'end' && 'flex--ai--end', distributedBetween && 'flex--jc--between', distributedAround && 'flex--jc--around', textAlign === 'center' && 'text-center', textAlign === 'right' && 'text-rtl', showIn && (0, _utils.showInCssClass)(type, showIn), className)
   }, props, {
     ref: ref
   }), children));
 });
 
 Div.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
-  type: _propTypes["default"].oneOf(["flex", "block"]),
-  direction: _propTypes["default"].oneOf(["horizontal", "vertical"]),
-  hAlign: _propTypes["default"].oneOf(["start", "center", "end"]),
-  vAlign: _propTypes["default"].oneOf(["start", "center", "end"]),
+  type: _propTypes["default"].oneOf(['flex', 'block']),
+  direction: _propTypes["default"].oneOf(['horizontal', 'vertical']),
+  hAlign: _propTypes["default"].oneOf(['start', 'center', 'end']),
+  vAlign: _propTypes["default"].oneOf(['start', 'center', 'end']),
   distributedBetween: _propTypes["default"].bool,
   distributedAround: _propTypes["default"].bool,
-  textAlign: _propTypes["default"].oneOf(["left", "center", "right"]),
+  textAlign: _propTypes["default"].oneOf(['left', 'center', 'right']),
   showIn: _propTypes["default"].array
 });
 Div.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  type: "block",
-  direction: "horizontal",
-  hAlign: "start",
-  vAlign: "start",
+  type: 'block',
+  direction: 'horizontal',
+  hAlign: 'start',
+  vAlign: 'start',
   distributedBetween: false,
   distributedAround: false,
-  textAlign: "left",
-  showIn: ["xs", "sm", "md", "lg"]
+  textAlign: 'left',
+  showIn: ['xs', 'sm', 'md', 'lg']
 });
 var _default = Div;
 exports["default"] = _default;

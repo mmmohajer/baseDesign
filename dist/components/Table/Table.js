@@ -70,8 +70,8 @@ var Table = function Table(_ref) {
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
   var _useState = (0, _react.useState)({
-    first_name: "",
-    last_name: ""
+    first_name: '',
+    last_name: ''
   }),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
       filter = _useState2[0],
@@ -117,7 +117,7 @@ var Table = function Table(_ref) {
       numberOfTotalPages = _useState18[0],
       setNumberOfTotalPages = _useState18[1];
 
-  var _useState19 = (0, _react.useState)("100%"),
+  var _useState19 = (0, _react.useState)('100%'),
       _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
       tableTotalWidth = _useState20[0],
       setTableTotalWidth = _useState20[1];
@@ -180,7 +180,7 @@ var Table = function Table(_ref) {
     if (data.length) {
       var localData = (0, _toConsumableArray2["default"])(data);
       localData.map(function (d) {
-        d["iswad_table_idx"] = count;
+        d['iswad_table_idx'] = count;
         localIsChecked[count] = false;
         count += 1;
       });
@@ -194,7 +194,7 @@ var Table = function Table(_ref) {
 
     headLines.map(function (h) {
       if (h !== null && h !== void 0 && h.isSortable) {
-        localSortIconColor[(h === null || h === void 0 ? void 0 : h.value) || h] = sortIconColors["REG"] || "silver";
+        localSortIconColor[(h === null || h === void 0 ? void 0 : h.value) || h] = sortIconColors['REG'] || 'silver';
       }
     });
     setSortIconColor(localSortIconColor);
@@ -206,10 +206,10 @@ var Table = function Table(_ref) {
       Object.keys(isChecked).map(function (idx) {
         if (isChecked[idx]) {
           var toBeAdded = _objectSpread({}, sortedData.find(function (d) {
-            return d["iswad_table_idx"] === parseInt(idx);
+            return d['iswad_table_idx'] === parseInt(idx);
           }));
 
-          delete toBeAdded["iswad_table_idx"];
+          delete toBeAdded['iswad_table_idx'];
           localSelectedData.push(toBeAdded);
         }
       });
@@ -241,15 +241,15 @@ var Table = function Table(_ref) {
     var localSortIconColor = _objectSpread({}, sortIconColor);
 
     Object.keys(localSortIconColor).map(function (k) {
-      localSortIconColor[k] = sortIconColors["REG"] || "silver";
+      localSortIconColor[k] = sortIconColors['REG'] || 'silver';
     });
 
     if (localIsSorted[key] === 1) {
-      localSortIconColor[key] = sortIconColors["ASC"] || "green";
+      localSortIconColor[key] = sortIconColors['ASC'] || 'green';
     } else if (localIsSorted[key] === 2) {
-      localSortIconColor[key] = sortIconColors["DESC"] || "red";
+      localSortIconColor[key] = sortIconColors['DESC'] || 'red';
     } else {
-      localSortIconColor[key] = sortIconColors["REG"] || "silver";
+      localSortIconColor[key] = sortIconColors['REG'] || 'silver';
     }
 
     setSortIconColor(localSortIconColor);
@@ -298,9 +298,9 @@ var Table = function Table(_ref) {
     setPageData(localPageData);
   }, [currentPage, sortedData, filteredData]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])("w-per-100 of-x-auto")
+    className: (0, _classnames["default"])('w-per-100 of-x-auto')
   }, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-    className: (0, _classnames["default"])("flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table")
+    className: (0, _classnames["default"])('flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table')
   }, props), /*#__PURE__*/_react["default"].createElement(_Th["default"], {
     className: ""
   }, isSelectable && /*#__PURE__*/_react["default"].createElement(_Td["default"], {
@@ -364,11 +364,11 @@ var Table = function Table(_ref) {
       }
     }, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("input", {
       type: "checkbox",
-      checked: isChecked[curRow["iswad_table_idx"]],
+      checked: isChecked[curRow['iswad_table_idx']],
       onChange: function onChange(e) {
         var localIsChecked = _objectSpread({}, isChecked);
 
-        localIsChecked[curRow["iswad_table_idx"]] = e.target.checked;
+        localIsChecked[curRow['iswad_table_idx']] = e.target.checked;
         setIsChecked(localIsChecked);
       }
     }))), headLines.map(function (curCol, idx1) {
@@ -381,13 +381,13 @@ var Table = function Table(_ref) {
         }
       }, ((_curRow = curRow[(curCol === null || curCol === void 0 ? void 0 : curCol.value) || curCol]) === null || _curRow === void 0 ? void 0 : _curRow.display) || curRow[(curCol === null || curCol === void 0 ? void 0 : curCol.value) || curCol] || curRow[curCol]);
     }));
-  }) : "")), showDefaultPagination && numberOfTotalPages ? /*#__PURE__*/_react["default"].createElement(_Pagination["default"], {
+  }) : '')), showDefaultPagination && numberOfTotalPages ? /*#__PURE__*/_react["default"].createElement(_Pagination["default"], {
     numberOfShownPages: numberOfShownPages || 5,
     currentPage: currentPage,
     numberOfTotalPages: numberOfTotalPages,
     setCurrentPage: setCurrentPage,
     showFirstLastIcon: true
-  }) : ""), /*#__PURE__*/_react["default"].createElement("style", null, "\n        .iswad_td {\n            width: ".concat(colWidth, "px;\n          }\n\n          .iswad_table {\n            width: ").concat(tableTotalWidth, ";\n          }\n          ")));
+  }) : ''), /*#__PURE__*/_react["default"].createElement("style", null, "\n        .iswad_td {\n            width: ".concat(colWidth, "px;\n          }\n\n          .iswad_table {\n            width: ").concat(tableTotalWidth, ";\n          }\n          ")));
 };
 
 Table.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
@@ -414,9 +414,9 @@ Table.defaultProps = {
   colWidth: 300,
   isSelectable: false,
   sortIconColors: {
-    ASC: "green",
-    DESC: "red",
-    REG: "silver"
+    ASC: 'green',
+    DESC: 'red',
+    REG: 'silver'
   },
   showDefaultPagination: true,
   numberOfShownPages: 5

@@ -33,9 +33,9 @@ var MobNavItem = function MobNavItem(_ref) {
   var navItemElement = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     if (isActive) {
-      navItemElement.current.classList.add("iswad_mobNavItem_active");
+      navItemElement.current.classList.add('iswad_mobNavItem_active');
     } else {
-      navItemElement.current.classList.remove("iswad_mobNavItem_active");
+      navItemElement.current.classList.remove('iswad_mobNavItem_active');
     }
   }, [isActive]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -43,7 +43,7 @@ var MobNavItem = function MobNavItem(_ref) {
       return navItemElement.current = el;
     }
   }, props, {
-    className: (0, _classnames["default"])("flex flex--dir--col flex--ai--center iswad_mobNavItem", className)
+    className: (0, _classnames["default"])('flex flex--dir--col flex--ai--center iswad_mobNavItem', className)
   }), children));
 };
 

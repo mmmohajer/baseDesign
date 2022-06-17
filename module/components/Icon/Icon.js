@@ -535,14 +535,14 @@ function Icon(_ref) {
 }
 
 Icon.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
-  type: _propTypes["default"].oneOf(["search", "up", "down", "left", "right", "dash", "image", "fimage", "mic", "fmic", "notification", "fnotification", "setting", "fsetting", "x", "video", "fvideo", "share", "fshare", "plus", "doubleRight", "doubleLeft"]),
+  type: _propTypes["default"].oneOf(['search', 'up', 'down', 'left', 'right', 'dash', 'image', 'fimage', 'mic', 'fmic', 'notification', 'fnotification', 'setting', 'fsetting', 'x', 'video', 'fvideo', 'share', 'fshare', 'plus', 'doubleRight', 'doubleLeft']),
   fill: _propTypes["default"].string,
   stroke: _propTypes["default"].string
 });
 Icon.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  type: "search",
-  fill: "black",
-  stroke: "black",
+  type: 'search',
+  fill: 'black',
+  stroke: 'black',
   scale: 1
 });
 var _default = Icon;
