@@ -41,8 +41,7 @@ function HamburgerIcon(_ref) {
       onOpenedIconClick = _ref.onOpenedIconClick,
       onClosedIconClick = _ref.onClosedIconClick,
       cssConfig = _ref.cssConfig,
-      iconToggler = _ref.iconToggler,
-      setIconToggler = _ref.setIconToggler;
+      iconToggler = _ref.iconToggler;
 
   var appliedCssConfig = _objectSpread(_objectSpread({}, _utils.cssDefaultConfig), cssConfig);
 
@@ -56,9 +55,8 @@ function HamburgerIcon(_ref) {
       var menuIcon = document.querySelector(".".concat(_utils.cssClassMaps['hamburgerMenuIcon'])) || document.querySelector(".".concat(_utils.cssClassMaps['hamburgerMenuClosedIcon']));
       menuIcon.classList.toggle(_utils.cssClassMaps['hamburgerMenuIcon']);
       menuIcon.classList.toggle(_utils.cssClassMaps['hamburgerMenuClosedIcon']);
-      setIconToggler(false);
     }
-  }, [iconToggler, setIconToggler]);
+  }, [iconToggler]);
 
   var menuIconToggleHandler = function menuIconToggleHandler() {
     var menuIcon = document.querySelector(".".concat(_utils.cssClassMaps['hamburgerMenuIcon'])) || document.querySelector(".".concat(_utils.cssClassMaps['hamburgerMenuClosedIcon']));
