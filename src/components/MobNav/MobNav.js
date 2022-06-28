@@ -7,7 +7,7 @@ const MobNav = React.forwardRef(({ children, isActive, className, ...props }, re
       <div
         {...props}
         className={cx(
-          'flex flex--dir--col flex--ai--center iswad_mobNav',
+          'flex flex--dir--col iswad_mobNav',
           isActive && 'iswad_mobNav_active',
           className
         )}

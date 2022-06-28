@@ -18,7 +18,7 @@ const MobNavItem = ({ children, className, isActive, ...props }) => {
       <div
         ref={(el) => (navItemElement.current = el)}
         {...props}
-        className={cx('flex flex--dir--col flex--ai--center iswad_mobNavItem', className)}>
+        className={cx('flex flex--dir--col iswad_mobNavItem', className)}>
         {children}
       </div>
     </>
