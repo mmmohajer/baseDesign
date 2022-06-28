@@ -1,22 +1,22 @@
-.iswad_navItem,
-.iswad_subNavItem {
-  &:hover {
-    border-color: $primaryColor;
-    background: rgba($primaryColor, 0.1);
-    color: $primaryColor;
-  }
-  &_active {
-    border-color: $primaryColor;
-    background: linear-gradient(rgba($primaryColor, 0.2), rgba($primaryColor, 0.3));
-    color: $primaryColor !important;
-  }
-}
+// .iswad_navItem,
+// .iswad_subNavItem {
+//   &:hover {
+//     border-color: $primaryColor;
+//     background: rgba($primaryColor, 0.1);
+//     color: $primaryColor;
+//   }
+//   &_active {
+//     border-color: $primaryColor;
+//     background: linear-gradient(rgba($primaryColor, 0.2), rgba($primaryColor, 0.3));
+//     color: $primaryColor !important;
+//   }
+// }
 
-.iswad_subNavContainer {
-  width: 100%;
-  display: none;
+// .iswad_subNavContainer {
+//   width: 100%;
+//   display: none;
 
-  &_active {
-    display: block;
-  }
-}
+//   &_active {
+//     display: block;
+//   }
+// }

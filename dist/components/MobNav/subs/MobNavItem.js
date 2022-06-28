@@ -43,7 +43,7 @@ var MobNavItem = function MobNavItem(_ref) {
       return navItemElement.current = el;
     }
   }, props, {
-    className: (0, _classnames["default"])('flex flex--dir--col flex--ai--center iswad_mobNavItem', className)
+    className: (0, _classnames["default"])('flex flex--dir--col iswad_mobNavItem', className)
   }), children));
 };
 
