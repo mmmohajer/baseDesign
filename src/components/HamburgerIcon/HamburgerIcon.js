@@ -9,14 +9,7 @@ import { cssClassMaps, cssConfigShape, cssDefaultConfig } from './utils';
 
 import { css } from './styles';
 
-function HamburgerIcon({
-  onClick,
-  onOpenedIconClick,
-  onClosedIconClick,
-  cssConfig,
-  iconToggler,
-  setIconToggler
-}) {
+function HamburgerIcon({ onClick, onOpenedIconClick, onClosedIconClick, cssConfig, iconToggler }) {
   const appliedCssConfig = { ...cssDefaultConfig, ...cssConfig };
   const [isIconOpened, setIsIconOpened] = useState(true);
 
@@ -27,9 +20,8 @@ function HamburgerIcon({
         document.querySelector(`.${cssClassMaps['hamburgerMenuClosedIcon']}`);
       menuIcon.classList.toggle(cssClassMaps['hamburgerMenuIcon']);
       menuIcon.classList.toggle(cssClassMaps['hamburgerMenuClosedIcon']);
-      setIconToggler(false);
     }
-  }, [iconToggler, setIconToggler]);
+  }, [iconToggler]);
 
   const menuIconToggleHandler = () => {
     const menuIcon =
