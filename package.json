@@ -38,6 +38,7 @@
   "author": "Mohammad Mahdi Mohajer",
   "license": "MIT",
   "devDependencies": {
+    "@types/eslint": "8.4.3",
     "@babel/cli": "^7.17.0",
     "@babel/core": "^7.17.2",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
