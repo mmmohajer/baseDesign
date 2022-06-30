@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/components/MobNav/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './MobNav';\n"],"file":"index.js"}
+{"version":3,"file":"index.js","names":[],"sources":["../../../src/components/MobNav/index.js"],"sourcesContent":["export { default } from './MobNav';\n"],"mappings":";;;;;;;;;;;;;;AAAA"}

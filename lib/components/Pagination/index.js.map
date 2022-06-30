@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/components/Pagination/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './Pagination';\n"],"file":"index.js"}
+{"version":3,"file":"index.js","names":[],"sources":["../../../src/components/Pagination/index.js"],"sourcesContent":["export { default } from './Pagination';\n"],"mappings":";;;;;;;;;;;;;;AAAA"}

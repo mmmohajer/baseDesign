@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/TestComponents/TestImage/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './TestImage';\n"],"file":"index.js"}
+{"version":3,"file":"index.js","names":[],"sources":["../../../src/TestComponents/TestImage/index.js"],"sourcesContent":["export { default } from './TestImage';\n"],"mappings":";;;;;;;;;;;;;;AAAA"}

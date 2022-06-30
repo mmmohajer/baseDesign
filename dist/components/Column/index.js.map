@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../../src/components/Column/index.js"],"names":[],"mappings":";;;;;;;;;;;;;;AAAA","sourcesContent":["export { default } from './Column';\n"],"file":"index.js"}
+{"version":3,"file":"index.js","names":[],"sources":["../../../src/components/Column/index.js"],"sourcesContent":["export { default } from './Column';\n"],"mappings":";;;;;;;;;;;;;;AAAA"}
