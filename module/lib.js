@@ -77,6 +77,12 @@ Object.defineProperty(exports, "Column", {
     return _Column["default"];
   }
 });
+Object.defineProperty(exports, "DisappearingElement", {
+  enumerable: true,
+  get: function get() {
+    return _DisappearingElement["default"];
+  }
+});
 Object.defineProperty(exports, "Div", {
   enumerable: true,
   get: function get() {
@@ -241,6 +247,8 @@ var _CarouselItem = _interopRequireDefault(require("./components/Carousel/subs/C
 var _Column = _interopRequireDefault(require("./components/Column"));
 
 var _Div = _interopRequireDefault(require("./components/Div"));
+
+var _DisappearingElement = _interopRequireDefault(require("./components/DisappearingElement"));
 
 var _Form = _interopRequireDefault(require("./components/Form"));
 
