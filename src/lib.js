@@ -11,6 +11,7 @@ import Carousel from './components/Carousel';
 import CarouselItem from './components/Carousel/subs/CarouselItem';
 import Column from './components/Column';
 import Div from './components/Div';
+import DisappearingElement from './components/DisappearingElement';
 import Form from './components/Form';
 import HamburgerIcon from './components/HamburgerIcon';
 import Heading from './components/Heading';
@@ -48,6 +49,7 @@ export {
   CarouselItem,
   Column,
   Div,
+  DisappearingElement,
   Form,
   HamburgerIcon,
   Heading,
