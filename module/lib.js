@@ -221,6 +221,18 @@ Object.defineProperty(exports, "SubNavItem", {
     return _SubNavItem["default"];
   }
 });
+Object.defineProperty(exports, "SwipableSlider", {
+  enumerable: true,
+  get: function get() {
+    return _SwipableSlider["default"];
+  }
+});
+Object.defineProperty(exports, "SwipableSliderItem", {
+  enumerable: true,
+  get: function get() {
+    return _SwipableSliderItem["default"];
+  }
+});
 Object.defineProperty(exports, "Table", {
   enumerable: true,
   get: function get() {
@@ -305,6 +317,10 @@ var _Paragraph = _interopRequireDefault(require("./components/Paragraph"));
 var _Row = _interopRequireDefault(require("./components/Row"));
 
 var _Search = _interopRequireDefault(require("./components/Search"));
+
+var _SwipableSlider = _interopRequireDefault(require("./components/SwipableSlider"));
+
+var _SwipableSliderItem = _interopRequireDefault(require("./components/SwipableSlider/subs/SwipableSliderItem"));
 
 var _Table = _interopRequireDefault(require("./components/Table"));
 
