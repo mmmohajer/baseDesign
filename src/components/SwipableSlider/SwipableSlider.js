@@ -18,6 +18,7 @@ const SwipableSlider = ({
   moveToItemWithNum,
   setMoveToItemWithNum,
   minXDifferenceToMove,
+  notScrollableOnSwipableElement,
   initialTranslateX,
   moveLeftTranslateX,
   moveRightTranslateX,
@@ -53,7 +54,7 @@ const SwipableSlider = ({
     if (position.x <= -minXDifferenceToMove) {
       goRight();
     }
-    return true;
+    return notScrollableOnSwipableElement;
   };
 
   const getNextActiveIdx = (idx) => {
@@ -217,7 +218,8 @@ SwipableSlider.propTypes = {
     'ease-in-out',
     'inherit'
   ]),
-  cursorIsHandOnItem: PropTypes.bool
+  cursorIsHandOnItem: PropTypes.bool,
+  notScrollableOnSwipableElement: PropTypes.bool
 };
 
 SwipableSlider.defaultProps = {
@@ -231,7 +233,8 @@ SwipableSlider.defaultProps = {
   moveRightTranslateX: '-66.666666%',
   transitionDuration: 0.3,
   transition_timing_function: 'linear',
-  cursorIsHandOnItem: true
+  cursorIsHandOnItem: true,
+  notScrollableOnSwipableElement: true
 };
 
 export default SwipableSlider;
