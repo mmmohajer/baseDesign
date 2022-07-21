@@ -17,6 +17,9 @@ const DraggableSlider = ({
   moveToItemWithNum,
   setMoveToItemWithNum,
   minXDifferenceToMove,
+  initialTranslateX,
+  moveLeftTranslateX,
+  moveRightTranslateX,
   transitionDuration,
   transition_timing_function,
   cursorIsHandOnItem,
@@ -164,6 +167,15 @@ const DraggableSlider = ({
             -moz-transition: all ${transition_timing_function} ${transitionDuration}s;
             -o-transition: all ${transition_timing_function} ${transitionDuration}s;
             transition: all ${transition_timing_function} ${transitionDuration}s;
+            transform: translateX(${initialTranslateX});
+          }
+
+          .${styles.moveLeft} {
+            transform: translateX(${moveLeftTranslateX});
+          }
+
+          .${styles.moveRight} {
+            transform: translateX(${moveRightTranslateX});
           }
         `}
       </style>
@@ -180,6 +192,9 @@ DraggableSlider.propTypes = {
   moveToItemWithNum: PropTypes.oneOfType([PropTypes.bool, propTypes.number]),
   setMoveToItemWithNum: PropTypes.func,
   minXDifferenceToMove: PropTypes.number,
+  initialTranslateX: PropTypes.string,
+  moveLeftTranslateX: PropTypes.string,
+  moveRightTranslateX: PropTypes.string,
   transitionDuration: PropTypes.number,
   transition_timing_function: PropTypes.oneOf([
     'ease',
@@ -198,6 +213,9 @@ DraggableSlider.defaultProps = {
   moveLeft: false,
   moveToItemWithNum: 1,
   minXDifferenceToMove: 100,
+  initialTranslateX: '-33.33333%',
+  moveLeftTranslateX: '0%',
+  moveRightTranslateX: '-66.666666%',
   transitionDuration: 0.3,
   transition_timing_function: 'linear',
   cursorIsHandOnItem: true
