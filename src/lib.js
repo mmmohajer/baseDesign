@@ -12,6 +12,8 @@ import CarouselItem from './components/Carousel/subs/CarouselItem';
 import Column from './components/Column';
 import Div from './components/Div';
 import DisappearingElement from './components/DisappearingElement';
+import DraggableSlider from './components/DraggableSlider';
+import DraggableSliderItem from './components/DraggableSlider/subs/DraggableSliderItem';
 import Form from './components/Form';
 import HamburgerIcon from './components/HamburgerIcon';
 import Heading from './components/Heading';
@@ -50,6 +52,8 @@ export {
   Column,
   Div,
   DisappearingElement,
+  DraggableSlider,
+  DraggableSliderItem,
   Form,
   HamburgerIcon,
   Heading,
