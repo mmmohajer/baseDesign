@@ -19,13 +19,14 @@ import TestButton from 'TestComponents/TestButton';
 import TestForm from 'TestComponents/TestForm';
 import TestRow from 'TestComponents/TestRow';
 import TestSearch from 'TestComponents/TestSearch';
+import TestDraggableSlider from 'TestComponents/TestDraggableSlider';
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
   return (
     <div className="container">
       <TestAdminNav />
-      <TestModal />
+      {/* <TestModal /> */}
       <div>
         <TestText />
       </div>
@@ -74,6 +75,9 @@ const Home = () => {
       <TestRow />
       <div className="m2 bgPurple p2">
         <TestSearch />
+      </div>
+      <div className="w-px-400 ml-auto mr-auto">
+        <TestDraggableSlider />
       </div>
     </div>
   );

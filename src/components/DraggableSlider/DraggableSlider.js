@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from './Carousel.module.scss';
+import styles from './DraggableSlider.module.scss';
 import propTypes from 'prop-types';
 
-const Carousel = ({
+const DraggableSlider = ({
   children,
   moveRight,
   setMoveRight,
@@ -16,13 +16,30 @@ const Carousel = ({
   setMoveLeft,
   moveToItemWithNum,
   setMoveToItemWithNum,
+  minXDifferenceToMove,
   transitionDuration,
   transition_timing_function,
+  cursorIsHandOnItem,
   className,
   ...props
 }) => {
   const sliderContainer = useRef();
+
   const [activeIndices, setActiveIndices] = useState([children.length - 1, 0, 1]);
+  const [xStart, setXStart] = useState(0);
+  const [xEnd, setXEnd] = useState(-100000);
+  const [yStart, setYStart] = useState(0);
+  const [yEnd, setYEnd] = useState(-100000);
+
+  const handleDragStart = (e) => {
+    setXStart(e.clientX);
+    setYStart(e.clientY);
+  };
+
+  const handleDragEnd = (e) => {
+    setXEnd(e.clientX);
+    setYEnd(e.clientY);
+  };
 
   const getNextActiveIdx = (idx) => {
     return idx + 1 < children.length ? idx + 1 : 0;
@@ -107,6 +124,17 @@ const Carousel = ({
     setMoveToItemWithNum(false);
   }, [moveToItemWithNum]);
 
+  useEffect(() => {
+    if (xEnd > -100000) {
+      if (xEnd - xStart >= minXDifferenceToMove) {
+        goLeft();
+      }
+      if (xEnd - xStart <= -minXDifferenceToMove) {
+        goRight();
+      }
+    }
+  }, [xEnd, yEnd]);
+
   return (
     <>
       <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
@@ -114,7 +142,15 @@ const Carousel = ({
           className={cx('flex', styles.sliderContainer)}
           ref={(el) => (sliderContainer.current = el)}>
           {activeIndices.map((item, idx) => (
-            <div key={idx} className="flex flex--jc--center flex--ai--center w-per-100">
+            <div
+              key={idx}
+              className={cx(
+                'flex flex--jc--center flex--ai--center w-per-100',
+                cursorIsHandOnItem && 'mouse-hand'
+              )}
+              draggable={true}
+              onDragStart={handleDragStart}
+              onDragEnd={handleDragEnd}>
               {children[item]}
             </div>
           ))}
@@ -135,7 +171,7 @@ const Carousel = ({
   );
 };
 
-Carousel.propTypes = {
+DraggableSlider.propTypes = {
   ...defaultPropTypes,
   moveRight: PropTypes.bool,
   setMoveRight: PropTypes.func,
@@ -143,6 +179,7 @@ Carousel.propTypes = {
   setMoveLeft: PropTypes.func,
   moveToItemWithNum: PropTypes.oneOfType([PropTypes.bool, propTypes.number]),
   setMoveToItemWithNum: PropTypes.func,
+  minXDifferenceToMove: PropTypes.number,
   transitionDuration: PropTypes.number,
   transition_timing_function: PropTypes.oneOf([
     'ease',
@@ -151,16 +188,19 @@ Carousel.propTypes = {
     'ease-out',
     'ease-in-out',
     'inherit'
-  ])
+  ]),
+  cursorIsHandOnItem: PropTypes.bool
 };
 
-Carousel.defaultProps = {
+DraggableSlider.defaultProps = {
   ...defaultProps,
   moveRight: false,
   moveLeft: false,
   moveToItemWithNum: 1,
+  minXDifferenceToMove: 100,
   transitionDuration: 0.3,
-  transition_timing_function: 'linear'
+  transition_timing_function: 'linear',
+  cursorIsHandOnItem: true
 };
 
-export default Carousel;
+export default DraggableSlider;
