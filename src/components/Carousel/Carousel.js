@@ -17,7 +17,9 @@ const Carousel = ({
   moveToItemWithNum,
   setMoveToItemWithNum,
   transitionDuration,
-  transition_timing_function
+  transition_timing_function,
+  className,
+  ...props
 }) => {
   const sliderContainer = useRef();
   const [activeIndices, setActiveIndices] = useState([children.length, 0, 1]);
@@ -107,7 +109,7 @@ const Carousel = ({
 
   return (
     <>
-      <div className="w-per-100 of-x-hidden">
+      <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
         <div
           className={cx('flex', styles.sliderContainer)}
           ref={(el) => (sliderContainer.current = el)}>
