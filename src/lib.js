@@ -34,6 +34,8 @@ import Pagination from './components/Pagination';
 import Paragraph from './components/Paragraph';
 import Row from './components/Row';
 import Search from './components/Search';
+import SwipableSlider from './components/SwipableSlider';
+import SwipableSliderItem from './components/SwipableSlider/subs/SwipableSliderItem';
 import Table from './components/Table';
 import Text from './components/Text';
 
@@ -74,6 +76,8 @@ export {
   Paragraph,
   Row,
   Search,
+  SwipableSlider,
+  SwipableSliderItem,
   Table,
   Text
 };
