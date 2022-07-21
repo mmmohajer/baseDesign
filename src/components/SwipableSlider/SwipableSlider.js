@@ -45,6 +45,17 @@ const SwipableSlider = ({
     setYEnd(e.clientY);
   };
 
+  const handleSwipeMove = (position, e) => {
+    if (position.x >= minXDifferenceToMove) {
+      goLeft();
+    }
+
+    if (position.x <= -minXDifferenceToMove) {
+      goRight();
+    }
+    return true;
+  };
+
   const getNextActiveIdx = (idx) => {
     return idx + 1 < children.length ? idx + 1 : 0;
   };
@@ -155,8 +166,7 @@ const SwipableSlider = ({
               draggable={true}
               onDragStart={handleDragStart}
               onDragEnd={handleDragEnd}
-              onSwipeStart={handleDragStart}
-              onSwipeEnd={handleDragEnd}>
+              onSwipeMove={handleSwipeMove}>
               {children[item]}
             </Swipe>
           ))}
