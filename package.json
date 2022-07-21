@@ -38,7 +38,6 @@
   "author": "Mohammad Mahdi Mohajer",
   "license": "MIT",
   "devDependencies": {
-    "@types/eslint": "8.4.3",
     "@babel/cli": "^7.17.0",
     "@babel/core": "^7.17.2",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
@@ -50,6 +49,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^14.1.1",
+    "@types/eslint": "8.4.3",
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-inline-react-svg": "^2.0.1",
@@ -88,6 +88,7 @@
     "classnames": "^2.3.1",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-easy-swipe": "^0.0.22"
   }
 }
