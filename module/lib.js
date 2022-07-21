@@ -89,6 +89,18 @@ Object.defineProperty(exports, "Div", {
     return _Div["default"];
   }
 });
+Object.defineProperty(exports, "DraggableSlider", {
+  enumerable: true,
+  get: function get() {
+    return _DraggableSlider["default"];
+  }
+});
+Object.defineProperty(exports, "DraggableSliderItem", {
+  enumerable: true,
+  get: function get() {
+    return _DraggableSliderItem["default"];
+  }
+});
 Object.defineProperty(exports, "Form", {
   enumerable: true,
   get: function get() {
@@ -249,6 +261,10 @@ var _Column = _interopRequireDefault(require("./components/Column"));
 var _Div = _interopRequireDefault(require("./components/Div"));
 
 var _DisappearingElement = _interopRequireDefault(require("./components/DisappearingElement"));
+
+var _DraggableSlider = _interopRequireDefault(require("./components/DraggableSlider"));
+
+var _DraggableSliderItem = _interopRequireDefault(require("./components/DraggableSlider/subs/DraggableSliderItem"));
 
 var _Form = _interopRequireDefault(require("./components/Form"));
 

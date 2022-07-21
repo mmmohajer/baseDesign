@@ -47,6 +47,8 @@ var _TestRow = _interopRequireDefault(require("./TestComponents/TestRow"));
 
 var _TestSearch = _interopRequireDefault(require("./TestComponents/TestSearch"));
 
+var _TestDraggableSlider = _interopRequireDefault(require("./TestComponents/TestDraggableSlider"));
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -55,7 +57,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 var Home = function Home() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react["default"].createElement(_TestAdminNav["default"], null), /*#__PURE__*/_react["default"].createElement(_TestModal["default"], null), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_TestText["default"], null)), /*#__PURE__*/_react["default"].createElement("div", {
+  }, /*#__PURE__*/_react["default"].createElement(_TestAdminNav["default"], null), /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_TestText["default"], null)), /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--jc--center p2 flex--ai--center w-per-100 flex--wrap bgYellow"
   }, /*#__PURE__*/_react["default"].createElement(_TestIcon["default"], null)), /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--jc--center my2"
@@ -78,7 +80,9 @@ var Home = function Home() {
     className: "w-per-100 p1 my1"
   }, /*#__PURE__*/_react["default"].createElement(_TestForm["default"], null)), /*#__PURE__*/_react["default"].createElement(_TestRow["default"], null), /*#__PURE__*/_react["default"].createElement("div", {
     className: "m2 bgPurple p2"
-  }, /*#__PURE__*/_react["default"].createElement(_TestSearch["default"], null)));
+  }, /*#__PURE__*/_react["default"].createElement(_TestSearch["default"], null)), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "w-px-400 ml-auto mr-auto"
+  }, /*#__PURE__*/_react["default"].createElement(_TestDraggableSlider["default"], null)));
 };
 
 var _default = Home;
