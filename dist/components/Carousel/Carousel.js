@@ -13,9 +13,13 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
+var _objectWithoutProperties2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutProperties"));
 
 var _react = _interopRequireWildcard(require("react"));
 
@@ -26,6 +30,8 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
 var _CarouselModule = _interopRequireDefault(require("./Carousel.module.scss"));
+
+var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "transitionDuration", "transition_timing_function", "className"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -47,7 +53,9 @@ var Carousel = function Carousel(_ref) {
       moveToItemWithNum = _ref.moveToItemWithNum,
       setMoveToItemWithNum = _ref.setMoveToItemWithNum,
       transitionDuration = _ref.transitionDuration,
-      transition_timing_function = _ref.transition_timing_function;
+      transition_timing_function = _ref.transition_timing_function,
+      className = _ref.className,
+      props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   var sliderContainer = (0, _react.useRef)();
 
   var _useState = (0, _react.useState)([children.length, 0, 1]),
@@ -233,9 +241,9 @@ var Carousel = function Carousel(_ref) {
 
     setMoveToItemWithNum(false);
   }, [moveToItemWithNum]);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-per-100 of-x-hidden"
-  }, /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
+    className: (0, _classnames["default"])('w-per-100 of-x-hidden', className)
+  }, props), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('flex', _CarouselModule["default"].sliderContainer),
     ref: function ref(el) {
       return sliderContainer.current = el;
