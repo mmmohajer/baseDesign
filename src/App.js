@@ -20,6 +20,7 @@ import TestForm from 'TestComponents/TestForm';
 import TestRow from 'TestComponents/TestRow';
 import TestSearch from 'TestComponents/TestSearch';
 import TestDraggableSlider from 'TestComponents/TestDraggableSlider';
+import TestSelect from 'TestComponents/TestSelect';
 // import TestPagination from "TestComponents/TestPagination";
 
 const Home = () => {
@@ -78,6 +79,9 @@ const Home = () => {
       </div>
       <div className="w-px-400 ml-auto mr-auto">
         <TestDraggableSlider />
+      </div>
+      <div className="w-px-400 ml-auto mr-auto">
+        <TestSelect />
       </div>
     </div>
   );
