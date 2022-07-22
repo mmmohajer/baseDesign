@@ -33,17 +33,13 @@ const SwipableSlider = ({
   const [activeIndices, setActiveIndices] = useState([children.length - 1, 0, 1]);
   const [xStart, setXStart] = useState(0);
   const [xEnd, setXEnd] = useState(-100000);
-  const [yStart, setYStart] = useState(0);
-  const [yEnd, setYEnd] = useState(-100000);
 
   const handleDragStart = (e) => {
     setXStart(e.clientX);
-    setYStart(e.clientY);
   };
 
   const handleDragEnd = (e) => {
     setXEnd(e.clientX);
-    setYEnd(e.clientY);
   };
 
   const handleSwipeMove = (position, e) => {
@@ -149,7 +145,7 @@ const SwipableSlider = ({
         goRight();
       }
     }
-  }, [xEnd, yEnd]);
+  }, [xEnd]);
 
   return (
     <>
