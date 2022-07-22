@@ -29,7 +29,7 @@ var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps
 
 var _Th = _interopRequireDefault(require("./subs/Th"));
 
-var _tr = _interopRequireDefault(require("./subs/tr"));
+var _Tr = _interopRequireDefault(require("./subs/Tr"));
 
 var _Td = _interopRequireDefault(require("./subs/Td"));
 
@@ -356,7 +356,7 @@ var Table = function Table(_ref) {
       stroke: sortIconColor[(head === null || head === void 0 ? void 0 : head.value) || head]
     }))));
   })), pageData !== null && pageData !== void 0 && pageData.length ? pageData.map(function (curRow, idx) {
-    return /*#__PURE__*/_react["default"].createElement(_tr["default"], {
+    return /*#__PURE__*/_react["default"].createElement(_Tr["default"], {
       key: idx
     }, isSelectable && /*#__PURE__*/_react["default"].createElement(_Td["default"], {
       style: {
