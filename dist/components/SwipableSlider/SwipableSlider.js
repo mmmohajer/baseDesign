@@ -196,17 +196,16 @@ var SwipableSlider = function SwipableSlider(_ref) {
     };
   }();
 
-  var goRight = function goRight() {
+  var goRight = (0, _react.useCallback)(function () {
     sliderContainer.current.classList.remove(_SwipableSliderModule["default"].notransition);
     sliderContainer.current.classList.add(_SwipableSliderModule["default"].moveRight);
     moveHandler(getNextActiveIdx(activeIndices[1]));
-  };
-
-  var goLeft = function goLeft() {
+  }, [activeIndices]);
+  var goLeft = (0, _react.useCallback)(function () {
     sliderContainer.current.classList.remove(_SwipableSliderModule["default"].notransition);
     sliderContainer.current.classList.add(_SwipableSliderModule["default"].moveLeft);
     moveHandler(getPrevActiveIdx(activeIndices[1]));
-  };
+  }, [activeIndices]);
 
   var goToItemWithNum = /*#__PURE__*/function () {
     var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee4(num) {
