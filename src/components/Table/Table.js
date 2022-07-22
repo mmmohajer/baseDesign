@@ -6,7 +6,7 @@ import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
 import Th from './subs/Th';
-import Tr from './subs/tr';
+import Tr from './subs/Tr';
 import Td from './subs/Td';
 import Icon from '../Icon';
 import Search from '../Search';
