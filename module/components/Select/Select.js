@@ -41,12 +41,12 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     className: (0, _classnames["default"])(fullWidth && 'w-per-100', className)
   }, props, {
     ref: ref
-  }), options.map(function (item, idx) {
+  }), options === null || options === void 0 ? void 0 : options.map(function (item, idx) {
     return /*#__PURE__*/_react["default"].createElement("option", {
       className: optionClassName,
       key: idx,
-      value: item.value
-    }, item.shownText);
+      value: item === null || item === void 0 ? void 0 : item.value
+    }, item === null || item === void 0 ? void 0 : item.shownText);
   })));
 });
 
