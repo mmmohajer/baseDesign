@@ -21,7 +21,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _excluded = ["options", "className", "optionClassName", "fullWidth", "children"];
+var _excluded = ["className", "fullWidth", "children"];
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -30,33 +30,24 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
-var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var options = _ref.options,
-      className = _ref.className,
-      optionClassName = _ref.optionClassName,
+var TextArea = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
+  var className = _ref.className,
       fullWidth = _ref.fullWidth,
       children = _ref.children,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("select", (0, _extends2["default"])({
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("textarea", (0, _extends2["default"])({
     className: (0, _classnames["default"])(fullWidth && 'w-per-100', className)
   }, props, {
     ref: ref
-  }), options.map(function (item, idx) {
-    return /*#__PURE__*/_react["default"].createElement("option", {
-      className: optionClassName,
-      key: idx,
-      value: item.value
-    }, item.shownText);
-  })));
+  }), children));
 });
 
-Select.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
-  fullWidth: _propTypes["default"].bool,
-  options: _propTypes["default"].array
+TextArea.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
+  fullWidth: _propTypes["default"].bool
 });
-Select.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
+TextArea.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   fullWidth: false
 });
-var _default = Select;
+var _default = TextArea;
 exports["default"] = _default;
-//# sourceMappingURL=Select.js.map
+//# sourceMappingURL=TextArea.js.map
