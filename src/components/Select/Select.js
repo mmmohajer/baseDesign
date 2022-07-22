@@ -10,9 +10,9 @@ const Select = React.forwardRef(
     return (
       <>
         <select className={cx(fullWidth && 'w-per-100', className)} {...props} ref={ref}>
-          {options.map((item, idx) => (
-            <option className={optionClassName} key={idx} value={item.value}>
-              {item.shownText}
+          {options?.map((item, idx) => (
+            <option className={optionClassName} key={idx} value={item?.value}>
+              {item?.shownText}
             </option>
           ))}
         </select>
