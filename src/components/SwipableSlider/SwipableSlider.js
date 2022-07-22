@@ -89,17 +89,17 @@ const SwipableSlider = ({
     setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
   };
 
-  const goRight = () => {
+  const goRight = useCallback(() => {
     sliderContainer.current.classList.remove(styles.notransition);
     sliderContainer.current.classList.add(styles.moveRight);
     moveHandler(getNextActiveIdx(activeIndices[1]));
-  };
+  }, [activeIndices]);
 
-  const goLeft = () => {
+  const goLeft = useCallback(() => {
     sliderContainer.current.classList.remove(styles.notransition);
     sliderContainer.current.classList.add(styles.moveLeft);
     moveHandler(getPrevActiveIdx(activeIndices[1]));
-  };
+  }, [activeIndices]);
 
   const goToItemWithNum = async (num, curActiveIdx = activeIndices[1]) => {
     if (curActiveIdx < num - 1) {
