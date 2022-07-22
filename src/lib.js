@@ -30,10 +30,12 @@ import NavBar from './components/NavBar';
 import NavItem from './components/NavBar/subs/NavItem';
 import SubNavContainer from './components/NavBar/subs/SubNavContainer';
 import SubNavItem from './components/NavBar/subs/SubNavItem';
+import Option from './components/Option';
 import Pagination from './components/Pagination';
 import Paragraph from './components/Paragraph';
 import Row from './components/Row';
 import Search from './components/Search';
+import Select from './components/Select';
 import SwipableSlider from './components/SwipableSlider';
 import SwipableSliderItem from './components/SwipableSlider/subs/SwipableSliderItem';
 import Table from './components/Table';
@@ -72,10 +74,12 @@ export {
   NavItem,
   SubNavContainer,
   SubNavItem,
+  Option,
   Pagination,
   Paragraph,
   Row,
   Search,
+  Select,
   SwipableSlider,
   SwipableSliderItem,
   Table,
