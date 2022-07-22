@@ -81,24 +81,12 @@ var SwipableSlider = function SwipableSlider(_ref) {
       xEnd = _useState6[0],
       setXEnd = _useState6[1];
 
-  var _useState7 = (0, _react.useState)(0),
-      _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
-      yStart = _useState8[0],
-      setYStart = _useState8[1];
-
-  var _useState9 = (0, _react.useState)(-100000),
-      _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
-      yEnd = _useState10[0],
-      setYEnd = _useState10[1];
-
   var handleDragStart = function handleDragStart(e) {
     setXStart(e.clientX);
-    setYStart(e.clientY);
   };
 
   var handleDragEnd = function handleDragEnd(e) {
     setXEnd(e.clientX);
-    setYEnd(e.clientY);
   };
 
   var handleSwipeMove = function handleSwipeMove(position, e) {
@@ -301,7 +289,7 @@ var SwipableSlider = function SwipableSlider(_ref) {
         goRight();
       }
     }
-  }, [xEnd, yEnd]);
+  }, [xEnd]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])('w-per-100 of-x-hidden', className)
   }, props), /*#__PURE__*/_react["default"].createElement("div", {
