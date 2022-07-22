@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import cx from 'classnames';
 
-import '../MobNav.scss';
-
 const MobNavItem = ({ children, className, isActive, ...props }) => {
   const navItemElement = useRef();
 

@@ -1,8 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import cx from 'classnames';
 
-import '../Navbar.scss';
-
 const NavItem = ({ children, className, isActive, ...props }) => {
   const navItemElement = useRef();
 
