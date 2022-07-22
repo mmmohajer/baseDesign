@@ -40,6 +40,7 @@ import SwipableSlider from './components/SwipableSlider';
 import SwipableSliderItem from './components/SwipableSlider/subs/SwipableSliderItem';
 import Table from './components/Table';
 import Text from './components/Text';
+import TextArea from './components/TextArea';
 
 export {
   AdminNav,
@@ -83,5 +84,6 @@ export {
   SwipableSlider,
   SwipableSliderItem,
   Table,
-  Text
+  Text,
+  TextArea
 };
