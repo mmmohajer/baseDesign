@@ -60,24 +60,22 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       optinsContainerClassName = _ref.optinsContainerClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
-  var _useState = (0, _react.useState)([]),
+  // const [filteredOptions, setFilteredOptions] = useState([]);
+  var _useState = (0, _react.useState)('Select'),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
-      filteredOptions = _useState2[0],
-      setFilteredOptions = _useState2[1];
+      curVal = _useState2[0],
+      setCurVal = _useState2[1];
 
-  var _useState3 = (0, _react.useState)('Select'),
+  var _useState3 = (0, _react.useState)(false),
       _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
-      curVal = _useState4[0],
-      setCurVal = _useState4[1];
+      isOptionsActive = _useState4[0],
+      setIsOptionsActive = _useState4[1]; // useEffect(() => {
+  //   if (options) {
+  //     setFilteredOptions(options);
+  //   }
+  // }, [options]);
 
-  var _useState5 = (0, _react.useState)(false),
-      _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
-      isOptionsActive = _useState6[0],
-      setIsOptionsActive = _useState6[1];
 
-  (0, _react.useEffect)(function () {
-    setFilteredOptions(options);
-  }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])('pos-rel', fullWidth && 'w-per-100', className, children)
   }, props, {
@@ -87,21 +85,22 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     onClick: function onClick() {
       return setIsOptionsActive(!isOptionsActive);
     }
-  }, curVal) : /*#__PURE__*/_react["default"].createElement("input", {
-    type: "search",
-    closable: false,
-    onChange: function onChange(e) {
-      return setFilteredOptions(function () {
-        return options.filter(function (x) {
-          var _x$shownText, _x$shownText$toLowerC, _e$target$value;
-
-          return x === null || x === void 0 ? void 0 : (_x$shownText = x.shownText) === null || _x$shownText === void 0 ? void 0 : (_x$shownText$toLowerC = _x$shownText.toLowerCase()) === null || _x$shownText$toLowerC === void 0 ? void 0 : _x$shownText$toLowerC.includes((_e$target$value = e.target.value) === null || _e$target$value === void 0 ? void 0 : _e$target$value.toLowerCase());
-        });
-      });
-    }
-  }), /*#__PURE__*/_react["default"].createElement("div", {
+  }, curVal) :
+  /*#__PURE__*/
+  // <input
+  //   type="search"
+  //   closable={false}
+  //   onChange={(e) =>
+  //     setFilteredOptions(() =>
+  //       options.filter((x) =>
+  //         x?.shownText?.toLowerCase()?.includes(e.target.value?.toLowerCase())
+  //       )
+  //     )
+  //   }
+  // />
+  _react["default"].createElement(_react["default"].Fragment, null), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])(_SelectModule["default"].optionContainer, isOptionsActive && _SelectModule["default"].optionContainerIsActive, optinsContainerClassName)
-  }, filteredOptions === null || filteredOptions === void 0 ? void 0 : filteredOptions.map(function (item, idx) {
+  }, options === null || options === void 0 ? void 0 : options.map(function (item, idx) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: (0, _classnames["default"])(_SelectModule["default"].option, optionClassName),
       key: idx,
