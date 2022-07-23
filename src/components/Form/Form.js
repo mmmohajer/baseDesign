@@ -25,7 +25,9 @@ const Form = React.forwardRef(
                 !validate(curElement.value, validator, minRequired, maxRequired, toBeSameFieldVal)
               ) {
                 item?.errorMessageHandler(item['validators'][idx]?.message);
-                item?.errorActivateHandler(true);
+                if (item?.errorActivateHandler) {
+                  item.errorActivateHandler(true);
+                }
                 is_validated = false;
                 break;
               }
