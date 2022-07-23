@@ -31,7 +31,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _SelectModule = _interopRequireDefault(require("./Select.module.scss"));
 
-var _excluded = ["options", "className", "optionClassName", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "optinsContainerClassName"];
+var _excluded = ["options", "className", "defaultViewClassName", "optionClassName", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "optinsContainerClassName"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -49,6 +49,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 
   var options = _ref.options,
       className = _ref.className,
+      defaultViewClassName = _ref.defaultViewClassName,
       optionClassName = _ref.optionClassName,
       fullWidth = _ref.fullWidth,
       children = _ref.children,
@@ -82,7 +83,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }, props, {
     ref: ref
   }), !isOptionsActive ? /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])(_SelectModule["default"].select),
+    className: (0, _classnames["default"])(defaultViewClassName),
     onClick: function onClick() {
       return setIsOptionsActive(!isOptionsActive);
     }
