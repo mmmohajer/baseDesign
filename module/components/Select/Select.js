@@ -60,7 +60,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       optinsContainerClassName = _ref.optinsContainerClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
-  var _useState = (0, _react.useState)(options),
+  var _useState = (0, _react.useState)([]),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
       filteredOptions = _useState2[0],
       setFilteredOptions = _useState2[1];
@@ -75,6 +75,9 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       isOptionsActive = _useState6[0],
       setIsOptionsActive = _useState6[1];
 
+  (0, _react.useEffect)(function () {
+    setFilteredOptions(options);
+  }, []);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])('pos-rel', fullWidth && 'w-per-100', className, children)
   }, props, {

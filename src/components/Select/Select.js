@@ -30,13 +30,15 @@ const Select = React.forwardRef(
     },
     ref
   ) => {
-    const [filteredOptions, setFilteredOptions] = useState([]);
+    // const [filteredOptions, setFilteredOptions] = useState([]);
     const [curVal, setCurVal] = useState('Select');
     const [isOptionsActive, setIsOptionsActive] = useState(false);
 
-    useEffect(() => {
-      setFilteredOptions(options);
-    }, []);
+    // useEffect(() => {
+    //   if (options) {
+    //     setFilteredOptions(options);
+    //   }
+    // }, [options]);
 
     return (
       <>
@@ -49,17 +51,18 @@ const Select = React.forwardRef(
               {curVal}
             </div>
           ) : (
-            <input
-              type="search"
-              closable={false}
-              onChange={(e) =>
-                setFilteredOptions(() =>
-                  options.filter((x) =>
-                    x?.shownText?.toLowerCase()?.includes(e.target.value?.toLowerCase())
-                  )
-                )
-              }
-            />
+            // <input
+            //   type="search"
+            //   closable={false}
+            //   onChange={(e) =>
+            //     setFilteredOptions(() =>
+            //       options.filter((x) =>
+            //         x?.shownText?.toLowerCase()?.includes(e.target.value?.toLowerCase())
+            //       )
+            //     )
+            //   }
+            // />
+            <></>
           )}
           <div
             className={cx(
@@ -67,7 +70,7 @@ const Select = React.forwardRef(
               isOptionsActive && styles.optionContainerIsActive,
               optinsContainerClassName
             )}>
-            {filteredOptions?.map((item, idx) => (
+            {options?.map((item, idx) => (
               <div
                 className={cx(styles.option, optionClassName)}
                 key={idx}
