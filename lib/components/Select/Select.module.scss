@@ -1,0 +1,22 @@
+.select {
+  border: solid 1px black;
+  padding: 8px 1rem;
+}
+
+.option {
+  &Container {
+    display: none;
+    flex-direction: column;
+
+    &IsActive {
+      display: flex;
+    }
+  }
+}
+
+.arrowConrainer {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+}
