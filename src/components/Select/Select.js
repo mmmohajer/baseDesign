@@ -15,6 +15,7 @@ const Select = React.forwardRef(
     {
       options,
       className,
+      defaultViewClassName,
       optionClassName,
       fullWidth,
       children,
@@ -41,7 +42,9 @@ const Select = React.forwardRef(
           {...props}
           ref={ref}>
           {!isOptionsActive ? (
-            <div className={cx(styles.select)} onClick={() => setIsOptionsActive(!isOptionsActive)}>
+            <div
+              className={cx(defaultViewClassName)}
+              onClick={() => setIsOptionsActive(!isOptionsActive)}>
               {curVal}
             </div>
           ) : (
