@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -30,9 +30,13 @@ const Select = React.forwardRef(
     },
     ref
   ) => {
-    const [filteredOptions, setFilteredOptions] = useState(options);
+    const [filteredOptions, setFilteredOptions] = useState([]);
     const [curVal, setCurVal] = useState('Select');
     const [isOptionsActive, setIsOptionsActive] = useState(false);
+
+    useEffect(() => {
+      setFilteredOptions(options);
+    }, []);
 
     return (
       <>
