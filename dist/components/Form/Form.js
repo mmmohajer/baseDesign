@@ -65,7 +65,11 @@ var Form = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
               var _item$validators$idx5;
 
               item === null || item === void 0 ? void 0 : item.errorMessageHandler((_item$validators$idx5 = item['validators'][idx]) === null || _item$validators$idx5 === void 0 ? void 0 : _item$validators$idx5.message);
-              item === null || item === void 0 ? void 0 : item.errorActivateHandler(true);
+
+              if (item !== null && item !== void 0 && item.errorActivateHandler) {
+                item.errorActivateHandler(true);
+              }
+
               is_validated = false;
               break;
             }
