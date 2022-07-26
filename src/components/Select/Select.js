@@ -29,6 +29,8 @@ const Select = React.forwardRef(
       openOptionsDownWard,
       selectIntialVal,
       placeHolder,
+      isOptionsActive,
+      setIsOptionsActive,
       className,
       defaultViewClassName,
       optionClassName,
@@ -42,7 +44,6 @@ const Select = React.forwardRef(
   ) => {
     const [filteredOptions, setFilteredOptions] = useState(options);
     const [curVal, setCurVal] = useState(selectIntialVal || options?.[0]?.shownText || '');
-    const [isOptionsActive, setIsOptionsActive] = useState(false);
     const [showPlaceHolder, setShowPlaceHolder] = useState(false);
 
     useEffect(() => {
@@ -143,7 +144,9 @@ Select.propTypes = {
   arrowIconScale: PropTypes.number,
   openOptionsDownWard: PropTypes.bool,
   selectIntialVal: PropTypes.any,
-  placeHolder: PropTypes.any
+  placeHolder: PropTypes.any,
+  isOptionsActive: PropTypes.bool,
+  setIsOptionsActive: PropTypes.func
 };
 
 Select.defaultProps = {
@@ -158,7 +161,8 @@ Select.defaultProps = {
   arrowIconFillColor: 'gray',
   arrowIconScale: 0.8,
   openOptionsDownWard: true,
-  placeHolder: ''
+  placeHolder: '',
+  isOptionsActive: false
 };
 
 export default Select;
