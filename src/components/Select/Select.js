@@ -82,8 +82,8 @@ const Select = React.forwardRef(
           )}
           <div
             className={cx(
-              styles.optionContainer,
-              !openOptionsDownWard && styles.optionsContainerToUp,
+              styles.optionsContainer,
+              openOptionsDownWard ? styles.optionsContainerToDown : styles.optionsContainerToUp,
               isOptionsActive && styles.optionContainerIsActive,
               optinsContainerClassName
             )}>
