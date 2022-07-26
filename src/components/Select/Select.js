@@ -63,7 +63,7 @@ const Select = React.forwardRef(
             <div
               className={cx(defaultViewClassName)}
               onClick={() => setIsOptionsActive(!isOptionsActive)}>
-              <span className={cx(showPlaceHolder && styles.placeHolderClassName)}>{curVal}</span>
+              <span className={cx(showPlaceHolder && placeHolderClassName)}>{curVal}</span>
             </div>
           ) : (
             <div className={cx('pos-rel', searchContainerClassName)}>
