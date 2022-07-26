@@ -29,8 +29,16 @@
 }
 
 .optionsContainer {
+  position: absolute;
+  left: 0;
+
   &ToUp {
     top: 0;
     transform: translateY(-100%);
+  }
+
+  &ToDown {
+    bottom: 0;
+    transform: translateY(100%);
   }
 }

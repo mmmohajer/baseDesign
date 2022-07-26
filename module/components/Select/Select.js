@@ -117,7 +117,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     stroke: searchIconStrokeColor,
     className: (0, _classnames["default"])('mouse-hand')
   }))), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])(_SelectModule["default"].optionContainer, !openOptionsDownWard && _SelectModule["default"].optionsContainerToUp, isOptionsActive && _SelectModule["default"].optionContainerIsActive, optinsContainerClassName)
+    className: (0, _classnames["default"])(_SelectModule["default"].optionsContainer, openOptionsDownWard ? _SelectModule["default"].optionsContainerToDown : _SelectModule["default"].optionsContainerToUp, isOptionsActive && _SelectModule["default"].optionContainerIsActive, optinsContainerClassName)
   }, filteredOptions === null || filteredOptions === void 0 ? void 0 : filteredOptions.map(function (item, idx) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: (0, _classnames["default"])(_SelectModule["default"].option, optionClassName),
