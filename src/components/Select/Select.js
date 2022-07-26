@@ -24,7 +24,6 @@ const Select = React.forwardRef(
       searchIconFillColor,
       searchIconStrokeColor,
       searchIconScale,
-      inputSearchClassName,
       showDefaultArrowDownIcon,
       showDefaultSearchIcon,
       openOptionsDownWard,
@@ -34,6 +33,7 @@ const Select = React.forwardRef(
       optionClassName,
       optinsContainerClassName,
       searchContainerClassName,
+      inputSearchClassName,
       ...props
     },
     ref
@@ -57,7 +57,7 @@ const Select = React.forwardRef(
           ) : (
             <div className={cx('pos-rel', searchContainerClassName)}>
               <input
-                type="search"
+                type="text"
                 className={cx('w-per-100', inputSearchClassName)}
                 onChange={(e) =>
                   setFilteredOptions(() =>
