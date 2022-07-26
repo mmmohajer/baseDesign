@@ -31,7 +31,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _SelectModule = _interopRequireDefault(require("./Select.module.scss"));
 
-var _excluded = ["options", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "searchIconScale", "showDefaultArrowDownIcon", "showDefaultSearchIcon", "openOptionsDownWard", "selectIntialVal", "placeHolder", "isOptionsActive", "setIsOptionsActive", "className", "defaultViewClassName", "optionClassName", "optinsContainerClassName", "searchContainerClassName", "inputSearchClassName", "placeHolderClassName"];
+var _excluded = ["options", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "searchIconScale", "showDefaultArrowDownIcon", "showDefaultSearchIcon", "openOptionsDownWard", "selectIntialShownText", "placeHolder", "isOptionsActive", "setIsOptionsActive", "className", "defaultViewClassName", "optionClassName", "optinsContainerClassName", "searchContainerClassName", "inputSearchClassName", "placeHolderClassName"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -59,7 +59,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       showDefaultArrowDownIcon = _ref.showDefaultArrowDownIcon,
       showDefaultSearchIcon = _ref.showDefaultSearchIcon,
       openOptionsDownWard = _ref.openOptionsDownWard,
-      selectIntialVal = _ref.selectIntialVal,
+      selectIntialShownText = _ref.selectIntialShownText,
       placeHolder = _ref.placeHolder,
       isOptionsActive = _ref.isOptionsActive,
       setIsOptionsActive = _ref.setIsOptionsActive,
@@ -77,7 +77,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       filteredOptions = _useState2[0],
       setFilteredOptions = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(selectIntialVal),
+  var _useState3 = (0, _react.useState)(selectIntialShownText),
       _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
       curVal = _useState4[0],
       setCurVal = _useState4[1];
@@ -161,7 +161,7 @@ Select.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   arrowIconStrokeColor: _propTypes["default"].string,
   arrowIconScale: _propTypes["default"].number,
   openOptionsDownWard: _propTypes["default"].bool,
-  selectIntialVal: _propTypes["default"].any,
+  selectIntialShownText: _propTypes["default"].any,
   placeHolder: _propTypes["default"].any,
   isOptionsActive: _propTypes["default"].bool,
   setIsOptionsActive: _propTypes["default"].func
@@ -179,7 +179,7 @@ Select.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   openOptionsDownWard: true,
   placeHolder: '',
   isOptionsActive: false,
-  selectIntialVal: ''
+  selectIntialShownText: ''
 });
 var _default = Select;
 exports["default"] = _default;
