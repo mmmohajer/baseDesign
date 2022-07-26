@@ -84,7 +84,7 @@ const Select = React.forwardRef(
             className={cx(
               styles.optionsContainer,
               openOptionsDownWard ? styles.optionsContainerToDown : styles.optionsContainerToUp,
-              isOptionsActive && styles.optionContainerIsActive,
+              isOptionsActive && styles.optionsContainerIsActive,
               optinsContainerClassName
             )}>
             {filteredOptions?.map((item, idx) => (
@@ -146,7 +146,7 @@ Select.defaultProps = {
   arrowIconStrokeColor: 'gray',
   arrowIconFillColor: 'gray',
   arrowIconScale: 0.8,
-  openOptionsDownWard: true
+  openOptionsDownWard: false
 };
 
 export default Select;
