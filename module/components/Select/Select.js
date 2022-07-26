@@ -31,7 +31,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _SelectModule = _interopRequireDefault(require("./Select.module.scss"));
 
-var _excluded = ["options", "className", "defaultViewClassName", "optionClassName", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "optinsContainerClassName"];
+var _excluded = ["options", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "searchIconScale", "inputSearchClassName", "showDefaultArrowDownIcon", "showDefaultSearchIcon", "openOptionsDownWard", "selectIntialVal", "className", "defaultViewClassName", "optionClassName", "optinsContainerClassName", "searchContainerClassName"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -48,9 +48,6 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var _options$;
 
   var options = _ref.options,
-      className = _ref.className,
-      defaultViewClassName = _ref.defaultViewClassName,
-      optionClassName = _ref.optionClassName,
       fullWidth = _ref.fullWidth,
       children = _ref.children,
       selectValue = _ref.selectValue,
@@ -60,7 +57,17 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       arrowIconScale = _ref.arrowIconScale,
       searchIconFillColor = _ref.searchIconFillColor,
       searchIconStrokeColor = _ref.searchIconStrokeColor,
+      searchIconScale = _ref.searchIconScale,
+      inputSearchClassName = _ref.inputSearchClassName,
+      showDefaultArrowDownIcon = _ref.showDefaultArrowDownIcon,
+      showDefaultSearchIcon = _ref.showDefaultSearchIcon,
+      openOptionsDownWard = _ref.openOptionsDownWard,
+      selectIntialVal = _ref.selectIntialVal,
+      className = _ref.className,
+      defaultViewClassName = _ref.defaultViewClassName,
+      optionClassName = _ref.optionClassName,
       optinsContainerClassName = _ref.optinsContainerClassName,
+      searchContainerClassName = _ref.searchContainerClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
   var _useState = (0, _react.useState)(options),
@@ -68,7 +75,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       filteredOptions = _useState2[0],
       setFilteredOptions = _useState2[1];
 
-  var _useState3 = (0, _react.useState)((options === null || options === void 0 ? void 0 : (_options$ = options[0]) === null || _options$ === void 0 ? void 0 : _options$.shownText) || ''),
+  var _useState3 = (0, _react.useState)(selectIntialVal || (options === null || options === void 0 ? void 0 : (_options$ = options[0]) === null || _options$ === void 0 ? void 0 : _options$.shownText) || ''),
       _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
       curVal = _useState4[0],
       setCurVal = _useState4[1];
@@ -87,8 +94,11 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     onClick: function onClick() {
       return setIsOptionsActive(!isOptionsActive);
     }
-  }, curVal) : /*#__PURE__*/_react["default"].createElement(_Search["default"], {
-    closable: false,
+  }, curVal) : /*#__PURE__*/_react["default"].createElement("div", {
+    className: (0, _classnames["default"])('pos-rel', searchContainerClassName)
+  }, /*#__PURE__*/_react["default"].createElement("input", {
+    type: "search",
+    className: (0, _classnames["default"])('w-per-100', inputSearchClassName),
     onChange: function onChange(e) {
       return setFilteredOptions(function () {
         return options.filter(function (x) {
@@ -98,8 +108,16 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         });
       });
     }
-  }), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])(_SelectModule["default"].optionContainer, isOptionsActive && _SelectModule["default"].optionContainerIsActive, optinsContainerClassName)
+  }), showDefaultSearchIcon && /*#__PURE__*/_react["default"].createElement("div", {
+    className: (0, _classnames["default"])(_SelectModule["default"].iconSearch)
+  }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    type: "search",
+    scale: searchIconScale,
+    fill: searchIconFillColor,
+    stroke: searchIconStrokeColor,
+    className: (0, _classnames["default"])('mouse-hand')
+  }))), /*#__PURE__*/_react["default"].createElement("div", {
+    className: (0, _classnames["default"])(_SelectModule["default"].optionContainer, !openOptionsDownWard && _SelectModule["default"].optionsContainerToUp, isOptionsActive && _SelectModule["default"].optionContainerIsActive, optinsContainerClassName)
   }, filteredOptions === null || filteredOptions === void 0 ? void 0 : filteredOptions.map(function (item, idx) {
     return /*#__PURE__*/_react["default"].createElement("div", {
       className: (0, _classnames["default"])(_SelectModule["default"].option, optionClassName),
@@ -111,7 +129,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
         setIsOptionsActive(false);
       }
     }, item === null || item === void 0 ? void 0 : item.shownText);
-  })), /*#__PURE__*/_react["default"].createElement("div", {
+  })), showDefaultArrowDownIcon && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])(_SelectModule["default"].arrowConrainer)
   }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     type: "down",
@@ -122,11 +140,30 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 });
 
 Select.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
+  options: _propTypes["default"].array,
   fullWidth: _propTypes["default"].bool,
-  options: _propTypes["default"].array
+  showDefaultSearchIcon: _propTypes["default"].bool,
+  showDefaultArrowDownIcon: _propTypes["default"].bool,
+  searchIconFillColor: _propTypes["default"].string,
+  searchIconStrokeColor: _propTypes["default"].string,
+  searchIconScale: _propTypes["default"].number,
+  arrowIconFillColor: _propTypes["default"].string,
+  arrowIconStrokeColor: _propTypes["default"].string,
+  arrowIconScale: _propTypes["default"].number,
+  openOptionsDownWard: _propTypes["default"].bool,
+  selectIntialVal: _propTypes["default"].any
 });
 Select.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  fullWidth: false
+  fullWidth: false,
+  showDefaultSearchIcon: true,
+  showDefaultArrowDownIcon: true,
+  searchIconFillColor: 'gray',
+  searchIconStrokeColor: 'gray',
+  searchIconScale: 0.8,
+  arrowIconStrokeColor: 'gray',
+  arrowIconFillColor: 'gray',
+  arrowIconScale: 0.8,
+  openOptionsDownWard: true
 });
 var _default = Select;
 exports["default"] = _default;
