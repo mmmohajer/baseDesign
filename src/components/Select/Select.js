@@ -43,7 +43,7 @@ const Select = React.forwardRef(
     ref
   ) => {
     const [filteredOptions, setFilteredOptions] = useState(options);
-    const [curVal, setCurVal] = useState(selectIntialVal || options?.[0]?.shownText || '');
+    const [curVal, setCurVal] = useState(selectIntialVal);
     const [showPlaceHolder, setShowPlaceHolder] = useState(false);
 
     useEffect(() => {
@@ -162,7 +162,8 @@ Select.defaultProps = {
   arrowIconScale: 0.8,
   openOptionsDownWard: true,
   placeHolder: '',
-  isOptionsActive: false
+  isOptionsActive: false,
+  selectIntialVal: ''
 };
 
 export default Select;
