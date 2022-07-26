@@ -31,7 +31,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _SelectModule = _interopRequireDefault(require("./Select.module.scss"));
 
-var _excluded = ["options", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "searchIconScale", "inputSearchClassName", "showDefaultArrowDownIcon", "showDefaultSearchIcon", "openOptionsDownWard", "selectIntialVal", "className", "defaultViewClassName", "optionClassName", "optinsContainerClassName", "searchContainerClassName"];
+var _excluded = ["options", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "searchIconScale", "showDefaultArrowDownIcon", "showDefaultSearchIcon", "openOptionsDownWard", "selectIntialVal", "className", "defaultViewClassName", "optionClassName", "optinsContainerClassName", "searchContainerClassName", "inputSearchClassName"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -58,7 +58,6 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       searchIconFillColor = _ref.searchIconFillColor,
       searchIconStrokeColor = _ref.searchIconStrokeColor,
       searchIconScale = _ref.searchIconScale,
-      inputSearchClassName = _ref.inputSearchClassName,
       showDefaultArrowDownIcon = _ref.showDefaultArrowDownIcon,
       showDefaultSearchIcon = _ref.showDefaultSearchIcon,
       openOptionsDownWard = _ref.openOptionsDownWard,
@@ -68,6 +67,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       optionClassName = _ref.optionClassName,
       optinsContainerClassName = _ref.optinsContainerClassName,
       searchContainerClassName = _ref.searchContainerClassName,
+      inputSearchClassName = _ref.inputSearchClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
   var _useState = (0, _react.useState)(options),
@@ -97,7 +97,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }, curVal) : /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('pos-rel', searchContainerClassName)
   }, /*#__PURE__*/_react["default"].createElement("input", {
-    type: "search",
+    type: "text",
     className: (0, _classnames["default"])('w-per-100', inputSearchClassName),
     onChange: function onChange(e) {
       return setFilteredOptions(function () {
