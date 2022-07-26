@@ -20,3 +20,17 @@
   transform: translateY(-50%);
   right: 8px;
 }
+
+.iconSearch {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.optionsContainer {
+  &ToUp {
+    top: 0;
+    transform: translateY(-100%);
+  }
+}

@@ -14,9 +14,6 @@ const Select = React.forwardRef(
   (
     {
       options,
-      className,
-      defaultViewClassName,
-      optionClassName,
       fullWidth,
       children,
       selectValue,
@@ -26,13 +23,23 @@ const Select = React.forwardRef(
       arrowIconScale,
       searchIconFillColor,
       searchIconStrokeColor,
+      searchIconScale,
+      inputSearchClassName,
+      showDefaultArrowDownIcon,
+      showDefaultSearchIcon,
+      openOptionsDownWard,
+      selectIntialVal,
+      className,
+      defaultViewClassName,
+      optionClassName,
       optinsContainerClassName,
+      searchContainerClassName,
       ...props
     },
     ref
   ) => {
     const [filteredOptions, setFilteredOptions] = useState(options);
-    const [curVal, setCurVal] = useState(options?.[0]?.shownText || '');
+    const [curVal, setCurVal] = useState(selectIntialVal || options?.[0]?.shownText || '');
     const [isOptionsActive, setIsOptionsActive] = useState(false);
 
     return (
@@ -48,20 +55,35 @@ const Select = React.forwardRef(
               {curVal}
             </div>
           ) : (
-            <Search
-              closable={false}
-              onChange={(e) =>
-                setFilteredOptions(() =>
-                  options.filter((x) =>
-                    x?.shownText?.toLowerCase()?.includes(e.target.value?.toLowerCase())
+            <div className={cx('pos-rel', searchContainerClassName)}>
+              <input
+                type="search"
+                className={cx('w-per-100', inputSearchClassName)}
+                onChange={(e) =>
+                  setFilteredOptions(() =>
+                    options.filter((x) =>
+                      x?.shownText?.toLowerCase()?.includes(e.target.value?.toLowerCase())
+                    )
                   )
-                )
-              }
-            />
+                }
+              />
+              {showDefaultSearchIcon && (
+                <div className={cx(styles.iconSearch)}>
+                  <Icon
+                    type="search"
+                    scale={searchIconScale}
+                    fill={searchIconFillColor}
+                    stroke={searchIconStrokeColor}
+                    className={cx('mouse-hand')}
+                  />
+                </div>
+              )}
+            </div>
           )}
           <div
             className={cx(
               styles.optionContainer,
+              !openOptionsDownWard && styles.optionsContainerToUp,
               isOptionsActive && styles.optionContainerIsActive,
               optinsContainerClassName
             )}>
@@ -79,14 +101,16 @@ const Select = React.forwardRef(
               </div>
             ))}
           </div>
-          <div className={cx(styles.arrowConrainer)}>
-            <Icon
-              type="down"
-              fill={arrowIconFillColor}
-              stroke={arrowIconStrokeColor}
-              scale={arrowIconScale}
-            />
-          </div>
+          {showDefaultArrowDownIcon && (
+            <div className={cx(styles.arrowConrainer)}>
+              <Icon
+                type="down"
+                fill={arrowIconFillColor}
+                stroke={arrowIconStrokeColor}
+                scale={arrowIconScale}
+              />
+            </div>
+          )}
         </div>
       </>
     );
@@ -95,13 +119,32 @@ const Select = React.forwardRef(
 
 Select.propTypes = {
   ...defaultPropTypes,
+  options: PropTypes.array,
   fullWidth: PropTypes.bool,
-  options: PropTypes.array
+  showDefaultSearchIcon: PropTypes.bool,
+  showDefaultArrowDownIcon: PropTypes.bool,
+  searchIconFillColor: PropTypes.string,
+  searchIconStrokeColor: PropTypes.string,
+  searchIconScale: PropTypes.number,
+  arrowIconFillColor: PropTypes.string,
+  arrowIconStrokeColor: PropTypes.string,
+  arrowIconScale: PropTypes.number,
+  openOptionsDownWard: PropTypes.bool,
+  selectIntialVal: PropTypes.any
 };
 
 Select.defaultProps = {
   ...defaultProps,
-  fullWidth: false
+  fullWidth: false,
+  showDefaultSearchIcon: true,
+  showDefaultArrowDownIcon: true,
+  searchIconFillColor: 'gray',
+  searchIconStrokeColor: 'gray',
+  searchIconScale: 0.8,
+  arrowIconStrokeColor: 'gray',
+  arrowIconFillColor: 'gray',
+  arrowIconScale: 0.8,
+  openOptionsDownWard: true
 };
 
 export default Select;
