@@ -50,6 +50,8 @@ const Select = React.forwardRef(
       if (placeHolder.length && !curVal.length) {
         setCurVal(placeHolder);
         setShowPlaceHolder(true);
+      } else {
+        setShowPlaceHolder(false);
       }
     }, [curVal]);
 
