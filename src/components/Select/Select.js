@@ -28,12 +28,14 @@ const Select = React.forwardRef(
       showDefaultSearchIcon,
       openOptionsDownWard,
       selectIntialVal,
+      placeHolder,
       className,
       defaultViewClassName,
       optionClassName,
       optinsContainerClassName,
       searchContainerClassName,
       inputSearchClassName,
+      placeHolderClassName,
       ...props
     },
     ref
@@ -41,6 +43,14 @@ const Select = React.forwardRef(
     const [filteredOptions, setFilteredOptions] = useState(options);
     const [curVal, setCurVal] = useState(selectIntialVal || options?.[0]?.shownText || '');
     const [isOptionsActive, setIsOptionsActive] = useState(false);
+    const [showPlaceHolder, setShowPlaceHolder] = useState(false);
+
+    useEffect(() => {
+      if (placeHolder.length && !curVal.length) {
+        setCurVal(placeHolder);
+        setShowPlaceHolder(true);
+      }
+    }, [curVal]);
 
     return (
       <>
@@ -52,7 +62,7 @@ const Select = React.forwardRef(
             <div
               className={cx(defaultViewClassName)}
               onClick={() => setIsOptionsActive(!isOptionsActive)}>
-              {curVal}
+              <span className={cx(showPlaceHolder && styles.placeHolderClassName)}>{curVal}</span>
             </div>
           ) : (
             <div className={cx('pos-rel', searchContainerClassName)}>
@@ -132,7 +142,8 @@ Select.propTypes = {
   arrowIconStrokeColor: PropTypes.string,
   arrowIconScale: PropTypes.number,
   openOptionsDownWard: PropTypes.bool,
-  selectIntialVal: PropTypes.any
+  selectIntialVal: PropTypes.any,
+  placeHolder: PropTypes.any
 };
 
 Select.defaultProps = {
@@ -146,7 +157,8 @@ Select.defaultProps = {
   arrowIconStrokeColor: 'gray',
   arrowIconFillColor: 'gray',
   arrowIconScale: 0.8,
-  openOptionsDownWard: false
+  openOptionsDownWard: true,
+  placeHolder: ''
 };
 
 export default Select;
