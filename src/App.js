@@ -83,12 +83,6 @@ const Home = () => {
       <div className="w-px-400 ml-auto mr-auto">
         <TestSelect />
       </div>
-      <div className="w-px-400 ml-auto mr-auto">
-        <TestSelect />
-      </div>
-      <div className="w-px-400 ml-auto mr-auto">
-        <TestSelect />
-      </div>
     </div>
   );
 };

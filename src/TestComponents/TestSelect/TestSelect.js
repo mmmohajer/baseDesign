@@ -6,9 +6,16 @@ import { PROVINCE_CHOICES } from './constants';
 
 function TestSelect() {
   const [val, setVal] = useState('');
+  const [isOptionsActive, setIsOptionsActive] = useState(false);
   return (
     <>
-      <Select selectValue={val} setSelectValue={setVal} options={PROVINCE_CHOICES} />
+      <Select
+        selectValue={val}
+        setSelectValue={setVal}
+        options={PROVINCE_CHOICES}
+        isOptionsActive={isOptionsActive}
+        setIsOptionsActive={setIsOptionsActive}
+      />
     </>
   );
 }
