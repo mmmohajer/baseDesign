@@ -88,7 +88,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       setShowPlaceHolder = _useState6[1];
 
   (0, _react.useEffect)(function () {
-    if (placeHolder.length && !curVal.length) {
+    if (placeHolder.length && !selectValue) {
       setCurVal(placeHolder);
       setShowPlaceHolder(true);
     } else {
