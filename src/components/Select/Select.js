@@ -101,7 +101,7 @@ const Select = React.forwardRef(
               </div>
             ))}
           </div>
-          {showDefaultArrowDownIcon && (
+          {showDefaultArrowDownIcon && !isOptionsActive ? (
             <div className={cx(styles.arrowConrainer)}>
               <Icon
                 type="down"
@@ -110,6 +110,8 @@ const Select = React.forwardRef(
                 scale={arrowIconScale}
               />
             </div>
+          ) : (
+            ''
           )}
         </div>
       </>
