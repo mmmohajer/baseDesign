@@ -45,8 +45,6 @@ var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
 var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var _options$;
-
   var options = _ref.options,
       fullWidth = _ref.fullWidth,
       children = _ref.children,
@@ -79,7 +77,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       filteredOptions = _useState2[0],
       setFilteredOptions = _useState2[1];
 
-  var _useState3 = (0, _react.useState)(selectIntialVal || (options === null || options === void 0 ? void 0 : (_options$ = options[0]) === null || _options$ === void 0 ? void 0 : _options$.shownText) || ''),
+  var _useState3 = (0, _react.useState)(selectIntialVal),
       _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
       curVal = _useState4[0],
       setCurVal = _useState4[1];
@@ -180,7 +178,8 @@ Select.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   arrowIconScale: 0.8,
   openOptionsDownWard: true,
   placeHolder: '',
-  isOptionsActive: false
+  isOptionsActive: false,
+  selectIntialVal: ''
 });
 var _default = Select;
 exports["default"] = _default;
