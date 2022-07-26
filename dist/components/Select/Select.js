@@ -103,7 +103,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       return setIsOptionsActive(!isOptionsActive);
     }
   }, /*#__PURE__*/_react["default"].createElement("span", {
-    className: (0, _classnames["default"])(showPlaceHolder && _SelectModule["default"].placeHolderClassName)
+    className: (0, _classnames["default"])(showPlaceHolder && placeHolderClassName)
   }, curVal)) : /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('pos-rel', searchContainerClassName)
   }, /*#__PURE__*/_react["default"].createElement("input", {
