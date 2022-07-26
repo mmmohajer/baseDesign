@@ -3,10 +3,22 @@
   padding: 8px 1rem;
 }
 
-.option {
+.options {
   &Container {
     display: none;
     flex-direction: column;
+    position: absolute;
+    left: 0;
+
+    &ToUp {
+      top: 0;
+      transform: translateY(-100%);
+    }
+
+    &ToDown {
+      bottom: 0;
+      transform: translateY(100%);
+    }
 
     &IsActive {
       display: flex;
@@ -26,19 +38,4 @@
   right: 8px;
   top: 50%;
   transform: translateY(-50%);
-}
-
-.optionsContainer {
-  position: absolute;
-  left: 0;
-
-  &ToUp {
-    top: 0;
-    transform: translateY(-100%);
-  }
-
-  &ToDown {
-    bottom: 0;
-    transform: translateY(100%);
-  }
 }
