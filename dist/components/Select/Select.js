@@ -91,6 +91,8 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     if (placeHolder.length && !curVal.length) {
       setCurVal(placeHolder);
       setShowPlaceHolder(true);
+    } else {
+      setShowPlaceHolder(false);
     }
   }, [curVal]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
