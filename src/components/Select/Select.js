@@ -47,7 +47,7 @@ const Select = React.forwardRef(
     const [showPlaceHolder, setShowPlaceHolder] = useState(false);
 
     useEffect(() => {
-      if (placeHolder.length && !curVal.length) {
+      if (placeHolder.length && !selectValue) {
         setCurVal(placeHolder);
         setShowPlaceHolder(true);
       } else {
