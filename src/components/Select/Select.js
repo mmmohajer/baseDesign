@@ -58,7 +58,7 @@ const Select = React.forwardRef(
     return (
       <>
         {isOptionsActive && (
-          <Div
+          <div
             className={cx(
               'w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10',
               styles.clickable
