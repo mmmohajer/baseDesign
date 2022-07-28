@@ -57,8 +57,20 @@ const Select = React.forwardRef(
 
     return (
       <>
+        {isOptionsActive && (
+          <Div
+            className={cx(
+              'w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10',
+              styles.clickable
+            )}
+            onClick={() => {
+              setIsOptionsActive(false);
+              setFilteredOptions(options);
+            }}
+          />
+        )}
         <div
-          className={cx('pos-rel', fullWidth && 'w-per-100', className, children)}
+          className={cx('pos-rel z-100', fullWidth && 'w-per-100', className, children)}
           {...props}
           ref={ref}>
           {!isOptionsActive ? (
