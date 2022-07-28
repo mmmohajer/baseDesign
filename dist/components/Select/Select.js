@@ -95,7 +95,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       setShowPlaceHolder(false);
     }
   }, [curVal]);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, isOptionsActive && /*#__PURE__*/_react["default"].createElement(Div, {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, isOptionsActive && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10', _SelectModule["default"].clickable),
     onClick: function onClick() {
       setIsOptionsActive(false);
