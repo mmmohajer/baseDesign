@@ -95,8 +95,14 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       setShowPlaceHolder(false);
     }
   }, [curVal]);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-    className: (0, _classnames["default"])('pos-rel', fullWidth && 'w-per-100', className, children)
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, isOptionsActive && /*#__PURE__*/_react["default"].createElement(Div, {
+    className: (0, _classnames["default"])('w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10', _SelectModule["default"].clickable),
+    onClick: function onClick() {
+      setIsOptionsActive(false);
+      setFilteredOptions(options);
+    }
+  }), /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
+    className: (0, _classnames["default"])('pos-rel z-100', fullWidth && 'w-per-100', className, children)
   }, props, {
     ref: ref
   }), !isOptionsActive ? /*#__PURE__*/_react["default"].createElement("div", {
