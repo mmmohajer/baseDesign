@@ -79,7 +79,7 @@ var Form = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     }
 
     if (is_validated) {
-      onSubmit();
+      onSubmit(e);
     }
   });
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("form", (0, _extends2["default"])({

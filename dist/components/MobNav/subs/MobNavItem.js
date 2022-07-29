@@ -17,7 +17,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _classnames = _interopRequireDefault(require("classnames"));
 
-var _excluded = ["children", "className", "isActive"];
+var _excluded = ["children", "className", "activeClassName", "isActive"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -26,14 +26,17 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 var MobNavItem = function MobNavItem(_ref) {
   var children = _ref.children,
       className = _ref.className,
+      activeClassName = _ref.activeClassName,
       isActive = _ref.isActive,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   var navItemElement = (0, _react.useRef)();
   (0, _react.useEffect)(function () {
     if (isActive) {
       navItemElement.current.classList.add('iswad_mobNavItem_active');
+      navItemElement.current.classList.add(activeClassName);
     } else {
       navItemElement.current.classList.remove('iswad_mobNavItem_active');
+      navItemElement.current.classList.remove(activeClassName);
     }
   }, [isActive]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({

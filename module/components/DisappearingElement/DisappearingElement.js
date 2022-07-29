@@ -23,7 +23,7 @@ var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps
 
 var _DisappearingElementModule = _interopRequireDefault(require("./DisappearingElement.module.scss"));
 
-var _excluded = ["children", "isActive", "className", "isActiveClassName"];
+var _excluded = ["children", "isActive", "className", "activeClassName"];
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -36,10 +36,10 @@ var DisappearingElement = function DisappearingElement(_ref) {
   var children = _ref.children,
       isActive = _ref.isActive,
       className = _ref.className,
-      isActiveClassName = _ref.isActiveClassName,
+      activeClassName = _ref.activeClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-    className: (0, _classnames["default"])(className, isActive && isActiveClassName)
+    className: (0, _classnames["default"])(className, isActive && activeClassName)
   }, props), children));
 };
 

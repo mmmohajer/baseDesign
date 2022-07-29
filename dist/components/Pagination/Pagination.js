@@ -39,7 +39,10 @@ var Pagination = function Pagination(_ref) {
       numberOfTotalPages = _ref.numberOfTotalPages,
       currentPage = _ref.currentPage,
       setCurrentPage = _ref.setCurrentPage,
-      showFirstLastIcon = _ref.showFirstLastIcon;
+      showFirstLastIcon = _ref.showFirstLastIcon,
+      containerClassName = _ref.containerClassName,
+      itemClassName = _ref.itemClassName,
+      activeItemClassName = _ref.activeItemClassName;
 
   var _useState = (0, _react.useState)([]),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
@@ -86,7 +89,7 @@ var Pagination = function Pagination(_ref) {
     calcShownPage(currentPage);
   }, [currentPage, numberOfTotalPages]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "flex w-per-100 flex--jc--center flex--ai--center iswad_pagination"
+    className: (0, _classnames["default"])('flex w-per-100 flex--jc--center flex--ai--center iswad_pagination', containerClassName)
   }, showFirstLastIcon && !shownPages.includes(1) ? /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--jc--center flex--ai--center mouse-hand",
     onClick: function onClick() {
@@ -97,7 +100,7 @@ var Pagination = function Pagination(_ref) {
     scale: 0.8
   })) : '', shownPages.map(function (p, idx) {
     return /*#__PURE__*/_react["default"].createElement("div", {
-      className: (0, _classnames["default"])('mouse-hand iswad_pagination_item', p === currentPage && 'iswad_pagination_item_active'),
+      className: (0, _classnames["default"])('mouse-hand iswad_pagination_item', itemClassName, p === currentPage && 'iswad_pagination_item_active', p === currentPage && activeItemClassName),
       key: idx,
       onClick: function onClick() {
         setCurrentPage(p);
