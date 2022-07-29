@@ -12,7 +12,10 @@ const Pagination = ({
   numberOfTotalPages,
   currentPage,
   setCurrentPage,
-  showFirstLastIcon
+  showFirstLastIcon,
+  containerClassName,
+  itemClassName,
+  activeItemClassName
 }) => {
   const [shownPages, setShownPages] = useState([]);
 
@@ -52,7 +55,11 @@ const Pagination = ({
 
   return (
     <>
-      <div className="flex w-per-100 flex--jc--center flex--ai--center iswad_pagination">
+      <div
+        className={cx(
+          'flex w-per-100 flex--jc--center flex--ai--center iswad_pagination',
+          containerClassName
+        )}>
         {showFirstLastIcon && !shownPages.includes(1) ? (
           <div
             className="flex flex--jc--center flex--ai--center mouse-hand"
@@ -66,7 +73,9 @@ const Pagination = ({
           <div
             className={cx(
               'mouse-hand iswad_pagination_item',
-              p === currentPage && 'iswad_pagination_item_active'
+              itemClassName,
+              p === currentPage && 'iswad_pagination_item_active',
+              p === currentPage && activeItemClassName
             )}
             key={idx}
             onClick={() => {

@@ -21,7 +21,8 @@ import TestRow from 'TestComponents/TestRow';
 import TestSearch from 'TestComponents/TestSearch';
 import TestDraggableSlider from 'TestComponents/TestDraggableSlider';
 import TestSelect from 'TestComponents/TestSelect';
-// import TestPagination from "TestComponents/TestPagination";
+import TestActivableElement from 'TestComponents/TestActivableElement';
+import TestPagination from 'TestComponents/TestPagination';
 
 const Home = () => {
   return (
@@ -82,6 +83,9 @@ const Home = () => {
       </div>
       <div className="w-px-400 ml-auto mr-auto">
         <TestSelect />
+      </div>
+      <div className="w-px-400 ml-auto mr-auto">
+        <TestActivableElement />
       </div>
     </div>
   );

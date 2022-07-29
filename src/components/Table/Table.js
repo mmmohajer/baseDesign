@@ -28,6 +28,8 @@ const Table = ({
   setCurrentPage,
   showDefaultPagination,
   numberOfShownPages,
+  tableClassName,
+  tableHeadContainerClassName,
   ...props
 }) => {
   const [filter, setFilter] = useState({ first_name: '', last_name: '' });
@@ -200,7 +202,10 @@ const Table = ({
       <div>
         <div className={cx('w-per-100 of-x-auto')}>
           <div
-            className={cx('flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table')}
+            className={cx(
+              'flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table',
+              tableClassName
+            )}
             {...props}>
             <Th className="">
               {isSelectable && (
@@ -222,7 +227,11 @@ const Table = ({
               {headLines.map((head, idx) => (
                 <Td className="" style={head?.width && { width: `${head.width}px` }} key={idx}>
                   <div className="flex w-per-100 flex--jc--between flex--ai--center">
-                    <div className="w-per-100 iswad_table_headContainer">
+                    <div
+                      className={cx(
+                        'w-per-100 iswad_table_headContainer',
+                        tableHeadContainerClassName
+                      )}>
                       <div className="m1">{head?.display || head}</div>
                       {head.hasSearch && (
                         <div className="">

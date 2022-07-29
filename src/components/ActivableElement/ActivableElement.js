@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from './DisappearingElement.module.scss';
+import styles from './ActivableElement.module.scss';
 
-const DisappearingElement = ({ children, isActive, className, activeClassName, ...props }) => {
+const ActivableElement = ({ children, isActive, className, activeClassName, ...props }) => {
   return (
     <>
       <div className={cx(className, isActive && activeClassName)} {...props}>
@@ -17,14 +17,14 @@ const DisappearingElement = ({ children, isActive, className, activeClassName, .
   );
 };
 
-DisappearingElement.propTypes = {
+ActivableElement.propTypes = {
   ...defaultPropTypes,
   isActive: PropTypes.bool
 };
 
-DisappearingElement.defaultProps = {
+ActivableElement.defaultProps = {
   ...defaultProps,
   isActive: true
 };
 
-export default DisappearingElement;
+export default ActivableElement;

@@ -10,7 +10,7 @@ import styles from './Search.module.scss';
 import Icon from '../Icon';
 
 const Search = React.forwardRef(
-  ({ closable, iconFillColor, iconStrokeColor, className, ...props }, ref) => {
+  ({ closable, iconFillColor, iconStrokeColor, className, containerClassName, ...props }, ref) => {
     const [activeSearch, setActiveSearch] = useState(false);
 
     useEffect(() => {
@@ -24,7 +24,8 @@ const Search = React.forwardRef(
         <div className="flex">
           <div
             className={cx(
-              'min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center iswad_search_container'
+              'min-height-px-30 min-w-px-30 br-rad-px-50 bgWhite flex flex--jc--center flex--ai--center iswad_search_container',
+              containerClassName
             )}>
             {closable ? (
               <Icon

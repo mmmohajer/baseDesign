@@ -1,3 +1,4 @@
+import ActivableElement from './components/ActivableElement';
 import AdminNav from './components/AdminNav';
 import AdminNavItem from './components/AdminNav/subs/AdminNavItem';
 import Alert from './components/Alert';
@@ -43,6 +44,7 @@ import Text from './components/Text';
 import TextArea from './components/TextArea';
 
 export {
+  ActivableElement,
   AdminNav,
   AdminNavItem,
   Alert,

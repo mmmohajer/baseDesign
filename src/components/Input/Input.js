@@ -7,10 +7,26 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 import { randomStr } from 'Utils/utils';
 
 const Input = React.forwardRef(
-  ({ type, className, fullWidth, errorMessage, errorIsActive, children, id, ...props }, ref) => {
+  (
+    {
+      type,
+      className,
+      containerClassName,
+      errorContainerClassName,
+      activeErrorContainerClassName,
+      errorTextClassName,
+      fullWidth,
+      errorMessage,
+      errorIsActive,
+      children,
+      id,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <>
-        <div className="flex flex--dir--col iswad_input_container">
+        <div className={cx('flex flex--dir--col iswad_input_container', containerClassName)}>
           <div className="iswad_input_field_container">
             <input
               className={cx('iswad_input', className, fullWidth && 'w-per-100')}
@@ -24,9 +40,11 @@ const Input = React.forwardRef(
             <div
               className={cx(
                 'iswad_input_errorMessage',
-                errorIsActive && 'iswad_input_errorMessage_active'
+                errorContainerClassName,
+                errorIsActive && 'iswad_input_errorMessage_active',
+                errorIsActive && activeErrorContainerClassName
               )}>
-              <span>{errorMessage}</span>
+              <span className={errorTextClassName}>{errorMessage}</span>
             </div>
           ) : (
             ''

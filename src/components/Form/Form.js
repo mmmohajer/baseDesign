@@ -36,7 +36,7 @@ const Form = React.forwardRef(
         });
       }
       if (is_validated) {
-        onSubmit();
+        onSubmit(e);
       }
     });
 
