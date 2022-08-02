@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from './Column.module.scss';
-
 import { showInCssClass } from 'Utils/utils';
 
 const arrayOfColSize = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];

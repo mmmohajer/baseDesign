@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from './DisappearingElement.module.scss';
-
 const DisappearingElement = ({ children, isActive, className, activeClassName, ...props }) => {
   return (
     <>

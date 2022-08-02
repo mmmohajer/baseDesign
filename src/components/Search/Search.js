@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from './Search.module.scss';
-
 import Icon from '../Icon';
 
 const Search = React.forwardRef(

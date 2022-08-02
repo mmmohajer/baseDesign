@@ -5,8 +5,6 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from './Row.module.scss';
-
 import { showInCssClass } from 'Utils/utils';
 
 const Row = React.forwardRef(({ showIn, className, children, ...props }, ref) => {
