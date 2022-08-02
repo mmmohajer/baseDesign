@@ -21,8 +21,6 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _ColumnModule = _interopRequireDefault(require("./Column.module.scss"));
-
 var _utils = require("../../utils/utils");
 
 var _excluded = ["xs", "sm", "md", "lg", "showIn", "className", "children"];

@@ -25,8 +25,6 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _SearchModule = _interopRequireDefault(require("./Search.module.scss"));
-
 var _Icon = _interopRequireDefault(require("../Icon"));
 
 var _excluded = ["closable", "iconFillColor", "iconStrokeColor", "className", "containerClassName"];
