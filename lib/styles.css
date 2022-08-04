@@ -3432,4 +3432,113 @@ ul {
   width: inherit;
 }
 
+.ISWAD-Carousel-sliderContainer {
+  width: 300%;
+  transform: translateX(-33.3333%);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.ISWAD-Carousel-moveRight {
+  transform: translateX(-66.6666%);
+}
+
+.ISWAD-Carousel-moveLeft {
+  transform: translateX(0);
+}
+
+.ISWAD-Carousel-notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.ISWAD-Draggable-sliderContainer {
+  width: 300%;
+  transform: translateX(-33.3333%);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.ISWAD-Draggable-moveRight {
+  transform: translateX(-66.6666%);
+}
+
+.ISWAD-Draggable-moveLeft {
+  transform: translateX(0);
+}
+
+.ISWAD-Draggable-notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.ISWAD-Select-select {
+  border: solid 1px black;
+  padding: 8px 1rem;
+}
+
+.ISWAD-Select-optionsContainer {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+}
+.ISWAD-Select-optionsContainerToUp {
+  top: 0;
+  transform: translateY(-100%);
+}
+.ISWAD-Select-optionsContainerToDown {
+  bottom: 0;
+  transform: translateY(100%);
+}
+.ISWAD-Select-optionsContainerIsActive {
+  display: flex;
+}
+
+.ISWAD-Select-arrowConrainer {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+}
+
+.ISWAD-Select-iconSearch {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ISWAD-Swipable-sliderContainer {
+  width: 300%;
+  transform: translateX(-33.3333%);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.ISWAD-Swipable-moveRight {
+  transform: translateX(-66.6666%);
+}
+
+.ISWAD-Swipable-moveLeft {
+  transform: translateX(0);
+}
+
+.ISWAD-Swipable-notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -96,7 +96,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     }
   }, [curVal]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, isOptionsActive && /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10', _SelectModule["default"].clickable),
+    className: (0, _classnames["default"])('w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10', 'ISWAD-Select-clickable'),
     onClick: function onClick() {
       setIsOptionsActive(false);
       setFilteredOptions(options);
@@ -127,7 +127,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       });
     }
   }), showDefaultSearchIcon && /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])(_SelectModule["default"].iconSearch)
+    className: (0, _classnames["default"])('ISWAD-Select-iconSearch')
   }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     type: "search",
     scale: searchIconScale,
@@ -135,10 +135,10 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     stroke: searchIconStrokeColor,
     className: (0, _classnames["default"])('mouse-hand')
   }))), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])(_SelectModule["default"].optionsContainer, openOptionsDownWard ? _SelectModule["default"].optionsContainerToDown : _SelectModule["default"].optionsContainerToUp, isOptionsActive && _SelectModule["default"].optionsContainerIsActive, optinsContainerClassName)
+    className: (0, _classnames["default"])('ISWAD-Select-optionsContainer', openOptionsDownWard ? 'ISWAD-Select-optionsContainerToDown' : 'ISWAD-Select-optionsContainerToUp', isOptionsActive && 'ISWAD-Select-optionsContainerIsActive', optinsContainerClassName)
   }, filteredOptions === null || filteredOptions === void 0 ? void 0 : filteredOptions.map(function (item, idx) {
     return /*#__PURE__*/_react["default"].createElement("div", {
-      className: (0, _classnames["default"])(_SelectModule["default"].option, optionClassName),
+      className: (0, _classnames["default"])('ISWAD-Select-option', optionClassName),
       key: idx,
       value: item === null || item === void 0 ? void 0 : item.value,
       onClick: function onClick() {
@@ -148,7 +148,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       }
     }, item === null || item === void 0 ? void 0 : item.shownText);
   })), showDefaultArrowDownIcon && !isOptionsActive ? /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])(_SelectModule["default"].arrowConrainer)
+    className: (0, _classnames["default"])('ISWAD-Select-arrowConrainer')
   }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     type: "down",
     fill: arrowIconFillColor,

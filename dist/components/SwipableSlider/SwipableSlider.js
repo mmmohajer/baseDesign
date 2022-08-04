@@ -31,8 +31,6 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _SwipableSliderModule = _interopRequireDefault(require("./SwipableSlider.module.scss"));
-
 var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "minXDifferenceToMove", "notScrollableOnSwipableElement", "initialTranslateX", "moveLeftTranslateX", "moveRightTranslateX", "transitionDuration", "transition_timing_function", "cursorIsHandOnItem", "className"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -143,9 +141,9 @@ var SwipableSlider = function SwipableSlider(_ref) {
               return wait(transitionDuration * 1000);
 
             case 2:
-              sliderContainer.current.classList.add(_SwipableSliderModule["default"].notransition);
-              sliderContainer.current.classList.remove(_SwipableSliderModule["default"].moveLeft);
-              sliderContainer.current.classList.remove(_SwipableSliderModule["default"].moveRight);
+              sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
+              sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
+              sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
               nextActiveIdx = getNextActiveIdx(curActiveIdx);
               prevActiveIdx = getPrevActiveIdx(curActiveIdx);
               setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
@@ -170,15 +168,15 @@ var SwipableSlider = function SwipableSlider(_ref) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
-              sliderContainer.current.classList.remove(_SwipableSliderModule["default"].notransition);
-              dir === 'right' ? sliderContainer.current.classList.add(_SwipableSliderModule["default"].moveRight) : sliderContainer.current.classList.add(_SwipableSliderModule["default"].moveLeft);
+              sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
+              dir === 'right' ? sliderContainer.current.classList.add('ISWAD-Swipable-moveRight') : sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
               _context3.next = 4;
               return wait(transitionDuration * 1000);
 
             case 4:
-              sliderContainer.current.classList.add(_SwipableSliderModule["default"].notransition);
-              sliderContainer.current.classList.remove(_SwipableSliderModule["default"].moveLeft);
-              sliderContainer.current.classList.remove(_SwipableSliderModule["default"].moveRight);
+              sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
+              sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
+              sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
               nextActiveIdx = getNextActiveIdx(curActiveIdx);
               prevActiveIdx = getPrevActiveIdx(curActiveIdx);
               setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
@@ -197,13 +195,13 @@ var SwipableSlider = function SwipableSlider(_ref) {
   }();
 
   var goRight = (0, _react.useCallback)(function () {
-    sliderContainer.current.classList.remove(_SwipableSliderModule["default"].notransition);
-    sliderContainer.current.classList.add(_SwipableSliderModule["default"].moveRight);
+    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
+    sliderContainer.current.classList.add('ISWAD-Swipable-moveRight');
     moveHandler(getNextActiveIdx(activeIndices[1]));
   }, [activeIndices]);
   var goLeft = (0, _react.useCallback)(function () {
-    sliderContainer.current.classList.remove(_SwipableSliderModule["default"].notransition);
-    sliderContainer.current.classList.add(_SwipableSliderModule["default"].moveLeft);
+    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
+    sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
     moveHandler(getPrevActiveIdx(activeIndices[1]));
   }, [activeIndices]);
 
@@ -292,7 +290,7 @@ var SwipableSlider = function SwipableSlider(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])('w-per-100 of-x-hidden', className)
   }, props), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('flex', _SwipableSliderModule["default"].sliderContainer),
+    className: (0, _classnames["default"])('flex', 'ISWAD-Swipable-sliderContainer'),
     ref: function ref(el) {
       return sliderContainer.current = el;
     }
@@ -305,7 +303,7 @@ var SwipableSlider = function SwipableSlider(_ref) {
       onDragEnd: handleDragEnd,
       onSwipeMove: handleSwipeMove
     }, children[item]);
-  }))), /*#__PURE__*/_react["default"].createElement("style", null, "\n          .".concat(_SwipableSliderModule["default"].sliderContainer, " {\n            -webkit-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -moz-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -o-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transform: translateX(").concat(initialTranslateX, ");\n          }\n\n          .").concat(_SwipableSliderModule["default"].moveLeft, " {\n            transform: translateX(").concat(moveLeftTranslateX, ");\n          }\n\n          .").concat(_SwipableSliderModule["default"].moveRight, " {\n            transform: translateX(").concat(moveRightTranslateX, ");\n          }\n        ")));
+  }))), /*#__PURE__*/_react["default"].createElement("style", null, "\n          .".concat('ISWAD-Swipable-sliderContainer', " {\n            -webkit-transition: all ", transition_timing_function, " ").concat(transitionDuration, "s;\n            -moz-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -o-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transform: translateX(").concat(initialTranslateX, ");\n          }\n\n          .", 'ISWAD-Swipable-moveLeft', " {\n            transform: translateX(").concat(moveLeftTranslateX, ");\n          }\n\n          .", 'ISWAD-Swipable-moveRight', " {\n            transform: translateX(").concat(moveRightTranslateX, ");\n          }\n        ")));
 };
 
 SwipableSlider.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
