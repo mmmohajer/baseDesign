@@ -6,9 +6,6 @@ import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
 import Icon from '../Icon';
-import Search from '../Search';
-
-import styles from './Select.module.scss';
 
 const Select = React.forwardRef(
   (
