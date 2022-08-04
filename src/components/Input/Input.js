@@ -33,7 +33,7 @@ const Input = React.forwardRef(
               {...props}
               ref={ref}
               type={type}
-              id={id || randomStr(16)}
+              id={id}
             />
           </div>
           {errorMessage?.length ? (
