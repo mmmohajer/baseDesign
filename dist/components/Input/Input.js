@@ -54,7 +54,7 @@ var Input = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }, props, {
     ref: ref,
     type: type,
-    id: id || (0, _utils.randomStr)(16)
+    id: id
   }))), errorMessage !== null && errorMessage !== void 0 && errorMessage.length ? /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('iswad_input_errorMessage', errorContainerClassName, errorIsActive && 'iswad_input_errorMessage_active', errorIsActive && activeErrorContainerClassName)
   }, /*#__PURE__*/_react["default"].createElement("span", {
