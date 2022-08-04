@@ -27,10 +27,6 @@ var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps
 
 var _Icon = _interopRequireDefault(require("../Icon"));
 
-var _Search = _interopRequireDefault(require("../Search"));
-
-var _SelectModule = _interopRequireDefault(require("./Select.module.scss"));
-
 var _excluded = ["options", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "searchIconScale", "showDefaultArrowDownIcon", "showDefaultSearchIcon", "openOptionsDownWard", "selectIntialShownText", "placeHolder", "isOptionsActive", "setIsOptionsActive", "className", "defaultViewClassName", "optionClassName", "optinsContainerClassName", "searchContainerClassName", "inputSearchClassName", "placeHolderClassName"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
