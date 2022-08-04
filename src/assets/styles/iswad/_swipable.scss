@@ -1,4 +1,4 @@
-.sliderContainer {
+.ISWAD-Swipable-sliderContainer {
   width: 300%;
   transform: translateX(-33.3333%);
   -webkit-transition: all 0.5s ease-in-out;
@@ -7,15 +7,15 @@
   transition: all 0.5s ease-in-out;
 }
 
-.moveRight {
+.ISWAD-Swipable-moveRight {
   transform: translateX(-66.6666%);
 }
 
-.moveLeft {
+.ISWAD-Swipable-moveLeft {
   transform: translateX(0);
 }
 
-.notransition {
+.ISWAD-Swipable-notransition {
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -o-transition: none !important;

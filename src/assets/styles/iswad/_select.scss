@@ -1,0 +1,41 @@
+.ISWAD-Select-select {
+  border: solid 1px black;
+  padding: 8px 1rem;
+}
+
+.ISWAD-Select-options {
+  &Container {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+
+    &ToUp {
+      top: 0;
+      transform: translateY(-100%);
+    }
+
+    &ToDown {
+      bottom: 0;
+      transform: translateY(100%);
+    }
+
+    &IsActive {
+      display: flex;
+    }
+  }
+}
+
+.ISWAD-Select-arrowConrainer {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 8px;
+}
+
+.ISWAD-Select-iconSearch {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}

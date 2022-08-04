@@ -1,16 +1,12 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-import { randomStr } from "Utils/utils";
-import { CSS_CLASS_RANDOM_LENGTH } from "Constants/vars";
+import { randomStr } from 'Utils/utils';
+import { CSS_CLASS_RANDOM_LENGTH } from 'Constants/vars';
 
 export const cssClassMaps = {
-  hamburgerMenuContainer: `hamburgerMenuContainer-${randomStr(
-    CSS_CLASS_RANDOM_LENGTH
-  )}`,
+  hamburgerMenuContainer: `hamburgerMenuContainer-${randomStr(CSS_CLASS_RANDOM_LENGTH)}`,
   hamburgerMenuIcon: `hamburgerMenuIcon-${randomStr(CSS_CLASS_RANDOM_LENGTH)}`,
-  hamburgerMenuClosedIcon: `hamburgerMenuClosedIcon-${randomStr(
-    CSS_CLASS_RANDOM_LENGTH
-  )}`,
+  hamburgerMenuClosedIcon: `hamburgerMenuClosedIcon-${randomStr(CSS_CLASS_RANDOM_LENGTH)}`
 };
 
 export const cssConfigShape = {
@@ -31,26 +27,26 @@ export const cssConfigShape = {
   hamburgerMenuTransitionDuration: PropTypes.number,
   hamburgerMenuContainerXPadding: PropTypes.number,
   hamburgerMenuTransform: PropTypes.oneOf([
-    "scale(-1, 1)",
-    "scale(1, 1)",
-    "scale(1, -1)",
-    "scale(-1, -1)",
-  ]),
+    'scale(-1, 1)',
+    'scale(1, 1)',
+    'scale(1, -1)',
+    'scale(-1, -1)'
+  ])
 };
 
 export const cssDefaultConfig = {
-  hamburgerMenuContainerBgColor: "transparent",
-  hamburgerMenuContainerBorder: "none",
+  hamburgerMenuContainerBgColor: 'transparent',
+  hamburgerMenuContainerBorder: 'none',
   hamburgerMenuContainerBorderRadius: 10,
   hamburgerMenuTopWidth: 15,
   hamburgerMenuMiddleWidth: 25,
   hamburgerMenuBottomWidth: 35,
   hamburgerMenuHeight: 4,
-  hamburgerMenuBgColor: "black",
+  hamburgerMenuBgColor: 'black',
   hamburgerMenuSpace: 10,
   hamburgerMenuBorderRadius: 5,
   hamburgerMenuClosedIconWidth: 25,
   hamburgerMenuTransitionDuration: 0.3,
   hamburgerMenuContainerXPadding: 10,
-  hamburgerMenuTransform: "scale(-1, 1)",
+  hamburgerMenuTransform: 'scale(-1, 1)'
 };

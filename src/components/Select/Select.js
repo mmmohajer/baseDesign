@@ -61,7 +61,7 @@ const Select = React.forwardRef(
           <div
             className={cx(
               'w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10',
-              styles.clickable
+              'ISWAD-Select-clickable'
             )}
             onClick={() => {
               setIsOptionsActive(false);
@@ -93,7 +93,7 @@ const Select = React.forwardRef(
                 }
               />
               {showDefaultSearchIcon && (
-                <div className={cx(styles.iconSearch)}>
+                <div className={cx('ISWAD-Select-iconSearch')}>
                   <Icon
                     type="search"
                     scale={searchIconScale}
@@ -107,14 +107,16 @@ const Select = React.forwardRef(
           )}
           <div
             className={cx(
-              styles.optionsContainer,
-              openOptionsDownWard ? styles.optionsContainerToDown : styles.optionsContainerToUp,
-              isOptionsActive && styles.optionsContainerIsActive,
+              'ISWAD-Select-optionsContainer',
+              openOptionsDownWard
+                ? 'ISWAD-Select-optionsContainerToDown'
+                : 'ISWAD-Select-optionsContainerToUp',
+              isOptionsActive && 'ISWAD-Select-optionsContainerIsActive',
               optinsContainerClassName
             )}>
             {filteredOptions?.map((item, idx) => (
               <div
-                className={cx(styles.option, optionClassName)}
+                className={cx('ISWAD-Select-option', optionClassName)}
                 key={idx}
                 value={item?.value}
                 onClick={() => {
@@ -127,7 +129,7 @@ const Select = React.forwardRef(
             ))}
           </div>
           {showDefaultArrowDownIcon && !isOptionsActive ? (
-            <div className={cx(styles.arrowConrainer)}>
+            <div className={cx('ISWAD-Select-arrowConrainer')}>
               <Icon
                 type="down"
                 fill={arrowIconFillColor}

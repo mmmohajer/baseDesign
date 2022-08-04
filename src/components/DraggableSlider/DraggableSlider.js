@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from './DraggableSlider.module.scss';
 import propTypes from 'prop-types';
 
 const DraggableSlider = ({
@@ -58,37 +57,37 @@ const DraggableSlider = ({
 
   const moveHandler = async (curActiveIdx) => {
     await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add(styles.notransition);
-    sliderContainer.current.classList.remove(styles.moveLeft);
-    sliderContainer.current.classList.remove(styles.moveRight);
+    sliderContainer.current.classList.add('ISWAD-Draggable-notransition');
+    sliderContainer.current.classList.remove('ISWAD-Draggable-moveLeft');
+    sliderContainer.current.classList.remove('ISWAD-Draggable-moveRight');
     const nextActiveIdx = getNextActiveIdx(curActiveIdx);
     const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
     setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
   };
 
   const multipleMoveHandler = async (curActiveIdx, dir) => {
-    sliderContainer.current.classList.remove(styles.notransition);
+    sliderContainer.current.classList.remove('ISWAD-Draggable-notransition');
     dir === 'right'
-      ? sliderContainer.current.classList.add(styles.moveRight)
-      : sliderContainer.current.classList.add(styles.moveLeft);
+      ? sliderContainer.current.classList.add('ISWAD-Draggable-moveRight')
+      : sliderContainer.current.classList.add('ISWAD-Draggable-moveLeft');
     await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add(styles.notransition);
-    sliderContainer.current.classList.remove(styles.moveLeft);
-    sliderContainer.current.classList.remove(styles.moveRight);
+    sliderContainer.current.classList.add('ISWAD-Draggable-notransition');
+    sliderContainer.current.classList.remove('ISWAD-Draggable-moveLeft');
+    sliderContainer.current.classList.remove('ISWAD-Draggable-moveRight');
     const nextActiveIdx = getNextActiveIdx(curActiveIdx);
     const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
     setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
   };
 
   const goRight = () => {
-    sliderContainer.current.classList.remove(styles.notransition);
-    sliderContainer.current.classList.add(styles.moveRight);
+    sliderContainer.current.classList.remove('ISWAD-Draggable-notransition');
+    sliderContainer.current.classList.add('ISWAD-Draggable-moveRight');
     moveHandler(getNextActiveIdx(activeIndices[1]));
   };
 
   const goLeft = () => {
-    sliderContainer.current.classList.remove(styles.notransition);
-    sliderContainer.current.classList.add(styles.moveLeft);
+    sliderContainer.current.classList.remove('ISWAD-Draggable-notransition');
+    sliderContainer.current.classList.add('ISWAD-Draggable-moveLeft');
     moveHandler(getPrevActiveIdx(activeIndices[1]));
   };
 
@@ -142,7 +141,7 @@ const DraggableSlider = ({
     <>
       <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
         <div
-          className={cx('flex', styles.sliderContainer)}
+          className={cx('flex', 'ISWAD-Draggable-sliderContainer')}
           ref={(el) => (sliderContainer.current = el)}>
           {activeIndices.map((item, idx) => (
             <div
@@ -162,7 +161,7 @@ const DraggableSlider = ({
 
       <style>
         {`
-          .${styles.sliderContainer} {
+          .${'ISWAD-Draggable-sliderContainer'} {
             -webkit-transition: all ${transition_timing_function} ${transitionDuration}s;
             -moz-transition: all ${transition_timing_function} ${transitionDuration}s;
             -o-transition: all ${transition_timing_function} ${transitionDuration}s;
@@ -170,11 +169,11 @@ const DraggableSlider = ({
             transform: translateX(${initialTranslateX});
           }
 
-          .${styles.moveLeft} {
+          .${'ISWAD-Draggable-moveLeft'} {
             transform: translateX(${moveLeftTranslateX});
           }
 
-          .${styles.moveRight} {
+          .${'ISWAD-Draggable-moveRight'} {
             transform: translateX(${moveRightTranslateX});
           }
         `}

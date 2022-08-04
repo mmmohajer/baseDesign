@@ -27,7 +27,8 @@ import TestPagination from 'TestComponents/TestPagination';
 const Home = () => {
   return (
     <div className="container">
-      <TestAdminNav />
+      <TestNavBar />
+      {/* <TestAdminNav /> */}
       {/* <TestModal /> */}
       <div>
         <TestText />

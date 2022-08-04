@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from './SwipableSlider.module.scss';
 import propTypes from 'prop-types';
 
 const SwipableSlider = ({
@@ -67,37 +66,37 @@ const SwipableSlider = ({
 
   const moveHandler = async (curActiveIdx) => {
     await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add(styles.notransition);
-    sliderContainer.current.classList.remove(styles.moveLeft);
-    sliderContainer.current.classList.remove(styles.moveRight);
+    sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
+    sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
+    sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
     const nextActiveIdx = getNextActiveIdx(curActiveIdx);
     const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
     setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
   };
 
   const multipleMoveHandler = async (curActiveIdx, dir) => {
-    sliderContainer.current.classList.remove(styles.notransition);
+    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
     dir === 'right'
-      ? sliderContainer.current.classList.add(styles.moveRight)
-      : sliderContainer.current.classList.add(styles.moveLeft);
+      ? sliderContainer.current.classList.add('ISWAD-Swipable-moveRight')
+      : sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
     await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add(styles.notransition);
-    sliderContainer.current.classList.remove(styles.moveLeft);
-    sliderContainer.current.classList.remove(styles.moveRight);
+    sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
+    sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
+    sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
     const nextActiveIdx = getNextActiveIdx(curActiveIdx);
     const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
     setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
   };
 
   const goRight = useCallback(() => {
-    sliderContainer.current.classList.remove(styles.notransition);
-    sliderContainer.current.classList.add(styles.moveRight);
+    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
+    sliderContainer.current.classList.add('ISWAD-Swipable-moveRight');
     moveHandler(getNextActiveIdx(activeIndices[1]));
   }, [activeIndices]);
 
   const goLeft = useCallback(() => {
-    sliderContainer.current.classList.remove(styles.notransition);
-    sliderContainer.current.classList.add(styles.moveLeft);
+    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
+    sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
     moveHandler(getPrevActiveIdx(activeIndices[1]));
   }, [activeIndices]);
 
@@ -151,7 +150,7 @@ const SwipableSlider = ({
     <>
       <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
         <div
-          className={cx('flex', styles.sliderContainer)}
+          className={cx('flex', 'ISWAD-Swipable-sliderContainer')}
           ref={(el) => (sliderContainer.current = el)}>
           {activeIndices.map((item, idx) => (
             <Swipe
@@ -172,7 +171,7 @@ const SwipableSlider = ({
 
       <style>
         {`
-          .${styles.sliderContainer} {
+          .${'ISWAD-Swipable-sliderContainer'} {
             -webkit-transition: all ${transition_timing_function} ${transitionDuration}s;
             -moz-transition: all ${transition_timing_function} ${transitionDuration}s;
             -o-transition: all ${transition_timing_function} ${transitionDuration}s;
@@ -180,11 +179,11 @@ const SwipableSlider = ({
             transform: translateX(${initialTranslateX});
           }
 
-          .${styles.moveLeft} {
+          .${'ISWAD-Swipable-moveLeft'} {
             transform: translateX(${moveLeftTranslateX});
           }
 
-          .${styles.moveRight} {
+          .${'ISWAD-Swipable-moveRight'} {
             transform: translateX(${moveRightTranslateX});
           }
         `}

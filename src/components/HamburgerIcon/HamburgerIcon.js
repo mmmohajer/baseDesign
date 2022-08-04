@@ -16,19 +16,19 @@ function HamburgerIcon({ onClick, onOpenedIconClick, onClosedIconClick, cssConfi
   useEffect(() => {
     if (iconToggler) {
       const menuIcon =
-        document.querySelector(`.${cssClassMaps['hamburgerMenuIcon']}`) ||
-        document.querySelector(`.${cssClassMaps['hamburgerMenuClosedIcon']}`);
-      menuIcon.classList.toggle(cssClassMaps['hamburgerMenuIcon']);
-      menuIcon.classList.toggle(cssClassMaps['hamburgerMenuClosedIcon']);
+        document.querySelector(`.${'ISWAD-Hamburger-hamburgerMenuIcon'}`) ||
+        document.querySelector(`.${'ISWAD-Hamburger-hamburgerMenuClosedIcon'}`);
+      menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuIcon');
+      menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuClosedIcon');
     }
   }, [iconToggler]);
 
   const menuIconToggleHandler = () => {
     const menuIcon =
-      document.querySelector(`.${cssClassMaps['hamburgerMenuIcon']}`) ||
-      document.querySelector(`.${cssClassMaps['hamburgerMenuClosedIcon']}`);
-    menuIcon.classList.toggle(cssClassMaps['hamburgerMenuIcon']);
-    menuIcon.classList.toggle(cssClassMaps['hamburgerMenuClosedIcon']);
+      document.querySelector(`.${'ISWAD-Hamburger-hamburgerMenuIcon'}`) ||
+      document.querySelector(`.${'ISWAD-Hamburger-hamburgerMenuClosedIcon'}`);
+    menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuIcon');
+    menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuClosedIcon');
     if (isIconOpened && onOpenedIconClick) {
       onOpenedIconClick();
     }
@@ -42,11 +42,11 @@ function HamburgerIcon({ onClick, onOpenedIconClick, onClosedIconClick, cssConfi
   };
   return (
     <>
-      <div className={cx(cssClassMaps['hamburgerMenuContainer'])} onClick={menuIconToggleHandler}>
-        <div className={cx(cssClassMaps['hamburgerMenuIcon'])}></div>
+      <div className={cx('ISWAD-Hamburger-hamburgerMenuContainer')} onClick={menuIconToggleHandler}>
+        <div className={cx('ISWAD-Hamburger-hamburgerMenuIcon')}></div>
       </div>
 
-      <style>{css(cssClassMaps, appliedCssConfig)}</style>
+      <style>{css(appliedCssConfig)}</style>
     </>
   );
 }

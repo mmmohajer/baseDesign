@@ -1,4 +1,4 @@
-export const css = (cssClassMaps, cssConfig) => {
+export const css = (cssConfig) => {
   const containerWidth =
     Math.max(
       cssConfig['hamburgerMenuTopWidth'],
@@ -17,7 +17,7 @@ export const css = (cssClassMaps, cssConfig) => {
     `;
 
   return `
-    .${cssClassMaps['hamburgerMenuContainer']} {
+    .${'ISWAD-Hamburger-hamburgerMenuContainer'} {
         display: flex;
         width: ${containerWidth}px;
         justify-content: center;
@@ -29,14 +29,14 @@ export const css = (cssClassMaps, cssConfig) => {
         border-radius: ${cssConfig['hamburgerMenuContainerBorderRadius']}px;
     }
 
-    .${cssClassMaps['hamburgerMenuIcon']} {
+    .${'ISWAD-Hamburger-hamburgerMenuIcon'} {
         ${toBeExtended}
         position: relative;
         width: ${cssConfig['hamburgerMenuMiddleWidth']}px;
         transform: ${cssConfig['hamburgerMenuTransform']};
       }
       
-      .${cssClassMaps['hamburgerMenuIcon']}::before {
+      .${'ISWAD-Hamburger-hamburgerMenuIcon'}::before {
         content: "";
         ${toBeExtended}
         position: absolute;
@@ -46,7 +46,7 @@ export const css = (cssClassMaps, cssConfig) => {
         width: ${cssConfig['hamburgerMenuTopWidth']}px;
       }
       
-      .${cssClassMaps['hamburgerMenuIcon']}::after {
+      .${'ISWAD-Hamburger-hamburgerMenuIcon'}::after {
         content: "";
         ${toBeExtended}
         position: absolute;
@@ -56,7 +56,7 @@ export const css = (cssClassMaps, cssConfig) => {
         width: ${cssConfig['hamburgerMenuBottomWidth']}px;
       }
       
-      .${cssClassMaps['hamburgerMenuClosedIcon']} {
+      .${'ISWAD-Hamburger-hamburgerMenuClosedIcon'} {
         ${toBeExtended}
         position: relative;
         transform: scaleX(1);
@@ -65,7 +65,7 @@ export const css = (cssClassMaps, cssConfig) => {
         width: ${cssConfig['hamburgerMenuClosedIconWidth']}px;
       }
       
-      .${cssClassMaps['hamburgerMenuClosedIcon']}::before {
+      .${'ISWAD-Hamburger-hamburgerMenuClosedIcon'}::before {
         content: "";
         ${toBeExtended}
         position: absolute;
@@ -74,7 +74,7 @@ export const css = (cssClassMaps, cssConfig) => {
         width: ${cssConfig['hamburgerMenuClosedIconWidth']}px;
       }
       
-      .${cssClassMaps['hamburgerMenuClosedIcon']}::after {
+      .${'ISWAD-Hamburger-hamburgerMenuClosedIcon'}::after {
         content: "";
         ${toBeExtended}
         position: absolute;

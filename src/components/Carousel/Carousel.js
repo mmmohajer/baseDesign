@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import styles from './Carousel.module.scss';
 import propTypes from 'prop-types';
 
 const Carousel = ({
@@ -38,37 +37,37 @@ const Carousel = ({
 
   const moveHandler = async (curActiveIdx) => {
     await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add(styles.notransition);
-    sliderContainer.current.classList.remove(styles.moveLeft);
-    sliderContainer.current.classList.remove(styles.moveRight);
+    sliderContainer.current.classList.add('ISWAD-Carousel-notransition');
+    sliderContainer.current.classList.remove('ISWAD-Carousel-moveLeft');
+    sliderContainer.current.classList.remove('ISWAD-Carousel-moveRight');
     const nextActiveIdx = getNextActiveIdx(curActiveIdx);
     const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
     setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
   };
 
   const multipleMoveHandler = async (curActiveIdx, dir) => {
-    sliderContainer.current.classList.remove(styles.notransition);
+    sliderContainer.current.classList.remove('ISWAD-Carousel-notransition');
     dir === 'right'
-      ? sliderContainer.current.classList.add(styles.moveRight)
-      : sliderContainer.current.classList.add(styles.moveLeft);
+      ? sliderContainer.current.classList.add('ISWAD-Carousel-moveRight')
+      : sliderContainer.current.classList.add('ISWAD-Carousel-moveLeft');
     await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add(styles.notransition);
-    sliderContainer.current.classList.remove(styles.moveLeft);
-    sliderContainer.current.classList.remove(styles.moveRight);
+    sliderContainer.current.classList.add('ISWAD-Carousel-notransition');
+    sliderContainer.current.classList.remove('ISWAD-Carousel-moveLeft');
+    sliderContainer.current.classList.remove('ISWAD-Carousel-moveRight');
     const nextActiveIdx = getNextActiveIdx(curActiveIdx);
     const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
     setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
   };
 
   const goRight = () => {
-    sliderContainer.current.classList.remove(styles.notransition);
-    sliderContainer.current.classList.add(styles.moveRight);
+    sliderContainer.current.classList.remove('ISWAD-Carousel-notransition');
+    sliderContainer.current.classList.add('ISWAD-Carousel-moveRight');
     moveHandler(getNextActiveIdx(activeIndices[1]));
   };
 
   const goLeft = () => {
-    sliderContainer.current.classList.remove(styles.notransition);
-    sliderContainer.current.classList.add(styles.moveLeft);
+    sliderContainer.current.classList.remove('ISWAD-Carousel-notransition');
+    sliderContainer.current.classList.add('ISWAD-Carousel-moveLeft');
     moveHandler(getPrevActiveIdx(activeIndices[1]));
   };
 
@@ -111,7 +110,7 @@ const Carousel = ({
     <>
       <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
         <div
-          className={cx('flex', styles.sliderContainer)}
+          className={cx('flex', 'ISWAD-Carousel-sliderContainer')}
           ref={(el) => (sliderContainer.current = el)}>
           {activeIndices.map((item, idx) => (
             <div key={idx} className="flex flex--jc--center flex--ai--center w-per-100">
@@ -123,7 +122,7 @@ const Carousel = ({
 
       <style>
         {`
-          .${styles.sliderContainer} {
+          .${'ISWAD-Carousel-sliderContainer'} {
             -webkit-transition: all ${transition_timing_function} ${transitionDuration}s;
             -moz-transition: all ${transition_timing_function} ${transitionDuration}s;
             -o-transition: all ${transition_timing_function} ${transitionDuration}s;
