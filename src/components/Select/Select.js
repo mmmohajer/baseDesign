@@ -25,7 +25,7 @@ const Select = React.forwardRef(
       showDefaultSearchIcon,
       openOptionsDownWard,
       selectIntialShownText,
-      placeHolder,
+      placeholder,
       isOptionsActive,
       setIsOptionsActive,
       className,
@@ -44,8 +44,8 @@ const Select = React.forwardRef(
     const [showPlaceHolder, setShowPlaceHolder] = useState(false);
 
     useEffect(() => {
-      if (placeHolder.length && !selectValue) {
-        setCurVal(placeHolder);
+      if (placeholder.length && !selectValue) {
+        setCurVal(placeholder);
         setShowPlaceHolder(true);
       } else {
         setShowPlaceHolder(false);
@@ -157,7 +157,7 @@ Select.propTypes = {
   arrowIconScale: PropTypes.number,
   openOptionsDownWard: PropTypes.bool,
   selectIntialShownText: PropTypes.any,
-  placeHolder: PropTypes.any,
+  placeholder: PropTypes.any,
   isOptionsActive: PropTypes.bool,
   setIsOptionsActive: PropTypes.func
 };
@@ -174,7 +174,7 @@ Select.defaultProps = {
   arrowIconFillColor: 'gray',
   arrowIconScale: 0.8,
   openOptionsDownWard: true,
-  placeHolder: '',
+  placeholder: '',
   isOptionsActive: false,
   selectIntialShownText: ''
 };
