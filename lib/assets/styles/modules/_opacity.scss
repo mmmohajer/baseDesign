@@ -1,5 +1,0 @@
-@each $opa in $opacityArray {
-    .op-#{$opa} {
-        opacity: math.div($opa, 100);
-    }
-}
