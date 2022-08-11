@@ -31,7 +31,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "minXDifferenceToMove", "notScrollableOnSwipableElement", "initialTranslateX", "moveLeftTranslateX", "moveRightTranslateX", "transitionDuration", "transition_timing_function", "cursorIsHandOnItem", "className"];
+var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "minXDifferenceToMove", "notScrollableOnSwipableElement", "transitionDuration", "transition_timing_function", "cursorIsHandOnItem", "mainContainerWidthMultiplier", "className", "isDraggable", "isSwipable"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -54,13 +54,13 @@ var SwipableSlider = function SwipableSlider(_ref) {
       setMoveToItemWithNum = _ref.setMoveToItemWithNum,
       minXDifferenceToMove = _ref.minXDifferenceToMove,
       notScrollableOnSwipableElement = _ref.notScrollableOnSwipableElement,
-      initialTranslateX = _ref.initialTranslateX,
-      moveLeftTranslateX = _ref.moveLeftTranslateX,
-      moveRightTranslateX = _ref.moveRightTranslateX,
       transitionDuration = _ref.transitionDuration,
       transition_timing_function = _ref.transition_timing_function,
       cursorIsHandOnItem = _ref.cursorIsHandOnItem,
+      mainContainerWidthMultiplier = _ref.mainContainerWidthMultiplier,
       className = _ref.className,
+      isDraggable = _ref.isDraggable,
+      isSwipable = _ref.isSwipable,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   var sliderContainer = (0, _react.useRef)();
 
@@ -78,6 +78,12 @@ var SwipableSlider = function SwipableSlider(_ref) {
       _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
       xEnd = _useState6[0],
       setXEnd = _useState6[1];
+
+  var lengthOfEachItem = mainContainerWidthMultiplier / 3 * 100;
+  var sidesLength = (100 - lengthOfEachItem) / 2;
+  var initialTranslateX = -((lengthOfEachItem - sidesLength) / mainContainerWidthMultiplier);
+  var moveLeftTranslateX = initialTranslateX + 100 / 3;
+  var moveRightTranslateX = initialTranslateX - 100 / 3;
 
   var handleDragStart = function handleDragStart(e) {
     setXStart(e.clientX);
@@ -295,15 +301,25 @@ var SwipableSlider = function SwipableSlider(_ref) {
       return sliderContainer.current = el;
     }
   }, activeIndices.map(function (item, idx) {
-    return /*#__PURE__*/_react["default"].createElement(_reactEasySwipe["default"], {
-      key: idx,
-      className: (0, _classnames["default"])('flex flex--jc--center flex--ai--center w-per-100', cursorIsHandOnItem && 'mouse-hand'),
-      draggable: true,
-      onDragStart: handleDragStart,
-      onDragEnd: handleDragEnd,
-      onSwipeMove: handleSwipeMove
-    }, children[item]);
-  }))), /*#__PURE__*/_react["default"].createElement("style", null, "\n          .".concat('ISWAD-Swipable-sliderContainer', " {\n            -webkit-transition: all ", transition_timing_function, " ").concat(transitionDuration, "s;\n            -moz-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -o-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transform: translateX(").concat(initialTranslateX, ");\n          }\n\n          .", 'ISWAD-Swipable-moveLeft', " {\n            transform: translateX(").concat(moveLeftTranslateX, ");\n          }\n\n          .", 'ISWAD-Swipable-moveRight', " {\n            transform: translateX(").concat(moveRightTranslateX, ");\n          }\n        ")));
+    if (isSwipable) {
+      return /*#__PURE__*/_react["default"].createElement(_reactEasySwipe["default"], {
+        key: idx,
+        className: (0, _classnames["default"])('flex flex--jc--center flex--ai--center w-per-100', cursorIsHandOnItem && 'mouse-hand'),
+        draggable: isDraggable,
+        onDragStart: handleDragStart,
+        onDragEnd: handleDragEnd,
+        onSwipeMove: handleSwipeMove
+      }, children[item]);
+    } else {
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        key: idx,
+        className: (0, _classnames["default"])('flex flex--jc--center flex--ai--center w-per-100', cursorIsHandOnItem && 'mouse-hand'),
+        draggable: isDraggable,
+        onDragStart: handleDragStart,
+        onDragEnd: handleDragEnd
+      }, children[item]);
+    }
+  }))), /*#__PURE__*/_react["default"].createElement("style", null, "\n          .".concat('ISWAD-Swipable-sliderContainer', " {\n            width: ", mainContainerWidthMultiplier * 100, "%;\n            -webkit-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -moz-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -o-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transform: translateX(").concat(initialTranslateX, "%);\n          }\n\n          .", 'ISWAD-Swipable-moveLeft', " {\n            transform: translateX(").concat(moveLeftTranslateX, "%);\n          }\n\n          .", 'ISWAD-Swipable-moveRight', " {\n            transform: translateX(").concat(moveRightTranslateX, "%);\n          }\n\n          .", 'ISWAD-Swipable-notransition', " {\n            -webkit-transition: none !important;\n            -moz-transition: none !important;\n            -o-transition: none !important;\n            transition: none !important;\n          }\n        ")));
 };
 
 SwipableSlider.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
@@ -314,26 +330,26 @@ SwipableSlider.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}
   moveToItemWithNum: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].number]),
   setMoveToItemWithNum: _propTypes["default"].func,
   minXDifferenceToMove: _propTypes["default"].number,
-  initialTranslateX: _propTypes["default"].string,
-  moveLeftTranslateX: _propTypes["default"].string,
-  moveRightTranslateX: _propTypes["default"].string,
   transitionDuration: _propTypes["default"].number,
   transition_timing_function: _propTypes["default"].oneOf(['ease', 'linear', 'ease-in', 'ease-out', 'ease-in-out', 'inherit']),
   cursorIsHandOnItem: _propTypes["default"].bool,
-  notScrollableOnSwipableElement: _propTypes["default"].bool
+  notScrollableOnSwipableElement: _propTypes["default"].bool,
+  mainContainerWidthMultiplier: _propTypes["default"].number,
+  isDraggable: _propTypes["default"].bool,
+  isSwipable: _propTypes["default"].bool
 });
 SwipableSlider.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   moveRight: false,
   moveLeft: false,
   moveToItemWithNum: 1,
   minXDifferenceToMove: 100,
-  initialTranslateX: '-33.33333%',
-  moveLeftTranslateX: '0%',
-  moveRightTranslateX: '-66.666666%',
   transitionDuration: 0.3,
   transition_timing_function: 'linear',
   cursorIsHandOnItem: true,
-  notScrollableOnSwipableElement: true
+  notScrollableOnSwipableElement: true,
+  mainContainerWidthMultiplier: 3,
+  isDraggable: true,
+  isSwipable: true
 });
 var _default = SwipableSlider;
 exports["default"] = _default;
