@@ -39,6 +39,8 @@ import Search from './components/Search';
 import Select from './components/Select';
 import SwipableSlider from './components/SwipableSlider';
 import SwipableSliderItem from './components/SwipableSlider/subs/SwipableSliderItem';
+import LimitedSwipableSlider from './components/LimitedSwipableSlider';
+import LimitedSwipableSliderItem from './components/LimitedSwipableSlider/subs/LimitedSwipableSliderItem';
 import Table from './components/Table';
 import Text from './components/Text';
 import TextArea from './components/TextArea';
@@ -85,6 +87,8 @@ export {
   Select,
   SwipableSlider,
   SwipableSliderItem,
+  LimitedSwipableSlider,
+  LimitedSwipableSliderItem,
   Table,
   Text,
   TextArea

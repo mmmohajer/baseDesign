@@ -8,7 +8,7 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
 import propTypes from 'prop-types';
 
-const SwipableSlider = ({
+const LimitedSwipableSlider = ({
   children,
   moveRight,
   setMoveRight,
@@ -21,23 +21,41 @@ const SwipableSlider = ({
   transitionDuration,
   transition_timing_function,
   cursorIsHandOnItem,
-  mainContainerWidthMultiplier,
   className,
+  sliderContainerWidthMultiplier,
   isDraggable,
   isSwipable,
+  showRightOfLastItem,
   ...props
 }) => {
   const sliderContainer = useRef();
 
-  const [activeIndices, setActiveIndices] = useState([children.length - 1, 0, 1]);
+  const [activeIdx, setActiveIdx] = useState(0);
   const [xStart, setXStart] = useState(0);
   const [xEnd, setXEnd] = useState(-100000);
+  const [mainWidthMultiplier, setMainWidthMultiplier] = useState(1);
+  const [translateXVal, setTranslateXVal] = useState(0);
 
-  const lengthOfEachItem = (mainContainerWidthMultiplier / 3) * 100;
+  const lengthOfEachItem = (sliderContainerWidthMultiplier / children.length) * 100;
   const sidesLength = (100 - lengthOfEachItem) / 2;
-  const initialTranslateX = -((lengthOfEachItem - sidesLength) / mainContainerWidthMultiplier);
-  const moveLeftTranslateX = initialTranslateX + 100 / 3;
-  const moveRightTranslateX = initialTranslateX - 100 / 3;
+  const initialTranslateX = -((lengthOfEachItem - sidesLength) / sliderContainerWidthMultiplier);
+
+  const getActiveIdx = (dir, idx) => {
+    if (dir === 'right') {
+      if (idx + 1 <= children.length - 1) {
+        return idx + 1;
+      } else {
+        return children.length - 1;
+      }
+    }
+    if (dir === 'left') {
+      if (idx - 1 >= 0) {
+        return idx - 1;
+      } else {
+        return 0;
+      }
+    }
+  };
 
   const handleDragStart = (e) => {
     setXStart(e.clientX);
@@ -58,67 +76,42 @@ const SwipableSlider = ({
     return notScrollableOnSwipableElement;
   };
 
-  const getNextActiveIdx = (idx) => {
-    return idx + 1 < children.length ? idx + 1 : 0;
-  };
-
-  const getPrevActiveIdx = (idx) => {
-    return idx - 1 >= 0 ? idx - 1 : children.length - 1;
-  };
-
-  const wait = async (delay) => {
-    return new Promise((resolve, reject) => setTimeout(resolve, delay));
-  };
-
-  const moveHandler = async (curActiveIdx) => {
-    await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
-    sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
-    const nextActiveIdx = getNextActiveIdx(curActiveIdx);
-    const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
-    setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
-  };
-
-  const multipleMoveHandler = async (curActiveIdx, dir) => {
-    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
-    dir === 'right'
-      ? sliderContainer.current.classList.add('ISWAD-Swipable-moveRight')
-      : sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
-    await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
-    sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
-    const nextActiveIdx = getNextActiveIdx(curActiveIdx);
-    const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
-    setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
-  };
-
   const goRight = useCallback(() => {
-    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.add('ISWAD-Swipable-moveRight');
-    moveHandler(getNextActiveIdx(activeIndices[1]));
-  }, [activeIndices]);
+    setActiveIdx(getActiveIdx('right', activeIdx));
+  }, [activeIdx]);
 
   const goLeft = useCallback(() => {
-    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
-    moveHandler(getPrevActiveIdx(activeIndices[1]));
-  }, [activeIndices]);
+    setActiveIdx(getActiveIdx('left', activeIdx));
+  }, [activeIdx]);
 
-  const goToItemWithNum = async (num, curActiveIdx = activeIndices[1]) => {
-    if (curActiveIdx < num - 1) {
-      curActiveIdx += 1;
-      multipleMoveHandler(curActiveIdx, 'right');
-      await wait(transitionDuration * 1000 + 100);
-      goToItemWithNum(num, curActiveIdx);
-    } else if (curActiveIdx > num - 1) {
-      curActiveIdx -= 1;
-      multipleMoveHandler(curActiveIdx, 'left');
-      await wait(transitionDuration * 1000 + 100);
-      goToItemWithNum(num, curActiveIdx);
+  const goToItemWithNum = async (num) => {
+    let cur_num = num - 1;
+    if (cur_num > children.length - 1) {
+      cur_num = children.length - 1;
     }
+    if (cur_num < 0) {
+      cur_num = 0;
+    }
+    setActiveIdx(cur_num);
   };
+
+  useEffect(() => {
+    if (activeIdx === 0) {
+      setTranslateXVal(0);
+    } else if (activeIdx === 1) {
+      setTranslateXVal(initialTranslateX);
+    } else if (activeIdx > 1 && activeIdx < children.length - 1) {
+      setTranslateXVal(
+        initialTranslateX - (lengthOfEachItem / sliderContainerWidthMultiplier) * (activeIdx - 1)
+      );
+    } else {
+      if (showRightOfLastItem) {
+        setTranslateXVal(-(activeIdx / children.length) * 100);
+      } else {
+        setTranslateXVal(-100 + 100 / mainWidthMultiplier);
+      }
+    }
+  }, [activeIdx]);
 
   useEffect(() => {
     if (moveRight) {
@@ -152,13 +145,25 @@ const SwipableSlider = ({
     }
   }, [xEnd]);
 
+  useEffect(() => {
+    if (children && !sliderContainerWidthMultiplier) {
+      setMainWidthMultiplier(`${children.length}`);
+    }
+    if (children && sliderContainerWidthMultiplier) {
+      setMainWidthMultiplier(`${sliderContainerWidthMultiplier}`);
+    }
+  }, [children, sliderContainerWidthMultiplier]);
+
   return (
     <>
       <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
         <div
-          className={cx('flex', 'ISWAD-Swipable-sliderContainer')}
+          className={cx(
+            'flex',
+            'ISWAD-Limited-Swipable-sliderContainer ISWAD-Limited-Swipable-move'
+          )}
           ref={(el) => (sliderContainer.current = el)}>
-          {activeIndices.map((item, idx) => {
+          {children?.map((item, idx) => {
             if (isSwipable) {
               return (
                 <Swipe
@@ -171,7 +176,7 @@ const SwipableSlider = ({
                   onDragStart={handleDragStart}
                   onDragEnd={handleDragEnd}
                   onSwipeMove={handleSwipeMove}>
-                  {children[item]}
+                  {item}
                 </Swipe>
               );
             } else {
@@ -185,7 +190,7 @@ const SwipableSlider = ({
                   draggable={isDraggable}
                   onDragStart={handleDragStart}
                   onDragEnd={handleDragEnd}>
-                  {children[item]}
+                  {item}
                 </div>
               );
             }
@@ -195,28 +200,17 @@ const SwipableSlider = ({
 
       <style>
         {`
-          .${'ISWAD-Swipable-sliderContainer'} {
-            width: ${mainContainerWidthMultiplier * 100}%;
+          .${'ISWAD-Limited-Swipable-sliderContainer'} {
+            width: ${mainWidthMultiplier * 100}%;
             -webkit-transition: all ${transition_timing_function} ${transitionDuration}s;
             -moz-transition: all ${transition_timing_function} ${transitionDuration}s;
             -o-transition: all ${transition_timing_function} ${transitionDuration}s;
             transition: all ${transition_timing_function} ${transitionDuration}s;
-            transform: translateX(${initialTranslateX}%);
+            transform: translateX(${0});
           }
 
-          .${'ISWAD-Swipable-moveLeft'} {
-            transform: translateX(${moveLeftTranslateX}%);
-          }
-
-          .${'ISWAD-Swipable-moveRight'} {
-            transform: translateX(${moveRightTranslateX}%);
-          }
-
-          .${'ISWAD-Swipable-notransition'} {
-            -webkit-transition: none !important;
-            -moz-transition: none !important;
-            -o-transition: none !important;
-            transition: none !important;
+          .${'ISWAD-Limited-Swipable-move'} {
+            transform: translateX(${translateXVal}%);
           }
         `}
       </style>
@@ -224,7 +218,7 @@ const SwipableSlider = ({
   );
 };
 
-SwipableSlider.propTypes = {
+LimitedSwipableSlider.propTypes = {
   ...defaultPropTypes,
   moveRight: PropTypes.bool,
   setMoveRight: PropTypes.func,
@@ -233,6 +227,9 @@ SwipableSlider.propTypes = {
   moveToItemWithNum: PropTypes.oneOfType([PropTypes.bool, propTypes.number]),
   setMoveToItemWithNum: PropTypes.func,
   minXDifferenceToMove: PropTypes.number,
+  //   initialTranslateX: PropTypes.string,
+  //   currentPositioning: PropTypes.string,
+  //   moveRightTranslateX: PropTypes.string,
   transitionDuration: PropTypes.number,
   transition_timing_function: PropTypes.oneOf([
     'ease',
@@ -244,24 +241,24 @@ SwipableSlider.propTypes = {
   ]),
   cursorIsHandOnItem: PropTypes.bool,
   notScrollableOnSwipableElement: PropTypes.bool,
-  mainContainerWidthMultiplier: PropTypes.number,
   isDraggable: PropTypes.bool,
-  isSwipable: PropTypes.bool
+  isSwipable: PropTypes.bool,
+  showRightOfLastItem: PropTypes.bool
 };
 
-SwipableSlider.defaultProps = {
+LimitedSwipableSlider.defaultProps = {
   ...defaultProps,
   moveRight: false,
   moveLeft: false,
   moveToItemWithNum: 1,
-  minXDifferenceToMove: 100,
+  minXDifferenceToMove: 20,
   transitionDuration: 0.3,
   transition_timing_function: 'linear',
   cursorIsHandOnItem: true,
   notScrollableOnSwipableElement: true,
-  mainContainerWidthMultiplier: 3,
   isDraggable: true,
-  isSwipable: true
+  isSwipable: true,
+  showRightOfLastItem: false
 };
 
-export default SwipableSlider;
+export default LimitedSwipableSlider;
