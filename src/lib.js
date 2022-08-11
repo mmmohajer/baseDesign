@@ -8,13 +8,9 @@ import Card from './components/Card';
 import CardBody from './components/Card/subs/CardBody';
 import CardFooter from './components/Card/subs/CardFooter';
 import CardHeader from './components/Card/subs/CardHeader';
-import Carousel from './components/Carousel';
-import CarouselItem from './components/Carousel/subs/CarouselItem';
 import Column from './components/Column';
 import Div from './components/Div';
 import DisappearingElement from './components/DisappearingElement';
-import DraggableSlider from './components/DraggableSlider';
-import DraggableSliderItem from './components/DraggableSlider/subs/DraggableSliderItem';
 import Form from './components/Form';
 import HamburgerIcon from './components/HamburgerIcon';
 import Heading from './components/Heading';
@@ -56,13 +52,9 @@ export {
   CardBody,
   CardFooter,
   CardHeader,
-  Carousel,
-  CarouselItem,
   Column,
   Div,
   DisappearingElement,
-  DraggableSlider,
-  DraggableSliderItem,
   Form,
   HamburgerIcon,
   Heading,
