@@ -1,0 +1,314 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--12 {
+    width: 100%;
+  }
+
+  &--11 {
+    width: percentage(math.div(11, 12));
+  }
+
+  &--10 {
+    width: percentage(math.div(10, 12));
+  }
+
+  &--9 {
+    width: percentage(math.div(9, 12));
+  }
+
+  &--8 {
+    width: percentage(math.div(8, 12));
+  }
+
+  &--7 {
+    width: percentage(math.div(7, 12));
+  }
+
+  &--6 {
+    width: 50%;
+  }
+
+  &--5 {
+    width: percentage(math.div(5, 12));
+  }
+
+  &--4 {
+    width: percentage(math.div(4, 12));
+  }
+
+  &--3 {
+    width: percentage(math.div(3, 12));
+  }
+
+  &--2 {
+    width: percentage(math.div(2, 12));
+  }
+
+  &--1 {
+    width: percentage(math.div(1, 12));
+  }
+
+  &--0 {
+    width: 0px;
+  }
+
+  &--sm--12 {
+    @include atSmall {
+      width: 100%;
+    }
+  }
+
+  &--sm--11 {
+    @include atSmall {
+      width: percentage(math.div(11, 12));
+    }
+  }
+
+  &--sm--10 {
+    @include atSmall {
+      width: percentage(math.div(10, 12));
+    }
+  }
+
+  &--sm--9 {
+    @include atSmall {
+      width: percentage(math.div(9, 12));
+    }
+  }
+
+  &--sm--8 {
+    @include atSmall {
+      width: percentage(math.div(8, 12));
+    }
+  }
+
+  &--sm--7 {
+    @include atSmall {
+      width: percentage(math.div(7, 12));
+    }
+  }
+
+  &--sm--6 {
+    @include atSmall {
+      width: 50%;
+    }
+  }
+
+  &--sm--5 {
+    @include atSmall {
+      width: percentage(math.div(5, 12));
+    }
+  }
+
+  &--sm--4 {
+    @include atSmall {
+      width: percentage(math.div(4, 12));
+    }
+  }
+
+  &--sm--3 {
+    @include atSmall {
+      width: percentage(math.div(3, 12));
+    }
+  }
+
+  &--sm--2 {
+    @include atSmall {
+      width: percentage(math.div(2, 12));
+    }
+  }
+
+  &--sm--1 {
+    @include atSmall {
+      width: percentage(math.div(1, 12));
+    }
+  }
+
+  &--sm--0 {
+    @include atSmall {
+      width: 0px;
+    }
+  }
+
+  &--md--12 {
+    @include atMedium {
+      width: 100%;
+    }
+  }
+
+  &--md--11 {
+    @include atMedium {
+      width: percentage(math.div(11, 12));
+    }
+  }
+
+  &--md--10 {
+    @include atMedium {
+      width: percentage(math.div(10, 12));
+    }
+  }
+
+  &--md--9 {
+    @include atMedium {
+      width: percentage(math.div(9, 12));
+    }
+  }
+
+  &--md--8 {
+    @include atMedium {
+      width: percentage(math.div(8, 12));
+    }
+  }
+
+  &--md--7 {
+    @include atMedium {
+      width: percentage(math.div(7, 12));
+    }
+  }
+
+  &--md--6 {
+    @include atMedium {
+      width: 50%;
+    }
+  }
+
+  &--md--5 {
+    @include atMedium {
+      width: percentage(math.div(5, 12));
+    }
+  }
+
+  &--md--4 {
+    @include atMedium {
+      width: percentage(math.div(4, 12));
+    }
+  }
+
+  &--md--3 {
+    @include atMedium {
+      width: percentage(math.div(3, 12));
+    }
+  }
+
+  &--md--2 {
+    @include atMedium {
+      width: percentage(math.div(2, 12));
+    }
+  }
+
+  &--md--1 {
+    @include atMedium {
+      width: percentage(math.div(1, 12));
+    }
+  }
+
+  &--md--0 {
+    @include atMedium {
+      width: 0px;
+    }
+  }
+
+  &--lg--12 {
+    @include atLarge {
+      width: 100%;
+    }
+  }
+
+  &--lg--11 {
+    @include atLarge {
+      width: percentage(math.div(11, 12));
+    }
+  }
+
+  &--lg--10 {
+    @include atLarge {
+      width: percentage(math.div(10, 12));
+    }
+  }
+
+  &--lg--9 {
+    @include atLarge {
+      width: percentage(math.div(9, 12));
+    }
+  }
+
+  &--lg--8 {
+    @include atLarge {
+      width: percentage(math.div(8, 12));
+    }
+  }
+
+  &--lg--7 {
+    @include atLarge {
+      width: percentage(math.div(7, 12));
+    }
+  }
+
+  &--lg--6 {
+    @include atLarge {
+      width: 50%;
+    }
+  }
+
+  &--lg--5 {
+    @include atLarge {
+      width: percentage(math.div(5, 12));
+    }
+  }
+
+  &--lg--4 {
+    @include atLarge {
+      width: percentage(math.div(4, 12));
+    }
+  }
+
+  &--lg--3 {
+    @include atLarge {
+      width: percentage(math.div(3, 12));
+    }
+  }
+
+  &--lg--2 {
+    @include atLarge {
+      width: percentage(math.div(2, 12));
+    }
+  }
+
+  &--lg--1 {
+    @include atLarge {
+      width: percentage(math.div(1, 12));
+    }
+  }
+
+  &--lg--0 {
+    @include atLarge {
+      width: 0px;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+
+  &--cols--auto {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  &--cols--oneFourth {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &--cols--oneThird {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &--cols--oneHalf {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

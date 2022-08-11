@@ -1,0 +1,54 @@
+%headingText {
+  font-weight: $fontHeadingWeight;
+}
+
+.h1 {
+  @extend %headingText;
+  font-size: $fontH1Size;
+
+  @include atSmall {
+    font-size: $fontH1SmallSize;
+  }
+
+  @include atMedium {
+    font-size: $fontH1MediumSize;
+  }
+
+  @include atLarge {
+    font-size: $fontH1LargeSize;
+  }
+}
+
+.h2 {
+  @extend %headingText;
+  font-size: $fontH2Size;
+
+  @include atSmall {
+    font-size: $fontH2SmallSize;
+  }
+
+  @include atMedium {
+    font-size: $fontH2MediumSize;
+  }
+
+  @include atLarge {
+    font-size: $fontH2LargeSize;
+  }
+}
+
+.h3 {
+  @extend %headingText;
+  font-size: $fontH3Size;
+
+  @include atSmall {
+    font-size: $fontH3SmallSize;
+  }
+
+  @include atMedium {
+    font-size: $fontH3MediumSize;
+  }
+
+  @include atLarge {
+    font-size: $fontH3LargeSize;
+  }
+}

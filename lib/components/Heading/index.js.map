@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","names":[],"sources":["../../../src/components/Heading/index.js"],"sourcesContent":["export { default } from './Heading';\n"],"mappings":";;;;;;;;;;;;;;AAAA"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","names":[],"sources":["../../../src/components/Label/index.js"],"sourcesContent":["export { default } from './Label';\n"],"mappings":";;;;;;;;;;;;;;AAAA"}

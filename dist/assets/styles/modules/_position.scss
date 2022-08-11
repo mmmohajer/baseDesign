@@ -1,0 +1,93 @@
+.pos-abs {
+  position: absolute;
+
+  &--center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--lt {
+    top: 0;
+    left: 0;
+  }
+
+  &--rt {
+    top: 0;
+    right: 0;
+  }
+
+  &--lb {
+    left: 0;
+    top: 100%;
+  }
+
+  &--rb {
+    right: 0;
+    top: 100%;
+  }
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-fix {
+  position: fixed;
+
+  &--center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--lt {
+    top: 0;
+    left: 0;
+  }
+
+  &--rt {
+    top: 0;
+    right: 0;
+  }
+
+  &--lb {
+    left: 0;
+    top: 100%;
+  }
+
+  &--rb {
+    right: 0;
+    top: 100%;
+  }
+}
+
+.pos-sticky {
+  position: sticky;
+
+  &--center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &--lt {
+    top: 0;
+    left: 0;
+  }
+
+  &--rt {
+    top: 0;
+    right: 0;
+  }
+
+  &--lb {
+    left: 0;
+    top: 100%;
+  }
+
+  &--rb {
+    right: 0;
+    top: 100%;
+  }
+}
