@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
-import { randomStr } from 'Utils/utils';
 
 const Input = React.forwardRef(
   (
