@@ -1309,6 +1309,12 @@ ul {
 .flex--dir--col {
   flex-direction: column;
 }
+.flex--dir--row--reverse {
+  flex-direction: row-reverse;
+}
+.flex--dir--col--reverse {
+  flex-direction: column-reverse;
+}
 .flex--wrap {
   flex-wrap: wrap;
 }
