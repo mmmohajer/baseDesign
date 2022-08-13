@@ -21,9 +21,9 @@ var Modal = function Modal(_ref) {
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('pos-fix pos-fix--lt w-per-100 height-vh-full op-50 bgFaded z-10', fullHeightclassName)
+    className: (0, _classnames["default"])('pos-fix pos-fix--lt w-per-100 height-vh-full', fullHeightclassName)
   }), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('pos-fix pos-fix--center z-100', className)
+    className: (0, _classnames["default"])('pos-fix pos-fix--center', className)
   }, children));
 };
 
