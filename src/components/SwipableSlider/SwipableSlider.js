@@ -25,6 +25,7 @@ const SwipableSlider = ({
   className,
   isDraggable,
   isSwipable,
+  swipeTolerance,
   ...props
 }) => {
   const sliderContainer = useRef();
@@ -45,17 +46,6 @@ const SwipableSlider = ({
 
   const handleDragEnd = (e) => {
     setXEnd(e.clientX);
-  };
-
-  const handleSwipeMove = (position, e) => {
-    if (position.x >= minXDifferenceToMove) {
-      goLeft();
-    }
-
-    if (position.x <= -minXDifferenceToMove) {
-      goRight();
-    }
-    return notScrollableOnSwipableElement;
   };
 
   const getNextActiveIdx = (idx) => {
@@ -170,7 +160,9 @@ const SwipableSlider = ({
                   draggable={isDraggable}
                   onDragStart={handleDragStart}
                   onDragEnd={handleDragEnd}
-                  onSwipeMove={handleSwipeMove}>
+                  onSwipeLeft={goRight}
+                  onSwipeRight={goLeft}
+                  tolerance={swipeTolerance}>
                   {children[item]}
                 </Swipe>
               );
@@ -246,7 +238,8 @@ SwipableSlider.propTypes = {
   notScrollableOnSwipableElement: PropTypes.bool,
   mainContainerWidthMultiplier: PropTypes.number,
   isDraggable: PropTypes.bool,
-  isSwipable: PropTypes.bool
+  isSwipable: PropTypes.bool,
+  swipeTolerance: PropTypes.number
 };
 
 SwipableSlider.defaultProps = {
@@ -261,7 +254,8 @@ SwipableSlider.defaultProps = {
   notScrollableOnSwipableElement: true,
   mainContainerWidthMultiplier: 3,
   isDraggable: true,
-  isSwipable: true
+  isSwipable: true,
+  swipeTolerance: 1
 };
 
 export default SwipableSlider;

@@ -26,6 +26,7 @@ const LimitedSwipableSlider = ({
   isDraggable,
   isSwipable,
   showRightOfLastItem,
+  swipeTolerance,
   ...props
 }) => {
   const sliderContainer = useRef();
@@ -63,17 +64,6 @@ const LimitedSwipableSlider = ({
 
   const handleDragEnd = (e) => {
     setXEnd(e.clientX);
-  };
-
-  const handleSwipeMove = (position, e) => {
-    if (position.x >= minXDifferenceToMove) {
-      goLeft();
-    }
-
-    if (position.x <= -minXDifferenceToMove) {
-      goRight();
-    }
-    return notScrollableOnSwipableElement;
   };
 
   const goRight = useCallback(() => {
@@ -175,7 +165,9 @@ const LimitedSwipableSlider = ({
                   draggable={isDraggable}
                   onDragStart={handleDragStart}
                   onDragEnd={handleDragEnd}
-                  onSwipeMove={handleSwipeMove}>
+                  onSwipeRight={goLeft}
+                  onSwipeLeft={goRight}
+                  tolerance={swipeTolerance}>
                   {item}
                 </Swipe>
               );
@@ -224,7 +216,7 @@ LimitedSwipableSlider.propTypes = {
   setMoveRight: PropTypes.func,
   moveLeft: PropTypes.bool,
   setMoveLeft: PropTypes.func,
-  moveToItemWithNum: PropTypes.oneOfType([PropTypes.bool, propTypes.number]),
+  moveToItemWithNum: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
   setMoveToItemWithNum: PropTypes.func,
   minXDifferenceToMove: PropTypes.number,
   //   initialTranslateX: PropTypes.string,
@@ -243,7 +235,8 @@ LimitedSwipableSlider.propTypes = {
   notScrollableOnSwipableElement: PropTypes.bool,
   isDraggable: PropTypes.bool,
   isSwipable: PropTypes.bool,
-  showRightOfLastItem: PropTypes.bool
+  showRightOfLastItem: PropTypes.bool,
+  swipeTolerance: PropTypes.number
 };
 
 LimitedSwipableSlider.defaultProps = {
@@ -258,7 +251,8 @@ LimitedSwipableSlider.defaultProps = {
   notScrollableOnSwipableElement: true,
   isDraggable: true,
   isSwipable: true,
-  showRightOfLastItem: false
+  showRightOfLastItem: false,
+  swipeTolerance: 1
 };
 
 export default LimitedSwipableSlider;
