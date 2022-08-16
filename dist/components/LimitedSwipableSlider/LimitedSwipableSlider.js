@@ -31,7 +31,7 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "minXDifferenceToMove", "notScrollableOnSwipableElement", "transitionDuration", "transition_timing_function", "cursorIsHandOnItem", "className", "sliderContainerWidthMultiplier", "isDraggable", "isSwipable", "showRightOfLastItem"];
+var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "minXDifferenceToMove", "notScrollableOnSwipableElement", "transitionDuration", "transition_timing_function", "cursorIsHandOnItem", "className", "sliderContainerWidthMultiplier", "isDraggable", "isSwipable", "showRightOfLastItem", "swipeTolerance"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -62,6 +62,7 @@ var LimitedSwipableSlider = function LimitedSwipableSlider(_ref) {
       isDraggable = _ref.isDraggable,
       isSwipable = _ref.isSwipable,
       showRightOfLastItem = _ref.showRightOfLastItem,
+      swipeTolerance = _ref.swipeTolerance,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   var sliderContainer = (0, _react.useRef)();
 
@@ -118,18 +119,6 @@ var LimitedSwipableSlider = function LimitedSwipableSlider(_ref) {
 
   var handleDragEnd = function handleDragEnd(e) {
     setXEnd(e.clientX);
-  };
-
-  var handleSwipeMove = function handleSwipeMove(position, e) {
-    if (position.x >= minXDifferenceToMove) {
-      goLeft();
-    }
-
-    if (position.x <= -minXDifferenceToMove) {
-      goRight();
-    }
-
-    return notScrollableOnSwipableElement;
   };
 
   var goRight = (0, _react.useCallback)(function () {
@@ -240,7 +229,9 @@ var LimitedSwipableSlider = function LimitedSwipableSlider(_ref) {
         draggable: isDraggable,
         onDragStart: handleDragStart,
         onDragEnd: handleDragEnd,
-        onSwipeMove: handleSwipeMove
+        onSwipeRight: goLeft,
+        onSwipeLeft: goRight,
+        tolerance: swipeTolerance
       }, item);
     } else {
       return /*#__PURE__*/_react["default"].createElement("div", {
@@ -271,7 +262,8 @@ LimitedSwipableSlider.propTypes = _objectSpread(_objectSpread({}, defaultPropTyp
   notScrollableOnSwipableElement: _propTypes["default"].bool,
   isDraggable: _propTypes["default"].bool,
   isSwipable: _propTypes["default"].bool,
-  showRightOfLastItem: _propTypes["default"].bool
+  showRightOfLastItem: _propTypes["default"].bool,
+  swipeTolerance: _propTypes["default"].number
 });
 LimitedSwipableSlider.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   moveRight: false,
@@ -284,7 +276,8 @@ LimitedSwipableSlider.defaultProps = _objectSpread(_objectSpread({}, defaultProp
   notScrollableOnSwipableElement: true,
   isDraggable: true,
   isSwipable: true,
-  showRightOfLastItem: false
+  showRightOfLastItem: false,
+  swipeTolerance: 1
 });
 var _default = LimitedSwipableSlider;
 exports["default"] = _default;
