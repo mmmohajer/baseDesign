@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import propTypes from 'prop-types';
-
 const SwipableSlider = ({
   children,
   moveRight,
@@ -222,7 +220,7 @@ SwipableSlider.propTypes = {
   setMoveRight: PropTypes.func,
   moveLeft: PropTypes.bool,
   setMoveLeft: PropTypes.func,
-  moveToItemWithNum: PropTypes.oneOfType([PropTypes.bool, propTypes.number]),
+  moveToItemWithNum: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
   setMoveToItemWithNum: PropTypes.func,
   minXDifferenceToMove: PropTypes.number,
   transitionDuration: PropTypes.number,

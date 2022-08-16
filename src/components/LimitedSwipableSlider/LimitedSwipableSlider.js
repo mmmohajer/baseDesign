@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import propTypes from 'prop-types';
-
 const LimitedSwipableSlider = ({
   children,
   moveRight,
