@@ -1,4 +1,4 @@
-export const css = (cssConfig) => {
+export const css = (cssConfig, containerUID) => {
   const containerWidth =
     Math.max(
       cssConfig['hamburgerMenuTopWidth'],
@@ -17,7 +17,7 @@ export const css = (cssConfig) => {
     `;
 
   return `
-    .${'ISWAD-Hamburger-hamburgerMenuContainer'} {
+    .${containerUID}-hamburgerMenuContainer {
         display: flex;
         width: ${containerWidth}px;
         justify-content: center;
@@ -29,14 +29,14 @@ export const css = (cssConfig) => {
         border-radius: ${cssConfig['hamburgerMenuContainerBorderRadius']}px;
     }
 
-    .${'ISWAD-Hamburger-hamburgerMenuIcon'} {
+    .${containerUID}-hamburgerMenuIcon {
         ${toBeExtended}
         position: relative;
         width: ${cssConfig['hamburgerMenuMiddleWidth']}px;
         transform: ${cssConfig['hamburgerMenuTransform']};
       }
       
-      .${'ISWAD-Hamburger-hamburgerMenuIcon'}::before {
+      .${containerUID}-hamburgerMenuIcon::before {
         content: "";
         ${toBeExtended}
         position: absolute;
@@ -46,7 +46,7 @@ export const css = (cssConfig) => {
         width: ${cssConfig['hamburgerMenuTopWidth']}px;
       }
       
-      .${'ISWAD-Hamburger-hamburgerMenuIcon'}::after {
+      .${containerUID}-hamburgerMenuIcon::after {
         content: "";
         ${toBeExtended}
         position: absolute;
@@ -56,7 +56,7 @@ export const css = (cssConfig) => {
         width: ${cssConfig['hamburgerMenuBottomWidth']}px;
       }
       
-      .${'ISWAD-Hamburger-hamburgerMenuClosedIcon'} {
+      .${containerUID}-hamburgerMenuClosedIcon {
         ${toBeExtended}
         position: relative;
         transform: scaleX(1);
@@ -65,7 +65,7 @@ export const css = (cssConfig) => {
         width: ${cssConfig['hamburgerMenuClosedIconWidth']}px;
       }
       
-      .${'ISWAD-Hamburger-hamburgerMenuClosedIcon'}::before {
+      .${containerUID}-hamburgerMenuClosedIcon::before {
         content: "";
         ${toBeExtended}
         position: absolute;
@@ -74,7 +74,7 @@ export const css = (cssConfig) => {
         width: ${cssConfig['hamburgerMenuClosedIconWidth']}px;
       }
       
-      .${'ISWAD-Hamburger-hamburgerMenuClosedIcon'}::after {
+      .${containerUID}-hamburgerMenuClosedIcon::after {
         content: "";
         ${toBeExtended}
         position: absolute;

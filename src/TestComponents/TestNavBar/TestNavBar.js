@@ -96,6 +96,7 @@ const TestNavBar = () => {
             onClick={() => setMobMenuIsActive(!mobMenuIsActive)}
             iconToggler={iconToggler}
             setIconToggler={setIconToggler}
+            containerUID="testHamburger"
           />
         </div>
         <div

@@ -5,30 +5,39 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
+import { randomStr } from 'Utils/utils';
+
 import { cssClassMaps, cssConfigShape, cssDefaultConfig } from './utils';
 
 import { css } from './styles';
 
-function HamburgerIcon({ onClick, onOpenedIconClick, onClosedIconClick, cssConfig, iconToggler }) {
+function HamburgerIcon({
+  containerUID,
+  onClick,
+  onOpenedIconClick,
+  onClosedIconClick,
+  cssConfig,
+  iconToggler
+}) {
   const appliedCssConfig = { ...cssDefaultConfig, ...cssConfig };
   const [isIconOpened, setIsIconOpened] = useState(true);
 
   useEffect(() => {
     if (iconToggler) {
       const menuIcon =
-        document.querySelector(`.${'ISWAD-Hamburger-hamburgerMenuIcon'}`) ||
-        document.querySelector(`.${'ISWAD-Hamburger-hamburgerMenuClosedIcon'}`);
-      menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuIcon');
-      menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuClosedIcon');
+        document.querySelector(`.${containerUID}-hamburgerMenuIcon`) ||
+        document.querySelector(`.${containerUID}-hamburgerMenuClosedIcon`);
+      menuIcon.classList.toggle(`${containerUID}-hamburgerMenuIcon`);
+      menuIcon.classList.toggle(`${containerUID}-hamburgerMenuClosedIcon`);
     }
   }, [iconToggler]);
 
   const menuIconToggleHandler = () => {
     const menuIcon =
-      document.querySelector(`.${'ISWAD-Hamburger-hamburgerMenuIcon'}`) ||
-      document.querySelector(`.${'ISWAD-Hamburger-hamburgerMenuClosedIcon'}`);
-    menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuIcon');
-    menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuClosedIcon');
+      document.querySelector(`.${containerUID}-hamburgerMenuIcon`) ||
+      document.querySelector(`.${containerUID}-hamburgerMenuClosedIcon`);
+    menuIcon.classList.toggle(`${containerUID}-hamburgerMenuIcon`);
+    menuIcon.classList.toggle(`${containerUID}-hamburgerMenuClosedIcon`);
     if (isIconOpened && onOpenedIconClick) {
       onOpenedIconClick();
     }
@@ -42,11 +51,11 @@ function HamburgerIcon({ onClick, onOpenedIconClick, onClosedIconClick, cssConfi
   };
   return (
     <>
-      <div className={cx('ISWAD-Hamburger-hamburgerMenuContainer')} onClick={menuIconToggleHandler}>
-        <div className={cx('ISWAD-Hamburger-hamburgerMenuIcon')}></div>
+      <div className={cx(`${containerUID}-hamburgerMenuContainer`)} onClick={menuIconToggleHandler}>
+        <div className={cx(`${containerUID}-hamburgerMenuIcon`)}></div>
       </div>
 
-      <style>{css(appliedCssConfig)}</style>
+      <style>{css(appliedCssConfig, containerUID)}</style>
     </>
   );
 }
@@ -58,12 +67,14 @@ HamburgerIcon.propTypes = {
   onClosedIconClick: PropTypes.func,
   cssConfig: PropTypes.shape(cssConfigShape),
   iconToggler: PropTypes.bool,
-  setIconToggler: PropTypes.func
+  setIconToggler: PropTypes.func,
+  containerUID: PropTypes.string
 };
 
 HamburgerIcon.defaultProps = {
   ...defaultProps,
-  cssConfig: cssDefaultConfig
+  cssConfig: cssDefaultConfig,
+  containerUID: randomStr()
 };
 
 export default HamburgerIcon;

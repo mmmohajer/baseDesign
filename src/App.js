@@ -27,6 +27,7 @@ import TestLimitedSwipableSlider from 'TestComponents/TestLimitedSwipableSlider'
 const Home = () => {
   return (
     <div className="container">
+      <TestNavBar />
       <div className="w-px-400 ml-auto mr-auto">
         <TestLimitedSwipableSlider />
       </div>
