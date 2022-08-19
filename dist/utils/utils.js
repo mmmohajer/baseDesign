@@ -5,7 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.showInCssClass = exports.randomStr = void 0;
 
-var randomStr = function randomStr(length) {
+var randomStr = function randomStr() {
+  var length = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 16;
   var result = '';
   var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var charactersLength = characters.length;

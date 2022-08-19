@@ -31,7 +31,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "minXDifferenceToMove", "notScrollableOnSwipableElement", "transitionDuration", "transition_timing_function", "cursorIsHandOnItem", "mainContainerWidthMultiplier", "className", "isDraggable", "isSwipable", "swipeTolerance"];
+var _utils = require("../../utils/utils");
+
+var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "minXDifferenceToMove", "notScrollableOnSwipableElement", "transitionDuration", "transition_timing_function", "cursorIsHandOnItem", "mainContainerWidthMultiplier", "className", "isDraggable", "isSwipable", "swipeTolerance", "containerUID"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -62,6 +64,7 @@ var SwipableSlider = function SwipableSlider(_ref) {
       isDraggable = _ref.isDraggable,
       isSwipable = _ref.isSwipable,
       swipeTolerance = _ref.swipeTolerance,
+      containerUID = _ref.containerUID,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   var sliderContainer = (0, _react.useRef)();
 
@@ -136,9 +139,9 @@ var SwipableSlider = function SwipableSlider(_ref) {
               return wait(transitionDuration * 1000);
 
             case 2:
-              sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
-              sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
-              sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
+              sliderContainer.current.classList.add("".concat(containerUID, "-notransition"));
+              sliderContainer.current.classList.remove("".concat(containerUID, "-moveLeft"));
+              sliderContainer.current.classList.remove("".concat(containerUID, "-moveRight"));
               nextActiveIdx = getNextActiveIdx(curActiveIdx);
               prevActiveIdx = getPrevActiveIdx(curActiveIdx);
               setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
@@ -163,15 +166,15 @@ var SwipableSlider = function SwipableSlider(_ref) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
-              sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
-              dir === 'right' ? sliderContainer.current.classList.add('ISWAD-Swipable-moveRight') : sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
+              sliderContainer.current.classList.remove("".concat(containerUID, "-notransition"));
+              dir === 'right' ? sliderContainer.current.classList.add("".concat(containerUID, "-moveRight")) : sliderContainer.current.classList.add("".concat(containerUID, "-moveLeft"));
               _context3.next = 4;
               return wait(transitionDuration * 1000);
 
             case 4:
-              sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
-              sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
-              sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
+              sliderContainer.current.classList.add("".concat(containerUID, "-notransition"));
+              sliderContainer.current.classList.remove("".concat(containerUID, "-moveLeft"));
+              sliderContainer.current.classList.remove("".concat(containerUID, "-moveRight"));
               nextActiveIdx = getNextActiveIdx(curActiveIdx);
               prevActiveIdx = getPrevActiveIdx(curActiveIdx);
               setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
@@ -190,13 +193,13 @@ var SwipableSlider = function SwipableSlider(_ref) {
   }();
 
   var goRight = (0, _react.useCallback)(function () {
-    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.add('ISWAD-Swipable-moveRight');
+    sliderContainer.current.classList.remove("".concat(containerUID, "-notransition"));
+    sliderContainer.current.classList.add("".concat(containerUID, "-moveRight"));
     moveHandler(getNextActiveIdx(activeIndices[1]));
   }, [activeIndices]);
   var goLeft = (0, _react.useCallback)(function () {
-    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
+    sliderContainer.current.classList.remove("".concat(containerUID, "-notransition"));
+    sliderContainer.current.classList.add("".concat(containerUID, "-moveLeft"));
     moveHandler(getPrevActiveIdx(activeIndices[1]));
   }, [activeIndices]);
 
@@ -285,7 +288,7 @@ var SwipableSlider = function SwipableSlider(_ref) {
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])('w-per-100 of-x-hidden', className)
   }, props), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('flex', 'ISWAD-Swipable-sliderContainer'),
+    className: (0, _classnames["default"])('flex', containerUID),
     ref: function ref(el) {
       return sliderContainer.current = el;
     }
@@ -310,7 +313,7 @@ var SwipableSlider = function SwipableSlider(_ref) {
         onDragEnd: handleDragEnd
       }, children[item]);
     }
-  }))), /*#__PURE__*/_react["default"].createElement("style", null, "\n          .".concat('ISWAD-Swipable-sliderContainer', " {\n            width: ", mainContainerWidthMultiplier * 100, "%;\n            -webkit-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -moz-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -o-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transform: translateX(").concat(initialTranslateX, "%);\n          }\n\n          .", 'ISWAD-Swipable-moveLeft', " {\n            transform: translateX(").concat(moveLeftTranslateX, "%);\n          }\n\n          .", 'ISWAD-Swipable-moveRight', " {\n            transform: translateX(").concat(moveRightTranslateX, "%);\n          }\n\n          .", 'ISWAD-Swipable-notransition', " {\n            -webkit-transition: none !important;\n            -moz-transition: none !important;\n            -o-transition: none !important;\n            transition: none !important;\n          }\n        ")));
+  }))), /*#__PURE__*/_react["default"].createElement("style", null, "\n          .".concat(containerUID, " {\n            width: ").concat(mainContainerWidthMultiplier * 100, "%;\n            -webkit-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -moz-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            -o-transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transition: all ").concat(transition_timing_function, " ").concat(transitionDuration, "s;\n            transform: translateX(").concat(initialTranslateX, "%);\n          }\n\n          .", "".concat(containerUID, "-moveLeft"), " {\n            transform: translateX(").concat(moveLeftTranslateX, "%);\n          }\n\n          .", "".concat(containerUID, "-moveRight"), " {\n            transform: translateX(").concat(moveRightTranslateX, "%);\n          }\n\n          .", "".concat(containerUID, "-notransition"), " {\n            -webkit-transition: none !important;\n            -moz-transition: none !important;\n            -o-transition: none !important;\n            transition: none !important;\n          }\n        ")));
 };
 
 SwipableSlider.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
@@ -328,7 +331,8 @@ SwipableSlider.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}
   mainContainerWidthMultiplier: _propTypes["default"].number,
   isDraggable: _propTypes["default"].bool,
   isSwipable: _propTypes["default"].bool,
-  swipeTolerance: _propTypes["default"].number
+  swipeTolerance: _propTypes["default"].number,
+  containerUID: _propTypes["default"].string
 });
 SwipableSlider.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   moveRight: false,
@@ -345,7 +349,8 @@ SwipableSlider.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {},
   mainContainerWidthMultiplier: 3,
   isDraggable: true,
   isSwipable: true,
-  swipeTolerance: 1
+  swipeTolerance: 1,
+  containerUID: (0, _utils.randomStr)()
 });
 var _default = SwipableSlider;
 exports["default"] = _default;
