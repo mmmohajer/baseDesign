@@ -240,7 +240,7 @@ LimitedSwipableSlider.defaultProps = {
   setMoveRight: false,
   moveLeft: false,
   setMoveLeft: false,
-  moveToItemWithNum: 1,
+  moveToItemWithNum: false,
   setMoveToItemWithNum: false,
   minXDifferenceToMove: 20,
   transitionDuration: 0.3,

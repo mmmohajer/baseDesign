@@ -246,7 +246,7 @@ SwipableSlider.defaultProps = {
   setMoveRight: false,
   moveLeft: false,
   setMoveLeft: false,
-  moveToItemWithNum: 1,
+  moveToItemWithNum: false,
   setMoveToItemWithNum: false,
   minXDifferenceToMove: 100,
   transitionDuration: 0.3,
