@@ -118,8 +118,8 @@ const LimitedSwipableSlider = ({
   useEffect(() => {
     if (moveToItemWithNum) {
       goToItemWithNum(moveToItemWithNum);
+      setMoveToItemWithNum(false);
     }
-    setMoveToItemWithNum(false);
   }, [moveToItemWithNum]);
 
   useEffect(() => {

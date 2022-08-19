@@ -217,11 +217,11 @@ const SwipableSlider = ({
 SwipableSlider.propTypes = {
   ...defaultPropTypes,
   moveRight: PropTypes.bool,
-  setMoveRight: PropTypes.func,
+  setMoveRight: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   moveLeft: PropTypes.bool,
-  setMoveLeft: PropTypes.func,
+  setMoveLeft: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   moveToItemWithNum: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-  setMoveToItemWithNum: PropTypes.func,
+  setMoveToItemWithNum: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   minXDifferenceToMove: PropTypes.number,
   transitionDuration: PropTypes.number,
   transition_timing_function: PropTypes.oneOf([
@@ -243,8 +243,11 @@ SwipableSlider.propTypes = {
 SwipableSlider.defaultProps = {
   ...defaultProps,
   moveRight: false,
+  setMoveRight: false,
   moveLeft: false,
+  setMoveLeft: false,
   moveToItemWithNum: 1,
+  setMoveToItemWithNum: false,
   minXDifferenceToMove: 100,
   transitionDuration: 0.3,
   transition_timing_function: 'linear',
