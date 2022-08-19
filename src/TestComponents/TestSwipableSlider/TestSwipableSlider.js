@@ -19,7 +19,8 @@ const TestSwipableSlider = () => {
         setMoveToItemWithNum={setMoveToItemWithNum}
         transitionDuration={0.3}
         transition_timing_function="ease-in"
-        mainContainerWidthMultiplier={1.5}>
+        mainContainerWidthMultiplier={1.5}
+        containerUID="testSwipableSlider">
         <SwipableSliderItem className="w-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 1

@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
+import { randomStr } from 'Utils/utils';
+
 const LimitedSwipableSlider = ({
   children,
   moveRight,
@@ -25,6 +27,7 @@ const LimitedSwipableSlider = ({
   isSwipable,
   showRightOfLastItem,
   swipeTolerance,
+  containerUID,
   ...props
 }) => {
   const sliderContainer = useRef();
@@ -146,10 +149,7 @@ const LimitedSwipableSlider = ({
     <>
       <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
         <div
-          className={cx(
-            'flex',
-            'ISWAD-Limited-Swipable-sliderContainer ISWAD-Limited-Swipable-move'
-          )}
+          className={cx('flex', `${containerUID}`, `${containerUID}-move`)}
           ref={(el) => (sliderContainer.current = el)}>
           {children?.map((item, idx) => {
             if (isSwipable) {
@@ -190,7 +190,7 @@ const LimitedSwipableSlider = ({
 
       <style>
         {`
-          .${'ISWAD-Limited-Swipable-sliderContainer'} {
+          .${containerUID} {
             width: ${mainWidthMultiplier * 100}%;
             -webkit-transition: all ${transition_timing_function} ${transitionDuration}s;
             -moz-transition: all ${transition_timing_function} ${transitionDuration}s;
@@ -199,7 +199,7 @@ const LimitedSwipableSlider = ({
             transform: translateX(${0});
           }
 
-          .${'ISWAD-Limited-Swipable-move'} {
+          .${containerUID}-move {
             transform: translateX(${translateXVal}%);
           }
         `}
@@ -231,7 +231,8 @@ LimitedSwipableSlider.propTypes = {
   isDraggable: PropTypes.bool,
   isSwipable: PropTypes.bool,
   showRightOfLastItem: PropTypes.bool,
-  swipeTolerance: PropTypes.number
+  swipeTolerance: PropTypes.number,
+  containerUID: PropTypes.string
 };
 
 LimitedSwipableSlider.defaultProps = {
@@ -250,7 +251,8 @@ LimitedSwipableSlider.defaultProps = {
   isDraggable: true,
   isSwipable: true,
   showRightOfLastItem: false,
-  swipeTolerance: 1
+  swipeTolerance: 1,
+  containerUID: randomStr()
 };
 
 export default LimitedSwipableSlider;

@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
+import { randomStr } from 'Utils/utils';
+
 const SwipableSlider = ({
   children,
   moveRight,
@@ -24,6 +26,7 @@ const SwipableSlider = ({
   isDraggable,
   isSwipable,
   swipeTolerance,
+  containerUID,
   ...props
 }) => {
   const sliderContainer = useRef();
@@ -60,37 +63,37 @@ const SwipableSlider = ({
 
   const moveHandler = async (curActiveIdx) => {
     await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
-    sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
+    sliderContainer.current.classList.add(`${containerUID}-notransition`);
+    sliderContainer.current.classList.remove(`${containerUID}-moveLeft`);
+    sliderContainer.current.classList.remove(`${containerUID}-moveRight`);
     const nextActiveIdx = getNextActiveIdx(curActiveIdx);
     const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
     setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
   };
 
   const multipleMoveHandler = async (curActiveIdx, dir) => {
-    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
+    sliderContainer.current.classList.remove(`${containerUID}-notransition`);
     dir === 'right'
-      ? sliderContainer.current.classList.add('ISWAD-Swipable-moveRight')
-      : sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
+      ? sliderContainer.current.classList.add(`${containerUID}-moveRight`)
+      : sliderContainer.current.classList.add(`${containerUID}-moveLeft`);
     await wait(transitionDuration * 1000);
-    sliderContainer.current.classList.add('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.remove('ISWAD-Swipable-moveLeft');
-    sliderContainer.current.classList.remove('ISWAD-Swipable-moveRight');
+    sliderContainer.current.classList.add(`${containerUID}-notransition`);
+    sliderContainer.current.classList.remove(`${containerUID}-moveLeft`);
+    sliderContainer.current.classList.remove(`${containerUID}-moveRight`);
     const nextActiveIdx = getNextActiveIdx(curActiveIdx);
     const prevActiveIdx = getPrevActiveIdx(curActiveIdx);
     setActiveIndices([prevActiveIdx, curActiveIdx, nextActiveIdx]);
   };
 
   const goRight = useCallback(() => {
-    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.add('ISWAD-Swipable-moveRight');
+    sliderContainer.current.classList.remove(`${containerUID}-notransition`);
+    sliderContainer.current.classList.add(`${containerUID}-moveRight`);
     moveHandler(getNextActiveIdx(activeIndices[1]));
   }, [activeIndices]);
 
   const goLeft = useCallback(() => {
-    sliderContainer.current.classList.remove('ISWAD-Swipable-notransition');
-    sliderContainer.current.classList.add('ISWAD-Swipable-moveLeft');
+    sliderContainer.current.classList.remove(`${containerUID}-notransition`);
+    sliderContainer.current.classList.add(`${containerUID}-moveLeft`);
     moveHandler(getPrevActiveIdx(activeIndices[1]));
   }, [activeIndices]);
 
@@ -143,9 +146,7 @@ const SwipableSlider = ({
   return (
     <>
       <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
-        <div
-          className={cx('flex', 'ISWAD-Swipable-sliderContainer')}
-          ref={(el) => (sliderContainer.current = el)}>
+        <div className={cx('flex', containerUID)} ref={(el) => (sliderContainer.current = el)}>
           {activeIndices.map((item, idx) => {
             if (isSwipable) {
               return (
@@ -185,7 +186,7 @@ const SwipableSlider = ({
 
       <style>
         {`
-          .${'ISWAD-Swipable-sliderContainer'} {
+          .${containerUID} {
             width: ${mainContainerWidthMultiplier * 100}%;
             -webkit-transition: all ${transition_timing_function} ${transitionDuration}s;
             -moz-transition: all ${transition_timing_function} ${transitionDuration}s;
@@ -194,15 +195,15 @@ const SwipableSlider = ({
             transform: translateX(${initialTranslateX}%);
           }
 
-          .${'ISWAD-Swipable-moveLeft'} {
+          .${`${containerUID}-moveLeft`} {
             transform: translateX(${moveLeftTranslateX}%);
           }
 
-          .${'ISWAD-Swipable-moveRight'} {
+          .${`${containerUID}-moveRight`} {
             transform: translateX(${moveRightTranslateX}%);
           }
 
-          .${'ISWAD-Swipable-notransition'} {
+          .${`${containerUID}-notransition`} {
             -webkit-transition: none !important;
             -moz-transition: none !important;
             -o-transition: none !important;
@@ -237,7 +238,8 @@ SwipableSlider.propTypes = {
   mainContainerWidthMultiplier: PropTypes.number,
   isDraggable: PropTypes.bool,
   isSwipable: PropTypes.bool,
-  swipeTolerance: PropTypes.number
+  swipeTolerance: PropTypes.number,
+  containerUID: PropTypes.string
 };
 
 SwipableSlider.defaultProps = {
@@ -256,7 +258,8 @@ SwipableSlider.defaultProps = {
   mainContainerWidthMultiplier: 3,
   isDraggable: true,
   isSwipable: true,
-  swipeTolerance: 1
+  swipeTolerance: 1,
+  containerUID: randomStr()
 };
 
 export default SwipableSlider;
