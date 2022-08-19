@@ -21,7 +21,9 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 
 var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps"));
 
-var _utils = require("./utils");
+var _utils = require("../../utils/utils");
+
+var _utils2 = require("./utils");
 
 var _styles = require("./styles");
 
@@ -37,13 +39,14 @@ var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
 function HamburgerIcon(_ref) {
-  var onClick = _ref.onClick,
+  var containerUID = _ref.containerUID,
+      onClick = _ref.onClick,
       onOpenedIconClick = _ref.onOpenedIconClick,
       onClosedIconClick = _ref.onClosedIconClick,
       cssConfig = _ref.cssConfig,
       iconToggler = _ref.iconToggler;
 
-  var appliedCssConfig = _objectSpread(_objectSpread({}, _utils.cssDefaultConfig), cssConfig);
+  var appliedCssConfig = _objectSpread(_objectSpread({}, _utils2.cssDefaultConfig), cssConfig);
 
   var _useState = (0, _react.useState)(true),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
@@ -52,16 +55,16 @@ function HamburgerIcon(_ref) {
 
   (0, _react.useEffect)(function () {
     if (iconToggler) {
-      var menuIcon = document.querySelector(".".concat('ISWAD-Hamburger-hamburgerMenuIcon')) || document.querySelector(".".concat('ISWAD-Hamburger-hamburgerMenuClosedIcon'));
-      menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuIcon');
-      menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuClosedIcon');
+      var menuIcon = document.querySelector(".".concat(containerUID, "-hamburgerMenuIcon")) || document.querySelector(".".concat(containerUID, "-hamburgerMenuClosedIcon"));
+      menuIcon.classList.toggle("".concat(containerUID, "-hamburgerMenuIcon"));
+      menuIcon.classList.toggle("".concat(containerUID, "-hamburgerMenuClosedIcon"));
     }
   }, [iconToggler]);
 
   var menuIconToggleHandler = function menuIconToggleHandler() {
-    var menuIcon = document.querySelector(".".concat('ISWAD-Hamburger-hamburgerMenuIcon')) || document.querySelector(".".concat('ISWAD-Hamburger-hamburgerMenuClosedIcon'));
-    menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuIcon');
-    menuIcon.classList.toggle('ISWAD-Hamburger-hamburgerMenuClosedIcon');
+    var menuIcon = document.querySelector(".".concat(containerUID, "-hamburgerMenuIcon")) || document.querySelector(".".concat(containerUID, "-hamburgerMenuClosedIcon"));
+    menuIcon.classList.toggle("".concat(containerUID, "-hamburgerMenuIcon"));
+    menuIcon.classList.toggle("".concat(containerUID, "-hamburgerMenuClosedIcon"));
 
     if (isIconOpened && onOpenedIconClick) {
       onOpenedIconClick();
@@ -79,23 +82,25 @@ function HamburgerIcon(_ref) {
   };
 
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('ISWAD-Hamburger-hamburgerMenuContainer'),
+    className: (0, _classnames["default"])("".concat(containerUID, "-hamburgerMenuContainer")),
     onClick: menuIconToggleHandler
   }, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('ISWAD-Hamburger-hamburgerMenuIcon')
-  })), /*#__PURE__*/_react["default"].createElement("style", null, (0, _styles.css)(appliedCssConfig)));
+    className: (0, _classnames["default"])("".concat(containerUID, "-hamburgerMenuIcon"))
+  })), /*#__PURE__*/_react["default"].createElement("style", null, (0, _styles.css)(appliedCssConfig, containerUID)));
 }
 
 HamburgerIcon.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   onClick: _propTypes["default"].func,
   onOpenedIconClick: _propTypes["default"].func,
   onClosedIconClick: _propTypes["default"].func,
-  cssConfig: _propTypes["default"].shape(_utils.cssConfigShape),
+  cssConfig: _propTypes["default"].shape(_utils2.cssConfigShape),
   iconToggler: _propTypes["default"].bool,
-  setIconToggler: _propTypes["default"].func
+  setIconToggler: _propTypes["default"].func,
+  containerUID: _propTypes["default"].string
 });
 HamburgerIcon.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  cssConfig: _utils.cssDefaultConfig
+  cssConfig: _utils2.cssDefaultConfig,
+  containerUID: (0, _utils.randomStr)()
 });
 var _default = HamburgerIcon;
 exports["default"] = _default;
