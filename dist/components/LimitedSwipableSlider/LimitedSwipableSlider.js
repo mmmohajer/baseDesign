@@ -247,15 +247,12 @@ var LimitedSwipableSlider = function LimitedSwipableSlider(_ref) {
 
 LimitedSwipableSlider.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   moveRight: _propTypes["default"].bool,
-  setMoveRight: _propTypes["default"].func,
+  setMoveRight: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].func]),
   moveLeft: _propTypes["default"].bool,
-  setMoveLeft: _propTypes["default"].func,
+  setMoveLeft: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].func]),
   moveToItemWithNum: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].number]),
-  setMoveToItemWithNum: _propTypes["default"].func,
+  setMoveToItemWithNum: _propTypes["default"].oneOfType([_propTypes["default"].bool, _propTypes["default"].func]),
   minXDifferenceToMove: _propTypes["default"].number,
-  //   initialTranslateX: PropTypes.string,
-  //   currentPositioning: PropTypes.string,
-  //   moveRightTranslateX: PropTypes.string,
   transitionDuration: _propTypes["default"].number,
   transition_timing_function: _propTypes["default"].oneOf(['ease', 'linear', 'ease-in', 'ease-out', 'ease-in-out', 'inherit']),
   cursorIsHandOnItem: _propTypes["default"].bool,
@@ -267,8 +264,11 @@ LimitedSwipableSlider.propTypes = _objectSpread(_objectSpread({}, defaultPropTyp
 });
 LimitedSwipableSlider.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   moveRight: false,
+  setMoveRight: false,
   moveLeft: false,
+  setMoveLeft: false,
   moveToItemWithNum: 1,
+  setMoveToItemWithNum: false,
   minXDifferenceToMove: 20,
   transitionDuration: 0.3,
   transition_timing_function: 'linear',
