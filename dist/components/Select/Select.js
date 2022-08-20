@@ -27,7 +27,7 @@ var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps
 
 var _Icon = _interopRequireDefault(require("../Icon"));
 
-var _excluded = ["options", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "searchIconScale", "showDefaultArrowDownIcon", "showDefaultSearchIcon", "openOptionsDownWard", "selectIntialShownText", "placeholder", "isOptionsActive", "setIsOptionsActive", "className", "defaultViewClassName", "optionClassName", "optinsContainerClassName", "searchContainerClassName", "inputSearchClassName", "placeHolderClassName"];
+var _excluded = ["options", "fullWidth", "children", "selectValue", "setSelectValue", "arrowIconFillColor", "arrowIconStrokeColor", "arrowIconScale", "searchIconFillColor", "searchIconStrokeColor", "searchIconScale", "showDefaultArrowDownIcon", "showDefaultSearchIcon", "openOptionsDownWard", "selectIntialShownText", "placeholder", "isOptionsActive", "setIsOptionsActive", "className", "defaultViewClassName", "optionClassName", "optinsContainerClassName", "searchContainerClassName", "inputSearchClassName", "placeHolderClassName", "SelectClickableClassName"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -66,6 +66,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       searchContainerClassName = _ref.searchContainerClassName,
       inputSearchClassName = _ref.inputSearchClassName,
       placeHolderClassName = _ref.placeHolderClassName,
+      SelectClickableClassName = _ref.SelectClickableClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
   var _useState = (0, _react.useState)(options),
@@ -92,13 +93,13 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     }
   }, [curVal]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, isOptionsActive && /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10', 'ISWAD-Select-clickable'),
+    className: (0, _classnames["default"])('SelectMainClickableZIndex', SelectClickableClassName),
     onClick: function onClick() {
       setIsOptionsActive(false);
       setFilteredOptions(options);
     }
   }), /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-    className: (0, _classnames["default"])('pos-rel z-100', fullWidth && 'w-per-100', className, children)
+    className: (0, _classnames["default"])('pos-rel SelectOptionsContainerZIndex', fullWidth && 'w-per-100', className, children)
   }, props, {
     ref: ref
   }), !isOptionsActive ? /*#__PURE__*/_react["default"].createElement("div", {
@@ -168,7 +169,8 @@ Select.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   selectIntialShownText: _propTypes["default"].any,
   placeholder: _propTypes["default"].any,
   isOptionsActive: _propTypes["default"].bool,
-  setIsOptionsActive: _propTypes["default"].func
+  setIsOptionsActive: _propTypes["default"].func,
+  SelectClickableClassName: _propTypes["default"].string
 });
 Select.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   fullWidth: false,
@@ -183,7 +185,8 @@ Select.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   openOptionsDownWard: true,
   placeholder: '',
   isOptionsActive: false,
-  selectIntialShownText: ''
+  selectIntialShownText: '',
+  SelectClickableClassName: 'w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10'
 });
 var _default = Select;
 exports["default"] = _default;
