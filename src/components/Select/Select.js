@@ -35,6 +35,7 @@ const Select = React.forwardRef(
       searchContainerClassName,
       inputSearchClassName,
       placeHolderClassName,
+      SelectClickableClassName,
       ...props
     },
     ref
@@ -56,10 +57,7 @@ const Select = React.forwardRef(
       <>
         {isOptionsActive && (
           <div
-            className={cx(
-              'w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10',
-              'ISWAD-Select-clickable'
-            )}
+            className={cx('SelectMainClickableZIndex', SelectClickableClassName)}
             onClick={() => {
               setIsOptionsActive(false);
               setFilteredOptions(options);
@@ -67,7 +65,12 @@ const Select = React.forwardRef(
           />
         )}
         <div
-          className={cx('pos-rel z-100', fullWidth && 'w-per-100', className, children)}
+          className={cx(
+            'pos-rel SelectOptionsContainerZIndex',
+            fullWidth && 'w-per-100',
+            className,
+            children
+          )}
           {...props}
           ref={ref}>
           {!isOptionsActive ? (
@@ -159,7 +162,8 @@ Select.propTypes = {
   selectIntialShownText: PropTypes.any,
   placeholder: PropTypes.any,
   isOptionsActive: PropTypes.bool,
-  setIsOptionsActive: PropTypes.func
+  setIsOptionsActive: PropTypes.func,
+  SelectClickableClassName: PropTypes.string
 };
 
 Select.defaultProps = {
@@ -176,7 +180,8 @@ Select.defaultProps = {
   openOptionsDownWard: true,
   placeholder: '',
   isOptionsActive: false,
-  selectIntialShownText: ''
+  selectIntialShownText: '',
+  SelectClickableClassName: 'w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10'
 };
 
 export default Select;
