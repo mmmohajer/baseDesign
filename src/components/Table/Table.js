@@ -11,7 +11,6 @@ import Td from './subs/Td';
 import Icon from '../Icon';
 import Search from '../Search';
 import Pagination from '../Pagination';
-import propTypes from 'prop-types';
 
 const Table = ({
   headLines,
@@ -322,12 +321,12 @@ const Table = ({
 Table.propTypes = {
   ...defaultPropTypes,
   headLines: PropTypes.array,
-  data: PropTypes.arrayOf(propTypes.object),
+  data: PropTypes.arrayOf(PropTypes.object),
   colWidth: PropTypes.number,
   tableWidth: PropTypes.string,
   isSelectable: PropTypes.bool,
   search: PropTypes.func,
-  selectedData: PropTypes.arrayOf(propTypes.object),
+  selectedData: PropTypes.arrayOf(PropTypes.object),
   setSelectedData: PropTypes.func,
   sortIconColors: PropTypes.shape({
     ASC: PropTypes.string,
