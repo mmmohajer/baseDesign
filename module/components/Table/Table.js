@@ -71,10 +71,7 @@ var Table = function Table(_ref) {
       tableHeadContainerClassName = _ref.tableHeadContainerClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
-  var _useState = (0, _react.useState)({
-    first_name: '',
-    last_name: ''
-  }),
+  var _useState = (0, _react.useState)({}),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
       filter = _useState2[0],
       setFilter = _useState2[1];
@@ -155,7 +152,15 @@ var Table = function Table(_ref) {
 
     var curFilter = _objectSpread({}, filter);
 
-    curFilter[key] = e.target.value;
+    if (key in curFilter) {
+      curFilter[key] = e.target.value;
+    } else {
+      var newObj = {
+        key: e.target.value
+      };
+      Object.assign(curFilter, newObj);
+    }
+
     setFilter(curFilter);
     setTimeout(function () {
       if (currentPage !== 1) {
