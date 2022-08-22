@@ -31,7 +31,7 @@ const Table = ({
   tableHeadContainerClassName,
   ...props
 }) => {
-  const [filter, setFilter] = useState({ first_name: '', last_name: '' });
+  const [filter, setFilter] = useState({});
   const [filteredData, setFilteredData] = useState([]);
   const [sortedData, setSortedData] = useState([]);
   const [isChecked, setIsChecked] = useState({});
@@ -69,7 +69,12 @@ const Table = ({
   const searchHandler = (e, head) => {
     const key = head?.value || head;
     const curFilter = { ...filter };
-    curFilter[key] = e.target.value;
+    if (key in curFilter) {
+      curFilter[key] = e.target.value;
+    } else {
+      let newObj = { key: e.target.value };
+      Object.assign(curFilter, newObj);
+    }
     setFilter(curFilter);
 
     setTimeout(() => {
