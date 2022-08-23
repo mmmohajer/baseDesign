@@ -40,6 +40,7 @@ var Pagination = function Pagination(_ref) {
       currentPage = _ref.currentPage,
       setCurrentPage = _ref.setCurrentPage,
       showFirstLastIcon = _ref.showFirstLastIcon,
+      showPrevNextIcon = _ref.showPrevNextIcon,
       containerClassName = _ref.containerClassName,
       itemClassName = _ref.itemClassName,
       activeItemClassName = _ref.activeItemClassName;
@@ -90,13 +91,21 @@ var Pagination = function Pagination(_ref) {
   }, [currentPage, numberOfTotalPages]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('flex w-per-100 flex--jc--center flex--ai--center iswad_pagination', containerClassName)
-  }, showFirstLastIcon && !shownPages.includes(1) ? /*#__PURE__*/_react["default"].createElement("div", {
+  }, showFirstLastIcon ? /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--jc--center flex--ai--center mouse-hand",
     onClick: function onClick() {
       return setCurrentPage(1);
     }
   }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
     type: "doubleLeft",
+    scale: 0.8
+  })) : '', showPrevNextIcon ? /*#__PURE__*/_react["default"].createElement("div", {
+    className: "flex flex--jc--center flex--ai--center mouse-hand",
+    onClick: function onClick() {
+      return currentPage !== 1 ? setCurrentPage(currentPage - 1) : setCurrentPage(numberOfTotalPages);
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    type: "left",
     scale: 0.8
   })) : '', shownPages.map(function (p, idx) {
     return /*#__PURE__*/_react["default"].createElement("div", {
@@ -106,7 +115,15 @@ var Pagination = function Pagination(_ref) {
         setCurrentPage(p);
       }
     }, p);
-  }), showFirstLastIcon && !shownPages.includes(numberOfTotalPages) ? /*#__PURE__*/_react["default"].createElement("div", {
+  }), showPrevNextIcon ? /*#__PURE__*/_react["default"].createElement("div", {
+    className: "flex flex--jc--center flex--ai--center mouse-hand",
+    onClick: function onClick() {
+      return currentPage !== numberOfTotalPages ? setCurrentPage(currentPage + 1) : setCurrentPage(1);
+    }
+  }, /*#__PURE__*/_react["default"].createElement(_Icon["default"], {
+    type: "right",
+    scale: 0.8
+  })) : '', showFirstLastIcon ? /*#__PURE__*/_react["default"].createElement("div", {
     className: "flex flex--jc--center flex--ai--center mouse-hand",
     onClick: function onClick() {
       return setCurrentPage(numberOfTotalPages);
@@ -122,11 +139,13 @@ Pagination.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   numberOfTotalPages: _propTypes["default"].number,
   currentPage: _propTypes["default"].number,
   setCurrentPage: _propTypes["default"].func,
-  showFirstLastIcon: _propTypes["default"].bool
+  showFirstLastIcon: _propTypes["default"].bool,
+  showPrevNextIcon: _propTypes["default"].bool
 });
 Pagination.defaultProps = {
   showFirstLastIcon: true,
-  currentPage: 1
+  currentPage: 1,
+  showPrevNextIcon: true
 };
 var _default = Pagination;
 exports["default"] = _default;
