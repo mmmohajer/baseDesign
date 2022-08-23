@@ -13,6 +13,7 @@ const Pagination = ({
   currentPage,
   setCurrentPage,
   showFirstLastIcon,
+  showPrevNextIcon,
   containerClassName,
   itemClassName,
   activeItemClassName
@@ -60,11 +61,24 @@ const Pagination = ({
           'flex w-per-100 flex--jc--center flex--ai--center iswad_pagination',
           containerClassName
         )}>
-        {showFirstLastIcon && !shownPages.includes(1) ? (
+        {showFirstLastIcon ? (
           <div
             className="flex flex--jc--center flex--ai--center mouse-hand"
             onClick={() => setCurrentPage(1)}>
             <Icon type="doubleLeft" scale={0.8} />
+          </div>
+        ) : (
+          ''
+        )}
+        {showPrevNextIcon ? (
+          <div
+            className="flex flex--jc--center flex--ai--center mouse-hand"
+            onClick={() =>
+              currentPage !== 1
+                ? setCurrentPage(currentPage - 1)
+                : setCurrentPage(numberOfTotalPages)
+            }>
+            <Icon type="left" scale={0.8} />
           </div>
         ) : (
           ''
@@ -84,7 +98,20 @@ const Pagination = ({
             {p}
           </div>
         ))}
-        {showFirstLastIcon && !shownPages.includes(numberOfTotalPages) ? (
+        {showPrevNextIcon ? (
+          <div
+            className="flex flex--jc--center flex--ai--center mouse-hand"
+            onClick={() =>
+              currentPage !== numberOfTotalPages
+                ? setCurrentPage(currentPage + 1)
+                : setCurrentPage(1)
+            }>
+            <Icon type="right" scale={0.8} />
+          </div>
+        ) : (
+          ''
+        )}
+        {showFirstLastIcon ? (
           <div
             className="flex flex--jc--center flex--ai--center mouse-hand"
             onClick={() => setCurrentPage(numberOfTotalPages)}>
@@ -104,12 +131,14 @@ Pagination.propTypes = {
   numberOfTotalPages: PropTypes.number,
   currentPage: PropTypes.number,
   setCurrentPage: PropTypes.func,
-  showFirstLastIcon: PropTypes.bool
+  showFirstLastIcon: PropTypes.bool,
+  showPrevNextIcon: PropTypes.bool
 };
 
 Pagination.defaultProps = {
   showFirstLastIcon: true,
-  currentPage: 1
+  currentPage: 1,
+  showPrevNextIcon: true
 };
 
 export default Pagination;

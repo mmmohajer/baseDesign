@@ -3,6 +3,7 @@ import cx from 'classnames';
 
 import Table from 'Components/Table';
 import Search from './Search';
+import Pagination from 'Components/Pagination';
 
 import { headLines, data } from './utils';
 
@@ -32,6 +33,10 @@ const TestTable = (props) => {
   };
   const search = (props) => {
     return <Search {...props} />;
+  };
+
+  const pagination = (props) => {
+    return <Pagination {...props} />;
   };
 
   const [selectedData, setSelectedData] = useState([]);
@@ -66,7 +71,8 @@ const TestTable = (props) => {
         rowsPerPage={10}
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
-        // showDefaultPagination={true}
+        showDefaultPagination={false}
+        paginationComponent={pagination}
         // numberOfShownPages={5}
       />
       <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>

@@ -29,6 +29,10 @@ const Table = ({
   numberOfShownPages,
   tableClassName,
   tableHeadContainerClassName,
+  paginationComponent,
+  showFirstLastIconInPagination,
+  showDefaultSortIcon,
+  sortIcon,
   ...props
 }) => {
   const [filter, setFilter] = useState({});
@@ -66,30 +70,50 @@ const Table = ({
     }
   }, []);
 
+  useEffect(() => {
+    if (headLines?.length) {
+      const newObj = {};
+      headLines?.forEach((item) => {
+        if (item?.value) {
+          newObj[item.value] = '';
+        } else {
+          newObj[item] = '';
+        }
+      });
+      setFilter({ ...newObj });
+    }
+  }, [headLines]);
+
   const searchHandler = (e, head) => {
     const key = head?.value || head;
     const curFilter = { ...filter };
     if (key in curFilter) {
       curFilter[key] = e.target.value;
     } else {
-      let newObj = { key: e.target.value };
+      let newObj = { [key]: e.target.value };
       Object.assign(curFilter, newObj);
     }
     setFilter(curFilter);
+  };
 
+  useEffect(() => {
     setTimeout(() => {
       if (currentPage !== 1) {
         setCurrentPage(1);
       }
       let localSortedData = [...data];
-      localSortedData = localSortedData.filter((d) => {
-        const curSearchElem = d[key]?.value || d[key];
-        return curSearchElem.includes(e.target.value);
+      Object.keys(filter).forEach((filteredKey) => {
+        if (filter[filteredKey].length) {
+          localSortedData = localSortedData.filter((d) => {
+            const curSearchElem = d[filteredKey]?.value || d[filteredKey];
+            return curSearchElem.includes(filter[filteredKey]);
+          });
+        }
       });
       setSortedData(localSortedData);
       setFilteredData(localSortedData);
     }, 500);
-  };
+  }, [filter]);
 
   useEffect(() => {
     const localIsChecked = { ...isChecked };
@@ -195,7 +219,7 @@ const Table = ({
     let localPageData = [...sortedData];
     if (rowsPerPage) {
       const firstIdx = (currentPage - 1) * rowsPerPage;
-      const lastIdx = currentPage * rowsPerPage - 1;
+      const lastIdx = currentPage * rowsPerPage;
       localPageData = localPageData.slice(firstIdx, lastIdx);
     }
     setPageData(localPageData);
@@ -241,12 +265,12 @@ const Table = ({
                         <div className="">
                           {search ? (
                             search({
-                              value: filter[head?.value || head],
+                              value: filter[head?.value || head] || '',
                               onChange: (e) => searchHandler(e, head)
                             })
                           ) : (
                             <Search
-                              value={filter[head?.value || head]}
+                              value={filter[head?.value || head] || ''}
                               onChange={(e) => searchHandler(e, head)}
                             />
                           )}
@@ -255,11 +279,23 @@ const Table = ({
                     </div>
                     {head?.isSortable && (
                       <div className="mouse-hand" onClick={() => sortHandler(head)}>
-                        <Icon
-                          type="down"
-                          fill={sortIconColor[head?.value || head]}
-                          stroke={sortIconColor[head?.value || head]}
-                        />
+                        {showDefaultSortIcon ? (
+                          <Icon
+                            type="down"
+                            fill={sortIconColor[head?.value || head]}
+                            stroke={sortIconColor[head?.value || head]}
+                          />
+                        ) : (
+                          ''
+                        )}
+                        {!showDefaultSortIcon && sortIcon
+                          ? sortIcon({
+                              isAsc: sortIconColor[head?.value || head] === sortIconColors['ASC'],
+                              isDesc: sortIconColor[head?.value || head] === sortIconColors['DESC'],
+                              notSorted:
+                                sortIconColor[head?.value || head] === sortIconColors['REG']
+                            })
+                          : ''}
                       </div>
                     )}
                   </div>
@@ -302,11 +338,20 @@ const Table = ({
             currentPage={currentPage}
             numberOfTotalPages={numberOfTotalPages}
             setCurrentPage={setCurrentPage}
-            showFirstLastIcon={true}
+            showFirstLastIcon={showFirstLastIconInPagination}
           />
         ) : (
           ''
         )}
+        {!showDefaultPagination && numberOfTotalPages && paginationComponent
+          ? paginationComponent({
+              numberOfShownPages: numberOfShownPages || 5,
+              currentPage,
+              numberOfTotalPages,
+              setCurrentPage,
+              showFirstLastIcon: showFirstLastIconInPagination
+            })
+          : ''}
       </div>
       <style>
         {`
@@ -342,7 +387,11 @@ Table.propTypes = {
   currentPage: PropTypes.number,
   setCurrentPage: PropTypes.func,
   showDefaultPagination: PropTypes.bool,
-  numberOfShownPages: PropTypes.number
+  numberOfShownPages: PropTypes.number,
+  paginationComponent: PropTypes.func,
+  showFirstLastIconInPagination: PropTypes.bool,
+  showDefaultSortIcon: PropTypes.bool,
+  sortIcon: PropTypes.func
 };
 
 Table.defaultProps = {
@@ -350,7 +399,9 @@ Table.defaultProps = {
   isSelectable: false,
   sortIconColors: { ASC: 'green', DESC: 'red', REG: 'silver' },
   showDefaultPagination: true,
-  numberOfShownPages: 5
+  numberOfShownPages: 5,
+  showFirstLastIconInPagination: true,
+  showDefaultSortIcon: true
 };
 
 export default Table;
