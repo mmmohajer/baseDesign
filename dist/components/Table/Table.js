@@ -39,7 +39,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _Pagination = _interopRequireDefault(require("../Pagination"));
 
-var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon"];
+var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -73,6 +73,8 @@ var Table = function Table(_ref) {
       showFirstLastIconInPagination = _ref.showFirstLastIconInPagination,
       showDefaultSortIcon = _ref.showDefaultSortIcon,
       sortIcon = _ref.sortIcon,
+      showDefaultSelectable = _ref.showDefaultSelectable,
+      selectableComp = _ref.selectableComp,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
   var _useState = (0, _react.useState)({}),
@@ -325,6 +327,25 @@ var Table = function Table(_ref) {
 
     setPageData(localPageData);
   }, [currentPage, sortedData, filteredData]);
+
+  var headerSelectableOnChange = function headerSelectableOnChange(e) {
+    setAllIsChecked(e.target.checked);
+
+    var localIsChecked = _objectSpread({}, isChecked);
+
+    Object.keys(localIsChecked).map(function (obj) {
+      localIsChecked[obj] = e.target.checked;
+    });
+    setIsChecked(localIsChecked);
+  };
+
+  var rowSelectableOnChange = function rowSelectableOnChange(e) {
+    var localIsChecked = _objectSpread({}, isChecked);
+
+    localIsChecked[curRow['iswad_table_idx']] = e.target.checked;
+    setIsChecked(localIsChecked);
+  };
+
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('w-per-100 of-x-auto')
   }, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -335,20 +356,18 @@ var Table = function Table(_ref) {
     style: {
       width: "25px"
     }
-  }, /*#__PURE__*/_react["default"].createElement("input", {
+  }, showDefaultSelectable && /*#__PURE__*/_react["default"].createElement("input", {
     type: "checkbox",
     checked: allIsChecked,
     onChange: function onChange(e) {
-      setAllIsChecked(e.target.checked);
-
-      var localIsChecked = _objectSpread({}, isChecked);
-
-      Object.keys(localIsChecked).map(function (obj) {
-        localIsChecked[obj] = e.target.checked;
-      });
-      setIsChecked(localIsChecked);
+      return headerSelectableOnChange(e);
     }
-  })), headLines.map(function (head, idx) {
+  }), !showDefaultSelectable && selectableComp ? selectableComp({
+    checked: allIsChecked,
+    onChange: function onChange(e) {
+      return headerSelectableOnChange(e);
+    }
+  }) : ''), headLines.map(function (head, idx) {
     return /*#__PURE__*/_react["default"].createElement(_Td["default"], {
       className: "",
       style: (head === null || head === void 0 ? void 0 : head.width) && {
@@ -394,16 +413,18 @@ var Table = function Table(_ref) {
       style: {
         width: "25px"
       }
-    }, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("input", {
+    }, /*#__PURE__*/_react["default"].createElement("div", null, showDefaultSelectable && /*#__PURE__*/_react["default"].createElement("input", {
       type: "checkbox",
       checked: isChecked[curRow['iswad_table_idx']],
       onChange: function onChange(e) {
-        var localIsChecked = _objectSpread({}, isChecked);
-
-        localIsChecked[curRow['iswad_table_idx']] = e.target.checked;
-        setIsChecked(localIsChecked);
+        return rowSelectableOnChange(e);
       }
-    }))), headLines.map(function (curCol, idx1) {
+    }), !showDefaultSelectable && selectableComp ? selectableComp({
+      checked: isChecked[curRow['iswad_table_idx']],
+      onChange: function onChange(e) {
+        return rowSelectableOnChange(e);
+      }
+    }) : '')), headLines.map(function (curCol, idx1) {
       var _curRow;
 
       return /*#__PURE__*/_react["default"].createElement(_Td["default"], {
@@ -450,7 +471,9 @@ Table.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   paginationComponent: _propTypes["default"].func,
   showFirstLastIconInPagination: _propTypes["default"].bool,
   showDefaultSortIcon: _propTypes["default"].bool,
-  sortIcon: _propTypes["default"].func
+  sortIcon: _propTypes["default"].func,
+  showDefaultSelectable: _propTypes["default"].bool,
+  selectableComp: _propTypes["default"].func
 });
 Table.defaultProps = {
   colWidth: 300,
@@ -463,7 +486,8 @@ Table.defaultProps = {
   showDefaultPagination: true,
   numberOfShownPages: 5,
   showFirstLastIconInPagination: true,
-  showDefaultSortIcon: true
+  showDefaultSortIcon: true,
+  showDefaultSelectable: true
 };
 var _default = Table;
 exports["default"] = _default;
