@@ -33,6 +33,8 @@ const Table = ({
   showFirstLastIconInPagination,
   showDefaultSortIcon,
   sortIcon,
+  showDefaultSelectable,
+  selectableComp,
   ...props
 }) => {
   const [filter, setFilter] = useState({});
@@ -238,18 +240,34 @@ const Table = ({
             <Th className="">
               {isSelectable && (
                 <Td style={{ width: `25px` }}>
-                  <input
-                    type="checkbox"
-                    checked={allIsChecked}
-                    onChange={(e) => {
-                      setAllIsChecked(e.target.checked);
-                      const localIsChecked = { ...isChecked };
-                      Object.keys(localIsChecked).map((obj) => {
-                        localIsChecked[obj] = e.target.checked;
-                      });
-                      setIsChecked(localIsChecked);
-                    }}
-                  />
+                  {showDefaultSelectable && (
+                    <input
+                      type="checkbox"
+                      checked={allIsChecked}
+                      onChange={(e) => {
+                        setAllIsChecked(e.target.checked);
+                        const localIsChecked = { ...isChecked };
+                        Object.keys(localIsChecked).map((obj) => {
+                          localIsChecked[obj] = e.target.checked;
+                        });
+                        setIsChecked(localIsChecked);
+                      }}
+                    />
+                  )}
+
+                  {!showDefaultSelectable && selectableComp
+                    ? selectableComp({
+                        checked: allIsChecked,
+                        onBoxClick: () => {
+                          setAllIsChecked(!allIsChecked);
+                          const localIsChecked = { ...isChecked };
+                          Object.keys(localIsChecked).map((obj) => {
+                            localIsChecked[obj] = !allIsChecked;
+                          });
+                          setIsChecked(localIsChecked);
+                        }
+                      })
+                    : ''}
                 </Td>
               )}
               {headLines.map((head, idx) => (
@@ -308,15 +326,28 @@ const Table = ({
                     {isSelectable && (
                       <Td style={{ width: `25px` }}>
                         <div>
-                          <input
-                            type="checkbox"
-                            checked={isChecked[curRow['iswad_table_idx']]}
-                            onChange={(e) => {
-                              const localIsChecked = { ...isChecked };
-                              localIsChecked[curRow['iswad_table_idx']] = e.target.checked;
-                              setIsChecked(localIsChecked);
-                            }}
-                          />
+                          {showDefaultSelectable && (
+                            <input
+                              type="checkbox"
+                              checked={isChecked[curRow['iswad_table_idx']]}
+                              onChange={(e) => {
+                                const localIsChecked = { ...isChecked };
+                                localIsChecked[curRow['iswad_table_idx']] = e.target.checked;
+                                setIsChecked(localIsChecked);
+                              }}
+                            />
+                          )}
+
+                          {!showDefaultSelectable && selectableComp
+                            ? selectableComp({
+                                checked: isChecked[curRow['iswad_table_idx']],
+                                onBoxClick: (e) => {
+                                  const localIsChecked = { ...isChecked };
+                                  localIsChecked[curRow['iswad_table_idx']] = !e.target.checked;
+                                  setIsChecked(localIsChecked);
+                                }
+                              })
+                            : ''}
                         </div>
                       </Td>
                     )}
@@ -391,7 +422,9 @@ Table.propTypes = {
   paginationComponent: PropTypes.func,
   showFirstLastIconInPagination: PropTypes.bool,
   showDefaultSortIcon: PropTypes.bool,
-  sortIcon: PropTypes.func
+  sortIcon: PropTypes.func,
+  showDefaultSelectable: PropTypes.bool,
+  selectableComp: PropTypes.func
 };
 
 Table.defaultProps = {
@@ -401,7 +434,8 @@ Table.defaultProps = {
   showDefaultPagination: true,
   numberOfShownPages: 5,
   showFirstLastIconInPagination: true,
-  showDefaultSortIcon: true
+  showDefaultSortIcon: true,
+  showDefaultSelectable: true
 };
 
 export default Table;
