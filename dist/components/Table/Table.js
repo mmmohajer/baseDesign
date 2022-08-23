@@ -419,10 +419,10 @@ var Table = function Table(_ref) {
       }
     }), !showDefaultSelectable && selectableComp ? selectableComp({
       checked: isChecked[curRow['iswad_table_idx']],
-      onBoxClick: function onBoxClick(e) {
+      onBoxClick: function onBoxClick() {
         var localIsChecked = _objectSpread({}, isChecked);
 
-        localIsChecked[curRow['iswad_table_idx']] = !e.target.checked;
+        localIsChecked[curRow['iswad_table_idx']] = !localIsChecked[curRow['iswad_table_idx']];
         setIsChecked(localIsChecked);
       }
     }) : '')), headLines.map(function (curCol, idx1) {
