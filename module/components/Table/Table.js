@@ -327,25 +327,6 @@ var Table = function Table(_ref) {
 
     setPageData(localPageData);
   }, [currentPage, sortedData, filteredData]);
-
-  var headerSelectableOnChange = function headerSelectableOnChange(e) {
-    setAllIsChecked(e.target.checked);
-
-    var localIsChecked = _objectSpread({}, isChecked);
-
-    Object.keys(localIsChecked).map(function (obj) {
-      localIsChecked[obj] = e.target.checked;
-    });
-    setIsChecked(localIsChecked);
-  };
-
-  var rowSelectableOnChange = function rowSelectableOnChange(e) {
-    var localIsChecked = _objectSpread({}, isChecked);
-
-    localIsChecked[curRow['iswad_table_idx']] = e.target.checked;
-    setIsChecked(localIsChecked);
-  };
-
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('w-per-100 of-x-auto')
   }, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -360,12 +341,26 @@ var Table = function Table(_ref) {
     type: "checkbox",
     checked: allIsChecked,
     onChange: function onChange(e) {
-      return headerSelectableOnChange(e);
+      setAllIsChecked(e.target.checked);
+
+      var localIsChecked = _objectSpread({}, isChecked);
+
+      Object.keys(localIsChecked).map(function (obj) {
+        localIsChecked[obj] = e.target.checked;
+      });
+      setIsChecked(localIsChecked);
     }
   }), !showDefaultSelectable && selectableComp ? selectableComp({
     checked: allIsChecked,
-    onChange: function onChange(e) {
-      return headerSelectableOnChange(e);
+    onBoxClick: function onBoxClick() {
+      setAllIsChecked(!allIsChecked);
+
+      var localIsChecked = _objectSpread({}, isChecked);
+
+      Object.keys(localIsChecked).map(function (obj) {
+        localIsChecked[obj] = !allIsChecked;
+      });
+      setIsChecked(localIsChecked);
     }
   }) : ''), headLines.map(function (head, idx) {
     return /*#__PURE__*/_react["default"].createElement(_Td["default"], {
@@ -417,12 +412,18 @@ var Table = function Table(_ref) {
       type: "checkbox",
       checked: isChecked[curRow['iswad_table_idx']],
       onChange: function onChange(e) {
-        return rowSelectableOnChange(e);
+        var localIsChecked = _objectSpread({}, isChecked);
+
+        localIsChecked[curRow['iswad_table_idx']] = e.target.checked;
+        setIsChecked(localIsChecked);
       }
     }), !showDefaultSelectable && selectableComp ? selectableComp({
       checked: isChecked[curRow['iswad_table_idx']],
-      onChange: function onChange(e) {
-        return rowSelectableOnChange(e);
+      onBoxClick: function onBoxClick(e) {
+        var localIsChecked = _objectSpread({}, isChecked);
+
+        localIsChecked[curRow['iswad_table_idx']] = !e.target.checked;
+        setIsChecked(localIsChecked);
       }
     }) : '')), headLines.map(function (curCol, idx1) {
       var _curRow;
