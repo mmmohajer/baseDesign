@@ -39,7 +39,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _Pagination = _interopRequireDefault(require("../Pagination"));
 
-var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth"];
+var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -76,6 +76,8 @@ var Table = function Table(_ref) {
       showDefaultSelectable = _ref.showDefaultSelectable,
       selectableComp = _ref.selectableComp,
       selectableColWidth = _ref.selectableColWidth,
+      selectableHeaderClassName = _ref.selectableHeaderClassName,
+      selectableRowClassName = _ref.selectableRowClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
   var _useState = (0, _react.useState)({}),
@@ -337,7 +339,8 @@ var Table = function Table(_ref) {
   }, isSelectable && /*#__PURE__*/_react["default"].createElement(_Td["default"], {
     style: {
       width: "".concat(selectableColWidth, "px")
-    }
+    },
+    className: selectableHeaderClassName
   }, showDefaultSelectable && /*#__PURE__*/_react["default"].createElement("input", {
     type: "checkbox",
     checked: allIsChecked,
@@ -408,7 +411,8 @@ var Table = function Table(_ref) {
     }, isSelectable && /*#__PURE__*/_react["default"].createElement(_Td["default"], {
       style: {
         width: "".concat(selectableColWidth, "px")
-      }
+      },
+      className: selectableRowClassName
     }, /*#__PURE__*/_react["default"].createElement("div", null, showDefaultSelectable && /*#__PURE__*/_react["default"].createElement("input", {
       type: "checkbox",
       checked: isChecked[curRow['iswad_table_idx']],
@@ -476,7 +480,9 @@ Table.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   sortIcon: _propTypes["default"].func,
   showDefaultSelectable: _propTypes["default"].bool,
   selectableComp: _propTypes["default"].func,
-  selectableColWidth: _propTypes["default"].number
+  selectableColWidth: _propTypes["default"].number,
+  selectableHeaderClassName: _propTypes["default"].string,
+  selectableRowClassName: _propTypes["default"].string
 });
 Table.defaultProps = {
   colWidth: 300,
@@ -491,7 +497,9 @@ Table.defaultProps = {
   showFirstLastIconInPagination: true,
   showDefaultSortIcon: true,
   showDefaultSelectable: true,
-  selectableColWidth: 25
+  selectableColWidth: 25,
+  selectableHeaderClassName: '',
+  selectableRowClassName: ''
 };
 var _default = Table;
 exports["default"] = _default;
