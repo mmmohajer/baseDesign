@@ -341,9 +341,10 @@ const Table = ({
                           {!showDefaultSelectable && selectableComp
                             ? selectableComp({
                                 checked: isChecked[curRow['iswad_table_idx']],
-                                onBoxClick: (e) => {
+                                onBoxClick: () => {
                                   const localIsChecked = { ...isChecked };
-                                  localIsChecked[curRow['iswad_table_idx']] = !e.target.checked;
+                                  localIsChecked[curRow['iswad_table_idx']] =
+                                    !localIsChecked[curRow['iswad_table_idx']];
                                   setIsChecked(localIsChecked);
                                 }
                               })
