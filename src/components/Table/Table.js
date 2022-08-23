@@ -36,6 +36,8 @@ const Table = ({
   showDefaultSelectable,
   selectableComp,
   selectableColWidth,
+  selectableHeaderClassName,
+  selectableRowClassName,
   ...props
 }) => {
   const [filter, setFilter] = useState({});
@@ -240,7 +242,9 @@ const Table = ({
             {...props}>
             <Th className="">
               {isSelectable && (
-                <Td style={{ width: `${selectableColWidth}px` }}>
+                <Td
+                  style={{ width: `${selectableColWidth}px` }}
+                  className={selectableHeaderClassName}>
                   {showDefaultSelectable && (
                     <input
                       type="checkbox"
@@ -325,7 +329,9 @@ const Table = ({
               ? pageData.map((curRow, idx) => (
                   <Tr key={idx}>
                     {isSelectable && (
-                      <Td style={{ width: `${selectableColWidth}px` }}>
+                      <Td
+                        style={{ width: `${selectableColWidth}px` }}
+                        className={selectableRowClassName}>
                         <div>
                           {showDefaultSelectable && (
                             <input
@@ -427,7 +433,9 @@ Table.propTypes = {
   sortIcon: PropTypes.func,
   showDefaultSelectable: PropTypes.bool,
   selectableComp: PropTypes.func,
-  selectableColWidth: PropTypes.number
+  selectableColWidth: PropTypes.number,
+  selectableHeaderClassName: PropTypes.string,
+  selectableRowClassName: PropTypes.string
 };
 
 Table.defaultProps = {
@@ -439,7 +447,9 @@ Table.defaultProps = {
   showFirstLastIconInPagination: true,
   showDefaultSortIcon: true,
   showDefaultSelectable: true,
-  selectableColWidth: 25
+  selectableColWidth: 25,
+  selectableHeaderClassName: '',
+  selectableRowClassName: ''
 };
 
 export default Table;
