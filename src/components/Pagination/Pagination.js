@@ -16,7 +16,13 @@ const Pagination = ({
   showPrevNextIcon,
   containerClassName,
   itemClassName,
-  activeItemClassName
+  activeItemClassName,
+  showDefaultPrevNextIcon,
+  showDefaultFirstLastIcon,
+  prevComp,
+  nextComp,
+  firstPageComp,
+  lastPageCome
 }) => {
   const [shownPages, setShownPages] = useState([]);
 
@@ -65,7 +71,8 @@ const Pagination = ({
           <div
             className="flex flex--jc--center flex--ai--center mouse-hand"
             onClick={() => setCurrentPage(1)}>
-            <Icon type="doubleLeft" scale={0.8} />
+            {showDefaultFirstLastIcon && <Icon type="doubleLeft" scale={0.8} />}
+            {!showDefaultFirstLastIcon && firstPageComp ? firstPageComp() : ''}
           </div>
         ) : (
           ''
@@ -78,7 +85,8 @@ const Pagination = ({
                 ? setCurrentPage(currentPage - 1)
                 : setCurrentPage(numberOfTotalPages)
             }>
-            <Icon type="left" scale={0.8} />
+            {showDefaultPrevNextIcon && <Icon type="left" scale={0.8} />}
+            {!showDefaultPrevNextIcon && prevComp ? prevComp() : ''}
           </div>
         ) : (
           ''
@@ -106,7 +114,8 @@ const Pagination = ({
                 ? setCurrentPage(currentPage + 1)
                 : setCurrentPage(1)
             }>
-            <Icon type="right" scale={0.8} />
+            {showDefaultPrevNextIcon && <Icon type="right" scale={0.8} />}
+            {!showDefaultPrevNextIcon && nextComp ? nextComp() : ''}
           </div>
         ) : (
           ''
@@ -115,7 +124,8 @@ const Pagination = ({
           <div
             className="flex flex--jc--center flex--ai--center mouse-hand"
             onClick={() => setCurrentPage(numberOfTotalPages)}>
-            <Icon type="doubleRight" scale={0.8} />
+            {showDefaultFirstLastIcon && <Icon type="doubleRight" scale={0.8} />}
+            {!showDefaultFirstLastIcon && lastPageCome ? lastPageCome() : ''}
           </div>
         ) : (
           ''
@@ -132,13 +142,21 @@ Pagination.propTypes = {
   currentPage: PropTypes.number,
   setCurrentPage: PropTypes.func,
   showFirstLastIcon: PropTypes.bool,
-  showPrevNextIcon: PropTypes.bool
+  showPrevNextIcon: PropTypes.bool,
+  showDefaultFirstLastIcon: PropTypes.bool,
+  showDefaultPrevNextIcon: PropTypes.bool,
+  firstPageComp: PropTypes.func,
+  lastPageCome: PropTypes.func,
+  prevComp: PropTypes.func,
+  nextComp: PropTypes.func
 };
 
 Pagination.defaultProps = {
   showFirstLastIcon: true,
   currentPage: 1,
-  showPrevNextIcon: true
+  showPrevNextIcon: true,
+  showDefaultFirstLastIcon: true,
+  showDefaultPrevNextIcon: true
 };
 
 export default Pagination;
