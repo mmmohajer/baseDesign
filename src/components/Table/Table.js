@@ -158,12 +158,16 @@ const Table = ({
           localSelectedData.push(toBeAdded);
         }
       });
-      setSelectedData(localSelectedData);
+      if (setSelectedData) {
+        setSelectedData(localSelectedData);
+      }
     }
   }, [isChecked]);
 
   const sortHandler = (head) => {
-    setCurrentPage(1);
+    if (setCurrentPage) {
+      setCurrentPage(1);
+    }
     const key = head?.value || head;
     let localIsSorted = { ...isSorted };
     const curKey = Object.keys(localIsSorted)[0] || false;
