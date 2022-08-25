@@ -246,12 +246,18 @@ var Table = function Table(_ref) {
           localSelectedData.push(toBeAdded);
         }
       });
-      setSelectedData(localSelectedData);
+
+      if (setSelectedData) {
+        setSelectedData(localSelectedData);
+      }
     }
   }, [isChecked]);
 
   var sortHandler = function sortHandler(head) {
-    setCurrentPage(1);
+    if (setCurrentPage) {
+      setCurrentPage(1);
+    }
+
     var key = (head === null || head === void 0 ? void 0 : head.value) || head;
 
     var localIsSorted = _objectSpread({}, isSorted);
