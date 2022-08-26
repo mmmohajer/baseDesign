@@ -32,10 +32,10 @@ function HamburgerIcon({
         document.querySelector(`.${containerUID}-hamburgerMenuClosedIcon`);
       menuIcon.classList.toggle(`${containerUID}-hamburgerMenuIcon`);
       menuIcon.classList.toggle(`${containerUID}-hamburgerMenuClosedIcon`);
+      setTimeout(() => {
+        setIconToggler(false);
+      }, 500);
     }
-    setTimeout(() => {
-      setIconToggler(false);
-    }, 500);
   }, [iconToggler]);
 
   useEffect(() => {
