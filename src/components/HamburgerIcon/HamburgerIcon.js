@@ -17,7 +17,10 @@ function HamburgerIcon({
   onOpenedIconClick,
   onClosedIconClick,
   cssConfig,
-  iconToggler
+  iconToggler,
+  setIconToggler,
+  openIcon,
+  closeIcon
 }) {
   const appliedCssConfig = { ...cssDefaultConfig, ...cssConfig };
   const [isIconOpened, setIsIconOpened] = useState(true);
@@ -30,7 +33,30 @@ function HamburgerIcon({
       menuIcon.classList.toggle(`${containerUID}-hamburgerMenuIcon`);
       menuIcon.classList.toggle(`${containerUID}-hamburgerMenuClosedIcon`);
     }
+    setTimeout(() => {
+      setIconToggler(false);
+    }, 500);
   }, [iconToggler]);
+
+  useEffect(() => {
+    if (openIcon) {
+      const menuIcon =
+        document.querySelector(`.${containerUID}-hamburgerMenuIcon`) ||
+        document.querySelector(`.${containerUID}-hamburgerMenuClosedIcon`);
+      menuIcon.classList.add(`${containerUID}-hamburgerMenuIcon`);
+      menuIcon.classList.remove(`${containerUID}-hamburgerMenuClosedIcon`);
+    }
+  }, [openIcon]);
+
+  useEffect(() => {
+    if (closeIcon) {
+      const menuIcon =
+        document.querySelector(`.${containerUID}-hamburgerMenuIcon`) ||
+        document.querySelector(`.${containerUID}-hamburgerMenuClosedIcon`);
+      menuIcon.classList.remove(`${containerUID}-hamburgerMenuIcon`);
+      menuIcon.classList.add(`${containerUID}-hamburgerMenuClosedIcon`);
+    }
+  }, [closeIcon]);
 
   const menuIconToggleHandler = () => {
     const menuIcon =
@@ -68,13 +94,17 @@ HamburgerIcon.propTypes = {
   cssConfig: PropTypes.shape(cssConfigShape),
   iconToggler: PropTypes.bool,
   setIconToggler: PropTypes.func,
-  containerUID: PropTypes.string
+  containerUID: PropTypes.string,
+  openIcon: PropTypes.bool,
+  closeIcon: PropTypes.bool
 };
 
 HamburgerIcon.defaultProps = {
   ...defaultProps,
   cssConfig: cssDefaultConfig,
-  containerUID: randomStr()
+  containerUID: randomStr(),
+  openIcon: false,
+  closeIcon: false
 };
 
 export default HamburgerIcon;
