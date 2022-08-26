@@ -61,11 +61,10 @@ function HamburgerIcon(_ref) {
       var menuIcon = document.querySelector(".".concat(containerUID, "-hamburgerMenuIcon")) || document.querySelector(".".concat(containerUID, "-hamburgerMenuClosedIcon"));
       menuIcon.classList.toggle("".concat(containerUID, "-hamburgerMenuIcon"));
       menuIcon.classList.toggle("".concat(containerUID, "-hamburgerMenuClosedIcon"));
+      setTimeout(function () {
+        setIconToggler(false);
+      }, 500);
     }
-
-    setTimeout(function () {
-      setIconToggler(false);
-    }, 500);
   }, [iconToggler]);
   (0, _react.useEffect)(function () {
     if (openIcon) {
