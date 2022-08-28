@@ -28,6 +28,7 @@ const Table = ({
   showDefaultPagination,
   numberOfShownPages,
   tableClassName,
+  className,
   tableHeadContainerClassName,
   paginationComponent,
   showFirstLastIconInPagination,
@@ -237,7 +238,7 @@ const Table = ({
   return (
     <>
       <div>
-        <div className={cx('w-per-100 of-x-auto')}>
+        <div className={cx('w-per-100 of-x-auto', className)}>
           <div
             className={cx(
               'flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table',

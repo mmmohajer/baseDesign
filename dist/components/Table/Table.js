@@ -39,7 +39,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _Pagination = _interopRequireDefault(require("../Pagination"));
 
-var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName"];
+var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "className", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -68,6 +68,7 @@ var Table = function Table(_ref) {
       showDefaultPagination = _ref.showDefaultPagination,
       numberOfShownPages = _ref.numberOfShownPages,
       tableClassName = _ref.tableClassName,
+      className = _ref.className,
       tableHeadContainerClassName = _ref.tableHeadContainerClassName,
       paginationComponent = _ref.paginationComponent,
       showFirstLastIconInPagination = _ref.showFirstLastIconInPagination,
@@ -337,7 +338,7 @@ var Table = function Table(_ref) {
     setPageData(localPageData);
   }, [currentPage, sortedData, filteredData]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('w-per-100 of-x-auto')
+    className: (0, _classnames["default"])('w-per-100 of-x-auto', className)
   }, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])('flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table', tableClassName)
   }, props), /*#__PURE__*/_react["default"].createElement(_Th["default"], {
