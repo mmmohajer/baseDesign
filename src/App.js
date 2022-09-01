@@ -23,18 +23,21 @@ import TestSelect from 'TestComponents/TestSelect';
 import TestActivableElement from 'TestComponents/TestActivableElement';
 import TestPagination from 'TestComponents/TestPagination';
 import TestLimitedSwipableSlider from 'TestComponents/TestLimitedSwipableSlider';
+import TestScroll from 'TestComponents/TestScroll';
 
 const Home = () => {
   return (
     <div className="container">
       {/* <TestNavBar /> */}
-      <div className="w-px-400 ml-auto mr-auto">
+      {/* <div className="w-px-400 ml-auto mr-auto">
         <TestLimitedSwipableSlider />
       </div>
       <div className="w-px-400 ml-auto mr-auto">
         <TestSwipableSlider />
       </div>
-      <TestTable />
+      <TestTable /> */}
+      <div className="w-per-100 height-px-200 bgYellow"></div>
+      <TestScroll />
     </div>
   );
 };
