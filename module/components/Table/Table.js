@@ -186,26 +186,28 @@ var Table = function Table(_ref) {
   };
 
   (0, _react.useEffect)(function () {
-    setTimeout(function () {
-      var localSortedData = (0, _toConsumableArray2["default"])(data);
-      Object.keys(filter).forEach(function (filteredKey) {
-        if (filter[filteredKey].length) {
-          if (currentPage !== 1) {
-            setCurrentPage(1);
+    if (data.length) {
+      setTimeout(function () {
+        var localSortedData = (0, _toConsumableArray2["default"])(data);
+        Object.keys(filter).forEach(function (filteredKey) {
+          if (filter[filteredKey].length) {
+            if (currentPage !== 1) {
+              setCurrentPage(1);
+            }
+
+            localSortedData = localSortedData.filter(function (d) {
+              var _d$filteredKey;
+
+              var curSearchElem = ((_d$filteredKey = d[filteredKey]) === null || _d$filteredKey === void 0 ? void 0 : _d$filteredKey.value) || d[filteredKey];
+              return curSearchElem.includes(filter[filteredKey]);
+            });
           }
-
-          localSortedData = localSortedData.filter(function (d) {
-            var _d$filteredKey;
-
-            var curSearchElem = ((_d$filteredKey = d[filteredKey]) === null || _d$filteredKey === void 0 ? void 0 : _d$filteredKey.value) || d[filteredKey];
-            return curSearchElem.includes(filter[filteredKey]);
-          });
-        }
-      });
-      setSortedData(localSortedData);
-      setFilteredData(localSortedData);
-    }, 500);
-  }, [filter]);
+        });
+        setSortedData(localSortedData);
+        setFilteredData(localSortedData);
+      }, 500);
+    }
+  }, [filter, data]);
   (0, _react.useEffect)(function () {
     var localIsChecked = _objectSpread({}, isChecked);
 
