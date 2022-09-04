@@ -387,7 +387,7 @@ var Table = function Table(_ref) {
     }, /*#__PURE__*/_react["default"].createElement("div", {
       className: (0, _classnames["default"])('w-per-100 iswad_table_headContainer', tableHeadContainerClassName)
     }, /*#__PURE__*/_react["default"].createElement("div", {
-      className: "m1"
+      className: ""
     }, (head === null || head === void 0 ? void 0 : head.display) || head), head.hasSearch && /*#__PURE__*/_react["default"].createElement("div", {
       className: ""
     }, search ? search({
