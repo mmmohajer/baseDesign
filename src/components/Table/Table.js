@@ -290,7 +290,7 @@ const Table = ({
                         'w-per-100 iswad_table_headContainer',
                         tableHeadContainerClassName
                       )}>
-                      <div className="m1">{head?.display || head}</div>
+                      <div className="">{head?.display || head}</div>
                       {head.hasSearch && (
                         <div className="">
                           {search ? (
