@@ -103,23 +103,25 @@ const Table = ({
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      let localSortedData = [...data];
-      Object.keys(filter).forEach((filteredKey) => {
-        if (filter[filteredKey].length) {
-          if (currentPage !== 1) {
-            setCurrentPage(1);
+    if (data.length) {
+      setTimeout(() => {
+        let localSortedData = [...data];
+        Object.keys(filter).forEach((filteredKey) => {
+          if (filter[filteredKey].length) {
+            if (currentPage !== 1) {
+              setCurrentPage(1);
+            }
+            localSortedData = localSortedData.filter((d) => {
+              const curSearchElem = d[filteredKey]?.value || d[filteredKey];
+              return curSearchElem.includes(filter[filteredKey]);
+            });
           }
-          localSortedData = localSortedData.filter((d) => {
-            const curSearchElem = d[filteredKey]?.value || d[filteredKey];
-            return curSearchElem.includes(filter[filteredKey]);
-          });
-        }
-      });
-      setSortedData(localSortedData);
-      setFilteredData(localSortedData);
-    }, 500);
-  }, [filter]);
+        });
+        setSortedData(localSortedData);
+        setFilteredData(localSortedData);
+      }, 500);
+    }
+  }, [filter, data]);
 
   useEffect(() => {
     const localIsChecked = { ...isChecked };
