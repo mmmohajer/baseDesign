@@ -37,6 +37,7 @@ import SwipableSlider from './components/SwipableSlider';
 import SwipableSliderItem from './components/SwipableSlider/subs/SwipableSliderItem';
 import LimitedSwipableSlider from './components/LimitedSwipableSlider';
 import LimitedSwipableSliderItem from './components/LimitedSwipableSlider/subs/LimitedSwipableSliderItem';
+import Scroll from './components/Scroll';
 import Table from './components/Table';
 import Text from './components/Text';
 import TextArea from './components/TextArea';
@@ -81,6 +82,7 @@ export {
   SwipableSliderItem,
   LimitedSwipableSlider,
   LimitedSwipableSliderItem,
+  Scroll,
   Table,
   Text,
   TextArea

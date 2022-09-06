@@ -1,128 +1,110 @@
-import React, { useState, useEffect } from 'react';
-import Draggable from 'react-draggable';
+import React, { useState, useEffect, useRef } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-const Scroll = React.forwardRef(
-  (
-    {
-      containerClassName,
-      scrollContainerClassName,
-      scrollClassName,
-      scrollableElementId,
-      scrollableContentId,
-      scrollAxis,
-      children,
-      disabled,
-      ...props
-    },
-    ref
-  ) => {
-    const [parentRef, setParentRef] = useState();
-    const [contentRef, setContentRef] = useState();
-    const [leftOnDragStart, setLeftOnDragStart] = useState(0);
-    const [topOnDragStart, setTopOnDragStart] = useState(0);
-    const [scrollPercentage, setScrollPercentage] = useState(0);
-    const [scrollStyle, setScrollStyle] = useState({});
-    const [bounds, setBounds] = useState({ left: 0, top: 0, right: 0, bottom: 0 });
+const Scroll = ({
+  scrollableElementId,
+  scrollableContentId,
+  scrollAxis,
+  containerClassName,
+  scrollContainerClassName,
+  scrollClassName,
+  transition,
+  children
+}) => {
+  const scrollRef = useRef();
 
-    useEffect(() => {
-      const localParentDom = document.getElementById(scrollableElementId);
-      const localContentDom = document.getElementById(scrollableContentId);
-      if (localParentDom) {
-        setParentRef(localParentDom);
-      }
-      if (localContentDom) {
-        setContentRef(localContentDom);
-      }
-    }, []);
+  const [parentRef, setParentRef] = useState();
+  const [contentRef, setContentRef] = useState();
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const [scrollStyle, setScrollStyle] = useState({});
 
-    useEffect(() => {
-      if (parentRef && contentRef) {
+  useEffect(() => {
+    const localParentDom = document.getElementById(scrollableElementId);
+    const localContentDom = document.getElementById(scrollableContentId);
+    if (localParentDom) {
+      setParentRef(localParentDom);
+    }
+    if (localContentDom) {
+      setContentRef(localContentDom);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (parentRef && scrollPercentage) {
+      parentRef?.addEventListener('scroll', (e) => {
         if (scrollAxis === 'x') {
-          setScrollPercentage((parentRef.clientWidth / contentRef.clientWidth) * 100);
+          const curScrollLeft = parentRef?.scrollLeft;
+          const calculatedTranslateX = (scrollPercentage * curScrollLeft) / 100;
+          scrollRef.current.style.transform = `translateX(${calculatedTranslateX}px)`;
         }
         if (scrollAxis === 'y') {
-          setScrollPercentage((parentRef.clientHeight / contentRef.clientHeight) * 100);
+          const curScrollTop = parentRef?.scrollTop;
+          const calculatedTranslateY = (scrollPercentage * curScrollTop) / 100;
+          scrollRef.current.style.transform = `translateY(${calculatedTranslateY}px)`;
         }
-      }
-    }, [parentRef, contentRef]);
+      });
+    }
+  }, [parentRef, scrollPercentage]);
 
-    useEffect(() => {
-      if (scrollPercentage) {
-        if (scrollAxis === 'x') {
-          setScrollStyle({ width: `${scrollPercentage}%` });
-        }
-        if (scrollAxis === 'y') {
-          setScrollStyle({ height: `${scrollPercentage}%` });
-        }
-      }
-    }, [scrollPercentage]);
-
-    useEffect(() => {
-      if (parentRef && scrollStyle) {
-        const remainingToTheEnd =
-          parentRef?.clientWidth - (parentRef?.clientWidth * scrollPercentage) / 100;
-        if (scrollAxis === 'x') {
-          setBounds({ left: 0, top: 0, right: remainingToTheEnd, bottom: 0 });
-        }
-        if (scrollAxis === 'y') {
-          setBounds({ left: 0, top: 0, right: 0, bottom: remainingToTheEnd });
-        }
-      }
-    }, [parentRef, scrollStyle]);
-
-    const handleDragging = (e) => {
+  useEffect(() => {
+    if (parentRef && contentRef) {
       if (scrollAxis === 'x') {
-        const curScrollLeft = parentRef?.scrollLeft;
-        parentRef.scroll(curScrollLeft + e?.clientX - leftOnDragStart, 0);
+        setScrollPercentage((parentRef.clientWidth / contentRef.clientWidth) * 100);
       }
       if (scrollAxis === 'y') {
-        const curScrollTop = parentRef?.scrollTop;
-        parentRef.scroll(0, curScrollTop + e?.clientY - topOnDragStart);
+        setScrollPercentage((parentRef.clientHeight / contentRef.clientHeight) * 100);
       }
-    };
+    }
+  }, [parentRef, contentRef]);
 
-    const handleDragStart = (e) => {
-      setLeftOnDragStart(e?.clientX);
-      setTopOnDragStart(e?.clientY);
-    };
+  useEffect(() => {
+    if (scrollPercentage) {
+      if (scrollAxis === 'x') {
+        setScrollStyle({ width: `${scrollPercentage}%` });
+      }
+      if (scrollAxis === 'y') {
+        setScrollStyle({ height: `${scrollPercentage}%` });
+      }
+    }
+  }, [scrollPercentage]);
 
-    return (
-      <>
-        <div className={cx(containerClassName)}>
-          {children}
-          <div className={scrollContainerClassName}>
-            <Draggable
-              axis={scrollAxis}
-              disabled={disabled}
-              bounds={bounds}
-              defaultPosition={{ x: 0, y: 0 }}
-              position={null}
-              grid={[1, 1]}
-              scale={1}
-              onDrag={handleDragging}
-              onStart={handleDragStart}>
-              <div style={scrollStyle} className={cx(scrollClassName)}></div>
-            </Draggable>
-          </div>
+  return (
+    <>
+      <div className={cx(containerClassName)}>
+        {children}
+        <div className={scrollContainerClassName}>
+          <div
+            ref={(el) => (scrollRef.current = el)}
+            style={{
+              transition,
+              ...scrollStyle
+            }}
+            className={cx(scrollClassName)}></div>
         </div>
-      </>
-    );
-  }
-);
+      </div>
+    </>
+  );
+};
 
-// Row.propTypes = {
-//   ...defaultPropTypes,
-//   showIn: PropTypes.array
-// };
+Scroll.propTypes = {
+  ...defaultPropTypes,
+  scrollableElementId: PropTypes.string,
+  scrollableContentId: PropTypes.string,
+  scrollAxis: PropTypes.oneOf(['x', 'y']),
+  containerClassName: PropTypes.string,
+  scrollContainerClassName: PropTypes.string,
+  scrollClassName: PropTypes.string,
+  transition: PropTypes.string
+};
 
-// Row.defaultProps = {
-//   ...defaultProps,
-//   showIn: ['xs', 'sm', 'md', 'lg']
-// };
+Scroll.defaultProps = {
+  ...defaultProps,
+  transition: 'all linear .1s',
+  scrollAxis: 'x'
+};
 
 export default Scroll;
