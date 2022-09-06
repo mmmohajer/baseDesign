@@ -203,6 +203,12 @@ Object.defineProperty(exports, "Row", {
     return _Row["default"];
   }
 });
+Object.defineProperty(exports, "Scroll", {
+  enumerable: true,
+  get: function get() {
+    return _Scroll["default"];
+  }
+});
 Object.defineProperty(exports, "Search", {
   enumerable: true,
   get: function get() {
@@ -335,6 +341,8 @@ var _SwipableSliderItem = _interopRequireDefault(require("./components/SwipableS
 var _LimitedSwipableSlider = _interopRequireDefault(require("./components/LimitedSwipableSlider"));
 
 var _LimitedSwipableSliderItem = _interopRequireDefault(require("./components/LimitedSwipableSlider/subs/LimitedSwipableSliderItem"));
+
+var _Scroll = _interopRequireDefault(require("./components/Scroll"));
 
 var _Table = _interopRequireDefault(require("./components/Table"));
 
