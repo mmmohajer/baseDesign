@@ -13,6 +13,7 @@ const Scroll = ({
   scrollContainerClassName,
   scrollClassName,
   transition,
+  updateRefs,
   children
 }) => {
   const scrollRef = useRef();
@@ -21,6 +22,40 @@ const Scroll = ({
   const [contentRef, setContentRef] = useState();
   const [scrollPercentage, setScrollPercentage] = useState(0);
   const [scrollStyle, setScrollStyle] = useState({});
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setTimeout(() => {
+        setParentRef('');
+        setContentRef('');
+        setTimeout(() => {
+          const localParentDom = document.getElementById(scrollableElementId);
+          const localContentDom = document.getElementById(scrollableContentId);
+          if (localParentDom) {
+            setParentRef(localParentDom);
+          }
+          if (localContentDom) {
+            setContentRef(localContentDom);
+          }
+        }, 100);
+      }, 100);
+    });
+  }, []);
+
+  useEffect(() => {
+    setParentRef('');
+    setContentRef('');
+    setTimeout(() => {
+      const localParentDom = document.getElementById(scrollableElementId);
+      const localContentDom = document.getElementById(scrollableContentId);
+      if (localParentDom) {
+        setParentRef(localParentDom);
+      }
+      if (localContentDom) {
+        setContentRef(localContentDom);
+      }
+    }, 500);
+  }, [updateRefs]);
 
   useEffect(() => {
     const localParentDom = document.getElementById(scrollableElementId);
@@ -100,13 +135,15 @@ Scroll.propTypes = {
   containerClassName: PropTypes.string,
   scrollContainerClassName: PropTypes.string,
   scrollClassName: PropTypes.string,
-  transition: PropTypes.string
+  transition: PropTypes.string,
+  updateRefs: PropTypes.bool
 };
 
 Scroll.defaultProps = {
   ...defaultProps,
   transition: 'all linear .1s',
-  scrollAxis: 'x'
+  scrollAxis: 'x',
+  updateRefs: true
 };
 
 export default Scroll;
