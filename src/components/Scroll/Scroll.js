@@ -76,15 +76,17 @@ const Scroll = ({
     <>
       <div className={cx(containerClassName)}>
         {children}
-        <div className={scrollContainerClassName}>
-          <div
-            ref={(el) => (scrollRef.current = el)}
-            style={{
-              transition,
-              ...scrollStyle
-            }}
-            className={cx(scrollClassName)}></div>
-        </div>
+        {scrollPercentage < 100 && (
+          <div className={scrollContainerClassName}>
+            <div
+              ref={(el) => (scrollRef.current = el)}
+              style={{
+                transition,
+                ...scrollStyle
+              }}
+              className={cx(scrollClassName)}></div>
+          </div>
+        )}
       </div>
     </>
   );
