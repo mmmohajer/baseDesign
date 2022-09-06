@@ -14,6 +14,7 @@ const Scroll = ({
   scrollClassName,
   transition,
   updateRefs,
+  timeOutToUpdate,
   children
 }) => {
   const scrollRef = useRef();
@@ -54,7 +55,7 @@ const Scroll = ({
       if (localContentDom) {
         setContentRef(localContentDom);
       }
-    }, 500);
+    }, timeOutToUpdate);
   }, [updateRefs]);
 
   useEffect(() => {
@@ -136,14 +137,16 @@ Scroll.propTypes = {
   scrollContainerClassName: PropTypes.string,
   scrollClassName: PropTypes.string,
   transition: PropTypes.string,
-  updateRefs: PropTypes.bool
+  updateRefs: PropTypes.bool,
+  timeOutToUpdate: PropTypes.number
 };
 
 Scroll.defaultProps = {
   ...defaultProps,
   transition: 'all linear .1s',
   scrollAxis: 'x',
-  updateRefs: true
+  updateRefs: true,
+  timeOutToUpdate: 500
 };
 
 export default Scroll;
