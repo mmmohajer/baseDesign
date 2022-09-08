@@ -11,6 +11,7 @@ import CardHeader from './components/Card/subs/CardHeader';
 import Column from './components/Column';
 import Div from './components/Div';
 import DisappearingElement from './components/DisappearingElement';
+import DragDropFileUpload from './components/DragDropFileUpload';
 import Form from './components/Form';
 import HamburgerIcon from './components/HamburgerIcon';
 import Heading from './components/Heading';
@@ -54,6 +55,7 @@ export {
   CardFooter,
   CardHeader,
   Column,
+  DragDropFileUpload,
   Div,
   DisappearingElement,
   Form,

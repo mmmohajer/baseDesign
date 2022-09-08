@@ -83,6 +83,12 @@ Object.defineProperty(exports, "Div", {
     return _Div["default"];
   }
 });
+Object.defineProperty(exports, "DragDropFileUpload", {
+  enumerable: true,
+  get: function get() {
+    return _DragDropFileUpload["default"];
+  }
+});
 Object.defineProperty(exports, "Form", {
   enumerable: true,
   get: function get() {
@@ -289,6 +295,8 @@ var _Column = _interopRequireDefault(require("./components/Column"));
 var _Div = _interopRequireDefault(require("./components/Div"));
 
 var _DisappearingElement = _interopRequireDefault(require("./components/DisappearingElement"));
+
+var _DragDropFileUpload = _interopRequireDefault(require("./components/DragDropFileUpload"));
 
 var _Form = _interopRequireDefault(require("./components/Form"));
 

@@ -1,6 +1,6 @@
 {
   "name": "basedesign-iswad",
-  "version": "15.1.1",
+  "version": "15.2.0",
   "description": "Includes different base components for any new projects.",
   "main": "./dist/lib.js",
   "browser": "./lib/lib.js",
