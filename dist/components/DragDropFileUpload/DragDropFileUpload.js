@@ -41,7 +41,8 @@ function DragDropFileUpload(_ref) {
       multipleFileUploader = _ref.multipleFileUploader,
       whileDraggingElementClassName = _ref.whileDraggingElementClassName,
       mainContainerClassName = _ref.mainContainerClassName,
-      acceptableFileType = _ref.acceptableFileType;
+      acceptableFileType = _ref.acceptableFileType,
+      inputId = _ref.inputId;
   var inputRef = (0, _react.useRef)();
 
   var _React$useState = _react["default"].useState(false),
@@ -98,7 +99,8 @@ function DragDropFileUpload(_ref) {
     className: "no-display",
     accept: acceptableFileType,
     multiple: multipleFileUploader,
-    onChange: handleChange
+    onChange: handleChange,
+    id: inputId
   }), draggableElement && draggableElement(), dragActive && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])(whileDraggingElementClassName),
     onDragEnter: handleDrag,
@@ -117,11 +119,13 @@ DragDropFileUpload.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes)
   multipleFileUploader: _propTypes["default"].bool,
   whileDraggingElementClassName: _propTypes["default"].string,
   mainContainerClassName: _propTypes["default"].string,
-  acceptableFileType: _propTypes["default"].string
+  acceptableFileType: _propTypes["default"].string,
+  inputId: _propTypes["default"].string
 });
 DragDropFileUpload.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   openFileBrowser: false,
-  acceptableFileType: '.jpg,.jpeg,.png'
+  acceptableFileType: '.jpg,.jpeg,.png',
+  inputId: 'draggableFileUploaderId'
 });
 var _default = DragDropFileUpload;
 exports["default"] = _default;
