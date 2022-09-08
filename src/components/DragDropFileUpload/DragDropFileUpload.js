@@ -13,7 +13,8 @@ function DragDropFileUpload({
   whileDraggingElement,
   multipleFileUploader,
   whileDraggingElementClassName,
-  mainContainerClassName
+  mainContainerClassName,
+  acceptableFileType
 }) {
   const inputRef = useRef();
 
@@ -64,6 +65,7 @@ function DragDropFileUpload({
           ref={inputRef}
           type="file"
           className="no-display"
+          accept={acceptableFileType}
           multiple={multipleFileUploader}
           onChange={handleChange}
         />
@@ -92,12 +94,14 @@ DragDropFileUpload.propTypes = {
   whileDraggingElement: PropTypes.func,
   multipleFileUploader: PropTypes.bool,
   whileDraggingElementClassName: PropTypes.string,
-  mainContainerClassName: PropTypes.string
+  mainContainerClassName: PropTypes.string,
+  acceptableFileType: PropTypes.string
 };
 
 DragDropFileUpload.defaultProps = {
   ...defaultProps,
-  openFileBrowser: false
+  openFileBrowser: false,
+  acceptableFileType: '.jpg,.jpeg,.png'
 };
 
 export default DragDropFileUpload;
