@@ -40,7 +40,8 @@ function DragDropFileUpload(_ref) {
       whileDraggingElement = _ref.whileDraggingElement,
       multipleFileUploader = _ref.multipleFileUploader,
       whileDraggingElementClassName = _ref.whileDraggingElementClassName,
-      mainContainerClassName = _ref.mainContainerClassName;
+      mainContainerClassName = _ref.mainContainerClassName,
+      acceptableFileType = _ref.acceptableFileType;
   var inputRef = (0, _react.useRef)();
 
   var _React$useState = _react["default"].useState(false),
@@ -95,6 +96,7 @@ function DragDropFileUpload(_ref) {
     ref: inputRef,
     type: "file",
     className: "no-display",
+    accept: acceptableFileType,
     multiple: multipleFileUploader,
     onChange: handleChange
   }), draggableElement && draggableElement(), dragActive && /*#__PURE__*/_react["default"].createElement("div", {
@@ -114,10 +116,12 @@ DragDropFileUpload.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes)
   whileDraggingElement: _propTypes["default"].func,
   multipleFileUploader: _propTypes["default"].bool,
   whileDraggingElementClassName: _propTypes["default"].string,
-  mainContainerClassName: _propTypes["default"].string
+  mainContainerClassName: _propTypes["default"].string,
+  acceptableFileType: _propTypes["default"].string
 });
 DragDropFileUpload.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  openFileBrowser: false
+  openFileBrowser: false,
+  acceptableFileType: '.jpg,.jpeg,.png'
 });
 var _default = DragDropFileUpload;
 exports["default"] = _default;
