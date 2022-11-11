@@ -39,6 +39,7 @@ const Table = ({
   selectableColWidth,
   selectableHeaderClassName,
   selectableRowClassName,
+  isSearchCaseInsensitive,
   ...props
 }) => {
   const [filter, setFilter] = useState({});
@@ -113,7 +114,11 @@ const Table = ({
             }
             localSortedData = localSortedData.filter((d) => {
               const curSearchElem = d[filteredKey]?.value || d[filteredKey];
-              return curSearchElem.includes(filter[filteredKey]);
+              if (isSearchCaseInsensitive) {
+                return curSearchElem.toLowerCase().includes(filter[filteredKey].toLowerCase());
+              } else {
+                return curSearchElem.includes(filter[filteredKey]);
+              }
             });
           }
         });
@@ -442,7 +447,8 @@ Table.propTypes = {
   selectableComp: PropTypes.func,
   selectableColWidth: PropTypes.number,
   selectableHeaderClassName: PropTypes.string,
-  selectableRowClassName: PropTypes.string
+  selectableRowClassName: PropTypes.string,
+  isSearchCaseInsensitive: PropTypes.bool
 };
 
 Table.defaultProps = {
@@ -456,7 +462,8 @@ Table.defaultProps = {
   showDefaultSelectable: true,
   selectableColWidth: 25,
   selectableHeaderClassName: '',
-  selectableRowClassName: ''
+  selectableRowClassName: '',
+  isSearchCaseInsensitive: true
 };
 
 export default Table;

@@ -39,7 +39,8 @@ const Home = () => {
       <TestTable /> */}
       {/* <div className="w-per-100 height-px-200 bgYellow"></div>
       <TestScroll /> */}
-      <TestDragDropFileUpload />
+      {/* <TestDragDropFileUpload /> */}
+      <TestTable />
     </div>
   );
 };
