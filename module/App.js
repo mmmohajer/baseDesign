@@ -66,7 +66,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 var Home = function Home() {
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react["default"].createElement(_TestDragDropFileUpload["default"], null));
+  }, /*#__PURE__*/_react["default"].createElement(_TestTable["default"], null));
 };
 
 var _default = Home;

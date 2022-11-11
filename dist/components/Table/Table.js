@@ -39,7 +39,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _Pagination = _interopRequireDefault(require("../Pagination"));
 
-var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "className", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName"];
+var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "className", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName", "isSearchCaseInsensitive"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -79,6 +79,7 @@ var Table = function Table(_ref) {
       selectableColWidth = _ref.selectableColWidth,
       selectableHeaderClassName = _ref.selectableHeaderClassName,
       selectableRowClassName = _ref.selectableRowClassName,
+      isSearchCaseInsensitive = _ref.isSearchCaseInsensitive,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
   var _useState = (0, _react.useState)({}),
@@ -199,7 +200,12 @@ var Table = function Table(_ref) {
               var _d$filteredKey;
 
               var curSearchElem = ((_d$filteredKey = d[filteredKey]) === null || _d$filteredKey === void 0 ? void 0 : _d$filteredKey.value) || d[filteredKey];
-              return curSearchElem.includes(filter[filteredKey]);
+
+              if (isSearchCaseInsensitive) {
+                return curSearchElem.toLowerCase().includes(filter[filteredKey].toLowerCase());
+              } else {
+                return curSearchElem.includes(filter[filteredKey]);
+              }
             });
           }
         });
@@ -491,7 +497,8 @@ Table.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   selectableComp: _propTypes["default"].func,
   selectableColWidth: _propTypes["default"].number,
   selectableHeaderClassName: _propTypes["default"].string,
-  selectableRowClassName: _propTypes["default"].string
+  selectableRowClassName: _propTypes["default"].string,
+  isSearchCaseInsensitive: _propTypes["default"].bool
 });
 Table.defaultProps = {
   colWidth: 300,
@@ -508,7 +515,8 @@ Table.defaultProps = {
   showDefaultSelectable: true,
   selectableColWidth: 25,
   selectableHeaderClassName: '',
-  selectableRowClassName: ''
+  selectableRowClassName: '',
+  isSearchCaseInsensitive: true
 };
 var _default = Table;
 exports["default"] = _default;
