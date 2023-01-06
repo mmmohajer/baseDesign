@@ -51,7 +51,7 @@ const Ring = React.forwardRef(
               )}></div>
             {showDefaultPercentageText && (
               <div className={cx('pos-abs pos-abs--center', defaultPercentageTextClassName)}>
-                75%
+                {percentage}%
               </div>
             )}
             {!showDefaultPercentageText && innerSectionComp ? (
