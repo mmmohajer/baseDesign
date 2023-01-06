@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","names":[],"sources":["../../../src/components/Ring/index.js"],"sourcesContent":["export { default } from './Ring';\n"],"mappings":";;;;;;;;;;;;;;AAAA"}

@@ -1319,6 +1319,10 @@ ul {
   flex-wrap: wrap;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .block {
   display: block;
 }
@@ -2222,6 +2226,10 @@ ul {
 
 .of-x-hidden {
   overflow-x: hidden;
+}
+
+.of-hidden {
+  overflow: hidden;
 }
 
 .of-x-scroll {
@@ -3440,6 +3448,31 @@ ul {
 
 .w-inherit {
   width: inherit;
+}
+
+.segment-0 {
+  transform: rotate(0deg) skew(0deg);
+}
+
+.segment-90 {
+  transform: rotate(90deg) skew(0deg);
+}
+
+.segment-180 {
+  transform: rotate(180deg) skew(0deg);
+}
+
+.segment-270 {
+  transform: rotate(270deg) skew(90deg);
+}
+
+.iswad_ring_segment {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vw;
+  transform-origin: 0 0;
 }
 
 .ISWAD-Select-select {

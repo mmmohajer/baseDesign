@@ -31,6 +31,7 @@ import SubNavItem from './components/NavBar/subs/SubNavItem';
 import Option from './components/Option';
 import Pagination from './components/Pagination';
 import Paragraph from './components/Paragraph';
+import Ring from './components/Ring';
 import Row from './components/Row';
 import Search from './components/Search';
 import Select from './components/Select';
@@ -78,6 +79,7 @@ export {
   Option,
   Pagination,
   Paragraph,
+  Ring,
   Row,
   Search,
   Select,
