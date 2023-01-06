@@ -7,7 +7,7 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
 import { showInCssClass } from 'Utils/utils';
 
-const arrayOfColSize = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const arrayOfColSize = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const Column = React.forwardRef(
   ({ xs, sm, md, lg, showIn, className, children, ...props }, ref) => {
