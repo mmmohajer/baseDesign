@@ -7,7 +7,7 @@ import { randomStr } from 'Utils/utils';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-import { cssClassMaps, cssConfigShape, cssDefaultConfig } from './utils';
+import { cssConfigShape, cssDefaultConfig } from './utils';
 import { css } from './styles';
 
 const Triangle = React.forwardRef(({ containerUID, cssConfig, className, ...props }, ref) => {

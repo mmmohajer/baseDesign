@@ -26,6 +26,7 @@ import TestLimitedSwipableSlider from 'TestComponents/TestLimitedSwipableSlider'
 import TestScroll from 'TestComponents/TestScroll';
 import TestDragDropFileUpload from './TestComponents/TestDragDropFileUpload';
 import TestTriangle from './TestComponents/TestTriangle';
+import TestRing from './TestComponents/TestRing';
 
 const Home = () => {
   return (
@@ -42,7 +43,11 @@ const Home = () => {
       <TestScroll /> */}
       {/* <TestDragDropFileUpload /> */}
       {/* <TestTable /> */}
-      <TestTriangle />
+      {/* <TestTriangle /> */}
+      <div className="p2">
+        <TestRing />
+        <div className="mouse-hand">Hello</div>
+      </div>
     </div>
   );
 };
