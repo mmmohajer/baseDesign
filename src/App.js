@@ -25,6 +25,7 @@ import TestPagination from 'TestComponents/TestPagination';
 import TestLimitedSwipableSlider from 'TestComponents/TestLimitedSwipableSlider';
 import TestScroll from 'TestComponents/TestScroll';
 import TestDragDropFileUpload from './TestComponents/TestDragDropFileUpload';
+import TestTriangle from './TestComponents/TestTriangle';
 
 const Home = () => {
   return (
@@ -40,7 +41,8 @@ const Home = () => {
       {/* <div className="w-per-100 height-px-200 bgYellow"></div>
       <TestScroll /> */}
       {/* <TestDragDropFileUpload /> */}
-      <TestTable />
+      {/* <TestTable /> */}
+      <TestTriangle />
     </div>
   );
 };

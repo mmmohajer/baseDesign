@@ -42,6 +42,7 @@ import Scroll from './components/Scroll';
 import Table from './components/Table';
 import Text from './components/Text';
 import TextArea from './components/TextArea';
+import Triangle from './components/Triangle';
 
 export {
   ActivableElement,
@@ -87,5 +88,6 @@ export {
   Scroll,
   Table,
   Text,
-  TextArea
+  TextArea,
+  Triangle
 };
