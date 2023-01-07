@@ -3450,22 +3450,6 @@ ul {
   width: inherit;
 }
 
-.segment-0 {
-  transform: rotate(0deg) skew(0deg);
-}
-
-.segment-90 {
-  transform: rotate(90deg) skew(0deg);
-}
-
-.segment-180 {
-  transform: rotate(180deg) skew(0deg);
-}
-
-.segment-270 {
-  transform: rotate(270deg) skew(90deg);
-}
-
 .iswad_ring_segment {
   position: absolute;
   top: 50%;
