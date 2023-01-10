@@ -28,6 +28,7 @@ const LimitedSwipableSlider = ({
   showRightOfLastItem,
   swipeTolerance,
   containerUID,
+  isVerticallyCenterAligned,
   ...props
 }) => {
   const sliderContainer = useRef();
@@ -157,8 +158,9 @@ const LimitedSwipableSlider = ({
                 <Swipe
                   key={idx}
                   className={cx(
-                    'flex flex--jc--center flex--ai--center w-per-100',
-                    cursorIsHandOnItem && 'mouse-hand'
+                    'flex flex--jc--center w-per-100',
+                    cursorIsHandOnItem && 'mouse-hand',
+                    isVerticallyCenterAligned && 'flex--ai--center'
                   )}
                   draggable={isDraggable}
                   onDragStart={handleDragStart}
@@ -232,7 +234,8 @@ LimitedSwipableSlider.propTypes = {
   isSwipable: PropTypes.bool,
   showRightOfLastItem: PropTypes.bool,
   swipeTolerance: PropTypes.number,
-  containerUID: PropTypes.string
+  containerUID: PropTypes.string,
+  isVerticallyCenterAligned: PropTypes.bool
 };
 
 LimitedSwipableSlider.defaultProps = {
@@ -252,7 +255,8 @@ LimitedSwipableSlider.defaultProps = {
   isSwipable: true,
   showRightOfLastItem: false,
   swipeTolerance: 1,
-  containerUID: randomStr()
+  containerUID: randomStr(),
+  isVerticallyCenterAligned: true
 };
 
 export default LimitedSwipableSlider;
