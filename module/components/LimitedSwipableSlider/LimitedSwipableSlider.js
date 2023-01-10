@@ -33,7 +33,7 @@ var _defaultProps = _interopRequireDefault(require("../../constants/defaultProps
 
 var _utils = require("../../utils/utils");
 
-var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "minXDifferenceToMove", "notScrollableOnSwipableElement", "transitionDuration", "transition_timing_function", "cursorIsHandOnItem", "className", "sliderContainerWidthMultiplier", "isDraggable", "isSwipable", "showRightOfLastItem", "swipeTolerance", "containerUID"];
+var _excluded = ["children", "moveRight", "setMoveRight", "moveLeft", "setMoveLeft", "moveToItemWithNum", "setMoveToItemWithNum", "minXDifferenceToMove", "notScrollableOnSwipableElement", "transitionDuration", "transition_timing_function", "cursorIsHandOnItem", "className", "sliderContainerWidthMultiplier", "isDraggable", "isSwipable", "showRightOfLastItem", "swipeTolerance", "containerUID", "isVerticallyCenterAligned"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -66,6 +66,7 @@ var LimitedSwipableSlider = function LimitedSwipableSlider(_ref) {
       showRightOfLastItem = _ref.showRightOfLastItem,
       swipeTolerance = _ref.swipeTolerance,
       containerUID = _ref.containerUID,
+      isVerticallyCenterAligned = _ref.isVerticallyCenterAligned,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   var sliderContainer = (0, _react.useRef)();
 
@@ -227,7 +228,7 @@ var LimitedSwipableSlider = function LimitedSwipableSlider(_ref) {
     if (isSwipable) {
       return /*#__PURE__*/_react["default"].createElement(_reactEasySwipe["default"], {
         key: idx,
-        className: (0, _classnames["default"])('flex flex--jc--center flex--ai--center w-per-100', cursorIsHandOnItem && 'mouse-hand'),
+        className: (0, _classnames["default"])('flex flex--jc--center w-per-100', cursorIsHandOnItem && 'mouse-hand', isVerticallyCenterAligned && 'flex--ai--center'),
         draggable: isDraggable,
         onDragStart: handleDragStart,
         onDragEnd: handleDragEnd,
@@ -263,7 +264,8 @@ LimitedSwipableSlider.propTypes = _objectSpread(_objectSpread({}, defaultPropTyp
   isSwipable: _propTypes["default"].bool,
   showRightOfLastItem: _propTypes["default"].bool,
   swipeTolerance: _propTypes["default"].number,
-  containerUID: _propTypes["default"].string
+  containerUID: _propTypes["default"].string,
+  isVerticallyCenterAligned: _propTypes["default"].bool
 });
 LimitedSwipableSlider.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
   moveRight: false,
@@ -281,7 +283,8 @@ LimitedSwipableSlider.defaultProps = _objectSpread(_objectSpread({}, defaultProp
   isSwipable: true,
   showRightOfLastItem: false,
   swipeTolerance: 1,
-  containerUID: (0, _utils.randomStr)()
+  containerUID: (0, _utils.randomStr)(),
+  isVerticallyCenterAligned: true
 });
 var _default = LimitedSwipableSlider;
 exports["default"] = _default;
