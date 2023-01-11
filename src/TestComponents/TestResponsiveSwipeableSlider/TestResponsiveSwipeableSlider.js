@@ -1,45 +1,36 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import LimitedSwipableSlider from 'Components/LimitedSwipableSlider';
-import NewLimitedSwipeableSlider from 'Components/NewLimitedSwipeableSlider';
-import LimitedSwipableSliderItem from 'Components/LimitedSwipableSlider/subs/LimitedSwipableSliderItem';
+import ResponsiveSwipeableSlider from 'Components/ResponsiveSwipeableSlider';
+import ResponsiveSwipeableSliderItem from 'Components/ResponsiveSwipeableSlider/subs/ResponsiveSwipeableSliderItem';
 
 const TestLimitedSwipableSlider = () => {
-  const arrayOfChildrenRefs = useRef(new Array());
+  const [items, setItems] = useState([0, 1, 2, 3, 4]);
 
-  const [arrayOfChildren, setArrayOfChildren] = useState([]);
-
-  useEffect(() => {
-    if (arrayOfChildrenRefs?.current?.length) {
-      let localArrayOfElements = [];
-      arrayOfChildrenRefs.current.forEach((item) => {
-        localArrayOfElements.push(item);
-      });
-      setArrayOfChildren(localArrayOfElements);
-    }
-  }, [arrayOfChildrenRefs?.current]);
+  const [rightSideActiveIndices, setRightSideActiveIndices] = useState([0, 1, 2, 3, 4]);
+  const [moveRight, setMoveRight] = useState(false);
+  const [moveLeft, setMoveLeft] = useState(false);
 
   return (
     <>
-      <NewLimitedSwipeableSlider arrayOfChildren={arrayOfChildren}>
-        <div className="w-per-100 bgBlue" ref={(el) => arrayOfChildrenRefs.current.push(el)}>
-          Hello
-        </div>
-        <div className="w-per-100 bgGreen" ref={(el) => arrayOfChildrenRefs.current.push(el)}>
-          Bye
-        </div>
-        <div className="w-per-100 bgYellow" ref={(el) => arrayOfChildrenRefs.current.push(el)}>
-          Test
-        </div>
-        <div
-          className="w-per-100 bgBlack textWhite"
-          ref={(el) => arrayOfChildrenRefs.current.push(el)}>
-          Test
-        </div>
-        <div className="w-per-100 bgWhite" ref={(el) => arrayOfChildrenRefs.current.push(el)}>
-          Test
-        </div>
-      </NewLimitedSwipeableSlider>
+      <ResponsiveSwipeableSlider
+        rightSideActiveIndices={rightSideActiveIndices}
+        setRightSideActiveIndices={setRightSideActiveIndices}
+        moveLeft={moveLeft}
+        setMoveLeft={setMoveLeft}
+        moveRight={moveRight}
+        setMoveRight={setMoveRight}>
+        {items?.map((item, idx) => (
+          <ResponsiveSwipeableSliderItem key={idx}>
+            <div className="flex">
+              <div className="w-px-300 bgBlue height-px-100">{item}</div>
+              <div className="w-px-50 height-px-100"></div>
+            </div>
+          </ResponsiveSwipeableSliderItem>
+        ))}
+      </ResponsiveSwipeableSlider>
+
+      <button onClick={() => setMoveRight(true)}>Show Next</button>
+      <button onClick={() => setMoveLeft(true)}>Show Previous</button>
     </>
   );
 };

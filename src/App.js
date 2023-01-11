@@ -36,7 +36,7 @@ const Home = () => {
       {/* <div className="w-per-100 height-px-200 bgRed ml-auto mr-auto">
         <TestLimitedSwipableSlider />
       </div> */}
-      <div className="w-per-500 height-px-200 bgRed ml-auto mr-auto">
+      <div className="w-px-500 height-px-200 bgRed ml-auto mr-auto">
         <TestResponsiveSwipeableSlider />
       </div>
       {/*<div className="w-px-400 ml-auto mr-auto">

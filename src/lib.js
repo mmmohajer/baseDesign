@@ -44,6 +44,8 @@ import Table from './components/Table';
 import Text from './components/Text';
 import TextArea from './components/TextArea';
 import Triangle from './components/Triangle';
+import ResponsiveSwipeableSlider from './components/ResponsiveSwipeableSlider';
+import ResponsiveSwipeableSliderItem from './components/ResponsiveSwipeableSlider/subs/ResponsiveSwipeableSliderItem';
 
 export {
   ActivableElement,
@@ -91,5 +93,7 @@ export {
   Table,
   Text,
   TextArea,
-  Triangle
+  Triangle,
+  ResponsiveSwipeableSlider,
+  ResponsiveSwipeableSliderItem
 };
