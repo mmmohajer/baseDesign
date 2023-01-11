@@ -203,6 +203,18 @@ Object.defineProperty(exports, "Paragraph", {
     return _Paragraph["default"];
   }
 });
+Object.defineProperty(exports, "ResponsiveSwipeableSlider", {
+  enumerable: true,
+  get: function get() {
+    return _ResponsiveSwipeableSlider["default"];
+  }
+});
+Object.defineProperty(exports, "ResponsiveSwipeableSliderItem", {
+  enumerable: true,
+  get: function get() {
+    return _ResponsiveSwipeableSliderItem["default"];
+  }
+});
 Object.defineProperty(exports, "Ring", {
   enumerable: true,
   get: function get() {
@@ -373,4 +385,8 @@ var _Text = _interopRequireDefault(require("./components/Text"));
 var _TextArea = _interopRequireDefault(require("./components/TextArea"));
 
 var _Triangle = _interopRequireDefault(require("./components/Triangle"));
+
+var _ResponsiveSwipeableSlider = _interopRequireDefault(require("./components/ResponsiveSwipeableSlider"));
+
+var _ResponsiveSwipeableSliderItem = _interopRequireDefault(require("./components/ResponsiveSwipeableSlider/subs/ResponsiveSwipeableSliderItem"));
 //# sourceMappingURL=lib.js.map

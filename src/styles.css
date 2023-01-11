@@ -2244,6 +2244,13 @@ ul {
   text-decoration: underline;
 }
 
+.noTransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
 .pos-abs {
   position: absolute;
 }
