@@ -27,7 +27,6 @@ import TestScroll from 'TestComponents/TestScroll';
 import TestDragDropFileUpload from './TestComponents/TestDragDropFileUpload';
 import TestTriangle from './TestComponents/TestTriangle';
 import TestRing from './TestComponents/TestRing';
-import TestResponsiveSwipeableSlider from './TestComponents/TestResponsiveSwipeableSlider';
 
 const Home = () => {
   return (
@@ -36,9 +35,9 @@ const Home = () => {
       {/* <div className="w-per-100 height-px-200 bgRed ml-auto mr-auto">
         <TestLimitedSwipableSlider />
       </div> */}
-      <div className="w-px-500 height-px-200 bgRed ml-auto mr-auto">
+      {/* <div className="w-px-500 height-px-200 bgRed ml-auto mr-auto">
         <TestResponsiveSwipeableSlider />
-      </div>
+      </div> */}
       {/*<div className="w-px-400 ml-auto mr-auto">
         <TestSwipableSlider />
       </div>
@@ -52,6 +51,7 @@ const Home = () => {
         <TestRing />
         <div className="mouse-hand">Hello</div>
       </div> */}
+      <TestScroll />
     </div>
   );
 };
