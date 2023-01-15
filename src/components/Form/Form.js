@@ -22,7 +22,7 @@ const Form = React.forwardRef(
             let toBeSameFieldVal = item['validators'][idx]?.toBeSameFieldVal;
             if (validator) {
               if (
-                !validate(curElement.value, validator, minRequired, maxRequired, toBeSameFieldVal)
+                !validate(curElement?.value, validator, minRequired, maxRequired, toBeSameFieldVal)
               ) {
                 item?.errorMessageHandler(item['validators'][idx]?.message);
                 if (item?.errorActivateHandler) {
