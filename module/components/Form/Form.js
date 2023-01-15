@@ -61,7 +61,7 @@ var Form = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
           var toBeSameFieldVal = (_item$validators$idx4 = item['validators'][idx]) === null || _item$validators$idx4 === void 0 ? void 0 : _item$validators$idx4.toBeSameFieldVal;
 
           if (validator) {
-            if (!(0, _utils.validate)(curElement.value, validator, minRequired, maxRequired, toBeSameFieldVal)) {
+            if (!(0, _utils.validate)(curElement === null || curElement === void 0 ? void 0 : curElement.value, validator, minRequired, maxRequired, toBeSameFieldVal)) {
               var _item$validators$idx5;
 
               item === null || item === void 0 ? void 0 : item.errorMessageHandler((_item$validators$idx5 = item['validators'][idx]) === null || _item$validators$idx5 === void 0 ? void 0 : _item$validators$idx5.message);
