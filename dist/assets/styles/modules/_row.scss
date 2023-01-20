@@ -55,7 +55,6 @@
 
   &--0 {
     width: 0px;
-    display: none !important;
   }
 
   &--sm--12 {
@@ -133,7 +132,6 @@
   &--sm--0 {
     @include atSmall {
       width: 0px;
-      display: none !important;
     }
   }
 
@@ -212,7 +210,6 @@
   &--md--0 {
     @include atMedium {
       width: 0px;
-      display: none !important;
     }
   }
 
@@ -291,7 +288,6 @@
   &--lg--0 {
     @include atLarge {
       width: 0px;
-      display: none !important;
     }
   }
 }
