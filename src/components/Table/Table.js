@@ -40,6 +40,7 @@ const Table = ({
   selectableHeaderClassName,
   selectableRowClassName,
   isSearchCaseInsensitive,
+  containerUID,
   ...props
 }) => {
   const [filter, setFilter] = useState({});
@@ -248,7 +249,7 @@ const Table = ({
         <div className={cx('w-per-100 of-x-auto', className)}>
           <div
             className={cx(
-              'flex flex--dir--col ml-auto mr-auto of-x-auto iswad_table',
+              `flex flex--dir--col ml-auto mr-auto of-x-auto ${containerUID}-iswad-table`,
               tableClassName
             )}
             {...props}>
@@ -406,11 +407,7 @@ const Table = ({
       </div>
       <style>
         {`
-        .iswad_td {
-            width: ${colWidth}px;
-          }
-
-          .iswad_table {
+          .${containerUID}-iswad-table {
             width: ${tableTotalWidth};
           }
           `}
@@ -448,7 +445,8 @@ Table.propTypes = {
   selectableColWidth: PropTypes.number,
   selectableHeaderClassName: PropTypes.string,
   selectableRowClassName: PropTypes.string,
-  isSearchCaseInsensitive: PropTypes.bool
+  isSearchCaseInsensitive: PropTypes.bool,
+  containerUID: PropTypes.string
 };
 
 Table.defaultProps = {
@@ -463,7 +461,8 @@ Table.defaultProps = {
   selectableColWidth: 25,
   selectableHeaderClassName: '',
   selectableRowClassName: '',
-  isSearchCaseInsensitive: true
+  isSearchCaseInsensitive: true,
+  containerUID: 'test'
 };
 
 export default Table;
