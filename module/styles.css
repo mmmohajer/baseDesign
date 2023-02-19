@@ -2240,8 +2240,28 @@ ul {
   overflow-x: auto;
 }
 
-.underline {
+.noTransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+
+.height-per-100 {
+  height: 100%;
+}
+
+.text-underline {
   text-decoration: underline;
+}
+.text-upperCase {
+  text-transform: uppercase;
+}
+.text-title {
+  text-transform: uppercase;
+}
+.text-italic {
+  font-style: italic;
 }
 
 .noTransition {
@@ -2249,6 +2269,16 @@ ul {
   -moz-transition: none !important;
   -o-transition: none !important;
   transition: none !important;
+}
+
+.oneLine {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .pos-abs {
