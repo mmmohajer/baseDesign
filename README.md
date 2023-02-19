@@ -320,6 +320,9 @@ Notice: In order to make any changes in the way of appearing of the mobile menu,
 - `z-(0, 10, 100, 1000, 10000, 100000)` &#8594; Z-index classes <br>
 - `f-(left, right)` &#8594; Float left or right <br>
 - `of-(y, x)-(hidden, scroll, auto)` &#8594; Overflow <br>
+- `text-(underline, upperCase, title, italic)` &#8594; Text styles <br>
+- `oneLine` &#8594; Cut text to be no more than one line <br>
+- `noTransition` &#8594; Remove all transition effects <br>
 
 <hr>
 
