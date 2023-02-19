@@ -52,7 +52,7 @@ const Home = () => {
         <div className="mouse-hand">Hello</div>
       </div> */}
       {/* <TestScroll /> */}
-      <TestNavBar />
+      {/* <TestNavBar /> */}
     </div>
   );
 };
