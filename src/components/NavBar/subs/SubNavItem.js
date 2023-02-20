@@ -1,10 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
 
-const SubNavItem = ({ children, className, ...props }) => {
+const SubNavItem = ({ isActive, children, className, activeClassName, ...props }) => {
   return (
     <>
-      <div {...props} className={cx('iswad_subNavItem', className)}>
+      <div {...props} className={cx('iswad_subNavItem', isActive && activeClassName, className)}>
         {children}
       </div>
     </>
