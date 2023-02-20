@@ -22,7 +22,7 @@ var MobSubNavItem = function MobSubNavItem(_ref) {
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({}, props, {
-    className: (0, _classnames["default"])('iswad_mobSubNavItem', className)
+    className: (0, _classnames["default"])('iswad_mobSubNavItem', className, isActive && activeClassName)
   }), children));
 };
 
