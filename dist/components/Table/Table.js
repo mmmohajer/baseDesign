@@ -157,7 +157,7 @@ var Table = function Table(_ref) {
     } else {
       setTableTotalWidth(tableWidth);
     }
-  }, []);
+  }, [tableWidth]);
   (0, _react.useEffect)(function () {
     if (headLines !== null && headLines !== void 0 && headLines.length) {
       var newObj = {};
@@ -188,7 +188,7 @@ var Table = function Table(_ref) {
   };
 
   (0, _react.useEffect)(function () {
-    if (data.length) {
+    if (data !== null && data !== void 0 && data.length) {
       setTimeout(function () {
         var localSortedData = (0, _toConsumableArray2["default"])(data);
         Object.keys(filter).forEach(function (filteredKey) {
@@ -214,13 +214,13 @@ var Table = function Table(_ref) {
         setFilteredData(localSortedData);
       }, 500);
     }
-  }, [filter, data]);
+  }, [filter, data, currentPage, isSearchCaseInsensitive]);
   (0, _react.useEffect)(function () {
     var localIsChecked = _objectSpread({}, isChecked);
 
     var count = 0;
 
-    if (data.length) {
+    if (data !== null && data !== void 0 && data.length) {
       var localData = (0, _toConsumableArray2["default"])(data);
       localData.map(function (d) {
         d['iswad_table_idx'] = count;
@@ -235,7 +235,7 @@ var Table = function Table(_ref) {
   (0, _react.useEffect)(function () {
     var localSortIconColor = _objectSpread({}, sortIconColor);
 
-    headLines.map(function (h) {
+    headLines === null || headLines === void 0 ? void 0 : headLines.map(function (h) {
       if (h !== null && h !== void 0 && h.isSortable) {
         localSortIconColor[(h === null || h === void 0 ? void 0 : h.value) || h] = sortIconColors['REG'] || 'silver';
       }
@@ -261,7 +261,7 @@ var Table = function Table(_ref) {
         setSelectedData(localSelectedData);
       }
     }
-  }, [isChecked]);
+  }, [isChecked, sortedData]);
 
   var sortHandler = function sortHandler(head) {
     if (setCurrentPage) {
@@ -331,7 +331,7 @@ var Table = function Table(_ref) {
         setSortedData((0, _toConsumableArray2["default"])(filteredData));
       }
     }
-  }, [isSorted]);
+  }, [isSorted, sortedData, filteredData]);
   (0, _react.useEffect)(function () {
     setNumberOfTotalPages(Math.ceil(sortedData.length / rowsPerPage));
   }, [sortedData]);
