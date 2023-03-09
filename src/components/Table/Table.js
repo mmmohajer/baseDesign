@@ -76,7 +76,7 @@ const Table = ({
     } else {
       setTableTotalWidth(tableWidth);
     }
-  }, []);
+  }, [tableWidth]);
 
   useEffect(() => {
     if (headLines?.length) {
@@ -105,7 +105,7 @@ const Table = ({
   };
 
   useEffect(() => {
-    if (data.length) {
+    if (data?.length) {
       setTimeout(() => {
         let localSortedData = [...data];
         Object.keys(filter).forEach((filteredKey) => {
@@ -127,12 +127,12 @@ const Table = ({
         setFilteredData(localSortedData);
       }, 500);
     }
-  }, [filter, data]);
+  }, [filter, data, currentPage, isSearchCaseInsensitive]);
 
   useEffect(() => {
     const localIsChecked = { ...isChecked };
     let count = 0;
-    if (data.length) {
+    if (data?.length) {
       const localData = [...data];
       localData.map((d) => {
         d['iswad_table_idx'] = count;
@@ -147,7 +147,7 @@ const Table = ({
 
   useEffect(() => {
     const localSortIconColor = { ...sortIconColor };
-    headLines.map((h) => {
+    headLines?.map((h) => {
       if (h?.isSortable) {
         localSortIconColor[h?.value || h] = sortIconColors['REG'] || 'silver';
       }
@@ -171,7 +171,7 @@ const Table = ({
         setSelectedData(localSelectedData);
       }
     }
-  }, [isChecked]);
+  }, [isChecked, sortedData]);
 
   const sortHandler = (head) => {
     if (setCurrentPage) {
@@ -227,7 +227,7 @@ const Table = ({
         setSortedData([...filteredData]);
       }
     }
-  }, [isSorted]);
+  }, [isSorted, sortedData, filteredData]);
 
   useEffect(() => {
     setNumberOfTotalPages(Math.ceil(sortedData.length / rowsPerPage));
