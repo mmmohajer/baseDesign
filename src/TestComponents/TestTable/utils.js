@@ -16,7 +16,13 @@ export const headLines = [
     hasSearch: true,
     isSortable: true
   },
-  'email',
+  {
+    value: 'email',
+    display: 'Email',
+    width: 300,
+    hasSearch: true,
+    isSortable: true
+  },
   {
     value: 'gender',
     display: 'Gender',

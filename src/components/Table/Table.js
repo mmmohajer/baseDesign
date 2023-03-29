@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -41,8 +41,11 @@ const Table = ({
   selectableRowClassName,
   isSearchCaseInsensitive,
   containerUID,
+  isFullWidth,
   ...props
 }) => {
+  const mainContainerRef = useRef();
+
   const [filter, setFilter] = useState({});
   const [filteredData, setFilteredData] = useState([]);
   const [sortedData, setSortedData] = useState([]);
@@ -53,6 +56,8 @@ const Table = ({
   const [pageData, setPageData] = useState({});
   const [numberOfTotalPages, setNumberOfTotalPages] = useState(1);
   const [tableTotalWidth, setTableTotalWidth] = useState('100%');
+  const [tableTotalWidthInPx, setTableTotalWidthInPx] = useState(0);
+  const [addedPx, setAddedPx] = useState(0);
 
   const calcTotalWidth = () => {
     let totalWidth = 0;
@@ -68,7 +73,22 @@ const Table = ({
       totalWidth += selectableColWidth;
     }
     setTableTotalWidth(`${totalWidth}px`);
+    setTableTotalWidthInPx(totalWidth);
   };
+
+  useEffect(() => {
+    if (mainContainerRef?.current && isFullWidth) {
+      setTableTotalWidth(`${mainContainerRef.current.clientWidth}px`);
+      if (!isNaN(tableTotalWidthInPx) && !isNaN(mainContainerRef.current.clientWidth)) {
+        if (mainContainerRef.current.clientWidth - tableTotalWidthInPx > 0 && headLines?.length) {
+          const localAddedPx =
+            (mainContainerRef.current.clientWidth - tableTotalWidthInPx) / headLines.length;
+          console.log(localAddedPx);
+          setAddedPx(localAddedPx);
+        }
+      }
+    }
+  }, [mainContainerRef?.current, tableTotalWidthInPx, headLines]);
 
   useEffect(() => {
     if (!tableWidth) {
@@ -76,7 +96,7 @@ const Table = ({
     } else {
       setTableTotalWidth(tableWidth);
     }
-  }, [tableWidth]);
+  }, [tableWidth, headLines, isSelectable]);
 
   useEffect(() => {
     if (headLines?.length) {
@@ -245,7 +265,7 @@ const Table = ({
 
   return (
     <>
-      <div>
+      <div className="w-per-100 bgBlue" ref={(el) => (mainContainerRef.current = el)}>
         <div className={cx('w-per-100 of-x-auto', className)}>
           <div
             className={cx(
@@ -289,7 +309,10 @@ const Table = ({
                 </Td>
               )}
               {headLines.map((head, idx) => (
-                <Td className="" style={head?.width && { width: `${head.width}px` }} key={idx}>
+                <Td
+                  className=""
+                  style={head?.width && { width: `${head.width + addedPx}px` }}
+                  key={idx}>
                   <div className="flex w-per-100 flex--jc--between flex--ai--center">
                     <div
                       className={cx(
@@ -373,7 +396,9 @@ const Table = ({
                       </Td>
                     )}
                     {headLines.map((curCol, idx1) => (
-                      <Td key={idx1} style={curCol?.width && { width: `${curCol.width}px` }}>
+                      <Td
+                        key={idx1}
+                        style={curCol?.width && { width: `${curCol.width + addedPx}px` }}>
                         {curRow[curCol?.value || curCol]?.display ||
                           curRow[curCol?.value || curCol] ||
                           curRow[curCol]}
@@ -441,6 +466,7 @@ Table.propTypes = {
   showDefaultSortIcon: PropTypes.bool,
   sortIcon: PropTypes.func,
   showDefaultSelectable: PropTypes.bool,
+  isFullWidth: PropTypes.bool,
   selectableComp: PropTypes.func,
   selectableColWidth: PropTypes.number,
   selectableHeaderClassName: PropTypes.string,
@@ -462,7 +488,8 @@ Table.defaultProps = {
   selectableHeaderClassName: '',
   selectableRowClassName: '',
   isSearchCaseInsensitive: true,
-  containerUID: 'test'
+  containerUID: 'test',
+  isFullWidth: false
 };
 
 export default Table;

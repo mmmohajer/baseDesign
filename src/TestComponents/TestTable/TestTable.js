@@ -63,6 +63,7 @@ const TestTable = (props) => {
         data={data}
         // colWidth={400}
         // tableWidth={"2025px"}
+
         isSelectable={true}
         // search={search}
         selectedData={selectedData}
@@ -73,6 +74,7 @@ const TestTable = (props) => {
         setCurrentPage={setCurrentPage}
         showDefaultPagination={false}
         paginationComponent={pagination}
+        // isFullWidth={true}
         // numberOfShownPages={5}
       />
       <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>

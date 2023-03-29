@@ -30,7 +30,7 @@ import TestRing from './TestComponents/TestRing';
 
 const Home = () => {
   return (
-    <div className="container">
+    <div className="">
       {/* <TestNavBar /> */}
       {/* <div className="w-per-100 height-px-200 bgRed ml-auto mr-auto">
         <TestLimitedSwipableSlider />
