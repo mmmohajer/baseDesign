@@ -39,7 +39,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _Pagination = _interopRequireDefault(require("../Pagination"));
 
-var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "className", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName", "isSearchCaseInsensitive", "containerUID", "isFullWidth"];
+var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "mainContainerClassName", "className", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName", "isSearchCaseInsensitive", "containerUID", "isFullWidth"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -68,6 +68,7 @@ var Table = function Table(_ref) {
       showDefaultPagination = _ref.showDefaultPagination,
       numberOfShownPages = _ref.numberOfShownPages,
       tableClassName = _ref.tableClassName,
+      mainContainerClassName = _ref.mainContainerClassName,
       className = _ref.className,
       tableHeadContainerClassName = _ref.tableHeadContainerClassName,
       paginationComponent = _ref.paginationComponent,
@@ -371,7 +372,7 @@ var Table = function Table(_ref) {
     setPageData(localPageData);
   }, [currentPage, sortedData, filteredData]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
-    className: "w-per-100 bgBlue",
+    className: (0, _classnames["default"])('w-per-100', mainContainerClassName),
     ref: function ref(el) {
       return mainContainerRef.current = el;
     }
