@@ -28,6 +28,7 @@ const Table = ({
   showDefaultPagination,
   numberOfShownPages,
   tableClassName,
+  mainContainerClassName,
   className,
   tableHeadContainerClassName,
   paginationComponent,
@@ -264,7 +265,9 @@ const Table = ({
 
   return (
     <>
-      <div className="w-per-100 bgBlue" ref={(el) => (mainContainerRef.current = el)}>
+      <div
+        className={cx('w-per-100', mainContainerClassName)}
+        ref={(el) => (mainContainerRef.current = el)}>
         <div className={cx('w-per-100 of-x-auto', className)}>
           <div
             className={cx(
