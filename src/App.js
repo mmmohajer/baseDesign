@@ -45,7 +45,7 @@ const Home = () => {
       {/* <div className="w-per-100 height-px-200 bgYellow"></div>
       <TestScroll /> */}
       {/* <TestDragDropFileUpload /> */}
-      {/* <TestTable /> */}
+      <TestTable />
       {/* <TestTriangle /> */}
       {/* <div className="p2">
         <TestRing />

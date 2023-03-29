@@ -74,7 +74,7 @@ const TestTable = (props) => {
         setCurrentPage={setCurrentPage}
         showDefaultPagination={false}
         paginationComponent={pagination}
-        // isFullWidth={true}
+        isFullWidth={true}
         // numberOfShownPages={5}
       />
       <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>

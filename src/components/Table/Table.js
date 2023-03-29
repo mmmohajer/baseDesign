@@ -85,6 +85,9 @@ const Table = ({
             (mainContainerRef.current.clientWidth - tableTotalWidthInPx) / headLines.length;
           setAddedPx(localAddedPx);
           setTableTotalWidth(`${mainContainerRef.current.clientWidth}px`);
+        } else {
+          setAddedPx(0);
+          setTableTotalWidth(`${tableTotalWidthInPx}px`);
         }
       }
     }
