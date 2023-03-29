@@ -78,13 +78,12 @@ const Table = ({
 
   useEffect(() => {
     if (mainContainerRef?.current && isFullWidth) {
-      setTableTotalWidth(`${mainContainerRef.current.clientWidth}px`);
       if (!isNaN(tableTotalWidthInPx) && !isNaN(mainContainerRef.current.clientWidth)) {
         if (mainContainerRef.current.clientWidth - tableTotalWidthInPx > 0 && headLines?.length) {
           const localAddedPx =
             (mainContainerRef.current.clientWidth - tableTotalWidthInPx) / headLines.length;
-          console.log(localAddedPx);
           setAddedPx(localAddedPx);
+          setTableTotalWidth(`${mainContainerRef.current.clientWidth}px`);
         }
       }
     }
