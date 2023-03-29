@@ -172,6 +172,9 @@ var Table = function Table(_ref) {
           var localAddedPx = (mainContainerRef.current.clientWidth - tableTotalWidthInPx) / headLines.length;
           setAddedPx(localAddedPx);
           setTableTotalWidth("".concat(mainContainerRef.current.clientWidth, "px"));
+        } else {
+          setAddedPx(0);
+          setTableTotalWidth("".concat(tableTotalWidthInPx, "px"));
         }
       }
     }
