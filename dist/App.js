@@ -69,7 +69,7 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 
 var Home = function Home() {
   return /*#__PURE__*/_react["default"].createElement("div", {
-    className: "container"
+    className: ""
   });
 };
 

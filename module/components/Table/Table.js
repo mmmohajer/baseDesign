@@ -39,7 +39,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _Pagination = _interopRequireDefault(require("../Pagination"));
 
-var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "className", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName", "isSearchCaseInsensitive", "containerUID"];
+var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "className", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName", "isSearchCaseInsensitive", "containerUID", "isFullWidth"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -81,7 +81,9 @@ var Table = function Table(_ref) {
       selectableRowClassName = _ref.selectableRowClassName,
       isSearchCaseInsensitive = _ref.isSearchCaseInsensitive,
       containerUID = _ref.containerUID,
+      isFullWidth = _ref.isFullWidth,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
+  var mainContainerRef = (0, _react.useRef)();
 
   var _useState = (0, _react.useState)({}),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
@@ -133,6 +135,16 @@ var Table = function Table(_ref) {
       tableTotalWidth = _useState20[0],
       setTableTotalWidth = _useState20[1];
 
+  var _useState21 = (0, _react.useState)(0),
+      _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
+      tableTotalWidthInPx = _useState22[0],
+      setTableTotalWidthInPx = _useState22[1];
+
+  var _useState23 = (0, _react.useState)(0),
+      _useState24 = (0, _slicedToArray2["default"])(_useState23, 2),
+      addedPx = _useState24[0],
+      setAddedPx = _useState24[1];
+
   var calcTotalWidth = function calcTotalWidth() {
     var totalWidth = 0;
     var allCols = headLines.length;
@@ -149,15 +161,29 @@ var Table = function Table(_ref) {
     }
 
     setTableTotalWidth("".concat(totalWidth, "px"));
+    setTableTotalWidthInPx(totalWidth);
   };
 
+  (0, _react.useEffect)(function () {
+    if (mainContainerRef !== null && mainContainerRef !== void 0 && mainContainerRef.current && isFullWidth) {
+      setTableTotalWidth("".concat(mainContainerRef.current.clientWidth, "px"));
+
+      if (!isNaN(tableTotalWidthInPx) && !isNaN(mainContainerRef.current.clientWidth)) {
+        if (mainContainerRef.current.clientWidth - tableTotalWidthInPx > 0 && headLines !== null && headLines !== void 0 && headLines.length) {
+          var localAddedPx = (mainContainerRef.current.clientWidth - tableTotalWidthInPx) / headLines.length;
+          console.log(localAddedPx);
+          setAddedPx(localAddedPx);
+        }
+      }
+    }
+  }, [mainContainerRef === null || mainContainerRef === void 0 ? void 0 : mainContainerRef.current, tableTotalWidthInPx, headLines]);
   (0, _react.useEffect)(function () {
     if (!tableWidth) {
       calcTotalWidth();
     } else {
       setTableTotalWidth(tableWidth);
     }
-  }, [tableWidth]);
+  }, [tableWidth, headLines, isSelectable]);
   (0, _react.useEffect)(function () {
     if (headLines !== null && headLines !== void 0 && headLines.length) {
       var newObj = {};
@@ -346,7 +372,12 @@ var Table = function Table(_ref) {
 
     setPageData(localPageData);
   }, [currentPage, sortedData, filteredData]);
-  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement("div", {
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "w-per-100 bgBlue",
+    ref: function ref(el) {
+      return mainContainerRef.current = el;
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('w-per-100 of-x-auto', className)
   }, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])("flex flex--dir--col ml-auto mr-auto of-x-auto ".concat(containerUID, "-iswad-table"), tableClassName)
@@ -386,7 +417,7 @@ var Table = function Table(_ref) {
     return /*#__PURE__*/_react["default"].createElement(_Td["default"], {
       className: "",
       style: (head === null || head === void 0 ? void 0 : head.width) && {
-        width: "".concat(head.width, "px")
+        width: "".concat(head.width + addedPx, "px")
       },
       key: idx
     }, /*#__PURE__*/_react["default"].createElement("div", {
@@ -452,7 +483,7 @@ var Table = function Table(_ref) {
       return /*#__PURE__*/_react["default"].createElement(_Td["default"], {
         key: idx1,
         style: (curCol === null || curCol === void 0 ? void 0 : curCol.width) && {
-          width: "".concat(curCol.width, "px")
+          width: "".concat(curCol.width + addedPx, "px")
         }
       }, ((_curRow = curRow[(curCol === null || curCol === void 0 ? void 0 : curCol.value) || curCol]) === null || _curRow === void 0 ? void 0 : _curRow.display) || curRow[(curCol === null || curCol === void 0 ? void 0 : curCol.value) || curCol] || curRow[curCol]);
     }));
@@ -495,6 +526,7 @@ Table.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   showDefaultSortIcon: _propTypes["default"].bool,
   sortIcon: _propTypes["default"].func,
   showDefaultSelectable: _propTypes["default"].bool,
+  isFullWidth: _propTypes["default"].bool,
   selectableComp: _propTypes["default"].func,
   selectableColWidth: _propTypes["default"].number,
   selectableHeaderClassName: _propTypes["default"].string,
@@ -519,7 +551,8 @@ Table.defaultProps = {
   selectableHeaderClassName: '',
   selectableRowClassName: '',
   isSearchCaseInsensitive: true,
-  containerUID: 'test'
+  containerUID: 'test',
+  isFullWidth: false
 };
 var _default = Table;
 exports["default"] = _default;

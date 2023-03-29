@@ -93,7 +93,8 @@ var TestTable = function TestTable(props) {
     currentPage: currentPage,
     setCurrentPage: setCurrentPage,
     showDefaultPagination: false,
-    paginationComponent: pagination // numberOfShownPages={5}
+    paginationComponent: pagination // isFullWidth={true}
+    // numberOfShownPages={5}
 
   }), /*#__PURE__*/_react["default"].createElement("button", {
     onClick: function onClick() {
