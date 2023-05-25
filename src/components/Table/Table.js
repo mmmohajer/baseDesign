@@ -47,6 +47,7 @@ const Table = ({
 }) => {
   const mainContainerRef = useRef();
 
+  const [firstSetup, setFirstSetup] = useState(true);
   const [filter, setFilter] = useState({});
   const [filteredData, setFilteredData] = useState([]);
   const [sortedData, setSortedData] = useState([]);
@@ -102,7 +103,7 @@ const Table = ({
   }, [tableWidth, headLines, isSelectable]);
 
   useEffect(() => {
-    if (headLines?.length) {
+    if (headLines?.length && firstSetup) {
       const newObj = {};
       headLines?.forEach((item) => {
         if (item?.value) {
@@ -112,8 +113,9 @@ const Table = ({
         }
       });
       setFilter({ ...newObj });
+      setFirstSetup(false);
     }
-  }, [headLines]);
+  }, [headLines, firstSetup]);
 
   const searchHandler = (e, head) => {
     const key = head?.value || head;
@@ -162,9 +164,9 @@ const Table = ({
         localIsChecked[count] = false;
         count += 1;
       });
-      setFilteredData(localData);
-      setSortedData(localData);
-      setIsChecked(localIsChecked);
+      setFilteredData([...localData]);
+      setSortedData([...localData]);
+      setIsChecked({ ...localIsChecked });
     }
   }, [data]);
 
@@ -184,17 +186,17 @@ const Table = ({
       Object.keys(isChecked).map((idx) => {
         if (isChecked[idx]) {
           const toBeAdded = {
-            ...sortedData.find((d) => d['iswad_table_idx'] === parseInt(idx))
+            ...data.find((d) => d['iswad_table_idx'] === parseInt(idx))
           };
           delete toBeAdded['iswad_table_idx'];
           localSelectedData.push(toBeAdded);
         }
       });
       if (setSelectedData) {
-        setSelectedData(localSelectedData);
+        setSelectedData([...localSelectedData]);
       }
     }
-  }, [isChecked, sortedData]);
+  }, [isChecked, data]);
 
   const sortHandler = (head) => {
     if (setCurrentPage) {
