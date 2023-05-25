@@ -86,65 +86,70 @@ var Table = function Table(_ref) {
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   var mainContainerRef = (0, _react.useRef)();
 
-  var _useState = (0, _react.useState)({}),
+  var _useState = (0, _react.useState)(true),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
-      filter = _useState2[0],
-      setFilter = _useState2[1];
+      firstSetup = _useState2[0],
+      setFirstSetup = _useState2[1];
 
-  var _useState3 = (0, _react.useState)([]),
+  var _useState3 = (0, _react.useState)({}),
       _useState4 = (0, _slicedToArray2["default"])(_useState3, 2),
-      filteredData = _useState4[0],
-      setFilteredData = _useState4[1];
+      filter = _useState4[0],
+      setFilter = _useState4[1];
 
   var _useState5 = (0, _react.useState)([]),
       _useState6 = (0, _slicedToArray2["default"])(_useState5, 2),
-      sortedData = _useState6[0],
-      setSortedData = _useState6[1];
+      filteredData = _useState6[0],
+      setFilteredData = _useState6[1];
 
-  var _useState7 = (0, _react.useState)({}),
+  var _useState7 = (0, _react.useState)([]),
       _useState8 = (0, _slicedToArray2["default"])(_useState7, 2),
-      isChecked = _useState8[0],
-      setIsChecked = _useState8[1];
+      sortedData = _useState8[0],
+      setSortedData = _useState8[1];
 
-  var _useState9 = (0, _react.useState)(false),
+  var _useState9 = (0, _react.useState)({}),
       _useState10 = (0, _slicedToArray2["default"])(_useState9, 2),
-      allIsChecked = _useState10[0],
-      setAllIsChecked = _useState10[1];
+      isChecked = _useState10[0],
+      setIsChecked = _useState10[1];
 
-  var _useState11 = (0, _react.useState)({}),
+  var _useState11 = (0, _react.useState)(false),
       _useState12 = (0, _slicedToArray2["default"])(_useState11, 2),
-      isSorted = _useState12[0],
-      setIsSorted = _useState12[1];
+      allIsChecked = _useState12[0],
+      setAllIsChecked = _useState12[1];
 
   var _useState13 = (0, _react.useState)({}),
       _useState14 = (0, _slicedToArray2["default"])(_useState13, 2),
-      sortIconColor = _useState14[0],
-      setSortIconColor = _useState14[1];
+      isSorted = _useState14[0],
+      setIsSorted = _useState14[1];
 
   var _useState15 = (0, _react.useState)({}),
       _useState16 = (0, _slicedToArray2["default"])(_useState15, 2),
-      pageData = _useState16[0],
-      setPageData = _useState16[1];
+      sortIconColor = _useState16[0],
+      setSortIconColor = _useState16[1];
 
-  var _useState17 = (0, _react.useState)(1),
+  var _useState17 = (0, _react.useState)({}),
       _useState18 = (0, _slicedToArray2["default"])(_useState17, 2),
-      numberOfTotalPages = _useState18[0],
-      setNumberOfTotalPages = _useState18[1];
+      pageData = _useState18[0],
+      setPageData = _useState18[1];
 
-  var _useState19 = (0, _react.useState)('100%'),
+  var _useState19 = (0, _react.useState)(1),
       _useState20 = (0, _slicedToArray2["default"])(_useState19, 2),
-      tableTotalWidth = _useState20[0],
-      setTableTotalWidth = _useState20[1];
+      numberOfTotalPages = _useState20[0],
+      setNumberOfTotalPages = _useState20[1];
 
-  var _useState21 = (0, _react.useState)(0),
+  var _useState21 = (0, _react.useState)('100%'),
       _useState22 = (0, _slicedToArray2["default"])(_useState21, 2),
-      tableTotalWidthInPx = _useState22[0],
-      setTableTotalWidthInPx = _useState22[1];
+      tableTotalWidth = _useState22[0],
+      setTableTotalWidth = _useState22[1];
 
   var _useState23 = (0, _react.useState)(0),
       _useState24 = (0, _slicedToArray2["default"])(_useState23, 2),
-      addedPx = _useState24[0],
-      setAddedPx = _useState24[1];
+      tableTotalWidthInPx = _useState24[0],
+      setTableTotalWidthInPx = _useState24[1];
+
+  var _useState25 = (0, _react.useState)(0),
+      _useState26 = (0, _slicedToArray2["default"])(_useState25, 2),
+      addedPx = _useState26[0],
+      setAddedPx = _useState26[1];
 
   var calcTotalWidth = function calcTotalWidth() {
     var totalWidth = 0;
@@ -187,7 +192,7 @@ var Table = function Table(_ref) {
     }
   }, [tableWidth, headLines, isSelectable]);
   (0, _react.useEffect)(function () {
-    if (headLines !== null && headLines !== void 0 && headLines.length) {
+    if (headLines !== null && headLines !== void 0 && headLines.length && firstSetup) {
       var newObj = {};
       headLines === null || headLines === void 0 ? void 0 : headLines.forEach(function (item) {
         if (item !== null && item !== void 0 && item.value) {
@@ -197,8 +202,9 @@ var Table = function Table(_ref) {
         }
       });
       setFilter(_objectSpread({}, newObj));
+      setFirstSetup(false);
     }
-  }, [headLines]);
+  }, [headLines, firstSetup]);
 
   var searchHandler = function searchHandler(e, head) {
     var key = (head === null || head === void 0 ? void 0 : head.value) || head;
@@ -255,9 +261,9 @@ var Table = function Table(_ref) {
         localIsChecked[count] = false;
         count += 1;
       });
-      setFilteredData(localData);
-      setSortedData(localData);
-      setIsChecked(localIsChecked);
+      setFilteredData((0, _toConsumableArray2["default"])(localData));
+      setSortedData((0, _toConsumableArray2["default"])(localData));
+      setIsChecked(_objectSpread({}, localIsChecked));
     }
   }, [data]);
   (0, _react.useEffect)(function () {
@@ -276,7 +282,7 @@ var Table = function Table(_ref) {
     if (Object.keys(isChecked).length) {
       Object.keys(isChecked).map(function (idx) {
         if (isChecked[idx]) {
-          var toBeAdded = _objectSpread({}, sortedData.find(function (d) {
+          var toBeAdded = _objectSpread({}, data.find(function (d) {
             return d['iswad_table_idx'] === parseInt(idx);
           }));
 
@@ -286,10 +292,10 @@ var Table = function Table(_ref) {
       });
 
       if (setSelectedData) {
-        setSelectedData(localSelectedData);
+        setSelectedData([].concat(localSelectedData));
       }
     }
-  }, [isChecked, sortedData]);
+  }, [isChecked, data]);
 
   var sortHandler = function sortHandler(head) {
     if (setCurrentPage) {
