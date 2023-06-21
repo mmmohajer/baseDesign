@@ -69,7 +69,7 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       SelectClickableClassName = _ref.SelectClickableClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
-  var _useState = (0, _react.useState)(options),
+  var _useState = (0, _react.useState)([]),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
       filteredOptions = _useState2[0],
       setFilteredOptions = _useState2[1];
@@ -92,6 +92,9 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       setShowPlaceHolder(false);
     }
   }, [curVal]);
+  (0, _react.useEffect)(function () {
+    setFilteredOptions(options);
+  }, [options]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, isOptionsActive && /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('SelectMainClickableZIndex', SelectClickableClassName),
     onClick: function onClick() {
