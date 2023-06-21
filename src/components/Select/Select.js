@@ -40,7 +40,7 @@ const Select = React.forwardRef(
     },
     ref
   ) => {
-    const [filteredOptions, setFilteredOptions] = useState(options);
+    const [filteredOptions, setFilteredOptions] = useState([]);
     const [curVal, setCurVal] = useState(selectIntialShownText);
     const [showPlaceHolder, setShowPlaceHolder] = useState(false);
 
@@ -52,6 +52,10 @@ const Select = React.forwardRef(
         setShowPlaceHolder(false);
       }
     }, [curVal]);
+
+    useEffect(() => {
+      setFilteredOptions(options);
+    }, [options]);
 
     return (
       <>
