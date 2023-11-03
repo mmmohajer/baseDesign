@@ -54,6 +54,16 @@ const Select = React.forwardRef(
     }, [curVal]);
 
     useEffect(() => {
+      let curOption;
+      options?.forEach((item) => {
+        if (item?.value && item.value === selectValue) {
+          curOption = item.shownText;
+        }
+      });
+      setCurVal(curOption);
+    }, [selectValue, options]);
+
+    useEffect(() => {
       setFilteredOptions(options);
     }, [options]);
 
