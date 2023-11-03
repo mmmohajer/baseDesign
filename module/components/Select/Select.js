@@ -93,6 +93,15 @@ var Select = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     }
   }, [curVal]);
   (0, _react.useEffect)(function () {
+    var curOption;
+    options === null || options === void 0 ? void 0 : options.forEach(function (item) {
+      if (item !== null && item !== void 0 && item.value && item.value === selectValue) {
+        curOption = item.shownText;
+      }
+    });
+    setCurVal(curOption);
+  }, [selectValue, options]);
+  (0, _react.useEffect)(function () {
     setFilteredOptions(options);
   }, [options]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, isOptionsActive && /*#__PURE__*/_react["default"].createElement("div", {
