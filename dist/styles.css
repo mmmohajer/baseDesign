@@ -3496,41 +3496,4 @@ ul {
   transform-origin: 0 0;
 }
 
-.ISWAD-Select-select {
-  border: solid 1px black;
-  padding: 8px 1rem;
-}
-
-.ISWAD-Select-optionsContainer {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  left: 0;
-}
-.ISWAD-Select-optionsContainerToUp {
-  top: 0;
-  transform: translateY(-100%);
-}
-.ISWAD-Select-optionsContainerToDown {
-  bottom: 0;
-  transform: translateY(100%);
-}
-.ISWAD-Select-optionsContainerIsActive {
-  display: flex;
-}
-
-.ISWAD-Select-arrowConrainer {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 8px;
-}
-
-.ISWAD-Select-iconSearch {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 /*# sourceMappingURL=styles.css.map */
