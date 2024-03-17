@@ -39,7 +39,7 @@ var _Search = _interopRequireDefault(require("../Search"));
 
 var _Pagination = _interopRequireDefault(require("../Pagination"));
 
-var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "mainContainerClassName", "className", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName", "isSearchCaseInsensitive", "containerUID", "isFullWidth"];
+var _excluded = ["headLines", "data", "colWidth", "tableWidth", "isSelectable", "search", "selectedData", "setSelectedData", "sortIconColors", "rowsPerPage", "currentPage", "setCurrentPage", "showDefaultPagination", "numberOfShownPages", "tableClassName", "mainContainerClassName", "className", "tableHeadContainerClassName", "paginationComponent", "showFirstLastIconInPagination", "showDefaultSortIcon", "sortIcon", "showDefaultSelectable", "selectableComp", "selectableColWidth", "selectableHeaderClassName", "selectableRowClassName", "isSearchCaseInsensitive", "containerUID", "isFullWidth", "thClassName", "trClassName", "tdClassName"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -83,6 +83,9 @@ var Table = function Table(_ref) {
       isSearchCaseInsensitive = _ref.isSearchCaseInsensitive,
       containerUID = _ref.containerUID,
       isFullWidth = _ref.isFullWidth,
+      thClassName = _ref.thClassName,
+      trClassName = _ref.trClassName,
+      tdClassName = _ref.tdClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   var mainContainerRef = (0, _react.useRef)();
 
@@ -390,7 +393,7 @@ var Table = function Table(_ref) {
   }, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
     className: (0, _classnames["default"])("flex flex--dir--col ml-auto mr-auto of-x-auto ".concat(containerUID, "-iswad-table"), tableClassName)
   }, props), /*#__PURE__*/_react["default"].createElement(_Th["default"], {
-    className: ""
+    className: thClassName
   }, isSelectable && /*#__PURE__*/_react["default"].createElement(_Td["default"], {
     style: {
       width: "".concat(selectableColWidth, "px")
@@ -423,7 +426,7 @@ var Table = function Table(_ref) {
     }
   }) : ''), headLines.map(function (head, idx) {
     return /*#__PURE__*/_react["default"].createElement(_Td["default"], {
-      className: "",
+      className: tdClassName,
       style: (head === null || head === void 0 ? void 0 : head.width) && {
         width: "".concat(head.width + addedPx, "px")
       },
@@ -462,7 +465,8 @@ var Table = function Table(_ref) {
     }) : '')));
   })), pageData !== null && pageData !== void 0 && pageData.length ? pageData.map(function (curRow, idx) {
     return /*#__PURE__*/_react["default"].createElement(_Tr["default"], {
-      key: idx
+      key: idx,
+      className: trClassName
     }, isSelectable && /*#__PURE__*/_react["default"].createElement(_Td["default"], {
       style: {
         width: "".concat(selectableColWidth, "px")
@@ -489,6 +493,7 @@ var Table = function Table(_ref) {
       var _curRow;
 
       return /*#__PURE__*/_react["default"].createElement(_Td["default"], {
+        className: tdClassName,
         key: idx1,
         style: (curCol === null || curCol === void 0 ? void 0 : curCol.width) && {
           width: "".concat(curCol.width + addedPx, "px")
