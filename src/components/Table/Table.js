@@ -43,6 +43,9 @@ const Table = ({
   isSearchCaseInsensitive,
   containerUID,
   isFullWidth,
+  thClassName,
+  trClassName,
+  tdClassName,
   ...props
 }) => {
   const mainContainerRef = useRef();
@@ -280,7 +283,7 @@ const Table = ({
               tableClassName
             )}
             {...props}>
-            <Th className="">
+            <Th className={thClassName}>
               {isSelectable && (
                 <Td
                   style={{ width: `${selectableColWidth}px` }}
@@ -317,7 +320,7 @@ const Table = ({
               )}
               {headLines.map((head, idx) => (
                 <Td
-                  className=""
+                  className={tdClassName}
                   style={head?.width && { width: `${head.width + addedPx}px` }}
                   key={idx}>
                   <div className="flex w-per-100 flex--jc--between flex--ai--center">
@@ -370,7 +373,7 @@ const Table = ({
             </Th>
             {pageData?.length
               ? pageData.map((curRow, idx) => (
-                  <Tr key={idx}>
+                  <Tr key={idx} className={trClassName}>
                     {isSelectable && (
                       <Td
                         style={{ width: `${selectableColWidth}px` }}
@@ -404,6 +407,7 @@ const Table = ({
                     )}
                     {headLines.map((curCol, idx1) => (
                       <Td
+                        className={tdClassName}
                         key={idx1}
                         style={curCol?.width && { width: `${curCol.width + addedPx}px` }}>
                         {curRow[curCol?.value || curCol]?.display ||
