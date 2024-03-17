@@ -36,6 +36,11 @@ const Select = React.forwardRef(
       inputSearchClassName,
       placeHolderClassName,
       SelectClickableClassName,
+      iconSearchContainerClassName,
+      optinsContainerToDownClassName,
+      optinsContainerToUpClassName,
+      optinsContainerIsActiveClassName,
+      arrowContainerClassName,
       ...props
     },
     ref
@@ -107,7 +112,7 @@ const Select = React.forwardRef(
                 }
               />
               {showDefaultSearchIcon && (
-                <div className={cx('ISWAD-Select-iconSearch')}>
+                <div className={cx('ISWAD-Select-iconSearch', iconSearchContainerClassName)}>
                   <Icon
                     type="search"
                     scale={searchIconScale}
@@ -122,10 +127,8 @@ const Select = React.forwardRef(
           <div
             className={cx(
               'ISWAD-Select-optionsContainer',
-              openOptionsDownWard
-                ? 'ISWAD-Select-optionsContainerToDown'
-                : 'ISWAD-Select-optionsContainerToUp',
-              isOptionsActive && 'ISWAD-Select-optionsContainerIsActive',
+              openOptionsDownWard ? optinsContainerToDownClassName : optinsContainerToUpClassName,
+              isOptionsActive && optinsContainerIsActiveClassName,
               optinsContainerClassName
             )}>
             {filteredOptions?.map((item, idx) => (
@@ -143,7 +146,7 @@ const Select = React.forwardRef(
             ))}
           </div>
           {showDefaultArrowDownIcon && !isOptionsActive ? (
-            <div className={cx('ISWAD-Select-arrowConrainer')}>
+            <div className={cx(arrowContainerClassName)}>
               <Icon
                 type="down"
                 fill={arrowIconFillColor}
@@ -177,7 +180,12 @@ Select.propTypes = {
   placeholder: PropTypes.any,
   isOptionsActive: PropTypes.bool,
   setIsOptionsActive: PropTypes.func,
-  SelectClickableClassName: PropTypes.string
+  SelectClickableClassName: PropTypes.string,
+  iconSearchContainerClassName: PropTypes.string,
+  optinsContainerToDownClassName: PropTypes.string,
+  optinsContainerToUpClassName: PropTypes.string,
+  optinsContainerIsActiveClassName: PropTypes.string,
+  arrowContainerClassName: PropTypes.string
 };
 
 Select.defaultProps = {
@@ -195,7 +203,12 @@ Select.defaultProps = {
   placeholder: '',
   isOptionsActive: false,
   selectIntialShownText: '',
-  SelectClickableClassName: 'w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10'
+  SelectClickableClassName: 'w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10',
+  iconSearchContainerClassName: '',
+  optinsContainerToDownClassName: '',
+  optinsContainerToUpClassName: '',
+  optinsContainerIsActiveClassName: '',
+  arrowContainerClassName: ''
 };
 
 export default Select;
