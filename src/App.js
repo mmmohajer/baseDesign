@@ -30,7 +30,9 @@ import TestRing from './TestComponents/TestRing';
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
+      {/* <div className="bgRed textYellow mB10 pY16 pX50 w-px-800 ml-auto mr-auto">Hello</div>
+      <div className="bgRed textYellow w-per-25 br-all-dashed-10 brGreen br-rad-px-10">Hello</div> */}
       {/* <TestNavBar /> */}
       {/* <div className="w-per-100 height-px-200 bgRed ml-auto mr-auto">
         <TestLimitedSwipableSlider />

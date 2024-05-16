@@ -11,22 +11,7 @@ html {
 }
 
 body {
-  font-family: $fontFamily;
-  color: $fontColor;
-  font-size: $fontSize;
   overflow-x: hidden;
-
-  @include atSmall {
-    font-size: $fontSmallSize;
-  }
-
-  @include atMedium {
-    font-size: $fontMediumSize;
-  }
-
-  @include atLarge {
-    font-size: $fontLargeSize;
-  }
 }
 
 img {

@@ -1,143 +1,253 @@
-// Borders
-$borderThickness: (1, 2, 3, 4);
-$borderRadius: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50);
-$borderPercentRadius: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
-$borderStyles: (
-  "dotted",
-  "dashed",
-  "solid",
-  "double",
-  "groove",
-  "ridge",
-  "inset",
-  "outset",
-  "none",
-  "hidden"
+@function capitalize($string) {
+  @if type-of($string) != 'string' {
+    @return $string;
+  }
+  $first-letter: str-slice($string, 1, 1);
+  $rest: str-slice($string, 2);
+  @return to-upper-case($first-letter) + $rest;
+}
+
+$zeroTo100: (
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32,
+  33,
+  34,
+  35,
+  36,
+  37,
+  38,
+  39,
+  40,
+  41,
+  42,
+  43,
+  44,
+  45,
+  46,
+  47,
+  48,
+  49,
+  50,
+  51,
+  52,
+  53,
+  54,
+  55,
+  56,
+  57,
+  58,
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73,
+  74,
+  75,
+  76,
+  77,
+  78,
+  79,
+  80,
+  81,
+  82,
+  83,
+  84,
+  85,
+  86,
+  87,
+  88,
+  89,
+  90,
+  91,
+  92,
+  93,
+  94,
+  95,
+  96,
+  97,
+  98,
+  99,
+  100
 );
-$directions: ("top", "left", "right", "bottom");
 
-//Buttons
-$btnColorHover: #ccc;
-$btnTextColor: black;
-$btnBgColor: orange;
-$btnBorderRadius: 10px;
-$btnPadding: 1rem;
+// Borders
+$borderThickness: $zeroTo100;
+$borderRadius: $zeroTo100;
+$borderPercentRadius: $zeroTo100;
+$borderStyles: (
+  'dotted',
+  'dashed',
+  'solid',
+  'double',
+  'groove',
+  'ridge',
+  'inset',
+  'outset',
+  'none',
+  'hidden'
+);
+$directions: ('top', 'left', 'right', 'bottom');
 
-$btnLarge: 200px;
-$btnMedium: 100px;
-$btnSmall: 80px;
-
-$btnSmallSizeLarge: 200px;
-$btnSmallSizeMedium: 100px;
-$btnSmallSizeSmall: 80px;
-
-$btnMediumSizeLarge: 400px;
-$btnMediumSizeMedium: 200px;
-$btnMediumSizeSmall: 160px;
-
-$btnLargeSizeLarge: 400px;
-$btnLargeSizeMedium: 200px;
-$btnLargeSizeSmall: 160px;
-
-// Colors
-$primaryColor: #0275d8;
-$fadedColor: #f7f7f7;
-$infoColor: #5bc0de;
-$inverseColor: #292b2c;
-$warningColor: #f0ad4e;
-$successColor: #5cb85c;
-$dangerColor: #d9534f;
-
-$redColor: red;
-$blueColor: blue;
-$blackColor: black;
-$whiteColor: white;
-$orangeColor: orange;
-$purpleColor: purple;
-$yellowColor: yellow;
-$greenColor: green;
-$pinkColor: pink;
-$cyanColor: cyan;
-$silverColor: silver;
-
+$colors: (
+  'red': red,
+  'blue': blue,
+  'black': black,
+  'white': white,
+  'orange': orange,
+  'purple': purple,
+  'yellow': yellow,
+  'green': green,
+  'pink': pink,
+  'cyan': cyan,
+  'silver': silver,
+  'navy': navy,
+  'maroon': maroon,
+  'olive': olive,
+  'lime': lime,
+  'teal': teal,
+  'gold': gold,
+  'bronze': bronze,
+  'beige': beige,
+  'coral': coral,
+  'indigo': indigo,
+  'lavender': lavender,
+  'magenta': magenta,
+  'salmon': salmon,
+  'turquoise': turquoise,
+  'violet': violet,
+  'wheat': wheat,
+  'khaki': khaki,
+  'plum': plum,
+  'orchid': orchid,
+  'slategray': slategray,
+  'tomato': tomato,
+  'crimson': crimson
+);
 // Display
 $flexGrow: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
 
-// Fonts
-$fontFamily: "Roboto", "sans-serif";
-$fontSize: 16px;
-$fontSmallSize: 16px;
-$fontMediumSize: 16px;
-$fontLargeSize: 18px;
-$fontColor: black;
-
 // Font Sizes
-$fontPxArray: (8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32);
-$fontRemArray: (1, 2, 3, 4, 5, 6, 7, 8);
+$fontPxArray: $zeroTo100;
+$fontRemArray: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16);
 $fontWeightArray: (100, 200, 300, 400, 500, 600, 700, 800, 900, 1000);
 
 // grid
 $gridGap: 1rem;
 
-// Headings
-$fontHeadingWeight: bold;
-
-$fontH1Size: 32px;
-$fontH1SmallSize: 32px;
-$fontH1MediumSize: 40px;
-$fontH1LargeSize: 48px;
-
-$fontH2Size: 26px;
-$fontH2SmallSize: 26px;
-$fontH2MediumSize: 32px;
-$fontH2LargeSize: 36px;
-
-$fontH3Size: 22px;
-$fontH3SmallSize: 22px;
-$fontH3MediumSize: 24px;
-$fontH3LargeSize: 28px;
-
 // Heights
 $boxHeighs: (
   0,
+  5,
   10,
+  15,
   20,
+  25,
   30,
+  35,
   40,
+  45,
   50,
+  55,
   60,
+  65,
   70,
+  75,
   80,
+  85,
   90,
+  95,
   100,
   125,
   150,
   175,
   200,
+  225,
   250,
+  275,
   300,
+  325,
   350,
+  375,
   400,
+  425,
   450,
-  500
+  475,
+  500,
+  525,
+  550,
+  575,
+  600,
+  625,
+  650,
+  675,
+  700,
+  725,
+  750,
+  775,
+  800,
+  825,
+  850,
+  875,
+  900,
+  925,
+  950,
+  975,
+  1000,
+  1050,
+  1100,
+  1150,
+  1200,
+  1250,
+  1300,
+  1350,
+  1400,
+  1450,
+  1500
 );
 
-// Inputs
-$inputPaddingX: 8px;
-$inputPaddingY: 6px;
-$inputTextColor: black;
-$inputBgColor: white;
-$focusTextColor: black;
-$focusBgColor: #ccc;
-
-// Links
-$linkColor: black;
-$linkHoverColor: pink;
-$linkBgColor: transparent;
-$linkHoverBgColor: transparent;
-
 // Opacities
-$opacityArray: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+$opacityArray: $zeroTo100;
 
 // Sizes
 $atSmall: 400px;
@@ -146,32 +256,76 @@ $atLarge: 1200px;
 $maxContainerWidth: 100%;
 
 // Spacing
-$spaceamounts: (1, 2, 3, 4, 5, 6, 7, 8);
+$spaceamounts: $zeroTo100;
 
 // Widths
-$widthPercentages: (0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100);
+$widthPercentages: $zeroTo100;
 $widthPx: (
   0,
+  5,
   10,
+  15,
   20,
+  25,
   30,
+  35,
   40,
+  45,
   50,
+  55,
   60,
+  65,
   70,
+  75,
   80,
+  85,
   90,
+  95,
   100,
   125,
   150,
   175,
   200,
+  225,
   250,
+  275,
   300,
+  325,
   350,
+  375,
   400,
+  425,
   450,
+  475,
   500,
+  525,
   550,
-  600
+  575,
+  600,
+  625,
+  650,
+  675,
+  700,
+  725,
+  750,
+  775,
+  800,
+  825,
+  850,
+  875,
+  900,
+  925,
+  950,
+  975,
+  1000,
+  1050,
+  1100,
+  1150,
+  1200,
+  1250,
+  1300,
+  1350,
+  1400,
+  1450,
+  1500
 );
