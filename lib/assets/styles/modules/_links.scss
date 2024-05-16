@@ -1,11 +1,4 @@
 .link {
   text-decoration: none;
-  color: $linkColor;
-  background-color: $linkBgColor;
   cursor: pointer;
-}
-
-.link:hover {
-  color: $linkHoverColor;
-  background-color: $linkHoverBgColor;
 }

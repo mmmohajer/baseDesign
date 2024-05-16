@@ -1,68 +1,69 @@
 @each $space in $spaceamounts {
-    .m#{$space} {
-        margin: $space*0.5rem;
-    }
+  .m#{$space} {
+    margin: #{$space}px;
+  }
 
-    .mt#{$space} {
-        margin-top: $space*0.5rem;
-    }
+  .mT#{$space} {
+    margin-top: #{$space}px;
+  }
 
-    .mb#{$space} {
-        margin-bottom: $space*0.5rem;
-    }
+  .mB#{$space} {
+    margin-bottom: #{$space}px;
+  }
 
-    .mr#{$space} {
-        margin-right: $space*0.5rem;
-    }
+  .mR#{$space} {
+    margin-right: #{$space}px;
+  }
 
-    .ml#{$space} {
-        margin-left: $space*0.5rem;
-    }
+  .mL#{$space} {
+    margin-left: #{$space}px;
+  }
 
-    .my#{$space} {
-        margin: $space*0.5rem 0;
-    }
+  .mY#{$space} {
+    margin-top: #{$space}px;
+    margin-bottom: #{$space}px;
+  }
 
-    .mx#{$space} {
-        margin: 0 $space*0.5rem;
-    }
+  .mX#{$space} {
+    margin-left: 0 #{$space}px;
+    margin-right: 0 #{$space}px;
+  }
 
-    // 
+  .p#{$space} {
+    padding: #{$space}px;
+  }
 
-    .p#{$space} {
-        padding: $space*0.5rem;
-    }
+  .pT#{$space} {
+    padding-top: #{$space}px;
+  }
 
-    .pt#{$space} {
-        padding-top: $space*0.5rem;
-    }
+  .pB#{$space} {
+    padding-bottom: #{$space}px;
+  }
 
-    .pb#{$space} {
-        padding-bottom: $space*0.5rem;
-    }
+  .pR#{$space} {
+    padding-right: #{$space}px;
+  }
 
-    .pr#{$space} {
-        padding-right: $space*0.5rem;
-    }
+  .pL#{$space} {
+    padding-left: #{$space}px;
+  }
 
-    .pl#{$space} {
-        padding-left: $space*0.5rem;
-    }
+  .pY#{$space} {
+    padding-top: #{$space}px;
+    padding-bottom: #{$space}px;
+  }
 
-    .py#{$space} {
-        padding: $space*0.5rem 0;
-    }
-
-    .px#{$space} {
-        padding: 0 $space*0.5rem;
-    }
-
+  .pX#{$space} {
+    padding-left: #{$space}px;
+    padding-right: #{$space}px;
+  }
 }
 
 .ml-auto {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .mr-auto {
-    margin-right: auto;
+  margin-right: auto;
 }

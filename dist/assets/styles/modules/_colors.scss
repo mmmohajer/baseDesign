@@ -1,151 +1,29 @@
-.text {
-  &Primary {
-    color: $primaryColor;
+@each $name, $color in $colors {
+  $className: 'text' + capitalize($name);
+  .#{$className} {
+    color: $color;
   }
 
-  &Faded {
-    color: $fadedColor;
-  }
-
-  &Info {
-    color: $infoColor;
-  }
-
-  &Inverse {
-    color: $inverseColor;
-  }
-
-  &Success {
-    color: $successColor;
-  }
-
-  &Warning {
-    color: $warningColor;
-  }
-
-  &Danger {
-    color: $dangerColor;
-  }
-
-  &Red {
-    color: $redColor;
-  }
-
-  &Blue {
-    color: $blueColor;
-  }
-
-  &Black {
-    color: $blackColor;
-  }
-
-  &White {
-    color: $whiteColor;
-  }
-
-  &Orange {
-    color: $orangeColor;
-  }
-
-  &Purple {
-    color: $purpleColor;
-  }
-
-  &Yellow {
-    color: $yellowColor;
-  }
-
-  &Green {
-    color: $greenColor;
-  }
-
-  &Pink {
-    color: $pinkColor;
-  }
-
-  &Cyan {
-    color: $cyanColor;
-  }
-
-  &Silver {
-    color: $silverColor;
+  .#{$className}OnHover:hover {
+    color: $color;
   }
 }
 
-.bg {
-  &Primary {
-    background-color: $primaryColor;
+@each $name, $color in $colors {
+  $className: 'bg' + capitalize($name);
+  .#{$className} {
+    background-color: $color;
   }
 
-  &Faded {
-    background-color: $fadedColor;
+  .#{$className}OnHover:hover {
+    background-color: $color;
   }
+}
 
-  &Info {
-    background-color: $infoColor;
-  }
+.bgTransparent {
+  background-color: transparent;
 
-  &Inverse {
-    background-color: $inverseColor;
-  }
-
-  &Success {
-    background-color: $successColor;
-  }
-
-  &Warning {
-    background-color: $warningColor;
-  }
-
-  &Danger {
-    background-color: $dangerColor;
-  }
-
-  &Red {
-    background-color: $redColor;
-  }
-
-  &Blue {
-    background-color: $blueColor;
-  }
-
-  &Black {
-    background-color: $blackColor;
-  }
-
-  &White {
-    background-color: $whiteColor;
-  }
-
-  &Orange {
-    background-color: $orangeColor;
-  }
-
-  &Purple {
-    background-color: $purpleColor;
-  }
-
-  &Yellow {
-    background-color: $yellowColor;
-  }
-
-  &Green {
-    background-color: $greenColor;
-  }
-
-  &Pink {
-    background-color: $pinkColor;
-  }
-
-  &Cyan {
-    background-color: $cyanColor;
-  }
-
-  &Silver {
-    background-color: $silverColor;
-  }
-
-  &Transparent {
+  &OnHover:hover {
     background-color: transparent;
   }
 }

@@ -28,78 +28,21 @@
   }
 }
 
-.br-color-primary {
-  border-color: $primaryColor;
-}
+@each $name, $color in $colors {
+  $className: 'br' + capitalize($name);
+  .#{$className} {
+    border-color: $color;
+  }
 
-.br-color-faded {
-  border-color: $fadedColor;
-}
-
-.br-color-info {
-  border-color: $infoColor;
-}
-
-.br-color-inverse {
-  border-color: $inverseColor;
-}
-
-.br-color-success {
-  border-color: $successColor;
-}
-
-.br-color-warning {
-  border-color: $warningColor;
-}
-
-.br-color-danger {
-  border-color: $dangerColor;
-}
-
-.br-color-red {
-  border-color: $redColor;
-}
-
-.br-color-blue {
-  border-color: $blueColor;
-}
-
-.br-color-black {
-  border-color: $blackColor;
-}
-
-.br-color-white {
-  border-color: $whiteColor;
-}
-
-.br-color-orange {
-  border-color: $orangeColor;
-}
-
-.br-color-purple {
-  border-color: $purpleColor;
-}
-
-.br-color-yellow {
-  border-color: $yellowColor;
-}
-
-.br-color-green {
-  border-color: $greenColor;
-}
-
-.br-color-pink {
-  border-color: $pinkColor;
-}
-
-.br-color-cyan {
-  border-color: $cyanColor;
-}
-
-.br-color-silver {
-  border-color: $silverColor;
+  .#{$className}OnHover:hover {
+    border-color: $color;
+  }
 }
 
 .br-none {
   border: none;
+
+  &OnHover:hover {
+    border: none;
+  }
 }
