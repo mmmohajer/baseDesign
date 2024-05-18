@@ -1,5 +1,5 @@
 @each $name, $color in $colors {
-  $className: 'text' + $name;
+  $className: 'text-' + $name;
   .#{$className} {
     color: $color;
   }
@@ -10,7 +10,7 @@
 }
 
 @each $name, $color in $colors {
-  $className: 'bg' + $name;
+  $className: 'bg-' + $name;
   .#{$className} {
     background-color: $color;
   }
