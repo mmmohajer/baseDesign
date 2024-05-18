@@ -58,6 +58,9 @@ const Home = () => {
       {/* <div className="bgRed w-per-100 height-px-100">
         <TestSelect />
       </div> */}
+      {/* <div className="bg-red text-white p-all-16 br-all-solid-4 br-blue br-rad-px-10 width-px-400 m-l-auto m-r-auto f-s-px-20 f-w-700 f-i height-px-400 bg-blue-on-hover br-green-on-hover mouse-hand">
+        Hello
+      </div> */}
     </div>
   );
 };
