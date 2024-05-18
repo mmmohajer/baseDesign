@@ -29,12 +29,12 @@
 }
 
 @each $name, $color in $colors {
-  $className: 'br' + capitalize($name);
+  $className: 'br-' + $name;
   .#{$className} {
     border-color: $color;
   }
 
-  .#{$className}OnHover:hover {
+  .#{$className}-on-hover:hover {
     border-color: $color;
   }
 }
@@ -42,7 +42,7 @@
 .br-none {
   border: none;
 
-  &OnHover:hover {
+  &-on-hover:hover {
     border: none;
   }
 }

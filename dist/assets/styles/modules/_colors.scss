@@ -1,29 +1,29 @@
 @each $name, $color in $colors {
-  $className: 'text' + capitalize($name);
+  $className: 'text' + $name;
   .#{$className} {
     color: $color;
   }
 
-  .#{$className}OnHover:hover {
+  .#{$className}-on-hover:hover {
     color: $color;
   }
 }
 
 @each $name, $color in $colors {
-  $className: 'bg' + capitalize($name);
+  $className: 'bg' + $name;
   .#{$className} {
     background-color: $color;
   }
 
-  .#{$className}OnHover:hover {
+  .#{$className}-on-hover:hover {
     background-color: $color;
   }
 }
 
-.bgTransparent {
+.bg-transparent {
   background-color: transparent;
 
-  &OnHover:hover {
+  &-on-hover:hover {
     background-color: transparent;
   }
 }
