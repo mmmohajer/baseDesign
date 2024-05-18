@@ -62,7 +62,7 @@
   overflow-x: auto;
 }
 
-.noTransition {
+.no-transition {
   -webkit-transition: none !important;
   -moz-transition: none !important;
   -o-transition: none !important;
@@ -78,7 +78,7 @@
     text-decoration: underline;
   }
 
-  &upperCase {
+  &upper-case {
     text-transform: uppercase;
   }
 
@@ -91,14 +91,7 @@
   }
 }
 
-.noTransition {
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
-}
-
-.oneLine {
+.one-line {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -1,69 +1,69 @@
 @each $space in $spaceamounts {
-  .m#{$space} {
+  .m-all-#{$space} {
     margin: #{$space}px;
   }
 
-  .mT#{$space} {
+  .m-t-#{$space} {
     margin-top: #{$space}px;
   }
 
-  .mB#{$space} {
+  .m-b-#{$space} {
     margin-bottom: #{$space}px;
   }
 
-  .mR#{$space} {
+  .m-r-#{$space} {
     margin-right: #{$space}px;
   }
 
-  .mL#{$space} {
+  .m-l-#{$space} {
     margin-left: #{$space}px;
   }
 
-  .mY#{$space} {
+  .m-y-#{$space} {
     margin-top: #{$space}px;
     margin-bottom: #{$space}px;
   }
 
-  .mX#{$space} {
+  .m-x-#{$space} {
     margin-left: 0 #{$space}px;
     margin-right: 0 #{$space}px;
   }
 
-  .p#{$space} {
+  .p-all-#{$space} {
     padding: #{$space}px;
   }
 
-  .pT#{$space} {
+  .p-t-#{$space} {
     padding-top: #{$space}px;
   }
 
-  .pB#{$space} {
+  .p-b-#{$space} {
     padding-bottom: #{$space}px;
   }
 
-  .pR#{$space} {
+  .p-r-#{$space} {
     padding-right: #{$space}px;
   }
 
-  .pL#{$space} {
+  .p-l-#{$space} {
     padding-left: #{$space}px;
   }
 
-  .pY#{$space} {
+  .p-y-#{$space} {
     padding-top: #{$space}px;
     padding-bottom: #{$space}px;
   }
 
-  .pX#{$space} {
+  .p-x-#{$space} {
     padding-left: #{$space}px;
     padding-right: #{$space}px;
   }
 }
 
-.ml-auto {
+.m-l-auto {
   margin-left: auto;
 }
 
-.mr-auto {
+.m-r-auto {
   margin-right: auto;
 }
