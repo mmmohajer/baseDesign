@@ -23,7 +23,7 @@ function TestScroll() {
           </div>
         </div>
       </Scroll>
-      <div className="w-per-100 flex flex--jc--center flex--ai--center bgBlack height-px-20 my3 textWhite">
+      <div className="width-per-100 flex flex--jc--center flex--ai--center bgBlack height-px-20 my3 textWhite">
         Separator
       </div>
       <Scroll

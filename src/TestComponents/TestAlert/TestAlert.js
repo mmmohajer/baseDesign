@@ -16,7 +16,7 @@ const TestAlert = () => {
         {arrayOfNotifications.map((notif) => (
           <AlertItem
             key={notif.key}
-            className="bgBlue my1 w-per-100 flex flex--jc--end p1 textWhite"
+            className="bgBlue my1 width-per-100 flex flex--jc--end p1 textWhite"
             isActive={notif.isActive}>
             <p>{notif.message}</p>
           </AlertItem>

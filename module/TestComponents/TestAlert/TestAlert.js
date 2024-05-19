@@ -33,7 +33,7 @@ var TestAlert = function TestAlert() {
   }, arrayOfNotifications.map(function (notif) {
     return /*#__PURE__*/_react["default"].createElement(_AlertItem["default"], {
       key: notif.key,
-      className: "bgBlue my1 w-per-100 flex flex--jc--end p1 textWhite",
+      className: "bgBlue my1 width-per-100 flex flex--jc--end p1 textWhite",
       isActive: notif.isActive
     }, /*#__PURE__*/_react["default"].createElement("p", null, notif.message));
   })));

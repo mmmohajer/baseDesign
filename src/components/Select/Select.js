@@ -86,7 +86,7 @@ const Select = React.forwardRef(
         <div
           className={cx(
             'pos-rel SelectOptionsContainerZIndex',
-            fullWidth && 'w-per-100',
+            fullWidth && 'width-per-100',
             className,
             children
           )}
@@ -102,7 +102,7 @@ const Select = React.forwardRef(
             <div className={cx('pos-rel', searchContainerClassName)}>
               <input
                 type="text"
-                className={cx('w-per-100', inputSearchClassName)}
+                className={cx('width-per-100', inputSearchClassName)}
                 onChange={(e) =>
                   setFilteredOptions(() =>
                     options.filter((x) =>
@@ -203,7 +203,7 @@ Select.defaultProps = {
   placeholder: '',
   isOptionsActive: false,
   selectIntialShownText: '',
-  SelectClickableClassName: 'w-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10',
+  SelectClickableClassName: 'width-per-100 height-vh-full bgWhite pos-fix pos-fix--lt op-10 z-10',
   iconSearchContainerClassName: '',
   optinsContainerToDownClassName: '',
   optinsContainerToUpClassName: '',

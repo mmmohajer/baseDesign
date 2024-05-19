@@ -23,7 +23,7 @@ const DesktopNav = ({
     <>
       <NavBar
         className={cx(
-          'pos-rel w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse bgInverse'
+          'pos-rel width-per-100 flex flex--jc--between flex--ai--center pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse bgInverse'
         )}>
         <div className="flex flex--jc--start flex--ai--center">
           <div className="w-px-200 height-px-50 bgSilver flex flex--jc--center flex--ai--center">
@@ -49,7 +49,7 @@ const DesktopNav = ({
                     {SUB_MENUES[menu].map((subMenu, idx2) => (
                       <SubNavItem
                         className={cx(
-                          'br-rad-px-10 textWhite p1 w-per-100 flex flex--jc--center flex--ai--center mouse-hand'
+                          'br-rad-px-10 textWhite p1 width-per-100 flex flex--jc--center flex--ai--center mouse-hand'
                         )}
                         key={idx2}>
                         {subMenu}

@@ -148,7 +148,7 @@ const LimitedSwipableSlider = ({
 
   return (
     <>
-      <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
+      <div className={cx('width-per-100 of-x-hidden', className)} {...props}>
         <div
           className={cx('flex', `${containerUID}`, `${containerUID}-move`)}
           ref={(el) => (sliderContainer.current = el)}>
@@ -158,7 +158,7 @@ const LimitedSwipableSlider = ({
                 <Swipe
                   key={idx}
                   className={cx(
-                    'flex flex--jc--center w-per-100',
+                    'flex flex--jc--center width-per-100',
                     cursorIsHandOnItem && 'mouse-hand',
                     isVerticallyCenterAligned && 'flex--ai--center'
                   )}
@@ -176,7 +176,7 @@ const LimitedSwipableSlider = ({
                 <div
                   key={idx}
                   className={cx(
-                    'flex flex--jc--center flex--ai--center w-per-100',
+                    'flex flex--jc--center flex--ai--center width-per-100',
                     cursorIsHandOnItem && 'mouse-hand'
                   )}
                   draggable={isDraggable}

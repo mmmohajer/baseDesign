@@ -410,7 +410,7 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 
 Available prop for this component is:
 
-- **fullWidth**: This prop gets a boolean value indicating whether the width of the button should be 100% or not (It sets `w-per-100` as className).
+- **fullWidth**: This prop gets a boolean value indicating whether the width of the button should be 100% or not (It sets `width-per-100` as className).
 
 <hr>
 
@@ -826,7 +826,7 @@ To see a more complete example, click [here](https://github.com/mmmohajer/baseDe
 Available props for this component is:
 
 - **type**: This prop is a sting that indicates the type of input (for example email, checkbox, etc).
-- **fullWidth**:This prop is a boolean value indicating whether the width of the button should be 100% or not (It sets w-per-100 as className).
+- **fullWidth**:This prop is a boolean value indicating whether the width of the button should be 100% or not (It sets width-per-100 as className).
 - **errorMessage**: This prop is a string value that indicates the error message when an error accrued.
 - **errorIsActive**: This prop is a boolean that indicates whether error messages should be shown or not for this input.
 

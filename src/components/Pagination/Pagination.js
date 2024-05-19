@@ -64,7 +64,7 @@ const Pagination = ({
     <>
       <div
         className={cx(
-          'flex w-per-100 flex--jc--center flex--ai--center iswad_pagination',
+          'flex width-per-100 flex--jc--center flex--ai--center iswad_pagination',
           containerClassName
         )}>
         {showFirstLastIcon ? (

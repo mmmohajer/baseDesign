@@ -9,7 +9,7 @@ const Button = React.forwardRef(({ className, fullWidth, children, ...props }, r
   return (
     <>
       <button
-        className={cx('mouse-hand', fullWidth && 'w-per-100', className)}
+        className={cx('mouse-hand', fullWidth && 'width-per-100', className)}
         {...props}
         ref={ref}>
         {children}

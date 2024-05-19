@@ -34,7 +34,7 @@ const Home = () => {
       {/* <div className="bgRed textYellow mB10 pY16 pX50 w-px-800 ml-auto mr-auto">Hello</div>
       <div className="bgRed textYellow w-per-25 br-all-dashed-10 brGreen br-rad-px-10">Hello</div> */}
       {/* <TestNavBar /> */}
-      {/* <div className="w-per-100 height-px-200 bgRed ml-auto mr-auto">
+      {/* <div className="width-per-100 height-px-200 bgRed ml-auto mr-auto">
         <TestLimitedSwipableSlider />
       </div> */}
       {/* <div className="w-px-500 height-px-200 bgRed ml-auto mr-auto">
@@ -44,7 +44,7 @@ const Home = () => {
         <TestSwipableSlider />
       </div>
       <TestTable /> */}
-      {/* <div className="w-per-100 height-px-200 bgYellow"></div>
+      {/* <div className="width-per-100 height-px-200 bgYellow"></div>
       <TestScroll /> */}
       {/* <TestDragDropFileUpload /> */}
       {/* <TestTable /> */}
@@ -55,7 +55,7 @@ const Home = () => {
       </div> */}
       {/* <TestScroll /> */}
       {/* <TestNavBar /> */}
-      {/* <div className="bgRed w-per-100 height-px-100">
+      {/* <div className="bgRed width-per-100 height-px-100">
         <TestSelect />
       </div> */}
       {/* <div className="bg-red text-white p-all-16 br-all-solid-4 br-blue br-rad-px-10 width-px-400 m-l-auto m-r-auto f-s-px-20 f-w-700 f-i height-px-400 bg-blue-on-hover br-green-on-hover mouse-hand">

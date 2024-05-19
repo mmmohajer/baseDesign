@@ -5,7 +5,7 @@
 }
 
 @each $size in $fontRemArray {
-  .f-s-quarter-rem-#{$size} {
+  .f-s-qr-rem-#{$size} {
     font-size: #{math.div($size, 4)}rem;
   }
 }

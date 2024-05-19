@@ -35,10 +35,10 @@ var MobileNav = function MobileNav(_ref) {
       setIconToggler = _ref.setIconToggler;
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_MobNav["default"], {
     isActive: mobMenuIsActive,
-    className: (0, _classnames["default"])('flex--gr--1 w-per-100 bgInverse pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse of-y-auto')
+    className: (0, _classnames["default"])('flex--gr--1 width-per-100 bgInverse pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse of-y-auto')
   }, MENUES.map(function (menu, idx1) {
     return /*#__PURE__*/_react["default"].createElement(_MobNavItem["default"], {
-      className: (0, _classnames["default"])('my1 py1 textWhite br-rad-px-10 br-color-primary w-per-100'),
+      className: (0, _classnames["default"])('my1 py1 textWhite br-rad-px-10 br-color-primary width-per-100'),
       onClick: function onClick() {
         return mobMenuClickHandler(menu);
       },
@@ -54,7 +54,7 @@ var MobileNav = function MobileNav(_ref) {
       isActive: activeSubMenues.includes(menu)
     }, SUB_MENUES[menu].map(function (subMenu, idx2) {
       return /*#__PURE__*/_react["default"].createElement(_MobSubNavItem["default"], {
-        className: (0, _classnames["default"])('br-rad-px-10 textWhite p1 w-per-100 flex flex--jc--center flex--ai--center mouse-hand'),
+        className: (0, _classnames["default"])('br-rad-px-10 textWhite p1 width-per-100 flex flex--jc--center flex--ai--center mouse-hand'),
         key: idx2,
         onClick: function onClick() {
           setMobMenuIsActive(false);

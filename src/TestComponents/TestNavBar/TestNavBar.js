@@ -85,7 +85,7 @@ const TestNavBar = () => {
       <div
         className={cx(
           'show-flex-in-md-sm-xsm',
-          'w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 height-px-60 br-bottom-solid-1 br-color-inverse bgInverse pos-rel'
+          'width-per-100 flex flex--jc--between flex--ai--center pl2 pr2 height-px-60 br-bottom-solid-1 br-color-inverse bgInverse pos-rel'
         )}>
         <div className="w-px-200 height-px-50 bgSilver flex flex--jc--center flex--ai--center">
           Logo 200x50

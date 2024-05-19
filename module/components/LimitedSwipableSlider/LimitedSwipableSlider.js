@@ -218,7 +218,7 @@ var LimitedSwipableSlider = function LimitedSwipableSlider(_ref) {
     }
   }, [children, sliderContainerWidthMultiplier]);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
-    className: (0, _classnames["default"])('w-per-100 of-x-hidden', className)
+    className: (0, _classnames["default"])('width-per-100 of-x-hidden', className)
   }, props), /*#__PURE__*/_react["default"].createElement("div", {
     className: (0, _classnames["default"])('flex', "".concat(containerUID), "".concat(containerUID, "-move")),
     ref: function ref(el) {
@@ -228,7 +228,7 @@ var LimitedSwipableSlider = function LimitedSwipableSlider(_ref) {
     if (isSwipable) {
       return /*#__PURE__*/_react["default"].createElement(_reactEasySwipe["default"], {
         key: idx,
-        className: (0, _classnames["default"])('flex flex--jc--center w-per-100', cursorIsHandOnItem && 'mouse-hand', isVerticallyCenterAligned && 'flex--ai--center'),
+        className: (0, _classnames["default"])('flex flex--jc--center width-per-100', cursorIsHandOnItem && 'mouse-hand', isVerticallyCenterAligned && 'flex--ai--center'),
         draggable: isDraggable,
         onDragStart: handleDragStart,
         onDragEnd: handleDragEnd,
@@ -239,7 +239,7 @@ var LimitedSwipableSlider = function LimitedSwipableSlider(_ref) {
     } else {
       return /*#__PURE__*/_react["default"].createElement("div", {
         key: idx,
-        className: (0, _classnames["default"])('flex flex--jc--center flex--ai--center w-per-100', cursorIsHandOnItem && 'mouse-hand'),
+        className: (0, _classnames["default"])('flex flex--jc--center flex--ai--center width-per-100', cursorIsHandOnItem && 'mouse-hand'),
         draggable: isDraggable,
         onDragStart: handleDragStart,
         onDragEnd: handleDragEnd

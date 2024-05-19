@@ -120,7 +120,7 @@ var TestNavBar = function TestNavBar() {
     MENUES: MENUES,
     SUB_MENUES: SUB_MENUES
   })), /*#__PURE__*/_react["default"].createElement("div", {
-    className: (0, _classnames["default"])('show-flex-in-md-sm-xsm', 'w-per-100 flex flex--jc--between flex--ai--center pl2 pr2 height-px-60 br-bottom-solid-1 br-color-inverse bgInverse pos-rel')
+    className: (0, _classnames["default"])('show-flex-in-md-sm-xsm', 'width-per-100 flex flex--jc--between flex--ai--center pl2 pr2 height-px-60 br-bottom-solid-1 br-color-inverse bgInverse pos-rel')
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "w-px-200 height-px-50 bgSilver flex flex--jc--center flex--ai--center"
   }, "Logo 200x50"), /*#__PURE__*/_react["default"].createElement("div", {

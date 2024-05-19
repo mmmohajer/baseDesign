@@ -8,7 +8,7 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 const Option = React.forwardRef(({ className, fullWidth, children, ...props }, ref) => {
   return (
     <>
-      <option className={cx(fullWidth && 'w-per-100', className)} {...props} ref={ref}>
+      <option className={cx(fullWidth && 'width-per-100', className)} {...props} ref={ref}>
         {children}
       </option>
     </>

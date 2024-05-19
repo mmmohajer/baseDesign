@@ -48,7 +48,7 @@ var Input = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   }, /*#__PURE__*/_react["default"].createElement("div", {
     className: "iswad_input_field_container"
   }, /*#__PURE__*/_react["default"].createElement("input", (0, _extends2["default"])({
-    className: (0, _classnames["default"])('iswad_input', className, fullWidth && 'w-per-100')
+    className: (0, _classnames["default"])('iswad_input', className, fullWidth && 'width-per-100')
   }, props, {
     ref: ref,
     type: type,

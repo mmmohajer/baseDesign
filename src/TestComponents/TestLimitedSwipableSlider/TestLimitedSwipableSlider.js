@@ -21,7 +21,7 @@ const TestLimitedSwipableSlider = () => {
         transition_timing_function="ease-in"
         sliderContainerWidthMultiplier={2}
         containerUID="testsample">
-        <LimitedSwipableSliderItem className="w-per-100 flex flex--jc--between flex--ai--center">
+        <LimitedSwipableSliderItem className="width-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 1
           </p>
@@ -30,7 +30,7 @@ const TestLimitedSwipableSlider = () => {
           </p>
         </LimitedSwipableSliderItem>
 
-        <LimitedSwipableSliderItem className="w-per-100 flex flex--jc--between flex--ai--center">
+        <LimitedSwipableSliderItem className="width-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 3
           </p>
@@ -39,7 +39,7 @@ const TestLimitedSwipableSlider = () => {
           </p>
         </LimitedSwipableSliderItem>
 
-        <LimitedSwipableSliderItem className="w-per-100 flex flex--jc--between flex--ai--center">
+        <LimitedSwipableSliderItem className="width-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 5
           </p>
@@ -48,7 +48,7 @@ const TestLimitedSwipableSlider = () => {
           </p>
         </LimitedSwipableSliderItem>
 
-        <LimitedSwipableSliderItem className="w-per-100 flex flex--jc--between flex--ai--center">
+        <LimitedSwipableSliderItem className="width-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 7
           </p>
@@ -57,7 +57,7 @@ const TestLimitedSwipableSlider = () => {
           </p>
         </LimitedSwipableSliderItem>
 
-        <LimitedSwipableSliderItem className="w-per-100 flex flex--jc--between flex--ai--center">
+        <LimitedSwipableSliderItem className="width-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 9
           </p>
@@ -66,7 +66,7 @@ const TestLimitedSwipableSlider = () => {
           </p>
         </LimitedSwipableSliderItem>
 
-        <LimitedSwipableSliderItem className="w-per-100 flex flex--jc--between flex--ai--center">
+        <LimitedSwipableSliderItem className="width-per-100 flex flex--jc--between flex--ai--center">
           <p className="bgSilver textRed w-per-50 flex flex--jc--center flex--ai--center height-px-100">
             Item 11
           </p>

@@ -28,7 +28,7 @@ const Input = React.forwardRef(
         <div className={cx('flex flex--dir--col iswad_input_container', containerClassName)}>
           <div className="iswad_input_field_container">
             <input
-              className={cx('iswad_input', className, fullWidth && 'w-per-100')}
+              className={cx('iswad_input', className, fullWidth && 'width-per-100')}
               {...props}
               ref={ref}
               type={type}

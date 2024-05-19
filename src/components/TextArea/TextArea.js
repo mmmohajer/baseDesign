@@ -8,7 +8,7 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 const TextArea = React.forwardRef(({ className, fullWidth, children, ...props }, ref) => {
   return (
     <>
-      <textarea className={cx(fullWidth && 'w-per-100', className)} {...props} ref={ref}>
+      <textarea className={cx(fullWidth && 'width-per-100', className)} {...props} ref={ref}>
         {children}
       </textarea>
     </>

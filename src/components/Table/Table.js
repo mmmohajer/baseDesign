@@ -274,12 +274,12 @@ const Table = ({
   return (
     <>
       <div
-        className={cx('w-per-100', mainContainerClassName)}
+        className={cx('width-per-100', mainContainerClassName)}
         ref={(el) => (mainContainerRef.current = el)}>
-        <div className={cx('w-per-100 of-x-auto', className)}>
+        <div className={cx('width-per-100 of-x-auto', className)}>
           <div
             className={cx(
-              `flex flex--dir--col ml-auto mr-auto of-x-auto ${containerUID}-iswad-table`,
+              `flex flex--dir--col m-l-auto m-r-auto of-x-auto ${containerUID}-iswad-table`,
               tableClassName
             )}
             {...props}>
@@ -323,10 +323,10 @@ const Table = ({
                   className={tdClassName}
                   style={head?.width && { width: `${head.width + addedPx}px` }}
                   key={idx}>
-                  <div className="flex w-per-100 flex--jc--between flex--ai--center">
+                  <div className="flex width-per-100 flex--jc--between flex--ai--center">
                     <div
                       className={cx(
-                        'w-per-100 iswad_table_headContainer',
+                        'width-per-100 iswad_table_headContainer',
                         tableHeadContainerClassName
                       )}>
                       <div className="">{head?.display || head}</div>

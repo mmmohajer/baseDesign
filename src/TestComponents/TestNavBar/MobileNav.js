@@ -25,11 +25,11 @@ const MobileNav = ({
       <MobNav
         isActive={mobMenuIsActive}
         className={cx(
-          'flex--gr--1 w-per-100 bgInverse pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse of-y-auto'
+          'flex--gr--1 width-per-100 bgInverse pl2 pr2 pt1 pb1 br-bottom-solid-1 br-color-inverse of-y-auto'
         )}>
         {MENUES.map((menu, idx1) => (
           <MobNavItem
-            className={cx('my1 py1 textWhite br-rad-px-10 br-color-primary w-per-100')}
+            className={cx('my1 py1 textWhite br-rad-px-10 br-color-primary width-per-100')}
             onClick={() => mobMenuClickHandler(menu)}
             isActive={activeMenu === menu}
             key={idx1}>
@@ -42,7 +42,7 @@ const MobileNav = ({
                 {SUB_MENUES[menu].map((subMenu, idx2) => (
                   <MobSubNavItem
                     className={cx(
-                      'br-rad-px-10 textWhite p1 w-per-100 flex flex--jc--center flex--ai--center mouse-hand'
+                      'br-rad-px-10 textWhite p1 width-per-100 flex flex--jc--center flex--ai--center mouse-hand'
                     )}
                     key={idx2}
                     onClick={() => {

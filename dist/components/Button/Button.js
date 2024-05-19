@@ -36,7 +36,7 @@ var Button = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       children = _ref.children,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("button", (0, _extends2["default"])({
-    className: (0, _classnames["default"])('mouse-hand', fullWidth && 'w-per-100', className)
+    className: (0, _classnames["default"])('mouse-hand', fullWidth && 'width-per-100', className)
   }, props, {
     ref: ref
   }), children));

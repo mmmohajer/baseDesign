@@ -145,7 +145,7 @@ const SwipableSlider = ({
 
   return (
     <>
-      <div className={cx('w-per-100 of-x-hidden', className)} {...props}>
+      <div className={cx('width-per-100 of-x-hidden', className)} {...props}>
         <div className={cx('flex', containerUID)} ref={(el) => (sliderContainer.current = el)}>
           {activeIndices.map((item, idx) => {
             if (isSwipable) {
@@ -153,7 +153,7 @@ const SwipableSlider = ({
                 <Swipe
                   key={idx}
                   className={cx(
-                    'flex flex--jc--center flex--ai--center w-per-100',
+                    'flex flex--jc--center flex--ai--center width-per-100',
                     cursorIsHandOnItem && 'mouse-hand'
                   )}
                   draggable={isDraggable}
@@ -170,7 +170,7 @@ const SwipableSlider = ({
                 <div
                   key={idx}
                   className={cx(
-                    'flex flex--jc--center flex--ai--center w-per-100',
+                    'flex flex--jc--center flex--ai--center width-per-100',
                     cursorIsHandOnItem && 'mouse-hand'
                   )}
                   draggable={isDraggable}
