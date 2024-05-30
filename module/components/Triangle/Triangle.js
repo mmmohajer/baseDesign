@@ -35,8 +35,10 @@ var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
 var Triangle = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var containerUID = _ref.containerUID,
-      cssConfig = _ref.cssConfig,
+  var _ref$containerUID = _ref.containerUID,
+      containerUID = _ref$containerUID === void 0 ? (0, _utils.randomStr)() : _ref$containerUID,
+      _ref$cssConfig = _ref.cssConfig,
+      cssConfig = _ref$cssConfig === void 0 ? _utils2.cssDefaultConfig : _ref$cssConfig,
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
@@ -50,10 +52,6 @@ var Triangle = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 Triangle.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   cssConfig: _propTypes["default"].shape(_utils2.cssConfigShape),
   containerUID: _propTypes["default"].string
-});
-Triangle.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  cssConfig: _utils2.cssDefaultConfig,
-  containerUID: (0, _utils.randomStr)()
 });
 var _default = Triangle;
 exports["default"] = _default;

@@ -33,7 +33,8 @@ var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
 var Row = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var showIn = _ref.showIn,
+  var _ref$showIn = _ref.showIn,
+      showIn = _ref$showIn === void 0 ? ['xs', 'sm', 'md', 'lg'] : _ref$showIn,
       className = _ref.className,
       children = _ref.children,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
@@ -46,9 +47,6 @@ var Row = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 
 Row.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   showIn: _propTypes["default"].array
-});
-Row.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  showIn: ['xs', 'sm', 'md', 'lg']
 });
 var _default = Row;
 exports["default"] = _default;

@@ -183,15 +183,7 @@ var Scroll = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
     style: scrollStyle,
     className: (0, _classnames["default"])(scrollClassName)
   })))));
-}); // Row.propTypes = {
-//   ...defaultPropTypes,
-//   showIn: PropTypes.array
-// };
-// Row.defaultProps = {
-//   ...defaultProps,
-//   showIn: ['xs', 'sm', 'md', 'lg']
-// };
-
+});
 
 var _default = Scroll;
 exports["default"] = _default;

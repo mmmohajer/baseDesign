@@ -369,10 +369,14 @@ DoubleLeft.defaultProps = {
 };
 
 function Icon(_ref) {
-  var type = _ref.type,
-      fill = _ref.fill,
-      stroke = _ref.stroke,
-      scale = _ref.scale,
+  var _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'search' : _ref$type,
+      _ref$fill = _ref.fill,
+      fill = _ref$fill === void 0 ? 'black' : _ref$fill,
+      _ref$stroke = _ref.stroke,
+      stroke = _ref$stroke === void 0 ? 'black' : _ref$stroke,
+      _ref$scale = _ref.scale,
+      scale = _ref$scale === void 0 ? 1 : _ref$scale,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   var otherProps = (0, _allowedProps["default"])(props);
   var iconTypes = {
@@ -538,12 +542,6 @@ Icon.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   type: _propTypes["default"].oneOf(['search', 'up', 'down', 'left', 'right', 'dash', 'image', 'fimage', 'mic', 'fmic', 'notification', 'fnotification', 'setting', 'fsetting', 'x', 'video', 'fvideo', 'share', 'fshare', 'plus', 'doubleRight', 'doubleLeft']),
   fill: _propTypes["default"].string,
   stroke: _propTypes["default"].string
-});
-Icon.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  type: 'search',
-  fill: 'black',
-  stroke: 'black',
-  scale: 1
 });
 var _default = Icon;
 exports["default"] = _default;

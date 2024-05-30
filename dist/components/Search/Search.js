@@ -41,9 +41,12 @@ var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
 var Search = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var closable = _ref.closable,
-      iconFillColor = _ref.iconFillColor,
-      iconStrokeColor = _ref.iconStrokeColor,
+  var _ref$closable = _ref.closable,
+      closable = _ref$closable === void 0 ? true : _ref$closable,
+      _ref$iconFillColor = _ref.iconFillColor,
+      iconFillColor = _ref$iconFillColor === void 0 ? 'gray' : _ref$iconFillColor,
+      _ref$iconStrokeColor = _ref.iconStrokeColor,
+      iconStrokeColor = _ref$iconStrokeColor === void 0 ? 'gray' : _ref$iconStrokeColor,
       className = _ref.className,
       containerClassName = _ref.containerClassName,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
@@ -87,11 +90,6 @@ Search.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   closable: _propTypes["default"].bool,
   iconFillColor: _propTypes["default"].string,
   iconStrokeColor: _propTypes["default"].string
-});
-Search.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  closable: true,
-  iconFillColor: 'grey',
-  iconStrokeColor: 'gray'
 });
 var _default = Search;
 exports["default"] = _default;

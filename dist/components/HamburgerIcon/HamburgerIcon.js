@@ -39,15 +39,19 @@ var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
 function HamburgerIcon(_ref) {
-  var containerUID = _ref.containerUID,
+  var _ref$containerUID = _ref.containerUID,
+      containerUID = _ref$containerUID === void 0 ? (0, _utils.randomStr)() : _ref$containerUID,
       onClick = _ref.onClick,
       onOpenedIconClick = _ref.onOpenedIconClick,
       onClosedIconClick = _ref.onClosedIconClick,
-      cssConfig = _ref.cssConfig,
+      _ref$cssConfig = _ref.cssConfig,
+      cssConfig = _ref$cssConfig === void 0 ? _utils2.cssDefaultConfig : _ref$cssConfig,
       iconToggler = _ref.iconToggler,
       setIconToggler = _ref.setIconToggler,
-      openIcon = _ref.openIcon,
-      closeIcon = _ref.closeIcon;
+      _ref$openIcon = _ref.openIcon,
+      openIcon = _ref$openIcon === void 0 ? false : _ref$openIcon,
+      _ref$closeIcon = _ref.closeIcon,
+      closeIcon = _ref$closeIcon === void 0 ? false : _ref$closeIcon;
 
   var appliedCssConfig = _objectSpread(_objectSpread({}, _utils2.cssDefaultConfig), cssConfig);
 
@@ -119,12 +123,6 @@ HamburgerIcon.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {},
   containerUID: _propTypes["default"].string,
   openIcon: _propTypes["default"].bool,
   closeIcon: _propTypes["default"].bool
-});
-HamburgerIcon.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  cssConfig: _utils2.cssDefaultConfig,
-  containerUID: (0, _utils.randomStr)(),
-  openIcon: false,
-  closeIcon: false
 });
 var _default = HamburgerIcon;
 exports["default"] = _default;

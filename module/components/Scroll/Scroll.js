@@ -35,13 +35,17 @@ var defaultProps = _defaultProps["default"].defaultProps,
 var Scroll = function Scroll(_ref) {
   var scrollableElementId = _ref.scrollableElementId,
       scrollableContentId = _ref.scrollableContentId,
-      scrollAxis = _ref.scrollAxis,
+      _ref$scrollAxis = _ref.scrollAxis,
+      scrollAxis = _ref$scrollAxis === void 0 ? 'x' : _ref$scrollAxis,
       containerClassName = _ref.containerClassName,
       scrollContainerClassName = _ref.scrollContainerClassName,
       scrollClassName = _ref.scrollClassName,
-      transition = _ref.transition,
-      updateRefs = _ref.updateRefs,
-      timeOutToUpdate = _ref.timeOutToUpdate,
+      _ref$transition = _ref.transition,
+      transition = _ref$transition === void 0 ? 'all linear .1s' : _ref$transition,
+      _ref$updateRefs = _ref.updateRefs,
+      updateRefs = _ref$updateRefs === void 0 ? true : _ref$updateRefs,
+      _ref$timeOutToUpdate = _ref.timeOutToUpdate,
+      timeOutToUpdate = _ref$timeOutToUpdate === void 0 ? 500 : _ref$timeOutToUpdate,
       children = _ref.children;
   var scrollRef = (0, _react.useRef)();
 
@@ -181,12 +185,6 @@ Scroll.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   transition: _propTypes["default"].string,
   updateRefs: _propTypes["default"].bool,
   timeOutToUpdate: _propTypes["default"].number
-});
-Scroll.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  transition: 'all linear .1s',
-  scrollAxis: 'x',
-  updateRefs: true,
-  timeOutToUpdate: 500
 });
 var _default = Scroll;
 exports["default"] = _default;

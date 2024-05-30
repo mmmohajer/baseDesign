@@ -37,9 +37,11 @@ var Input = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
       errorContainerClassName = _ref.errorContainerClassName,
       activeErrorContainerClassName = _ref.activeErrorContainerClassName,
       errorTextClassName = _ref.errorTextClassName,
-      fullWidth = _ref.fullWidth,
+      _ref$fullWidth = _ref.fullWidth,
+      fullWidth = _ref$fullWidth === void 0 ? false : _ref$fullWidth,
       errorMessage = _ref.errorMessage,
-      errorIsActive = _ref.errorIsActive,
+      _ref$errorIsActive = _ref.errorIsActive,
+      errorIsActive = _ref$errorIsActive === void 0 ? true : _ref$errorIsActive,
       children = _ref.children,
       id = _ref.id,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
@@ -65,10 +67,6 @@ Input.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   fullWidth: _propTypes["default"].bool,
   errorMessage: _propTypes["default"].string,
   errorIsActive: _propTypes["default"].bool
-});
-Input.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  fullWidth: false,
-  errorIsActive: true
 });
 var _default = Input;
 exports["default"] = _default;

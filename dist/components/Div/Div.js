@@ -34,14 +34,22 @@ var defaultProps = _defaultProps["default"].defaultProps,
 
 var Div = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var children = _ref.children,
-      type = _ref.type,
-      direction = _ref.direction,
-      hAlign = _ref.hAlign,
-      vAlign = _ref.vAlign,
-      textAlign = _ref.textAlign,
-      distributedBetween = _ref.distributedBetween,
-      distributedAround = _ref.distributedAround,
-      showIn = _ref.showIn,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 'block' : _ref$type,
+      _ref$direction = _ref.direction,
+      direction = _ref$direction === void 0 ? 'horizontal' : _ref$direction,
+      _ref$hAlign = _ref.hAlign,
+      hAlign = _ref$hAlign === void 0 ? 'start' : _ref$hAlign,
+      _ref$vAlign = _ref.vAlign,
+      vAlign = _ref$vAlign === void 0 ? 'start' : _ref$vAlign,
+      _ref$textAlign = _ref.textAlign,
+      textAlign = _ref$textAlign === void 0 ? 'left' : _ref$textAlign,
+      _ref$distributedBetwe = _ref.distributedBetween,
+      distributedBetween = _ref$distributedBetwe === void 0 ? false : _ref$distributedBetwe,
+      _ref$distributedAroun = _ref.distributedAround,
+      distributedAround = _ref$distributedAroun === void 0 ? false : _ref$distributedAroun,
+      _ref$showIn = _ref.showIn,
+      showIn = _ref$showIn === void 0 ? ['xs', 'sm', 'md', 'lg'] : _ref$showIn,
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("div", (0, _extends2["default"])({
@@ -60,16 +68,6 @@ Div.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   distributedAround: _propTypes["default"].bool,
   textAlign: _propTypes["default"].oneOf(['left', 'center', 'right']),
   showIn: _propTypes["default"].array
-});
-Div.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  type: 'block',
-  direction: 'horizontal',
-  hAlign: 'start',
-  vAlign: 'start',
-  distributedBetween: false,
-  distributedAround: false,
-  textAlign: 'left',
-  showIn: ['xs', 'sm', 'md', 'lg']
 });
 var _default = Div;
 exports["default"] = _default;

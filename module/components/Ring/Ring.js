@@ -43,11 +43,16 @@ var defaultProps = _defaultProps["default"].defaultProps,
     defaultPropTypes = _defaultProps["default"].defaultPropTypes;
 
 var Ring = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
-  var percentage = _ref.percentage,
-      cssConfig = _ref.cssConfig,
-      containerUID = _ref.containerUID,
-      showDefaultPercentageText = _ref.showDefaultPercentageText,
-      innerSectionComp = _ref.innerSectionComp,
+  var _ref$percentage = _ref.percentage,
+      percentage = _ref$percentage === void 0 ? 100 : _ref$percentage,
+      _ref$cssConfig = _ref.cssConfig,
+      cssConfig = _ref$cssConfig === void 0 ? _utils2.cssDefaultConfig : _ref$cssConfig,
+      _ref$containerUID = _ref.containerUID,
+      containerUID = _ref$containerUID === void 0 ? (0, _utils.randomStr)() : _ref$containerUID,
+      _ref$showDefaultPerce = _ref.showDefaultPercentageText,
+      showDefaultPercentageText = _ref$showDefaultPerce === void 0 ? true : _ref$showDefaultPerce,
+      _ref$innerSectionComp = _ref.innerSectionComp,
+      innerSectionComp = _ref$innerSectionComp === void 0 ? null : _ref$innerSectionComp,
       className = _ref.className,
       outerCircleClassName = _ref.outerCircleClassName,
       innerCircleClassName = _ref.innerCircleClassName,
@@ -88,13 +93,6 @@ Ring.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   containerUID: _propTypes["default"].string,
   showDefaultPercentageText: _propTypes["default"].bool,
   innerSectionComp: _propTypes["default"].func
-});
-Ring.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  cssConfig: _utils2.cssDefaultConfig,
-  containerUID: (0, _utils.randomStr)(),
-  percentage: 100,
-  showDefaultPercentageText: true,
-  innerSectionComp: null
 });
 var _default = Ring;
 exports["default"] = _default;

@@ -30,7 +30,8 @@ var defaultProps = _defaultProps["default"].defaultProps,
 
 var Heading = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var children = _ref.children,
-      type = _ref.type,
+      _ref$type = _ref.type,
+      type = _ref$type === void 0 ? 1 : _ref$type,
       className = _ref.className,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
 
@@ -88,9 +89,6 @@ var Heading = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 
 Heading.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   type: _propTypes["default"].number
-});
-Heading.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  type: 1
 });
 var _default = Heading;
 exports["default"] = _default;

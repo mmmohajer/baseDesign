@@ -32,7 +32,8 @@ var defaultProps = _defaultProps["default"].defaultProps,
 
 var Option = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
   var className = _ref.className,
-      fullWidth = _ref.fullWidth,
+      _ref$fullWidth = _ref.fullWidth,
+      fullWidth = _ref$fullWidth === void 0 ? false : _ref$fullWidth,
       children = _ref.children,
       props = (0, _objectWithoutProperties2["default"])(_ref, _excluded);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement("option", (0, _extends2["default"])({
@@ -44,9 +45,6 @@ var Option = /*#__PURE__*/_react["default"].forwardRef(function (_ref, ref) {
 
 Option.propTypes = _objectSpread(_objectSpread({}, defaultPropTypes), {}, {
   fullWidth: _propTypes["default"].bool
-});
-Option.defaultProps = _objectSpread(_objectSpread({}, defaultProps), {}, {
-  fullWidth: false
 });
 var _default = Option;
 exports["default"] = _default;
