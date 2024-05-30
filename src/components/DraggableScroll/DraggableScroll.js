@@ -115,14 +115,4 @@ const Scroll = React.forwardRef(
   }
 );
 
-// Row.propTypes = {
-//   ...defaultPropTypes,
-//   showIn: PropTypes.array
-// };
-
-// Row.defaultProps = {
-//   ...defaultProps,
-//   showIn: ['xs', 'sm', 'md', 'lg']
-// };
-
 export default Scroll;

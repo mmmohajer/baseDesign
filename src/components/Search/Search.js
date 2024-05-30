@@ -8,7 +8,17 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 import Icon from '../Icon';
 
 const Search = React.forwardRef(
-  ({ closable, iconFillColor, iconStrokeColor, className, containerClassName, ...props }, ref) => {
+  (
+    {
+      closable = true,
+      iconFillColor = 'gray',
+      iconStrokeColor = 'gray',
+      className,
+      containerClassName,
+      ...props
+    },
+    ref
+  ) => {
     const [activeSearch, setActiveSearch] = useState(false);
 
     useEffect(() => {
@@ -64,13 +74,6 @@ Search.propTypes = {
   closable: PropTypes.bool,
   iconFillColor: PropTypes.string,
   iconStrokeColor: PropTypes.string
-};
-
-Search.defaultProps = {
-  ...defaultProps,
-  closable: true,
-  iconFillColor: 'grey',
-  iconStrokeColor: 'gray'
 };
 
 export default Search;

@@ -13,11 +13,11 @@ import { css } from './styles';
 const Ring = React.forwardRef(
   (
     {
-      percentage,
-      cssConfig,
-      containerUID,
-      showDefaultPercentageText,
-      innerSectionComp,
+      percentage = 100,
+      cssConfig = cssDefaultConfig,
+      containerUID = randomStr(),
+      showDefaultPercentageText = true,
+      innerSectionComp = null,
       className,
       outerCircleClassName,
       innerCircleClassName,
@@ -73,15 +73,6 @@ Ring.propTypes = {
   containerUID: PropTypes.string,
   showDefaultPercentageText: PropTypes.bool,
   innerSectionComp: PropTypes.func
-};
-
-Ring.defaultProps = {
-  ...defaultProps,
-  cssConfig: cssDefaultConfig,
-  containerUID: randomStr(),
-  percentage: 100,
-  showDefaultPercentageText: true,
-  innerSectionComp: null
 };
 
 export default Ring;

@@ -10,27 +10,23 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 import { cssConfigShape, cssDefaultConfig } from './utils';
 import { css } from './styles';
 
-const Triangle = React.forwardRef(({ containerUID, cssConfig, className, ...props }, ref) => {
-  const appliedCssConfig = { ...cssDefaultConfig, ...cssConfig };
+const Triangle = React.forwardRef(
+  ({ containerUID = randomStr(), cssConfig = cssDefaultConfig, className, ...props }, ref) => {
+    const appliedCssConfig = { ...cssDefaultConfig, ...cssConfig };
 
-  return (
-    <>
-      <div className={cx(`${containerUID}-triangleContainer`, className)}></div>
-      <style>{css(appliedCssConfig, containerUID)}</style>
-    </>
-  );
-});
+    return (
+      <>
+        <div className={cx(`${containerUID}-triangleContainer`, className)}></div>
+        <style>{css(appliedCssConfig, containerUID)}</style>
+      </>
+    );
+  }
+);
 
 Triangle.propTypes = {
   ...defaultPropTypes,
   cssConfig: PropTypes.shape(cssConfigShape),
   containerUID: PropTypes.string
-};
-
-Triangle.defaultProps = {
-  ...defaultProps,
-  cssConfig: cssDefaultConfig,
-  containerUID: randomStr()
 };
 
 export default Triangle;

@@ -10,15 +10,15 @@ import Icon from '../Icon';
 const Pagination = ({
   numberOfShownPages,
   numberOfTotalPages,
-  currentPage,
+  currentPage = 1,
   setCurrentPage,
-  showFirstLastIcon,
-  showPrevNextIcon,
+  showFirstLastIcon = true,
+  showPrevNextIcon = true,
   containerClassName,
   itemClassName,
   activeItemClassName,
-  showDefaultPrevNextIcon,
-  showDefaultFirstLastIcon,
+  showDefaultPrevNextIcon = true,
+  showDefaultFirstLastIcon = true,
   prevComp,
   nextComp,
   firstPageComp,
@@ -149,14 +149,6 @@ Pagination.propTypes = {
   lastPageCome: PropTypes.func,
   prevComp: PropTypes.func,
   nextComp: PropTypes.func
-};
-
-Pagination.defaultProps = {
-  showFirstLastIcon: true,
-  currentPage: 1,
-  showPrevNextIcon: true,
-  showDefaultFirstLastIcon: true,
-  showDefaultPrevNextIcon: true
 };
 
 export default Pagination;

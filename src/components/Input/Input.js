@@ -14,9 +14,9 @@ const Input = React.forwardRef(
       errorContainerClassName,
       activeErrorContainerClassName,
       errorTextClassName,
-      fullWidth,
+      fullWidth = false,
       errorMessage,
-      errorIsActive,
+      errorIsActive = true,
       children,
       id,
       ...props
@@ -83,12 +83,6 @@ Input.propTypes = {
   fullWidth: PropTypes.bool,
   errorMessage: PropTypes.string,
   errorIsActive: PropTypes.bool
-};
-
-Input.defaultProps = {
-  ...defaultProps,
-  fullWidth: false,
-  errorIsActive: true
 };
 
 export default Input;

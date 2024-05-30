@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-const Button = React.forwardRef(({ className, fullWidth, children, ...props }, ref) => {
+const Button = React.forwardRef(({ className, fullWidth = false, children, ...props }, ref) => {
   return (
     <>
       <button
@@ -21,11 +21,6 @@ const Button = React.forwardRef(({ className, fullWidth, children, ...props }, r
 Button.propTypes = {
   ...defaultPropTypes,
   fullWidth: PropTypes.bool
-};
-
-Button.defaultProps = {
-  ...defaultProps,
-  fullWidth: false
 };
 
 export default Button;

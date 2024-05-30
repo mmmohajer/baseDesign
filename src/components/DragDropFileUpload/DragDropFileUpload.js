@@ -7,16 +7,16 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
 function DragDropFileUpload({
   setFile,
-  openFileBrowser,
+  openFileBrowser = false,
   setOpenFileBrowser,
   draggableElement,
   whileDraggingElement,
   multipleFileUploader,
   whileDraggingElementClassName,
   mainContainerClassName,
-  acceptableFileType,
-  inputId,
-  inputName
+  acceptableFileType = '.jpg,.jpeg,.png',
+  inputId = 'draggableFileUploaderId',
+  inputName = 'file_name'
 }) {
   const inputRef = useRef();
 
@@ -102,14 +102,6 @@ DragDropFileUpload.propTypes = {
   acceptableFileType: PropTypes.string,
   inputId: PropTypes.string,
   inputName: PropTypes.string
-};
-
-DragDropFileUpload.defaultProps = {
-  ...defaultProps,
-  openFileBrowser: false,
-  acceptableFileType: '.jpg,.jpeg,.png',
-  inputId: 'draggableFileUploaderId',
-  inputName: 'file_name'
 };
 
 export default DragDropFileUpload;

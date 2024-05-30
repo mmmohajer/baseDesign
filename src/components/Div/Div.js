@@ -11,14 +11,14 @@ const Div = React.forwardRef(
   (
     {
       children,
-      type,
-      direction,
-      hAlign,
-      vAlign,
-      textAlign,
-      distributedBetween,
-      distributedAround,
-      showIn,
+      type = 'block',
+      direction = 'horizontal',
+      hAlign = 'start',
+      vAlign = 'start',
+      textAlign = 'left',
+      distributedBetween = false,
+      distributedAround = false,
+      showIn = ['xs', 'sm', 'md', 'lg'],
       className,
       ...props
     },
@@ -64,18 +64,6 @@ Div.propTypes = {
   distributedAround: PropTypes.bool,
   textAlign: PropTypes.oneOf(['left', 'center', 'right']),
   showIn: PropTypes.array
-};
-
-Div.defaultProps = {
-  ...defaultProps,
-  type: 'block',
-  direction: 'horizontal',
-  hAlign: 'start',
-  vAlign: 'start',
-  distributedBetween: false,
-  distributedAround: false,
-  textAlign: 'left',
-  showIn: ['xs', 'sm', 'md', 'lg']
 };
 
 export default Div;

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import defaultPropsMap from 'Constants/defaultProps';
 const { defaultProps, defaultPropTypes } = defaultPropsMap;
 
-const Heading = React.forwardRef(({ children, type, className, ...props }, ref) => {
+const Heading = React.forwardRef(({ children, type = 1, className, ...props }, ref) => {
   switch (type) {
     case 1:
       return (
@@ -54,11 +54,6 @@ const Heading = React.forwardRef(({ children, type, className, ...props }, ref) 
 Heading.propTypes = {
   ...defaultPropTypes,
   type: PropTypes.number
-};
-
-Heading.defaultProps = {
-  ...defaultProps,
-  type: 1
 };
 
 export default Heading;

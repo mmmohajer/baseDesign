@@ -56,8 +56,4 @@ Form.propTypes = {
   toBeValidatedFields: PropTypes.arrayOf(PropTypes.shape(toBeValidatedFieldsShape).isRequired)
 };
 
-Form.defaultProps = {
-  ...defaultProps
-};
-
 export default Form;

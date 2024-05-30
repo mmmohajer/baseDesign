@@ -8,13 +8,13 @@ const { defaultProps, defaultPropTypes } = defaultPropsMap;
 const Scroll = ({
   scrollableElementId,
   scrollableContentId,
-  scrollAxis,
+  scrollAxis = 'x',
   containerClassName,
   scrollContainerClassName,
   scrollClassName,
-  transition,
-  updateRefs,
-  timeOutToUpdate,
+  transition = 'all linear .1s',
+  updateRefs = true,
+  timeOutToUpdate = 500,
   children
 }) => {
   const scrollRef = useRef();
@@ -139,14 +139,6 @@ Scroll.propTypes = {
   transition: PropTypes.string,
   updateRefs: PropTypes.bool,
   timeOutToUpdate: PropTypes.number
-};
-
-Scroll.defaultProps = {
-  ...defaultProps,
-  transition: 'all linear .1s',
-  scrollAxis: 'x',
-  updateRefs: true,
-  timeOutToUpdate: 500
 };
 
 export default Scroll;

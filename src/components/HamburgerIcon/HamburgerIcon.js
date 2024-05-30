@@ -12,15 +12,15 @@ import { cssClassMaps, cssConfigShape, cssDefaultConfig } from './utils';
 import { css } from './styles';
 
 function HamburgerIcon({
-  containerUID,
+  containerUID = randomStr(),
   onClick,
   onOpenedIconClick,
   onClosedIconClick,
-  cssConfig,
+  cssConfig = cssDefaultConfig,
   iconToggler,
   setIconToggler,
-  openIcon,
-  closeIcon
+  openIcon = false,
+  closeIcon = false
 }) {
   const appliedCssConfig = { ...cssDefaultConfig, ...cssConfig };
   const [isIconOpened, setIsIconOpened] = useState(true);
@@ -97,14 +97,6 @@ HamburgerIcon.propTypes = {
   containerUID: PropTypes.string,
   openIcon: PropTypes.bool,
   closeIcon: PropTypes.bool
-};
-
-HamburgerIcon.defaultProps = {
-  ...defaultProps,
-  cssConfig: cssDefaultConfig,
-  containerUID: randomStr(),
-  openIcon: false,
-  closeIcon: false
 };
 
 export default HamburgerIcon;

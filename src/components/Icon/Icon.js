@@ -29,7 +29,7 @@ import Plus from 'Images/js-images/icons/svg/plus.svg';
 import DoubleRight from 'Images/js-images/icons/svg/doubleRight.svg';
 import DoubleLeft from 'Images/js-images/icons/svg/doubleLeft.svg';
 
-function Icon({ type, fill, stroke, scale, ...props }) {
+function Icon({ type = 'search', fill = 'black', stroke = 'black', scale = 1, ...props }) {
   const otherProps = allowedProps(props);
   const iconTypes = {
     search: (
@@ -176,14 +176,6 @@ Icon.propTypes = {
   ]),
   fill: PropTypes.string,
   stroke: PropTypes.string
-};
-
-Icon.defaultProps = {
-  ...defaultProps,
-  type: 'search',
-  fill: 'black',
-  stroke: 'black',
-  scale: 1
 };
 
 export default Icon;

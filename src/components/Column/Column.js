@@ -10,7 +10,19 @@ import { showInCssClass } from 'Utils/utils';
 const arrayOfColSize = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const Column = React.forwardRef(
-  ({ xs, sm, md, lg, showIn, className, children, ...props }, ref) => {
+  (
+    {
+      xs = 12,
+      sm = 12,
+      md = 12,
+      lg = 12,
+      showIn = ['xs', 'sm', 'md', 'lg'],
+      className,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     const getCssClass = (num, size) => {
       if (size === 'xs') {
         return `row--${num}`;
