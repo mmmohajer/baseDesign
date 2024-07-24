@@ -76,126 +76,126 @@
   display: none;
 }
 
-.show-flex-in {
-  &-sm-md-lg {
-    display: none;
+// .show-flex-in {
+//   &-sm-md-lg {
+//     display: none;
 
-    @include atSmall {
-      display: flex;
-    }
+//     @include atSmall {
+//       display: flex;
+//     }
 
-    @include atMedium {
-      display: flex;
-    }
+//     @include atMedium {
+//       display: flex;
+//     }
 
-    @include atLarge {
-      display: flex;
-    }
-  }
+//     @include atLarge {
+//       display: flex;
+//     }
+//   }
 
-  &-md-lg {
-    display: none;
+//   &-md-lg {
+//     display: none;
 
-    @include atMedium {
-      display: flex;
-    }
+//     @include atMedium {
+//       display: flex;
+//     }
 
-    @include atLarge {
-      display: flex;
-    }
-  }
+//     @include atLarge {
+//       display: flex;
+//     }
+//   }
 
-  &-lg {
-    display: none;
+//   &-lg {
+//     display: none;
 
-    @include atLarge {
-      display: flex;
-    }
-  }
+//     @include atLarge {
+//       display: flex;
+//     }
+//   }
 
-  &-md-sm-xsm {
-    display: flex;
+//   &-md-sm-xsm {
+//     display: flex;
 
-    @include atLarge {
-      display: none;
-    }
-  }
+//     @include atLarge {
+//       display: none;
+//     }
+//   }
 
-  &-sm-xsm {
-    display: flex;
+//   &-sm-xsm {
+//     display: flex;
 
-    @include atMedium {
-      display: none;
-    }
-  }
+//     @include atMedium {
+//       display: none;
+//     }
+//   }
 
-  &-xsm {
-    display: flex;
+//   &-xsm {
+//     display: flex;
 
-    @include atSmall {
-      display: none;
-    }
-  }
-}
+//     @include atSmall {
+//       display: none;
+//     }
+//   }
+// }
 
-.show-block-in {
-  &-sm-md-lg {
-    display: none;
+// .show-block-in {
+//   &-sm-md-lg {
+//     display: none;
 
-    @include atSmall {
-      display: block;
-    }
+//     @include atSmall {
+//       display: block;
+//     }
 
-    @include atMedium {
-      display: block;
-    }
+//     @include atMedium {
+//       display: block;
+//     }
 
-    @include atLarge {
-      display: block;
-    }
-  }
+//     @include atLarge {
+//       display: block;
+//     }
+//   }
 
-  &-md-lg {
-    display: none;
+//   &-md-lg {
+//     display: none;
 
-    @include atMedium {
-      display: block;
-    }
+//     @include atMedium {
+//       display: block;
+//     }
 
-    @include atLarge {
-      display: block;
-    }
-  }
+//     @include atLarge {
+//       display: block;
+//     }
+//   }
 
-  &-lg {
-    display: none;
+//   &-lg {
+//     display: none;
 
-    @include atLarge {
-      display: block;
-    }
-  }
+//     @include atLarge {
+//       display: block;
+//     }
+//   }
 
-  &-md-sm-xsm {
-    display: block;
+//   &-md-sm-xsm {
+//     display: block;
 
-    @include atLarge {
-      display: none;
-    }
-  }
+//     @include atLarge {
+//       display: none;
+//     }
+//   }
 
-  &-sm-xsm {
-    display: block;
+//   &-sm-xsm {
+//     display: block;
 
-    @include atMedium {
-      display: none;
-    }
-  }
+//     @include atMedium {
+//       display: none;
+//     }
+//   }
 
-  &-xsm {
-    display: block;
+//   &-xsm {
+//     display: block;
 
-    @include atSmall {
-      display: none;
-    }
-  }
-}
+//     @include atSmall {
+//       display: none;
+//     }
+//   }
+// }
